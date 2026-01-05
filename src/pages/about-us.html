@@ -1,0 +1,339 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/about-us.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <title>About Us</title>
+  </head>
+  <body class="m-0 p-0 border-box">
+    <header class="header w-full flex justify-between p-4">
+      <div class="uppercase font-bold text-[24px] text-black">
+        <a href="/frontend/index.html">roompal</a>
+      </div>
+      <nav class="flex items-center gap-4 text-[#7c7c7c]">
+        <a href="/frontend/index.html">Home</a>
+        <div class="relative">
+          <button class="dropdown-btn">
+            <img src="/" alt="" />
+            <span class="flex items-center gap-2"
+              >Service
+              <img
+                src="/frontend/assets/images/dropdown-chevron.png"
+                class="w-4"
+                alt=""
+            /></span>
+          </button>
+          <ul id="dropdown-menu" class="hidden dropdown">
+            <li>
+              <a href="./find-apartment.html">Find an Apartment</a>
+            </li>
+            <li>
+              <a href="./find-roomie.html"> Find a Roomamte</a>
+            </li>
+            <li>
+              <a href="./find-renter.html">FInd a Flatmate</a>
+            </li>
+          </ul>
+        </div>
+        <a href="./about-us.html">About</a>
+        <a href="./contact-us.html">Contact</a>
+      </nav>
+      <div
+        class="bg-[#223448] text-white rounded-full w-37 h-11 flex items-center justify-center px-3.75 py-1"
+      >
+        <a class="text-white" href="#">Find your home</a>
+      </div>
+    </header>
+    <main>
+      <section class="flex flex-col items-center pt-20">
+        <div class="pb-12 flex flex-col justify-center max-w-full px-10">
+          <p class="text-[#7c7c7c] uppercase text-sm">Who are we</p>
+          <h2 class="md:text-base lg:text-5xl font-normal text-black">
+            We are a housing and roommate matching platform built to make
+            finding a place to live simple, safe, and reliable.
+          </h2>
+        </div>
+        <div class="w-full pb-24">
+          <img
+            class="w-full px-10 object-cover m-auto h-full"
+            src="/frontend/assets/images/Frame-427321920.png"
+            alt=""
+          />
+        </div>
+      </section>
+      <!--  -->
+      <section>
+        <div class="about-us-container">
+          <div class="grid grid-cols-2 w-full">
+            <div class="flex flex-col pl-24 justify-center w-full">
+              <h2 class="font-medium text-[3rem] text-black">OUR MISSION</h2>
+              <p class="text-[#ababab] leading-[150%] font-normal w-125">
+                To make housing accessible and stress-free by connecting people
+                to verified homes and compatible roommates through trust,
+                transparency, and smart matching.
+              </p>
+            </div>
+            <div class="w-full">
+              <img
+                class="w-full h-full object-cover"
+                src="/frontend/assets/images/Frame-427321922.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="w-full grid grid-cols-2 items-center">
+            <div class="about-us-image">
+              <img
+                class="w-full object-cover"
+                src="/frontend/assets/images/Frame-427321923.png"
+                alt=""
+              />
+            </div>
+            <div class="flex flex-col flex-center max-w-125 h-33 pr-24">
+              <h2 class="max-w-full font-medium text-[3rem] text-black">
+                OUR VISION
+              </h2>
+              <p class="w-125 text-[#ababab] leading-normal font-normal">
+                To become the most trusted housing and roommate platform, where
+                finding a home or someone to share it with feels safe, simple,
+                and human.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- REVIEWS -->
+      <section>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+      <!-- subscribe to our newsletter -->
+      <section class="py-15">
+        <div class="grid lg:grid-cols-2 w-full p-4 lg:p-10">
+          <div class="flex flex-col w-full">
+            <h2
+              class="lg:text-4xl text-black font-medium leading-[-1.5px] py-3"
+            >
+              Subscribe to our newletter
+            </h2>
+            <span class="flex items-center text-[#7c7c7c] gap-2.5 py-2"
+              ><img
+                class="h-5 w-5"
+                src="/frontend/assets/images/Vector-(5).png"
+                alt=""
+              />Weekly updates</span
+            >
+            <span class="flex items-center text-[#7c7c7c] gap-2.5 pb-2">
+              <img
+                class="h-5 w-5"
+                src="/frontend/assets/images/Vector-(5).png"
+                alt=""
+              />Early access our new listing
+            </span>
+            <span class="flex items-center text-[#7c7c7c] gap-2.5"
+              ><img
+                class="h-5 w-5"
+                src="/frontend/assets/images/Vector-(5).png"
+                alt=""
+              />Exclusive content</span
+            >
+            <div class="flex mt-auto gap-4">
+              <a
+                class="flex items-center justify-center pt-1 pr-3.75 pb-1 pl-3.75 bg-[#223448] rounded-full max-w-37 h-11 capitalize text-[#e9e0cf]"
+                href="#"
+                >find apartment</a
+              >
+              <a
+                class="flex items-center justify-center bg-[#00000033] max-w-43.25 h-11 text pt-1 pr-3.75 pb-1 pl-3.75 text-[#223448] rounded-full"
+                href="#"
+                >List an apartment</a
+              >
+            </div>
+          </div>
+          <div class="w-full">
+            <img
+              class="w-full h-full rounded-2xl object-cover"
+              src="/frontend/assets/images/flip-image.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <!-- FAQ ACCORDION         -->
+      <section class="bg-black text-white p-20 mb-20">
+        <div class="flex justify-around flex-wrap m-auto w-full">
+          <div class="h-38.75 max-w-86.75">
+            <h2 class="text-[48px] font-bold">FAQS</h2>
+            <p class="max-w-77.75 text-[24px] leading-[120%] font-light pt-4">
+              Everything you want to know before finding your next home.
+            </p>
+          </div>
+          <div class="w-[50%]">
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div class="w-full">
+              <button
+                class="w-full flex items-center justify-between text-2xl font-medium faq-question py-4 cursor-pointer"
+              >
+                Are there financing options available?
+                <span class="faq-icon transition-transform duration-300"
+                  ><img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="/frontend/assets/images/chevron.png"
+                    alt=""
+                /></span>
+              </button>
+              <div
+                class="faq-answer overflow-hidden max-h-0 transition-all duration-300 text-2xl font-extralight"
+              >
+                Yes. Property tours are available for most listings. You can
+                schedule a physical or virtual tour directly through the
+                platform, depending on what the agent or landlord offers.
+              </div>
+            </div>
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div w-full>
+              <button
+                class="w-full flex items-center justify-between text-2xl font-medium faq-question py-4 cursor-pointer"
+              >
+                Are there financing options available?
+                <span class="faq-icon transition-transform duration-300"
+                  ><img
+                    class="w-[16.7px] h-2.25 object-cover"
+                    src="/frontend/assets/images/chevron.png"
+                    alt=""
+                /></span>
+              </button>
+              <div
+                class="faq-answer overflow-hidden max-h-0 transition-all duration-300 text-2xl font-extralight"
+              >
+                Listings are updated regularly to ensure availability and
+                accuracy. Unavailable or rented properties are removed promptly
+                to keep things reliable. or landlord offers.
+              </div>
+            </div>
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div w-full>
+              <button
+                class="w-full flex items-center justify-between text-2xl font-medium faq-question py-4 cursor-pointer"
+              >
+                Are your communities family-friendly?
+                <span class="faq-icon transition-transform duration-300"
+                  ><img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="/frontend/assets/images/chevron.png"
+                    alt=""
+                /></span>
+              </button>
+              <div
+                class="faq-answer overflow-hidden max-h-0 transition-all duration-300 text-2xl font-extralight"
+              >
+                any of our listings are located in safe, family-friendly
+                neighborhoods. You can use filters to find homes suitable for
+                families.
+              </div>
+            </div>
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div w-full>
+              <button
+                class="w-full flex items-center justify-between text-2xl font-medium faq-question py-4 cursor-pointer"
+              >
+                What do I need to rent a property?
+                <span class="faq-icon transition-transform duration-300"
+                  ><img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="/frontend/assets/images/chevron.png"
+                    alt=""
+                /></span>
+              </button>
+              <div
+                class="faq-answer overflow-hidden max-h-0 transition-all duration-300 text-2xl font-extralight"
+              >
+                Requirements vary, but typically you’ll need a valid ID, rent
+                payment, caution or security deposit, and any additional
+                documents requested by the landlord.services in their new
+                location.
+              </div>
+            </div>
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div w-full>
+              <button
+                class="w-full flex items-center justify-between text-2xl font-medium faq-question py-4"
+              >
+                Who do I contact for maintenance issues?
+                <span class="faq-icon transition-transform duration-300"
+                  ><img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="/frontend/assets/images/chevron.png"
+                    alt=""
+                /></span>
+              </button>
+              <div
+                class="faq-answer overflow-hidden max-h-0 transition-all duration-300 text-2xl font-extralight"
+              >
+                Maintenance requests should be directed to the listed agent or
+                landlord through the platform. Contact details are provided once
+                you’re connected to a property.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="h-full bg-[#f5f5f5]">
+      <div class="infinite py-30 px-10 relative text-black">
+        <img
+          class="absolute top-px left-[40%] max-w-49.25 h-[474.33px]"
+          src="/frontend/assets/images/flame.png"
+          alt=""
+        />
+        <strong class="text-[200px]">ROOMPAL</strong>
+        <p>
+          At ROOMPAL, we’re not just about properties , we’re about people. Born
+          from a passion for helping individuals and families find their ideal
+          space, we’ve built a team that’s obsessed with making your home
+          journey as seamless and rewarding as possible.
+        </p>
+      </div>
+      <div class="flex justify-between w-[90%] mx-auto">
+        <div class="flex items-center gap-3">
+          <a href="">
+            <img
+              class="w-6 h-6"
+              src="/frontend/assets/images/Vector.png"
+              alt=""
+          /></a>
+          <a href="">
+            <img
+              class="w-6 h-6"
+              src="/frontend/assets/images/Vector-(1).png"
+              alt=""
+          /></a>
+          <a href="">
+            <img
+              class="w-6 h-6"
+              src="/frontend/assets/images/InstagramLogo.png"
+              alt=""
+          /></a>
+        </div>
+        <div class="contact-us text-black">
+          <div class="find">
+            <p>Find Us</p>
+            <p>143 Clinton Street</p>
+            <p class="state">Hilton state, 12353</p>
+          </div>
+          <div class="info">
+            <span>Contact</span>
+            <a href="tel:(123) 256-4565">(123) 256-4565</a>
+            <a class="email" href="mailto:Suport @landing.com"
+              >Support <br />
+              @landing.com</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/faq.js"></script>
+  </body>
+</html>

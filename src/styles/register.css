@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"); */
+@font-face {
+  font-family: "Infinite Realities";
+  src: url(../fonts/Infinite\ Realities.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Gilroy Thin";
+  src: url(../fonts/Gilroy-Thin.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Gilroy light";
+  src: url(../fonts/Gilroy-Light.ttf) format("truetype");
+}
+:root {
+  --white: #ffffff;
+  --off-white: #f5f5f5;
+  --black: #000;
+  --footer-color: #f5f5f5;
+  --blue-2: #223448;
+  --ash: #7c7c7c;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+/* MAIN */
+.create-details-container {
+  max-width: 527px;
+  width: 100%;
+  height: 767px;
+}
+.log-in {
+  max-width: 379px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.log-in a {
+  background: var(--off-white);
+  border-radius: 50px;
+  height: 36px;
+  max-width: 174px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+.log-in a:nth-of-type(2) {
+  border-radius: 10px;
+}
+.log-in a img {
+  width: 16px;
+  height: 16px;
+}
+form .input-group {
+  display: flex;
+  flex-direction: column;
+  max-width: 452px;
+  height: 45px;
+  background: var(--off-white);
+  border-radius: 10px;
+}
+form .input-group label {
+  color: var(--black);
+  display: flex;
+}
+form .input-group input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: var(--off-white);
+}
+.side-image img {
+  max-width: 745px;
+  width: 100%;
+  object-fit: cover;
+  max-height: 1042px;
+}

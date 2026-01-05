@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="src/styles/index.css" />
+    <link href="src/styles/style.css" rel="stylesheet" />
+  </head>
+  <body class="m-0 p-0 border-box bg-#f1f1f1">
+    <header class="header w-full flex justify-between p-4">
+      <div class="uppercase font-bold text-[24px]">
+        <a href="index.html">roompal</a>
+        <img src="" alt="" />
+      </div>
+      <nav
+        class="flex items-center justify-between gap-4 text-[#7c7c7c] md:flex"
+      >
+        <a href="/frontend/index.html">Home</a>
+        <div class="relative">
+          <button class="dropdown-btn">
+            <span class="flex items-center gap-2"
+              >Service
+              <img src="assets/images/dropdown-chevron.png" class="w-4" alt=""
+            /></span>
+          </button>
+          <ul id="dropdown-menu" class="hidden">
+            <li>
+              <a href="src/pages/find-apartment.html">Find an Apartment</a>
+            </li>
+            <li>
+              <a href="src/pages/find-roomie.html"> Find a Roomamte</a>
+            </li>
+            <li>
+              <a href="src/pages/find-renter.html">FInd a Flatmate</a>
+            </li>
+          </ul>
+        </div>
+        <a href="src/pages/about-us.html">About</a>
+        <a href="src/pages/contact-us.html">Contact</a>
+      </nav>
+      <div
+        class="bg-[#223448] text-white rounded-full w-37 h-11 flex items-center justify-center px-3.75 py-1"
+      >
+        <a class="text-white" href="#">Find your home</a>
+      </div>
+    </header>
+    <main>
+      <!-- hero section -->
+      <section class="hero-section">
+        <div
+          class="your-home flex items-center justify-between p-[3.2rem] w-full"
+        >
+          <h2 class="">find your dream apartment here</h2>
+          <p>
+            Verified listings, real people, and safe connections. No stress. No
+            scams.
+          </p>
+        </div>
+        <div class="get-a-space-container">
+          <img src="assets/images/3d-rendering-house-model-1.png" alt="" />
+          <div class="two-con">
+            <div class="fia-links">
+              <a class="find-apartment" href="src/pages/find-apartment.html"
+                >Find an Apartment</a
+              >
+              <a href="src/pages/find-renter.html">List an Apartment</a>
+              <a href="src/pages/find-roomie.html">Find a Roomate</a>
+            </div>
+            <div class="apartment-locations">
+              <div class="apartment-locations-frame"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- what we do section -->
+      <section class="what-we-do-frame">
+        <h2 class="what-we-do-heading">What we do</h2>
+        <div
+          class="grid m-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 w-[90%] p-8"
+        >
+          <div
+            class="w-full bg-[#f5f5f5] items-center flex flex-col p-6 rounded-[20px]"
+          >
+            <div class="w-full flex flex-col p-2.5">
+              <p class="text-[#7c7c7c] uppercase text-[16px] pb-2">
+                performance
+              </p>
+              <p class="lg:text-[30px] font-medium">Find a House</p>
+              <span class="text-[#7c7c7c] max-w-75"
+                >We help you find that perfect house you can boldly call a
+                home</span
+              >
+              <a
+                class="bg-[#223448] text-white rounded-full flex items-center justify-center text-[1.1rem] max-w-37.5 h-13.5 mt-4"
+                href="#"
+                >Get Started</a
+              >
+            </div>
+            <div class="w-full">
+              <img
+                class="rounded-[20px]"
+                src="assets/images/Frame-14.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div
+            class="w-full bg-[#f5f5f5] items-center flex flex-col p-6 rounded-[20px]"
+          >
+            <div class="w-full">
+              <img
+                class="rounded-[20px]"
+                src="assets/images/image-table.png"
+                alt=""
+              />
+            </div>
+            <div class="w-full flex flex-col p-2.5">
+              <p class="text-[#7c7c7c] uppercase text-[16px] pb-2">
+                Monitoring
+              </p>
+              <p class="lg:text-[30px] font-medium">List A House</p>
+              <span class="text-[#7c7c7c] max-w-75"
+                >We let you list your available houses and get it across to the
+                right tenant</span
+              >
+              <a
+                class="bg-[#223448] text-white rounded-full flex items-center justify-center text-[1.1rem] max-w-37.5 h-13.5 mt-4"
+                href="#"
+                >Get Started</a
+              >
+            </div>
+          </div>
+          <div
+            class="w-full bg-[#f5f5f5] items-center flex flex-col p-6 rounded-[20px]"
+          >
+            <div class="w-full flex flex-col p-2.5">
+              <p class="text-[#7c7c7c] uppercase text-[16px] pb-2">
+                performance
+              </p>
+              <p class="lg:text-[30px] font-medium">Find a Apartment</p>
+              <span class="text-[#7c7c7c] max-w-75"
+                >We help you find that perfect house you can boldly call a
+                home</span
+              >
+              <a
+                class="bg-[#223448] text-white rounded-full flex items-center justify-center text-[1.1rem] max-w-37.5 h-13.5 mt-[0.8rem]"
+                href="#"
+                >Get Started</a
+              >
+            </div>
+            <div class="">
+              <img
+                class="rounded-[20px]"
+                src="assets/images/side-view-roommates-laying-bed-1.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--  -->
+      <div class="relative w-full overflow-hidden">
+        <!-- Image -->
+        <div class="rounded-[20px]">
+          <img
+            src="assets/images/3d-rendering-loft-luxury-living-room-with-shelf-near-dining-table-1.png"
+            class="w-[90%] m-auto h-full object-cover"
+          />
+        </div>
+        <div
+          class="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center flex-1 gap-6"
+        >
+          <span
+            class="w-67.5 h-3.25 rounded=[20px] bg-white rounded-full"
+          ></span>
+          <h1 class="text-white lg:text-[128px] font-medium">Homely</h1>
+          <span
+            class="w-67.5 h-3.25 rounded=[20px] bg-white rounded-full"
+          ></span>
+        </div>
+      </div>
+      <!--Why us section  -->
+      <section class="py-35">
+        <h2 class="text-3xl font-bold text-center pb-10">WHY US</h2>
+        <div class="w-[90%] border-2 border-[#e5e5e5] rounded-lg m-auto">
+          <div
+            class="why-us-parent grid items-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 sm:grid-cols-2 p-20"
+          >
+            <div
+              class="why-us-card items-stretch flex flex-col justify-center text-center"
+            >
+              <div
+                class="bg-[#f5f5f5] w-14 h-14 rounded-2xl p-4 flex items-center justify-center my-5"
+              >
+                <img class="w-4 h-4.5" src="assets/images/arrow.png" alt="" />
+              </div>
+              <div>
+                <p class="text-4xl font-semibold">x3</p>
+                <p class="text-2xl w-45 font-medium py-2">
+                  Verified listings only
+                </p>
+                <p class="w-45 text-[#7c7c7c]">
+                  Every home and agent goes through checks before going live.
+                </p>
+              </div>
+            </div>
+            <div
+              class="why-us-card flex flex-col items-center justify-center text-center"
+            >
+              <div
+                class="bg-[#f5f5f5] w-14 h-14 rounded-2xl p-4 flex items-center justify-center my-5"
+              >
+                <img class="w-4 h-4.5" src="assets/images/arrow.png" alt="" />
+              </div>
+              <div>
+                <p class="text-4xl font-semibold">x5</p>
+                <p class="text-2xl font-medium py-2">
+                  Real people, <br />
+                  real profiles
+                </p>
+                <p class="w-45 text-[#7c7c7c]">
+                  Know who you’re talking to before you ever step out.
+                </p>
+              </div>
+            </div>
+            <div
+              class="why-us-card flex flex-col items-center justify-center text-center"
+            >
+              <div
+                class="bg-[#f5f5f5] w-14 h-14 rounded-2xl p-4 flex items-center justify-center my-5"
+              >
+                <img class="w-4 h-4.5" src="assets/images/arrow.png" alt="" />
+              </div>
+              <div class="why-us-text">
+                <p class="text-4xl font-semibold">5%</p>
+                <p class="text-2xl font-medium py-2">
+                  Find your fit, <br />
+                  not just a room
+                </p>
+                <p class="w-45 text-[#7c7c7c]">
+                  Match with roommates based on lifestyle, budget, and location.
+                </p>
+              </div>
+            </div>
+            <div
+              class="why-us-card flex flex-col items-center justify-center text-center"
+            >
+              <div
+                class="bg-[#f5f5f5] w-14 h-14 rounded-2xl p-4 flex items-center justify-center my-5"
+              >
+                <img class="w-4 h-4.5" src="assets/images/arrow.png" alt="" />
+              </div>
+              <div>
+                <p class="text-4xl font-semibold">+3M</p>
+                <p class="text-2xl font-medium py-2">Built for safety</p>
+                <p class="w-45 text-[#7c7c7c]">
+                  In-app messaging, reporting tools, and profile verification.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pt-8 pb-20 flex items-center justify-center">
+            <p class="text-2xl font-semibold text-center max-w-123">
+              Find verified homes and compatible roommates in one place.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!--Explore Our Properties  -->
+      <section class="bg-[#f5f5f5]">
+        <div class="w-[90%] m-auto flex justify-between items-center py-15">
+          <div class="post">
+            <p>Featured Post</p>
+            <h2>Explore our properties</h2>
+            <a href="#">Explore</a>
+          </div>
+          <div class="discover">
+            <p>
+              Discover stunning properties in the most desirable neighborhoods
+              carefully selected for style, location, and value.
+            </p>
+          </div>
+        </div>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 m-auto w-[90%]"
+        >
+          <div class="bg-[#e9e0cf] w-full rounded-[20px]">
+            <div class="w-full p-5">
+              <img src="assets/images/image-1.png" alt="" />
+            </div>
+            <div class="w-full flex flex-col px-10 pb-4">
+              <div class="w-full flex items-center justify-between px-1">
+                <h2 class="text-2xl font-medium">N250,000</h2>
+                <p class="text-[#00000033] text-xs uppercase font-medium">
+                  total area: 250M2
+                </p>
+              </div>
+              <p class="flex items-center gap-2 text-[#00000033] py-2 px-1">
+                <img
+                  class="w-4 h-3.5"
+                  src="assets/images/Vector-(7).png"
+                  alt=""
+                />
+                102 Gbagada street, new island
+              </p>
+              <div class="flex items-center gap-6 px-1">
+                <p class="flex items-center gap-2 text-[#00000033]">
+                  <img
+                    class="w-4 h-2.75"
+                    src="assets/images/Vector-(8).png"
+                    alt=""
+                  />
+                  4 bedroom
+                </p>
+                <p class="text-[#00000033] flex items-center gap-2">
+                  <img
+                    class="w-4 h-3.25"
+                    src="assets/images/Vector-(9).png"
+                    alt=""
+                  />2 bedroom
+                </p>
+              </div>
+              <div class="flex items-center justify-evenly gap-10 py-4">
+                <a
+                  class="flex items-center justify-center gap-2 text-white bg-[#223448] h-11 w-full rounded-full text-xs"
+                  href="#"
+                  ><img class="w-4" src="assets/images/tel.png" alt="" />Contact
+                  the house agent</a
+                ><a
+                  class="w-13.25 h-9 bg-[#00000033] flex items-center justify-center rounded-full"
+                  href="#"
+                  ><img class="w-5" src="assets/images/message.png" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-[#e9e0cf] w-full rounded-[20px]">
+            <div class="p-5">
+              <img src="assets/images/image-2.png" alt="" />
+            </div>
+            <div class="w-full flex flex-col px-10 pb-4">
+              <div class="w-full flex items-center justify-between px-1">
+                <h2 class="text-2xl font-medium">N250,000</h2>
+                <p class="text-[#00000033] text-xs uppercase font-medium">
+                  total area: 250M2
+                </p>
+              </div>
+              <p class="flex items-center gap-2 text-[#00000033] py-2 px-1">
+                <img
+                  class="w-4 h-3.5"
+                  src="assets/images/Vector-(7).png"
+                  alt=""
+                />
+                102 Gbagada street, new island
+              </p>
+              <div class="flex items-center gap-6 px-1">
+                <p class="flex items-center gap-2 text-[#00000033]">
+                  <img
+                    class="w-4 h-2.75"
+                    src="assets/images/Vector-(8).png"
+                    alt=""
+                  />
+                  4 bedroom
+                </p>
+                <p class="text-[#00000033] flex items-center gap-2">
+                  <img
+                    class="w-4 h-3.25"
+                    src="assets/images/Vector-(9).png"
+                    alt=""
+                  />2 bedroom
+                </p>
+              </div>
+              <div class="flex items-center justify-evenly gap-10 py-4">
+                <a
+                  class="flex items-center justify-center gap-2 text-white bg-[#223448] h-11 w-full rounded-full text-xs"
+                  href="#"
+                  ><img class="w-4" src="assets/images/tel.png" alt="" />Contact
+                  the house agent</a
+                ><a
+                  class="w-13.25 h-9 bg-[#00000033] flex items-center justify-center rounded-full"
+                  href="#"
+                  ><img class="w-5" src="assets/images/message.png" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-[#e9e0cf] w-full rounded-[20px]">
+            <div class="p-5 w-full">
+              <img src="assets/images/image-3.png" alt="" />
+            </div>
+            <div class="w-full flex flex-col px-10 pb-4">
+              <div class="w-full flex items-center justify-between px-1">
+                <h2 class="text-2xl font-medium">N250,000</h2>
+                <p class="text-[#00000033] text-xs uppercase font-medium">
+                  total area: 250M2
+                </p>
+              </div>
+              <p class="flex items-center gap-2 text-[#00000033] py-2 px-1">
+                <img
+                  class="w-4 h-3.5"
+                  src="assets/images/Vector-(7).png"
+                  alt=""
+                />
+                102 Gbagada street, new island
+              </p>
+              <div class="flex items-center gap-6 px-1">
+                <p class="flex items-center gap-2 text-[#00000033]">
+                  <img
+                    class="w-4 h-2.75"
+                    src="assets/images/Vector-(8).png"
+                    alt=""
+                  />
+                  4 bedroom
+                </p>
+                <p class="text-[#00000033] flex items-center gap-2">
+                  <img
+                    class="w-4 h-3.25"
+                    src="assets/images/Vector-(9).png"
+                    alt=""
+                  />2 bedroom
+                </p>
+              </div>
+              <div class="flex items-center justify-evenly gap-10 py-4">
+                <a
+                  class="flex items-center justify-center gap-2 text-white bg-[#223448] h-11 w-full rounded-full text-xs"
+                  href="#"
+                  ><img class="w-4" src="assets/images/tel.png" alt="" />Contact
+                  the house agent</a
+                ><a
+                  class="w-13.25 h-9 bg-[#00000033] flex items-center justify-center rounded-full"
+                  href="#"
+                  ><img class="w-5" src="assets/images/message.png" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-[#e9e0cf] w-full rounded-[20px]">
+            <div class="p-5">
+              <img src="assets/images/image-4.png" alt="" />
+            </div>
+            <div class="w-full flex flex-col px-10 pb-4">
+              <div class="w-full flex items-center justify-between px-1">
+                <h2 class="text-2xl font-medium">N250,000</h2>
+                <p class="text-[#00000033] text-xs uppercase font-medium">
+                  total area: 250M2
+                </p>
+              </div>
+              <p class="flex items-center gap-2 text-[#00000033] py-2 px-1">
+                <img
+                  class="w-4 h-3.5"
+                  src="assets/images/Vector-(7).png"
+                  alt=""
+                />
+                102 Gbagada street, new island
+              </p>
+              <div class="flex items-center gap-6 px-1">
+                <p class="flex items-center gap-2 text-[#00000033]">
+                  <img
+                    class="w-4 h-2.75"
+                    src="assets/images/Vector-(8).png"
+                    alt=""
+                  />
+                  4 bedroom
+                </p>
+                <p class="text-[#00000033] flex items-center gap-2">
+                  <img
+                    class="w-4 h-3.25"
+                    src="assets/images/Vector-(9).png"
+                    alt=""
+                  />2 bedroom
+                </p>
+              </div>
+              <div class="flex items-center justify-evenly gap-10 py-4">
+                <a
+                  class="flex items-center justify-center gap-2 text-white bg-[#223448] h-11 w-full rounded-full text-xs"
+                  href="#"
+                  ><img class="w-4" src="assets/images/tel.png" alt="" />Contact
+                  the house agent</a
+                ><a
+                  class="w-13.25 h-9 bg-[#00000033] flex items-center justify-center rounded-full"
+                  href="#"
+                  ><img class="w-5" src="assets/images/message.png" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-[#e9e0cf] w-full rounded-[20px]">
+            <div class="p-5">
+              <img src="assets/images/image-5.png" alt="" />
+            </div>
+            <div class="w-full flex flex-col px-10 pb-4">
+              <div class="w-full flex items-center justify-between px-1">
+                <h2 class="text-2xl font-medium">N250,000</h2>
+                <p class="text-[#00000033] text-xs uppercase font-medium">
+                  total area: 250M2
+                </p>
+              </div>
+              <p class="flex items-center gap-2 text-[#00000033] py-2 px-1">
+                <img
+                  class="w-4 h-3.5"
+                  src="assets/images/Vector-(7).png"
+                  alt=""
+                />
+                102 Gbagada street, new island
+              </p>
+              <div class="flex items-center gap-6 px-1">
+                <p class="flex items-center gap-2 text-[#00000033]">
+                  <img
+                    class="w-4 h-2.75"
+                    src="assets/images/Vector-(8).png"
+                    alt=""
+                  />
+                  4 bedroom
+                </p>
+                <p class="text-[#00000033] flex items-center gap-2">
+                  <img
+                    class="w-4 h-3.25"
+                    src="assets/images/Vector-(9).png"
+                    alt=""
+                  />2 bedroom
+                </p>
+              </div>
+              <div class="flex items-center justify-evenly gap-10 py-4">
+                <a
+                  class="flex items-center justify-center gap-2 text-white bg-[#223448] h-11 w-full rounded-full text-xs"
+                  href="#"
+                  ><img class="w-4" src="assets/images/tel.png" alt="" />Contact
+                  the house agent</a
+                ><a
+                  class="w-13.25 h-9 bg-[#00000033] flex items-center justify-center rounded-full"
+                  href="#"
+                  ><img class="w-5" src="assets/images/message.png" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-[#e9e0cf] w-full rounded-[20px]">
+            <div class="p-5">
+              <img src="assets/images/image-6.png" alt="" />
+            </div>
+            <div class="w-full flex flex-col px-10 pb-4">
+              <div class="w-full flex items-center justify-between px-1">
+                <h2 class="text-2xl font-medium">N250,000</h2>
+                <p class="text-[#00000033] text-xs uppercase font-medium">
+                  total area: 250M2
+                </p>
+              </div>
+              <p class="flex items-center gap-2 text-[#00000033] py-2 px-1">
+                <img
+                  class="w-4 h-3.5"
+                  src="assets/images/Vector-(7).png"
+                  alt=""
+                />
+                102 Gbagada street, new island
+              </p>
+              <div class="flex items-center gap-6 px-1">
+                <p class="flex items-center gap-2 text-[#00000033]">
+                  <img
+                    class="w-4 h-2.75"
+                    src="assets/images/Vector-(8).png"
+                    alt=""
+                  />
+                  4 bedroom
+                </p>
+                <p class="text-[#00000033] flex items-center gap-2">
+                  <img
+                    class="w-4 h-3.25"
+                    src="assets/images/Vector-(9).png"
+                    alt=""
+                  />2 bedroom
+                </p>
+              </div>
+              <div class="flex items-center justify-evenly gap-10 py-4">
+                <a
+                  class="flex items-center justify-center gap-2 text-white bg-[#223448] h-11 w-full rounded-full text-xs"
+                  href="#"
+                  ><img class="w-4" src="assets/images/tel.png" alt="" />Contact
+                  the house agent</a
+                ><a
+                  class="w-13.25 h-9 bg-[#00000033] flex items-center justify-center rounded-full"
+                  href="#"
+                  ><img class="w-5" src="assets/images/message.png" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--subscribe to our newsletter  -->
+      <section class="py-15">
+        <div class="grid lg:grid-cols-2 w-full p-4 lg:p-10">
+          <div class="flex flex-col w-full">
+            <h2
+              class="lg:text-4xl text-black font-medium leading-[-1.5px] py-3"
+            >
+              Subscribe to our newletter
+            </h2>
+            <span class="flex items-center text-[#7c7c7c] gap-2.5 py-2"
+              ><img
+                class="h-5 w-5"
+                src="assets/images/Vector-(5).png"
+                alt=""
+              />Weekly updates</span
+            >
+            <span class="flex items-center text-[#7c7c7c] gap-2.5 pb-2">
+              <img
+                class="h-5 w-5"
+                src="assets/images/Vector-(5).png"
+                alt=""
+              />Early access our new listing
+            </span>
+            <span class="flex items-center text-[#7c7c7c] gap-2.5"
+              ><img
+                class="h-5 w-5"
+                src="assets/images/Vector-(5).png"
+                alt=""
+              />Exclusive content</span
+            >
+            <div class="flex mt-auto gap-4">
+              <a
+                class="flex items-center justify-center pt-1 pr-3.75 pb-1 pl-3.75 bg-[#223448] rounded-full max-w-37 h-11 capitalize text-[#e9e0cf]"
+                href="#"
+                >find apartment</a
+              >
+              <a
+                class="flex items-center justify-center bg-[#00000033] max-w-43.25 h-11 text pt-1 pr-3.75 pb-1 pl-3.75 text-[#223448] rounded-full"
+                href="#"
+                >List an apartment</a
+              >
+            </div>
+          </div>
+          <div class="w-full">
+            <img
+              class="w-full h-full rounded-2xl object-cover"
+              src="assets/images/flip-image.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Reviews -->
+      <section>
+        <div></div>
+      </section>
+      <!-- FAQ ACCORDION         -->
+      <section class="bg-black text-white p-20">
+        <div class="flex justify-around flex-wrap m-auto w-full">
+          <div class="h-38.75 max-w-86.75">
+            <h2 class="text-[48px] font-bold">FAQS</h2>
+            <p class="max-w-77.75 text-[24px] leading-[120%] font-light pt-4">
+              Everything you want to know before finding your next home.
+            </p>
+          </div>
+          <div class="w-[50%]">
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div class="w-full">
+              <button
+                class="w-full flex items-center justify-between text-2xl font-medium faq-question py-4 cursor-pointer"
+              >
+                Are there financing options available?
+                <span class="faq-icon transition-transform duration-300"
+                  ><img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="assets/images/chevron.png"
+                    alt=""
+                /></span>
+              </button>
+              <div
+                class="faq-answer max-h-0 transition-all duration-300 text-2xl overflow-hidden font-extralight"
+              >
+                Yes. Property tours are available for most listings. You can
+                schedule a physical or virtual tour directly through the
+                platform, depending on what the agent or landlord offers.
+              </div>
+            </div>
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div w-full>
+              <button
+                class="w-full flex items-center justify-between text-2xl font-medium faq-question py-4 cursor-pointer"
+              >
+                Are there financing options available?
+                <span class="faq-icon transition-transform duration-300"
+                  ><img
+                    class="w-[16.7px] h-2.25 object-cover"
+                    src="assets/images/chevron.png"
+                    alt=""
+                /></span>
+              </button>
+              <div
+                class="faq-answer overflow-hidden max-h-0 transition-all duration-300 text-2xl font-extralight"
+              >
+                Listings are updated regularly to ensure availability and
+                accuracy. Unavailable or rented properties are removed promptly
+                to keep things reliable. or landlord offers.
+              </div>
+            </div>
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div w-full>
+              <button
+                class="w-full flex items-center justify-between text-2xl font-medium faq-question py-4 cursor-pointer"
+              >
+                Are your communities family-friendly?
+                <span class="faq-icon transition-transform duration-300"
+                  ><img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="assets/images/chevron.png"
+                    alt=""
+                /></span>
+              </button>
+              <div
+                class="faq-answer overflow-hidden max-h-0 transition-all duration-300 text-2xl font-extralight"
+              >
+                any of our listings are located in safe, family-friendly
+                neighborhoods. You can use filters to find homes suitable for
+                families.
+              </div>
+            </div>
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div w-full>
+              <button
+                class="w-full flex items-center justify-between text-2xl font-medium faq-question py-4 cursor-pointer"
+              >
+                What do I need to rent a property?
+                <span class="faq-icon transition-transform duration-300"
+                  ><img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="assets/images/chevron.png"
+                    alt=""
+                /></span>
+              </button>
+              <div
+                class="faq-answer overflow-hidden max-h-0 transition-all duration-300 text-2xl font-extralight"
+              >
+                Requirements vary, but typically you’ll need a valid ID, rent
+                payment, caution or security deposit, and any additional
+                documents requested by the landlord.services in their new
+                location.
+              </div>
+            </div>
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div w-full>
+              <button
+                class="w-full flex items-center justify-between text-2xl font-medium faq-question py-4 cursor-pointer"
+              >
+                Who do I contact for maintenance issues?
+                <span class="faq-icon transition-transform duration-300"
+                  ><img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="assets/images/chevron.png"
+                    alt=""
+                /></span>
+              </button>
+              <div
+                class="faq-answer overflow-hidden max-h-0 transition-all duration-300 text-2xl font-extralight"
+              >
+                Maintenance requests should be directed to the listed agent or
+                landlord through the platform. Contact details are provided once
+                you’re connected to a property.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="h-full">
+      <div class="infinite">
+        <img src="assets/images/flame.png" alt="" />
+        <strong>ROOMPAL</strong>
+        <p>
+          At ROOMPAL, we’re not just about properties , we’re about people. Born
+          from a passion for helping individuals and families find their ideal
+          space, we’ve built a team that’s obsessed with making your home
+          journey as seamless and rewarding as possible.
+        </p>
+      </div>
+      <div class="flex justify-between w-[90%] mx-auto">
+        <div class="flex items-center gap-3">
+          <a href="">
+            <img class="w-6 h-6" src="assets/images/Vector.png" alt=""
+          /></a>
+          <a href="">
+            <img class="w-6 h-6" src="assets/images/Vector-(1).png" alt=""
+          /></a>
+          <a href="">
+            <img class="w-6 h-6" src="assets/images/InstagramLogo.png" alt=""
+          /></a>
+        </div>
+        <div class="contact-us">
+          <div class="find">
+            <p>Find Us</p>
+            <p>143 Clinton Street</p>
+            <p class="state">Hilton state, 12353</p>
+          </div>
+          <div class="info">
+            <span>Contact</span>
+            <a href="tel:(123) 256-4565">(123) 256-4565</a>
+            <a class="email" href="mailto:Suport @landing.com"
+              >Support <br />
+              @landing.com</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="src/scripts/faq.js"></script>
+    <!-- <script src="js/dropdown.js"></script> -->
+  </body>
+</html>

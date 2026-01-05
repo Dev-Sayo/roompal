@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
+@font-face {
+  font-family: "Infinite Realities";
+  src: url(../fonts/Infinite\ Realities.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Gilroy Thin";
+  src: url(../fonts/Gilroy-Thin.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Gilroy light";
+  src: url(../fonts/Gilroy-Light.ttf) format("truetype");
+}
+:root {
+  --white: #ffffff;
+  --off-white: #f5f5f5;
+  --black: #000;
+  --footer-color: #f5f5f5;
+  --blue-2: #223448;
+  --ash: #7c7c7c;
+  --ash-2: #ababab;
+  color: rgba(171, 171, 171, 1);
+}
+* {
+  text-decoration: none;
+  letter-spacing: -0.2px;
+}
+body {
+  background: var(--white);
+  font-family: "inter", sans-serif;
+  color: #fafafa;
+}
+/*  HEADER   */
+.links {
+  display: flex;
+  gap: 10px;
+}
+.links a {
+  font-size: 16px;
+}
+.find-a-home a {
+  background: var(--black);
+  color: var(--white);
+  font-size: 16px;
+  border-radius: 20px;
+  padding: 10px 15px;
+}
+/* MAIN */
+.hero-section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.who-are-we {
+  max-height: 138px;
+  height: 100%;
+  max-width: 1240px;
+  width: 100%;
+  /* padding: 184px 0rem 0rem; */
+}
+.who-are-we p {
+  font-family: "DM Mono", monospace;
+  color: var(--ash);
+  text-transform: uppercase;
+}
+.who-are-we h1 {
+  text-align: left;
+  font-size: 48px;
+  font-weight: 400;
+}
+.hero-image {
+  border-radius: 20px;
+}
+footer {
+  background: var(--footer-color);
+  height: 910px;
+}
+.infinite {
+  max-width: 100%;
+  width: 928px;
+  position: relative;
+  padding: 11rem 4rem;
+}
+.infinite strong {
+  max-width: 100%;
+  display: flex;
+  font-size: 200px;
+  font-family: "Infinite Realities", sans-serif;
+  letter-spacing: 5px;
+}
+.infinite p {
+  font-family: "Gilroy light", sans-serif;
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.infinite img {
+  max-width: 196.02px;
+  max-width: 100%;
+  height: 474.33px;
+  position: absolute;
+  left: 52%;
+  top: 3%;
+  z-index: 9999;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 6rem 4rem;
+}
+.socials img {
+  width: 20.25px;
+  height: 20.25px;
+}
+.find {
+  padding-top: 1.2rem;
+}
+.contact-us {
+  display: flex;
+  gap: 1.5rem;
+}
+.info span,
+.find p:nth-of-type(1) {
+  font-family: "Gilroy light", sans-serif;
+  font-size: 14px;
+  padding-bottom: 0.7rem;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+}
+.info a {
+  color: var(--black);
+}
+.email,
+.state {
+  font-family: "Gilroy light", sans-serif;
+}
