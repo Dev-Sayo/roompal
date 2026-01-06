@@ -1,0 +1,553 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Roomate</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="m-0 p-0 border-box bg-white">
+    <header class="header w-full flex justify-between p-4">
+      <div class="uppercase font-bold text-[24px]">
+        <a href="/index.html">roompal</a>
+      </div>
+      <nav
+        class="flex items-center justify-between gap-4 text-[#7c7c7c] md:flex"
+      >
+        <a href="/index.html">Home</a>
+        <div class="relative">
+          <button class="dropdown-btn">
+            <span class="flex items-center gap-2"
+              >Service
+              <img src="../images/dropdown-chevron.png" class="w-4" alt=""
+            /></span>
+          </button>
+          <ul id="dropdown-menu" class="hidden">
+            <li>
+              <a href="./find-apartment.html">Find an Apartment</a>
+            </li>
+            <li>
+              <a href="./find-roomie.html"> Find a Roomamte</a>
+            </li>
+            <li>
+              <a href="./find-renter.html">FInd a Flatmate</a>
+            </li>
+          </ul>
+        </div>
+        <a href="./about-us.html">About</a>
+        <a href="./contact-us.html">Contact</a>
+      </nav>
+      <div
+        class="bg-[#223448] text-white rounded-full w-37 h-11 flex items-center justify-center px-3.75 py-1"
+      >
+        <a class="text-white" href="/register.html">Find your home</a>
+      </div>
+    </header>
+    <main>
+      <!--Find Roomate here  -->
+      <section>
+        <div class="pb-12 pt-8 w-full">
+          <h1 class="text-[64px] font-medium text-center">
+            Find the Right Roommate
+          </h1>
+          <p class="text-[16px] text-center font-normal">
+            Living with the right person makes all the difference.
+          </p>
+        </div>
+        <div class="pb-20">
+          <div
+            class="bg-[#f5f5f5] w-[40%] m-auto flex justify-between items-center p-5 rounded-t-lg"
+          >
+            <a
+              class="flex items-center justify-center w-45.75 h-11 bg-[#223448] text-white rounded-full"
+              href="./find-apartment.html"
+              >Find an Apartment</a
+            >
+            <a class="font-medium text-[#7c7c7c]" href="./find-renter.html"
+              >List an Apartment</a
+            ><a class="font-medium text-[#7c7c7c]" href="./find-roomie.html"
+              >Find a Flatmate</a
+            >
+          </div>
+          <div
+            class="grid grid-cols-3 gap-5 justify-between m-auto w-[70%] bg-[#f5f5f5] h-27 rounded-[20px] p-5"
+          >
+            <div class="w-full">
+              <p class="text-[14px] text-[#7c7c7c]">Location</p>
+              <select
+                id="state"
+                name="states"
+                class="w-full bg-white h-11 cursor-pointer"
+              >
+                <option value="abia">Abia</option>
+                <option value="adamawa">Adamawa</option>
+                <option value="akwa-ibom">Akwa ibom</option>
+                <option value="lagos" selected>lagos</option>
+                <option value="abuja">Abuja</option>
+                <option value="delta">Delta</option>
+              </select>
+            </div>
+            <div>
+              <p class="text-[14px] text-[#7c7c7c]">Budget</p>
+              <select
+                name="budget"
+                id="budget"
+                class="w-full bg-white h-11 cursor-pointer"
+              >
+                <option value="">100k - 200k</option>
+                <option value="" selected>200 - 400k</option>
+                <option value="">400 - 600k</option>
+                <option value="">600 - 1M</option>
+                <option value="">1M -2M</option>
+                <option value="">2M - 5M</option>
+                <option value="">%M & above</option>
+              </select>
+            </div>
+            <div>
+              <p class="text-[14px] text-[#7c7c7c]">Apatment Type</p>
+              <select
+                name="apartment-type"
+                id="apartment-type"
+                class="w-full bg-white h-11 cursor-pointer"
+              >
+                <option value="" selected disabled>Show all</option>
+                <option value="">Apartments / Flats</option>
+                <option value="">Self-contained rooms</option>
+                <option value="">Shared Apartments</option>
+                <option value="">Detached Houses</option>
+                <option value="">Semi-detatched Houses</option>
+                <option value="">Duplexes</option>
+                <option value="">Bungalows</option>
+                <option value="">Serviced Apartments</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Choose a roomate -->
+      <section class="lg:py-24 md:py-8">
+        <div class="flex flex-col justify-center items-center py-10">
+          <p class="text-[#ababab] uppercase">Choose a Roommate</p>
+          <h2 class="text-4xl font-medium">Find a Roommate</h2>
+          <p class="text-[#7c7c7c] pt-3">
+            Below are some of the persons looking for a roommate now
+          </p>
+        </div>
+        <div
+          class="w-full max-w-7xl mx-auto grid grid-cols-2 max-[366px]:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-10 gap-x-6 p-4 sm:p-6 md:p-10"
+        >
+          <figure class="max-w-sm m-auto">
+            <img src="../images/avatar-1.png" alt="Modern apartment" />
+            <figcaption class="flex justify-center flex-col">
+              <p class="name pt-4 font-medium text-black text-center">
+                Owen Mitchell
+              </p>
+              <p class="text-center text-[#7c7c7c] pb-3">Student</p>
+              <div class="w-full flex items-center justify-center gap-5">
+                <span
+                  class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
+                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  Call</span
+                ><span
+                  class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
+                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                /></span>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="max-w-sm m-auto">
+            <img src="../images/avatar-2.png" alt="Modern apartment" />
+            <figcaption class="flex justify-center flex-col">
+              <p class="name pt-4 font-medium text-black text-center">
+                Lucas Grant
+              </p>
+              <p class="text-center text-[#7c7c7c] pb-3">Banker</p>
+              <div class="w-full flex items-center justify-center gap-5">
+                <span
+                  class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
+                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  Call</span
+                ><span
+                  class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
+                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                /></span>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="max-w-sm m-auto">
+            <img src="../images/avatar-3.png" alt="Modern apartment" />
+            <figcaption class="flex justify-center flex-col">
+              <p class="name pt-4 font-medium text-black text-center">
+                Chloe Adams
+              </p>
+              <p class="text-center text-[#7c7c7c] pb-3">CTO</p>
+              <div class="w-full flex items-center justify-center gap-5">
+                <span
+                  class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
+                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  Call</span
+                ><span
+                  class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
+                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                /></span>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="max-w-sm m-auto">
+            <img src="../images/avatar-4.png" alt="Modern apartment" />
+            <figcaption class="flex justify-center flex-col">
+              <p class="name pt-4 font-medium text-black text-center">
+                Grace Miller
+              </p>
+              <p class="text-center text-[#7c7c7c] pb-3">Marketer</p>
+              <div class="w-full flex items-center justify-center gap-5">
+                <span
+                  class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
+                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  Call</span
+                ><span
+                  class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
+                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                /></span>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="max-w-sm m-auto">
+            <img src="../images/avatar-2.png" alt="Modern apartment" />
+            <figcaption class="flex justify-center flex-col">
+              <p class="name pt-4 font-medium text-black text-center">
+                Lucas Grant
+              </p>
+              <p class="text-center text-[#7c7c7c] pb-3">Banker</p>
+              <div class="w-full flex items-center justify-center gap-5">
+                <span
+                  class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
+                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  Call</span
+                ><span
+                  class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
+                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                /></span>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="max-w-sm m-auto">
+            <img src="../images/avatar-5.png" alt="Modern apartment" />
+            <figcaption class="flex justify-center flex-col">
+              <p class="name pt-4 font-medium text-black text-center">
+                Benjamin Ross
+              </p>
+              <p class="text-center text-[#7c7c7c] pb-3">Plumber</p>
+              <div class="w-full flex items-center justify-center gap-5">
+                <span
+                  class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
+                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  Call</span
+                ><span
+                  class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
+                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                /></span>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="max-w-sm m-auto">
+            <img src="../images/avatar-6.png" alt="Modern apartment" />
+            <figcaption class="flex justify-center flex-col">
+              <p class="name pt-4 font-medium text-black text-center">
+                Elijah Scott
+              </p>
+              <p class="text-center text-[#7c7c7c] pb-3">Artist</p>
+              <div class="w-full flex items-center justify-center gap-5">
+                <span
+                  class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
+                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  Call</span
+                ><span
+                  class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
+                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                /></span>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="max-w-sm m-auto">
+            <img src="../images/avatar-7.png" alt="Modern apartment" />
+            <figcaption class="flex justify-center flex-col">
+              <p class="name pt-4 font-medium text-black text-center">
+                Scarlett Bennett
+              </p>
+              <p class="text-center text-[#7c7c7c] pb-3">Student</p>
+              <div class="w-full flex items-center justify-center gap-5">
+                <span
+                  class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
+                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  Call</span
+                ><span
+                  class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
+                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                /></span>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="max-w-sm m-auto">
+            <img src="../images/avatar-8.png" alt="Modern apartment" />
+            <figcaption class="flex justify-center flex-col">
+              <p class="name pt-4 font-medium text-black text-center">
+                Aria Collins
+              </p>
+              <p class="text-center text-[#7c7c7c] pb-3">Teacher</p>
+              <div class="w-full flex items-center justify-center gap-5">
+                <span
+                  class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
+                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  Call</span
+                ><span
+                  class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
+                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                /></span>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="max-w-sm m-auto">
+            <img src="../images/avatar-7.png" alt="Modern apartment" />
+            <figcaption class="flex justify-center flex-col">
+              <p class="name pt-4 font-medium text-black text-center">
+                Scarlett Bennett
+              </p>
+              <p class="text-center text-[#7c7c7c] pb-3">Student</p>
+              <div class="w-full flex items-center justify-center gap-5">
+                <span
+                  class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
+                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  Call</span
+                ><span
+                  class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
+                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                /></span>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <!--subscribe to our newsletter  -->
+      <section class="py-15">
+        <div class="grid lg:grid-cols-2 w-full p-4 lg:p-10">
+          <div class="flex flex-col w-full">
+            <h2
+              class="lg:text-4xl text-black font-medium leading-[-1.5px] py-3"
+            >
+              Subscribe to our newletter
+            </h2>
+            <span class="flex items-center text-[#7c7c7c] gap-2.5 py-2"
+              ><img
+                class="h-5 w-5"
+                src="../images/Vector-(5).png"
+                alt=""
+              />Weekly updates</span
+            >
+            <span class="flex items-center text-[#7c7c7c] gap-2.5 pb-2">
+              <img class="h-5 w-5" src="../images/Vector-(5).png" alt="" />Early
+              access our new listing
+            </span>
+            <span class="flex items-center text-[#7c7c7c] gap-2.5"
+              ><img
+                class="h-5 w-5"
+                src="../images/Vector-(5).png"
+                alt=""
+              />Exclusive content</span
+            >
+            <div class="flex mt-auto gap-4">
+              <a
+                class="flex items-center justify-center pt-1 pr-3.75 pb-1 pl-3.75 bg-[#223448] rounded-full max-w-37 h-11 capitalize text-[#e9e0cf]"
+                href="#"
+                >find apartment</a
+              >
+              <a
+                class="flex items-center justify-center bg-[#00000033] max-w-43.25 h-11 text pt-1 pr-3.75 pb-1 pl-3.75 text-[#223448] rounded-full"
+                href="#"
+                >List an apartment</a
+              >
+            </div>
+          </div>
+          <div class="w-full">
+            <img
+              class="w-full h-full rounded-2xl object-cover"
+              src="../images/flip-image.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <!-- FAQ ACCORDION         -->
+      <section class="bg-black text-white p-4 sm:p-6 md:p-8 lg:p-20">
+        <div class="grid lg:grid-cols-2 gap-y-10 m-auto w-full">
+          <div class="flex flex-col w-full">
+            <h2 class="text-[48px] font-bold">FAQS</h2>
+            <p class="max-w-77.75 text-[24px] leading-[120%] font-light pt-4">
+              Everything you want to know before finding your next home.
+            </p>
+          </div>
+          <div class="w-full">
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div class="w-full">
+              <button
+                class="w-full flex items-center justify-between lg:text-2xl font-medium faq-question py-4 cursor-pointer"
+              >
+                Are there financing options available?
+                <span class="faq-icon transition-transform duration-300">
+                  <img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="../images/chevron.png"
+                    alt=""
+                  />
+                </span>
+              </button>
+              <div
+                class="faq-answer max-h-0 transition-all duration-300 text-2xl overflow-hidden font-extralight"
+              >
+                Yes. Property tours are available for most listings. You can
+                schedule a physical or virtual tour directly through the
+                platform, depending on what the agent or landlord offers.
+              </div>
+            </div>
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div w-full>
+              <button
+                class="w-full flex items-center justify-between lg:text-2xl font-medium faq-question py-4 cursor-pointer"
+              >
+                Are there financing options available?
+                <span class="faq-icon transition-transform duration-300">
+                  <img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="../images/chevron.png"
+                    alt=""
+                  />
+                </span>
+              </button>
+              <div
+                class="faq-answer overflow-hidden max-h-0 transition-all duration-300 text-2xl font-extralight"
+              >
+                Listings are updated regularly to ensure availability and
+                accuracy. Unavailable or rented properties are removed promptly
+                to keep things reliable. or landlord offers.
+              </div>
+            </div>
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div w-full>
+              <button
+                class="w-full flex items-center justify-between lg:text-2xl font-medium faq-question py-4 cursor-pointer"
+              >
+                Are your communities family-friendly?
+                <span class="faq-icon transition-transform duration-300"
+                  ><img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="../images/chevron.png"
+                    alt=""
+                /></span>
+              </button>
+              <div
+                class="faq-answer overflow-hidden max-h-0 transition-all duration-300 text-2xl font-extralight"
+              >
+                any of our listings are located in safe, family-friendly
+                neighborhoods. You can use filters to find homes suitable for
+                families.
+              </div>
+            </div>
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div w-full>
+              <button
+                class="w-full flex items-center justify-between lg:text-2xl font-medium faq-question py-4 cursor-pointer"
+              >
+                What do I need to rent a property?
+                <span class="faq-icon transition-transform duration-300">
+                  <img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="../images/chevron.png"
+                    alt=""
+                  />
+                </span>
+              </button>
+              <div
+                class="faq-answer overflow-hidden max-h-0 transition-all duration-300 text-2xl font-extralight"
+              >
+                Requirements vary, but typically you’ll need a valid ID, rent
+                payment, caution or security deposit, and any additional
+                documents requested by the landlord.services in their new
+                location.
+              </div>
+            </div>
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div w-full>
+              <button
+                class="w-full flex items-center justify-between lg:text-2xl lg:font-medium faq-question py-4 cursor-pointer"
+              >
+                Who do I contact for maintenance issues?
+                <span class="faq-icon transition-transform duration-300"
+                  ><img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="../images/chevron.png"
+                    alt=""
+                  />
+                </span>
+              </button>
+              <div
+                class="faq-answer overflow-hidden max-h-0 transition-all duration-300 text-2xl font-extralight"
+              >
+                Maintenance requests should be directed to the listed agent or
+                landlord through the platform. Contact details are provided once
+                you’re connected to a property.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-[#f5f5f5] mt-8">
+      <div class="infinite">
+        <div class="w-49 h-118.5">
+          <img src="../images/flame.png" alt="" />
+        </div>
+        <strong
+          class="w-full uppercase flex sm:text-[48px] md:text-[150px] lg:text-[180px] 2xl:text-[200px] tracking-[5px]"
+          >roompal</strong
+        >
+        <p>
+          At ROOMPAL, we’re not just about properties , we’re about people. Born
+          from a passion for helping individuals and families find their ideal
+          space, we’ve built a team that’s obsessed with making your home
+          journey as seamless and rewarding as possible.
+        </p>
+      </div>
+      <div class="footer-bottom">
+        <div class="flex items-center gap-2.5">
+          <a href="">
+            <img class="w-[20.25px]" src="../images/Vector.png" alt="" />
+          </a>
+          <a href="">
+            <img class="w-[20.25px]" src="../images/Vector-(1).png" alt=""
+          /></a>
+          <a href="">
+            <img
+              class="w-[20.25px] object-cover"
+              src="../images/InstagramLogo.png"
+              alt=""
+          /></a>
+        </div>
+        <div class="contact-us">
+          <div class="find">
+            <p>Find Us</p>
+            <p>143 Clinton Street</p>
+            <p class="state">Hilton state, 12353</p>
+          </div>
+          <div class="info">
+            <span>Contact</span>
+            <a href="tel:(123) 256-4565">(123) 256-4565</a>
+            <a class="email" href="mailto:Suport @landing.com"
+              >Support <br />
+              @landing.com</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/src/scripts/faq.js"></script>
+  </body>
+</html>

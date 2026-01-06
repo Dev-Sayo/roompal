@@ -1,0 +1,407 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find a renter</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="m-0 p-0 border-box bg-white">
+    <header class="header w-full flex justify-between p-4">
+      <div class="uppercase font-bold text-[24px] text-black">
+        <a href="/index.html">roompal</a>
+      </div>
+      <nav class="flex items-center gap-4 text-[#7c7c7c]">
+        <a href="/index.html">Home</a>
+        <div class="relative">
+          <button class="dropdown-btn">
+            <img src="/" alt="" />
+            <span class="flex items-center gap-2"
+              >Service
+              <img src="../images/dropdown-chevron.png" class="w-4" alt=""
+            /></span>
+          </button>
+          <ul id="dropdown-menu" class="hidden dropdown">
+            <li>
+              <a href="./find-apartment.html">Find an Apartment</a>
+            </li>
+            <li>
+              <a href="./find-roomie.html"> Find a Roomamte</a>
+            </li>
+            <li>
+              <a href="./find-renter.html">FInd a Flatmate</a>
+            </li>
+          </ul>
+        </div>
+        <a href="./about-us.html">About</a>
+        <a href="./contact-us.html">Contact</a>
+      </nav>
+      <div
+        class="bg-[#223448] text-white rounded-full w-37 h-11 flex items-center justify-center px-3.75 py-1"
+      >
+        <a class="text-white" href="#">Find your home</a>
+      </div>
+    </header>
+    <main>
+      <!--Find serious renter Here Section  -->
+      <section>
+        <div class="pb-12 pt-8 w-full">
+          <h1 class="text-[64px] font-medium text-center">
+            Find Serious Renter
+          </h1>
+          <p class="text-[16px] text-center font-normal">
+            Upload your apartment details once and connect with people ready to
+            rent.
+          </p>
+        </div>
+        <div class="pb-20">
+          <div
+            class="bg-[#f5f5f5] w-[40%] m-auto flex justify-between items-center p-5 rounded-t-lg"
+          >
+            <a
+              class="flex items-center justify-center w-45.75 h-11 bg-[#223448] text-white rounded-full"
+              href="./find-apartment.html"
+              >Find an Apartment</a
+            >
+            <a class="font-medium text-[#7c7c7c]" href="./find-renter.html"
+              >List an Apartment</a
+            ><a class="font-medium text-[#7c7c7c]" href="./find-roomie.html"
+              >Find a Flatmate</a
+            >
+          </div>
+          <div
+            class="grid grid-cols-3 gap-5 justify-between m-auto w-[70%] bg-[#f5f5f5] h-27 rounded-[20px] p-5"
+          >
+            <div class="w-full">
+              <p class="text-[14px] text-[#7c7c7c]">Location</p>
+              <select
+                id="state"
+                name="states"
+                class="w-full bg-white h-11 cursor-pointer"
+              >
+                <option value="abia">Abia</option>
+                <option value="adamawa">Adamawa</option>
+                <option value="akwa-ibom">Akwa ibom</option>
+                <option value="lagos" selected>lagos</option>
+                <option value="abuja">Abuja</option>
+                <option value="delta">Delta</option>
+              </select>
+            </div>
+            <div>
+              <p class="text-[14px] text-[#7c7c7c]">Budget</p>
+              <select
+                name="budget"
+                id="budget"
+                class="w-full bg-white h-11 cursor-pointer"
+              >
+                <option value="">100k - 200k</option>
+                <option value="" selected>200 - 400k</option>
+                <option value="">400 - 600k</option>
+                <option value="">600 - 1M</option>
+                <option value="">1M -2M</option>
+                <option value="">2M - 5M</option>
+                <option value="">%M & above</option>
+              </select>
+            </div>
+            <div>
+              <p class="text-[14px] text-[#7c7c7c]">Apatment Type</p>
+              <select
+                name="apartment-type"
+                id="apartment-type"
+                class="w-full bg-white h-11 cursor-pointer"
+              >
+                <option value="" selected disabled>Show all</option>
+                <option value="">Apartments / Flats</option>
+                <option value="">Self-contained rooms</option>
+                <option value="">Shared Apartments</option>
+                <option value="">Detached Houses</option>
+                <option value="">Semi-detatched Houses</option>
+                <option value="">Duplexes</option>
+                <option value="">Bungalows</option>
+                <option value="">Serviced Apartments</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Why us -->
+      <section class="bg-[#f5f5f5] py-20">
+        <div class="text-center pt-6 pb-15">
+          <p class="uppercase text-[#7c7c7c] text-sm">list here</p>
+          <h2 class="text-4xl font-medium">Why us</h2>
+          <p class="text-[16px] text-[#5e5e5e]">Here is why you need us</p>
+        </div>
+        <div class="w-[90%] m-auto flex flex-col gap-24">
+          <div class="w-full grid lg:grid-cols-2 gap-8">
+            <div class="flex flex-col lg:m-auto">
+              <p class="text-xs text-[#7c7c7c]">RESULT</p>
+              <h3 class="text-2xl font-medium">
+                Reach Serious, Verified Renters
+              </h3>
+              <p class="max-w-112.5 text-[#7c7c7c] text-sm font-normal">
+                List your apartment in front of people who are actively
+                searching and ready to rent. Our platform prioritizes verified
+                users, smart matching, and real intent so you spend less time
+                answering unserious enquiries and more time closing deals
+                faster.
+              </p>
+              <div class="flex lg:mt-20 md:mt-6">
+                <a
+                  class="flex items-center justify-center text-[#e9e0cf] bg-[#223448] rounded-full w-37 h-11"
+                  href="#"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+            <div class="w-full">
+              <img
+                class="w-full h-full object-cover"
+                src="../images/why-us-img-1.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="w-full grid lg:grid-cols-2">
+            <div class="w-full">
+              <img
+                class="w-full h-full object-cover"
+                src="../images/why-us-img-2.png"
+                alt=""
+              />
+            </div>
+            <div class="flex flex-col lg:m-auto">
+              <p class="text-xs text-[#7c7c7c]">RESULT</p>
+              <h3 class="text-2xl font-medium">
+                Simple, Secure, and Stress-Free Listings
+              </h3>
+              <p class="text-[#7c7c7c] max-w-112.5 text-sm font-normal">
+                From easy apartment uploads to secure communication and guided
+                inspections, we handle the heavy lifting. You get visibility,
+                control, and peace of mind while we help you manage listings
+                without unnecessary back-and-forth or hidden stress.
+              </p>
+              <div class="flex lg:mt-20 md:mt-6">
+                <a
+                  class="flex items-center justify-center text-[#e9e0cf] bg-[#223448] rounded-full w-37 h-11"
+                  href="#"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--sibscribe to our newsletter  -->
+      <section>
+        <div class="flex justify-between flex-wrap w-full p-10">
+          <div class="flex flex-col w-147 h-148">
+            <h2 class="text-4xl font-medium leading-[-1.5px]">
+              Subscribe to our newletter
+            </h2>
+            <div class="flex items-center gap-2.5">
+              <img class="h-5 w-5" src="../images/Vector-(5).png" alt="" />
+              <span class="text-[#7c7c7c]">Weekly updates</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <img class="h-5 w-5" src="../images/Vector-(5).png" alt="" />
+              <span class="text-[#7c7c7c]">Early access our new listing</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <img class="h-5 w-5" src="../images/Vector-(5).png" alt="" />
+              <span class="text-[#7c7c7c]">Exclusive content</span>
+            </div>
+            <div class="flex mt-auto gap-4">
+              <a
+                class="flex items-center justify-center pt-1 pr-3.75 pb-1 pl-3.75 bg-[#223448] rounded-full w-37 h-11 capitalize text-[#e9e0cf]"
+                href="#"
+                >find apartment</a
+              >
+              <a
+                class="flex items-center justify-center bg-[#00000033] w-43.25 h-11 text pt-1 pr-3.75 pb-1 pl-3.75 text-[#223448] rounded-full"
+                href="#"
+                >List an apartment</a
+              >
+            </div>
+          </div>
+          <!--  -->
+          <div class="max-w-full">
+            <img
+              class="w-139.5 h-full rounded-2xl object-cover"
+              src="../images/flip-image.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <!-- FAQ ACCORDION         -->
+      <section class="bg-black text-white p-4 sm:p-6 md:p-8 lg:p-20">
+        <div class="grid lg:grid-cols-2 gap-y-10 m-auto w-full">
+          <div class="flex flex-col w-full">
+            <h2 class="text-[48px] font-bold">FAQS</h2>
+            <p class="max-w-77.75 text-[24px] leading-[120%] font-light pt-4">
+              Everything you want to know before finding your next home.
+            </p>
+          </div>
+          <div class="w-full">
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div class="w-full">
+              <button
+                class="w-full flex items-center justify-between lg:text-2xl font-medium faq-question py-4 cursor-pointer"
+              >
+                Are there financing options available?
+                <span class="faq-icon transition-transform duration-300">
+                  <img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="../images/chevron.png"
+                    alt=""
+                  />
+                </span>
+              </button>
+              <div
+                class="faq-answer max-h-0 transition-all duration-300 text-2xl overflow-hidden font-extralight"
+              >
+                Yes. Property tours are available for most listings. You can
+                schedule a physical or virtual tour directly through the
+                platform, depending on what the agent or landlord offers.
+              </div>
+            </div>
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div w-full>
+              <button
+                class="w-full flex items-center justify-between lg:text-2xl font-medium faq-question py-4 cursor-pointer"
+              >
+                Are there financing options available?
+                <span class="faq-icon transition-transform duration-300">
+                  <img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="../images/chevron.png"
+                    alt=""
+                  />
+                </span>
+              </button>
+              <div
+                class="faq-answer overflow-hidden max-h-0 transition-all duration-300 text-2xl font-extralight"
+              >
+                Listings are updated regularly to ensure availability and
+                accuracy. Unavailable or rented properties are removed promptly
+                to keep things reliable. or landlord offers.
+              </div>
+            </div>
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div w-full>
+              <button
+                class="w-full flex items-center justify-between lg:text-2xl font-medium faq-question py-4 cursor-pointer"
+              >
+                Are your communities family-friendly?
+                <span class="faq-icon transition-transform duration-300"
+                  ><img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="../images/chevron.png"
+                    alt=""
+                /></span>
+              </button>
+              <div
+                class="faq-answer overflow-hidden max-h-0 transition-all duration-300 text-2xl font-extralight"
+              >
+                any of our listings are located in safe, family-friendly
+                neighborhoods. You can use filters to find homes suitable for
+                families.
+              </div>
+            </div>
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div w-full>
+              <button
+                class="w-full flex items-center justify-between lg:text-2xl font-medium faq-question py-4 cursor-pointer"
+              >
+                What do I need to rent a property?
+                <span class="faq-icon transition-transform duration-300">
+                  <img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="../images/chevron.png"
+                    alt=""
+                  />
+                </span>
+              </button>
+              <div
+                class="faq-answer overflow-hidden max-h-0 transition-all duration-300 text-2xl font-extralight"
+              >
+                Requirements vary, but typically you’ll need a valid ID, rent
+                payment, caution or security deposit, and any additional
+                documents requested by the landlord.services in their new
+                location.
+              </div>
+            </div>
+            <div class="border border-[#1E1D1D] h-0 w-full m-auto"></div>
+            <div w-full>
+              <button
+                class="w-full flex items-center justify-between lg:text-2xl lg:font-medium faq-question py-4 cursor-pointer"
+              >
+                Who do I contact for maintenance issues?
+                <span class="faq-icon transition-transform duration-300"
+                  ><img
+                    class="object-cover w-[16.7px] h-2.25"
+                    src="../images/chevron.png"
+                    alt=""
+                  />
+                </span>
+              </button>
+              <div
+                class="faq-answer overflow-hidden max-h-0 transition-all duration-300 text-2xl font-extralight"
+              >
+                Maintenance requests should be directed to the listed agent or
+                landlord through the platform. Contact details are provided once
+                you’re connected to a property.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="h-full bg-[#f5f5f5] mt-8">
+      <div class="infinite">
+        <img src="../images/flame.png" alt="" />
+        <strong
+          class="w-full uppercase flex sm:text-[48px] md:text-[150px] lg:text-[180px] 2xl:text-[200px] tracking-[5px]"
+          >roompal</strong
+        >
+        <p>
+          At ROOMPAL, we’re not just about properties , we’re about people. Born
+          from a passion for helping individuals and families find their ideal
+          space, we’ve built a team that’s obsessed with making your home
+          journey as seamless and rewarding as possible.
+        </p>
+      </div>
+      <div class="footer-bottom">
+        <div class="flex items-center gap-2.5">
+          <a href="">
+            <img class="w-[20.25px]" src="../images/Vector.png" alt="" />
+          </a>
+          <a href="">
+            <img class="w-[20.25px]" src="../images/Vector-(1).png" alt=""
+          /></a>
+          <a href="">
+            <img
+              class="w-[20.25px] object-cover"
+              src="../images/InstagramLogo.png"
+              alt=""
+          /></a>
+        </div>
+        <div class="contact-us">
+          <div class="find">
+            <p>Find Us</p>
+            <p>143 Clinton Street</p>
+            <p class="state">Hilton state, 12353</p>
+          </div>
+          <div class="info">
+            <span>Contact</span>
+            <a href="tel:(123) 256-4565">(123) 256-4565</a>
+            <a class="email" href="mailto:Suport @landing.com"
+              >Support <br />
+              @landing.com</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/faq.js"></script>
+  </body>
+</html>
