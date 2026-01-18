@@ -2,6 +2,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Roompal</title>
     <link rel="stylesheet" href="./home.css" />
     <link rel="stylesheet" href="/frontend/dist/output.css" />
@@ -25,22 +32,39 @@
       </div>
     </nav>
     <aside>
-      <div class="location-div">
+      <div class="location-div w-77.25">
         <p>Location</p>
+        <div class="location-dropdown bg-white h-11 flex flex-col">
+          <div>
+            <span> Lagos</span>
+            <img
+              class="w-4 object-cover"
+              src="/frontend/assets/images/light-chevron.png"
+              alt=""
+            />
+          </div>
+          <div>
+            <ul></ul>
+          </div>
+        </div>
+      </div>
+      <div class="filter-section">
+        <form action="#">
+          <input type="text" placeholder="Filter Options" />
+        </form>
         <div></div>
+        <div><button>Cancel</button><button>Filter</button></div>
       </div>
     </aside>
     <main>
-      <section class="w-full">
-        <div class="relative bg-[#e9e0c] overflow-hidden rounded-2xl p-8">
-          <div
-            class="absolute bg-cover w-1/3 bg-center bg-no-repeat"
-            style="
-              background-image: url('/frontend/assets/images/3d-model-house.png');
-            "
-          ></div>
+      <div class="hero-section rounded-2xl w-full">
+        <div class="heading-wrapper rounded-tl-2xl">
+          <h2 class="font-medium text-2xl">
+            Search for your Dream Apartment Here
+          </h2>
+          <div class="ranges-div bg-white">tt</div>
         </div>
-      </section>
+      </div>
     </main>
     <!-- <footer></footer> -->
   </body>

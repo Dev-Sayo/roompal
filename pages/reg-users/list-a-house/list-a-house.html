@@ -1,0 +1,195 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>List a House</title>
+    <link rel="stylesheet" href="./list-a-house.css" />
+    <link rel="stylesheet" href="/frontend/dist/output.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-side__1">
+        <a class="home" href="/frontend/index.html">roompal</a>
+        <div class="link">
+          <a href="">Find an Apartment</a>
+          <a href="">Find a Roomate</a>
+          <a href="">List a House </a>
+          <a href="">Messages</a>
+        </div>
+      </div>
+      <div class="side-two">
+        <span class="notification"
+          ><img src="/frontend/assets/images/notification-bell.png" alt=""
+        /></span>
+        <span><a class="need-help" href="">Need Help?</a></span>
+      </div>
+    </nav>
+    <main>
+      <div class="hero-section w-full">
+        <div class="heading-text">
+          <h1>Listing Form</h1>
+          <p>Fill the above details to list an apartment in our platform</p>
+        </div>
+        <div class="info-input-parent-container">
+          <div class="numbering-change">
+            <p>PROPERTY DETAILS</p>
+            <span>1/3</span>
+          </div>
+          <div class="info-input-parent">
+            <div class="select">
+              <div class="selector-group">
+                <label>What type of space are you listing?</label>
+                <div class="selector">
+                  <div id="selectField">
+                    <p id="selectText">Choose Option</p>
+                    <img
+                      src="/frontend/assets/images/light-chevron.png"
+                      alt=""
+                    />
+                  </div>
+                  <ul id="list" class="hide list">
+                    <li class="option">Apartments / FLats</li>
+                    <li class="option">Self-contained rooms</li>
+                    <li class="option">Shared Apartments</li>
+                    <li class="option">Detached Houses</li>
+                    <li class="option">Semi-attached Houses</li>
+                    <li class="option">Duplexes</li>
+                    <li class="option">Bungalows</li>
+                    <li class="option">Serviced Apartments</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="selector-group">
+                <p>Is this an entire place or a shared space?</p>
+                <div class="selector">
+                  <div id="selectField">
+                    <p id="selectText">Choose Option</p>
+                    <img
+                      src="/frontend/assets/images/light-chevron.png"
+                      alt=""
+                    />
+                  </div>
+                  <ul id="list" class="hide list">
+                    <li class="option">Entire Place</li>
+                    <li class="option">Shared Space</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="selector-group">
+                <p>How many rooms are available?</p>
+                <div class="selector">
+                  <div id="selectField">
+                    <p id="selectText">Choose Option</p>
+                    <img
+                      src="/frontend/assets/images/light-chevron.png"
+                      alt=""
+                    />
+                  </div>
+                  <ul id="list" class="hide list">
+                    <li class="option">1</li>
+                    <li class="option">2</li>
+                    <li class="option">3</li>
+                    <li class="option">4</li>
+                    <li class="option">5</li>
+                    <li class="option">6</li>
+                    <li class="option">7</li>
+                    <li class="option">8 & above</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="selector-group">
+                <p>How many bathroom are available?</p>
+                <div class="selector">
+                  <div id="selectField">
+                    <p id="selectText">Choose Option</p>
+                    <img
+                      src="/frontend/assets/images/light-chevron.png"
+                      alt=""
+                    />
+                  </div>
+                  <ul id="list" class="hide list">
+                    <li class="option">1</li>
+                    <li class="option">2</li>
+                    <li class="option">3</li>
+                    <li class="option">4</li>
+                    <li class="option">5</li>
+                    <li class="option">6</li>
+                    <li class="option">7</li>
+                    <li class="option">8 & above</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="selector-group">
+                <p>Where is the property located?</p>
+                <div class="selector">
+                  <div id="selectField">
+                    <p id="selectText">Choose Option</p>
+                    <img
+                      src="/frontend/assets/images/light-chevron.png"
+                      alt=""
+                    />
+                  </div>
+                  <ul id="list" class="hide list">
+                    <li class="option">Abia</li>
+                    <li class="option">Adamawa</li>
+                    <li class="option">Akwa Ibom</li>
+                    <li class="option">Lagos</li>
+                    <li class="option">Abuja</li>
+                    <li class="option">Delta</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="selector-group">
+                <p>In which City/Area?</p>
+                <div class="selector">
+                  <div id="selectField">
+                    <p id="selectText">Choose Option</p>
+                    <img
+                      src="/frontend/assets/images/light-chevron.png"
+                      alt=""
+                    />
+                  </div>
+                  <ul id="list" class="hide list">
+                    <li class="option">Gbagada</li>
+                    <li class="option">Ikoggi</li>
+                    <li class="option">Ketu</li>
+                    <li class="option">Mile 2</li>
+                    <li class="option">Mainland</li>
+                    <li class="option">Island</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="selector-group">
+                <p>Nearest landmark?</p>
+                <div class="selector">
+                  <div id="selectField">
+                    <p id="selectText">Choose Option</p>
+                    <img
+                      src="/frontend/assets/images/light-chevron.png"
+                      alt=""
+                    />
+                  </div>
+                  <ul id="list" class="hide list">
+                    <li class="option">Millennuim</li>
+                    <li class="option">Millennuim</li>
+                    <li class="option">Millennuim</li>
+                    <li class="option">Gospel Apostolic CHurch</li>
+                  </ul>
+                </div>
+              </div>
+              <button>Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./list-a-house.js"></script>
+  </body>
+</html>

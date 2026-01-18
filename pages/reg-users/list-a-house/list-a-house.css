@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
+@font-face {
+  font-family: "Infinite Realities";
+  src: url(/frontend/assets/fonts/Infinite\ Realities.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Gilroy Thin";
+  src: url(/frontend/assets/fonts/Gilroy-Thin.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Gilroy light";
+  src: url(/frontend/assets/fonts/Gilroy-Light.ttf) format("truetype");
+}
+:root {
+  --white: #ffffff;
+  --black-color: #000;
+  --Secondary-white-Color: rgba(245, 245, 245, 1);
+  --offwhite: rgba(250, 250, 250, 1);
+  --white-2: rgba(255, 255, 255, 1);
+  --secondary-color-2: rgba(148, 180, 193, 1);
+  --primary-color: rgba(0, 0, 0, 0.2);
+  --primary-color-variant: rgba(34, 52, 72, 1);
+  --bg-color: rgb(248, 248, 248);
+  --gray: rgba(124, 124, 124, 1);
+  --gray-2: rgba(0, 0, 0, 0.6);
+  --primary-color-2: #e9e0cf;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--Secondary-white-Color);
+  letter-spacing: -0.3px;
+  min-height: 100vh;
+}
+nav {
+  background: var(--white);
+  padding: 1rem 3em;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.nav-side__1 {
+  display: flex;
+  align-items: center;
+  gap: 7rem;
+}
+.nav .home {
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.link a {
+  margin-right: 1.5em;
+  color: var(--gray);
+  font-weight: 500;
+}
+.side-two {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.notification {
+  background: var(--secondary-color-2);
+  width: 44px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.notification img {
+  width: 24px;
+  height: 26px;
+  object-fit: cover;
+}
+.need-help {
+  max-width: 122px;
+  width: 100%;
+  height: 44px;
+  border-radius: 50px;
+  background: var(--primary-color);
+  padding: 16px 32px;
+  color: var(--white);
+}
+/* main */
+.hero-section {
+  margin-top: 5rem;
+}
+.heading-text {
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+.heading-text h1 {
+  font-size: 48px;
+  font-weight: 500;
+}
+.heading-text p {
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 10px;
+  color: var(--gray-2);
+}
+.numbering-change {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.numbering-change p,
+span {
+  font-size: 14px;
+  color: rgba(171, 171, 171, 1);
+  line-height: 20px;
+  font-family: "DM mono", monospace;
+}
+.info-input-parent-container {
+  padding: 64px;
+  max-width: 858px;
+  width: 100%;
+  margin-inline: auto;
+  margin-top: 2rem;
+}
+.info-input-parent {
+  background: var(--offwhite);
+  height: 850px;
+  border-radius: 24px;
+  padding: 2rem;
+}
+.selector-group {
+  height: 68px;
+  margin-bottom: 2rem;
+}
+.selector-group p:nth-child(1) {
+  margin-bottom: 10px;
+}
+.selector {
+  position: relative;
+}
+#selectField {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  background: var(--Secondary-white-Color);
+  border-radius: 10px;
+  padding-inline: 10px;
+  cursor: pointer;
+}
+#selectField img {
+  object-fit: cover;
+  width: 12px;
+  height: 6px;
+  transition: all ease 0.5s;
+}
+#selectText {
+  color: hsla(0, 0%, 33%, 0.42);
+}
+.list {
+  width: 350px;
+  background: var(--white-2);
+  border-radius: 10px;
+  list-style: none;
+  /* display: none; */
+  z-index: 100;
+  position: absolute;
+  left: 70%;
+}
+.list:nth-child(1) {
+}
+.list:nth-child(2) {
+}
+.list:nth-child(3) {
+}
+.list:nth-child(4) {
+}
+.list:nth-child(5) {
+}
+.list:nth-child(6) {
+}
+.list:nth-child(7) {
+}
+.option {
+  padding: 15px 0 15px 17px;
+  cursor: pointer;
+}
+.option:hover {
+  background: var(--Secondary-white-Color);
+  border-radius: 10px;
+}
+button {
+  border: none;
+  background: var(--primary-color-variant);
+  width: 100%;
+  color: var(--white);
+  border-radius: 50px;
+  height: 44px;
+}
