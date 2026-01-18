@@ -6,15 +6,28 @@
     <link rel="stylesheet" href="dist/output.css" />
     <link rel="stylesheet" href="src/styles/register.css" />
   </head>
-  <body class="m-0 p-0 border-box">
+  <body class="m-0 p-0 border-box min-h-full">
     <main>
       <section>
         <!-- verify your email overlay -->
         <div
           id="verify-email"
-          class="verify-email-overlay w-163.5 h-124.75 bg-white border rounded-[14px] hidden"
+          class="verify-email-overlay rounded-[14px] mx-auto hidden"
         >
-          <button class="okay-btn">okay</button>
+          <div class="verify-text w-full text-center">
+            <h2>Verify your email</h2>
+            <p>We sent the verification code to your email, proxy1@gmail.com</p>
+            <div class="email_animation mt-4">
+              <img src="assets/images/email-animation.gif" alt="" />
+            </div>
+          </div>
+          <div
+            class="okay-btn w-[90%] m-auto h-10 rounded-[20px] bg-[#223448] text-white cursor-pointer p-5 flex items-center justify-center"
+          >
+            <a href="./pages/auth/verify-email.html" class="p-5" target="_self">
+              okay
+            </a>
+          </div>
         </div>
 
         <div class="grid grid-cols-2 items-stretch h-full">
@@ -78,6 +91,11 @@
                   class="w-full h-11 bg-[#f1f1f1] pl-4.5 rounded-lg border border-transparent focus:border-[#223448] focus:outline-none"
                   type="text"
                   placeholder="Enter password"
+                />
+                <img
+                  class="w-6 h-3.75"
+                  src="assets/images/eye-off.svg"
+                  id="eyeicon"
                 />
                 <div class="error" id="passwordError"></div>
               </div>

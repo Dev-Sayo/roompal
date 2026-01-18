@@ -1,13 +1,20 @@
 "use strict";
 const myForm = document.getElementById("register-form");
 const successMessage = document.getElementById("verify-email");
+let eyeIccon = document.getElementById("eyeicon");
 
 function errorMessage(input, message) {
   const errorDiv = document.getElementById(input.id + "Error");
   errorDiv.textContent = message;
   errorDiv.style.display = "block";
   input.classList.add("error-border");
+  valid = false;
 }
+
+// function validateEmail(email) {
+//   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+//   return emailPattern.test(email);
+// }
 
 function clearError() {
   const errorDivs = document.querySelectorAll(".error");
@@ -28,6 +35,8 @@ myForm.addEventListener("submit", (e) => {
   const password = document.getElementById("password");
   const confirmPassword = document.getElementById("confirmPassword");
 
+  let valid = true;
+
   //   inputs validations
   if (name.value.trim().length <= 2) {
     errorMessage(name, "name must be at least two character");
@@ -39,15 +48,32 @@ myForm.addEventListener("submit", (e) => {
   }
 
   //   password vlidation
-  if (!password.value.includes("#") || password.value.length >= 8) {
+  if (
+    !password.value.includes("#") ||
+    password.value.length < 8 ||
+    password === ""
+  ) {
     errorMessage(password, "please enter at least 8 digits password with #");
   }
 
-  //   confirm password validation
-  //   if (.value.includes("@") || !email.value.includes(".com")) {
-  //     nameError.textContent = "please enter a valid email address";
-  //   } else {
-  //     emailError.style.display = "none";
-  //     email.classList.remove("error-border");
-  //   }
+  // confirm password validation
+  if (!confirmPassword === password) {
+    errorMessage(confirmPassword, "Password does not match");
+  }
+
+  if (valid) {
+    const formData = {
+      name: name.value,
+      email: email.value,
+      password: password.value,
+      confirmPassword: confirmPassword.value,
+    };
+    console.log("Submitted successfully");
+    console.log(formData);
+
+    successMessage.style.display = "block";
+
+    //
+    myForm.reset();
+  }
 });
