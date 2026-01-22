@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,32 +7,12 @@
     <link rel="stylesheet" href="dist/output.css" />
     <link rel="stylesheet" href="src/styles/register.css" />
   </head>
-  <body class="m-0 p-0 border-box min-h-full">
+  <body class="m-0 p-0 box-border">
     <main>
       <section>
-        <!-- verify your email overlay -->
-        <div
-          id="verify-email"
-          class="verify-email-overlay rounded-[14px] mx-auto hidden"
-        >
-          <div class="verify-text w-full text-center">
-            <h2>Verify your email</h2>
-            <p>We sent the verification code to your email, proxy1@gmail.com</p>
-            <div class="email_animation mt-4">
-              <img src="assets/images/email-animation.gif" alt="" />
-            </div>
-          </div>
-          <div
-            class="okay-btn w-[90%] m-auto h-10 rounded-[20px] bg-[#223448] text-white cursor-pointer p-5 flex items-center justify-center"
-          >
-            <a href="./pages/auth/verify-email.html" class="p-5" target="_self">
-              okay
-            </a>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-2 items-stretch h-full">
-          <div class="register-input-frame w-full p-20">
+        <!-- main section -->
+        <div class="register-container grid grid-cols-2">
+          <div class="register-input-frame w-1/2 p-10">
             <h2 class="text-5xl font-medium capitalize pb-3">
               get started now
             </h2>
@@ -92,11 +73,11 @@
                   type="text"
                   placeholder="Enter password"
                 />
-                <img
-                  class="w-6 h-3.75"
-                  src="assets/images/eye-off.svg"
-                  id="eyeicon"
-                />
+                <!-- <img
+                    class="w-6 h-3.75"
+                    src="assets/images/eye-off.svg"
+                    id="eyeicon"
+                  /> -->
                 <div class="error" id="passwordError"></div>
               </div>
               <div class="input-box w-full">
@@ -121,27 +102,55 @@
               <div
                 class="bg-[#223448] text-[#e9e0cf] w-full rounded-full h-10 flex items-center justify-center cursor-pointer mb-4"
               >
-                <button class="w-full cursor-pointer">Create Account</button>
+                <button id="openModal" class="w-full cursor-pointer">
+                  Create Account
+                </button>
               </div>
               <span
                 >Already have an account?
-                <a class="text-green-700" href="login.html">Sign in</a></span
+                <a class="text-green-700" href="/frontend/pages/auth/login.html"
+                  >Sign in</a
+                ></span
               >
             </form>
           </div>
-          <div class="w-full">
-            <div class="bg-side">
-              <h2>Roompal</h2>
-              <p>
-                We are a housing and roommate matching platform built to make
-                finding a place to live simple, safe, and reliable.
-              </p>
-              <img class="backdrop" src="assets/images/blur-blue.png" alt="" />
+          <div class="bg-side">
+            <h2>Roompal</h2>
+            <p>
+              We are a housing and roommate matching platform built to make
+              finding a place to live simple, safe, and reliable.
+            </p>
+            <img class="backdrop" src="assets/images/blur-blue.png" alt="" />
+          </div>
+        </div>
+        <!-- verify your email overlay-modal -->
+        <div
+          id="verify-email"
+          class="verify-email-overlay rounded-[14px] mx-auto"
+        >
+          <div class="verify-text w-full text-center">
+            <h2>Verify your email</h2>
+            <p id="">
+              We sent the verification code to your email, proxy1@gmail.com
+            </p>
+            <div class="email_animation mt-4">
+              <img src="assets/images/email-animation.gif" alt="" />
+            </div>
+            <div
+              class="okay-btn w-[80%] m-auto h-10 rounded-[20px] bg-[#223448] text-white cursor-pointer p-5 flex items-center justify-center"
+            >
+              <a
+                href="./pages/auth/verify-email/verify-email.html"
+                class="p-5"
+                target="_self"
+              >
+                okay
+              </a>
             </div>
           </div>
         </div>
       </section>
     </main>
-    <script src="pages/auth/auth-js/register.js"></script>
+    <script src="./assets/scripts/register.js"></script>
   </body>
 </html>

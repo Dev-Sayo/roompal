@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/frontend/dist/output.css" />
+  </head>
+  <body>
+    <div class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg">
+      <div class="text-sm font-semibold text-gray-500 mb-4">
+        Step <span id="current-index">1</span> of 3
+      </div>
+
+      <div id="step-1" class="step-content">
+        <h2 class="text-2xl font-bold mb-4">Account Info</h2>
+        <input
+          type="text"
+          placeholder="Username"
+          class="w-full p-2 border rounded"
+        />
+      </div>
+
+      <div id="step-2" class="step-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Profile Details</h2>
+        <input
+          type="text"
+          placeholder="Full Name"
+          class="w-full p-2 border rounded"
+        />
+      </div>
+
+      <div id="step-3" class="step-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Review & Submit</h2>
+        <p class="text-gray-600">Please confirm your details are correct.</p>
+      </div>
+
+      <div class="flex justify-between mt-8">
+        <button id="prevBtn" class="px-4 py-2 text-gray-600 invisible">
+          Previous
+        </button>
+        <button
+          id="nextBtn"
+          class="px-6 py-2 bg-blue-600 text-black rounded-lg font-medium"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+    <script>
+      const steps = document.querySelectorAll(".step-content");
+      const nextBtn = document.getElementById("nextBtn");
+      const prevBtn = document.getElementById("prevBtn");
+      const stepCounter = document.getElementById("current-index");
+
+      let currentStep = 1;
+
+      function updateDisplay() {
+        // 1. Show/Hide Step Content
+        steps.forEach((step, index) => {
+          step.classList.toggle("hidden", index + 1 !== currentStep);
+        });
+
+        // 2. Update Counter Text
+        stepCounter.innerText = currentStep;
+
+        // 3. Handle Button Visibility/Text
+        prevBtn.classList.toggle("invisible", currentStep === 1);
+
+        if (currentStep === steps.length) {
+          nextBtn.innerText = "Finish";
+          nextBtn.classList.replace("bg-blue-600", "bg-green-600");
+        } else {
+          nextBtn.innerText = "Next";
+          nextBtn.classList.replace("bg-green-600", "bg-blue-600");
+        }
+      }
+
+      nextBtn.addEventListener("click", () => {
+        if (currentStep < steps.length) {
+          currentStep++;
+          updateDisplay();
+        }
+      });
+
+      prevBtn.addEventListener("click", () => {
+        if (currentStep > 1) {
+          currentStep--;
+          updateDisplay();
+        }
+      });
+    </script>
+  </body>
+</html>
+<div class="info-input-parent-container">
+  <div>
+    <div class="numbering-change">
+      <p>PROPERTY DETAILS</p>
+      <span id="current-index">1/3</span>
+    </div>
+    <a href="#" id="prevBtn">Go Back</a>
+    <div class="info-input-parent bg-white">
+      <div id="step-1" class="selector">
+        <div class="selector-group block px-4 selector-group w-full relative">
+          <p>What type of space are you listing?</p>
+          <select
+            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+            name=""
+            id=""
+          >
+            <option value="0" selected disabled>Choose Options</option>
+            <option value="1">Apartment / Flat</option>
+            <option value="">Self-contained R0oms</option>
+            <option value="">Shared Apartments</option>
+            <option value="">Detached Houses</option>
+            <option value="">Semi-detached Houses</option>
+            <option value="">Duplexes</option>
+            <option value="">Bungalow</option>
+            <option value="">Serviced Apartment</option>
+          </select>
+        </div>
+        <div class="selector-group">
+          <p>Is this an entire place or a shared space?</p>
+          <select
+            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+            name=""
+            id=""
+          >
+            <option value="0" selected disabled>Choose Options</option>
+            <option value="1">Entire Place</option>
+            <option value="2">Shared Space</option>
+          </select>
+        </div>
+        <div class="selector-group">
+          <p>How many rooms are available?</p>
+          <select
+            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+            name=""
+            id=""
+          >
+            <option value="0" selected disabled>Choose Options</option>
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">4</option>
+            <option value="">5</option>
+            <option value="">6</option>
+            <option value="">8</option>
+            <option value="">8 & above</option>
+          </select>
+        </div>
+        <div class="selector-group">
+          <p>How many bathroom are available?</p>
+          <select
+            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+            name=""
+            id=""
+          >
+            <option value="0" selected disabled>Choose Options</option>
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">4</option>
+            <option value="">5</option>
+            <option value="">6</option>
+            <option value="">8</option>
+            <option value="">8 & above</option>
+          </select>
+        </div>
+        <div class="selector-group">
+          <p>Where is the property located?</p>
+          <select
+            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+            name=""
+            id=""
+          >
+            <option value="0" selected disabled>Choose Options</option>
+            <option value="">Abia</option>
+            <option value="">Adamawa</option>
+            <option value="">Akwa Ibom</option>
+            <option value="">Ogun</option>
+            <option value="">Lagos</option>
+            <option value="">Delta</option>
+            <option value="">Abuja</option>
+          </select>
+        </div>
+        <div class="selector-group">
+          <p>In which City/Area?</p>
+          <select
+            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+            name=""
+            id=""
+          >
+            <option value="0" selected disabled>Choose Options</option>
+            <option value="">Gbagada</option>
+            <option value="">Ikoggi</option>
+            <option value="">Ketu</option>
+            <option value="">Mile 2</option>
+            <option value="">Mainland</option>
+            <option value="">Island</option>
+          </select>
+        </div>
+        <div class="selector-group">
+          <p>Nearest landmark?</p>
+          <select
+            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+            name=""
+            id=""
+          >
+            <option value="0" selected disabled>Choose Options</option>
+            <option value="">Millennium Estate</option>
+            <option value="">The Redeemed Church</option>
+            <option value="">Medina centre mosque</option>
+            <option value="">Gospel Apostolic church</option>
+          </select>
+        </div>
+        <button class="next-btn">Next</button>
+      </div>
+      <div id="step-2" class="selector hidden">
+        <div class="selector-group block px-4 selector-group w-full relative">
+          <p>Are utilities included in the rent??</p>
+          <select
+            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+            name=""
+            id=""
+          >
+            <option value="0" selected disabled>Choose Options</option>
+            <option value="">Yes</option>
+            <option value="">NO</option>
+          </select>
+        </div>
+        <div class="selector-group">
+          <p>Are Pets Allowed</p>
+          <select
+            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+            name=""
+            id=""
+          >
+            <option value="0" selected disabled>Choose Options</option>
+            <option value="">Yes</option>
+            <option value="">No</option>
+          </select>
+        </div>
+        <div class="selector-group">
+          <p>What is the yearly rent?</p>
+          <div class="tel-box">
+            <input type="text" placeholder="Enter Exact Amount" />
+          </div>
+        </div>
+        <div class="selector-group">
+          <p>Is the property furnished or unfurnished?</p>
+          <select
+            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+            name=""
+            id=""
+          >
+            <option value="0" selected disabled>Choose Options</option>
+            <option value="">Fully Furnished</option>
+            <option value="">Semi Firnished</option>
+            <option value="">Not Furnished</option>
+          </select>
+        </div>
+        <div class="selector-group">
+          <p>Date Of Birth</p>
+          <div class="tel-box">
+            <input type="date" />
+          </div>
+        </div>
+        <div class="selector-group">
+          <p>
+            provide the primary contact for lease signing and maintenance
+            issues?
+          </p>
+          <div class="tel-box">
+            <input type="tel" placeholder="Enter Phone Number" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 3 -->
+    <div id="step-3" class="selector info-input-parent hidden">
+      <div class="selector h-full">
+        <form class="flex flex-col">
+          <p class="py-5">Upload a valid ID</p>
+          <div
+            class="upload-box w-full bg-white rounded-lg flex gap-3 items-center"
+          >
+            <label class="flex items-center w-5 h-5" for="upload"
+              ><img
+                class="w-full object-cover"
+                src="/frontend/assets/images/upload.png"
+                alt=""
+            /></label>
+            <input class="cursor-pointer" type="file" accept=".jpg,.png,.pdf" />
+          </div>
+          <a href="/frontend/index.html">Start Hunting</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

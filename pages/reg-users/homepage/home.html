@@ -28,7 +28,11 @@
         <span class="notification"
           ><img src="/frontend/assets/images/notification-bell.png" alt=""
         /></span>
-        <span><a class="need-help" href="">Need Help?</a></span>
+        <span
+          ><a class="need-help" href="../need-help/need-help.html"
+            >Need Help?</a
+          ></span
+        >
       </div>
     </nav>
     <aside>
@@ -36,7 +40,7 @@
         <p>Location</p>
         <div class="location-dropdown bg-white h-11 flex flex-col">
           <div>
-            <span> Lagos</span>
+            <span>Lagos</span>
             <img
               class="w-4 object-cover"
               src="/frontend/assets/images/light-chevron.png"
@@ -50,21 +54,108 @@
       </div>
       <div class="filter-section">
         <form action="#">
-          <input type="text" placeholder="Filter Options" />
+          <input type="search" placeholder="Filter Options" />
         </form>
-        <div></div>
-        <div><button>Cancel</button><button>Filter</button></div>
-      </div>
-    </aside>
-    <main>
-      <div class="hero-section rounded-2xl w-full">
-        <div class="heading-wrapper rounded-tl-2xl">
-          <h2 class="font-medium text-2xl">
-            Search for your Dream Apartment Here
-          </h2>
-          <div class="ranges-div bg-white">tt</div>
+        <div class="filter-dropdown-container">
+          <div>
+            <button class="filter-dropdown">
+              property Type
+              <img src="/frontend/assets/images/light-chevron.png" alt="" />
+            </button>
+          </div>
+          <div>
+            <button class="filter-dropdown">
+              Rent Price, Yearly N
+              <img src="/frontend/assets/images/light-chevron.png" alt="" />
+            </button>
+          </div>
+          <div>
+            <button class="filter-dropdown">
+              Agent
+              <img src="/frontend/assets/images/light-chevron.png" alt="" />
+            </button>
+          </div>
+          <div>
+            <button class="filter-dropdown">
+              Amenities
+              <img src="/frontend/assets/images/light-chevron.png" alt="" />
+            </button>
+          </div>
+          <div>
+            <button class="filter-dropdown">
+              Bathroon
+              <img src="/frontend/assets/images/light-chevron.png" alt="" />
+            </button>
+          </div>
+          <div>
+            <button class="filter-dropdown">
+              Bedrooms
+              <img src="/frontend/assets/images/light-chevron.png" alt="" />
+            </button>
+          </div>
+          <div>
+            <button class="filter-dropdown">
+              Furnishing
+              <img src="/frontend/assets/images/light-chevron.png" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="clear_filter">
+          <button class="cancel">Cancel</button
+          ><button class="filter-btn">Filter</button>
         </div>
       </div>
+    </aside>
+    <main class="bg-white h-full">
+      <section class="m-10">
+        <div class="hero-section rounded-2xl">
+          <div>
+            <h2 class="font-medium text-2xl">
+              Search for your Dream Apartment Here
+            </h2>
+            <div class="ranges-div bg-white flex justify-between items-center">
+              <div>
+                <p>Location</p>
+                <button class="location-select">
+                  Lagos
+                  <img
+                    class="chevron"
+                    src="/frontend/assets/images/light-chevron.png"
+                    alt=""
+                  />
+                </button>
+              </div>
+              <div>
+                <p>Pricing Range</p>
+                <div>
+                  <button class="location-select">
+                    Lagos
+                    <img
+                      class="chevron"
+                      src="/frontend/assets/images/light-chevron.png"
+                      alt=""
+                    />
+                  </button>
+                </div>
+              </div>
+              <div>
+                <p>Apartment Type</p>
+                <div>
+                  <button class="location-select">
+                    Lagos
+                    <img
+                      class="chevron"
+                      src="/frontend/assets/images/light-chevron.png"
+                      alt=""
+                    />
+                  </button>
+                </div>
+              </div>
+              <div><button class="search-btn mt-10">Search</button></div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- <footer></footer> -->
   </body>

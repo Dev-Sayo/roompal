@@ -1,0 +1,11 @@
+.message-recieved {
+  width: 654px;
+  height: 553px;
+  background-color: #fff;
+  border-radius: 14px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

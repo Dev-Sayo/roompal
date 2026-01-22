@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -17,9 +17,9 @@
         class="hidden items-center justify-between gap-4 text-[#7c7c7c] md:flex"
       >
         <a href="./index.html">Home</a>
-        <div class="relative">
-          <button class="dropdown-btn">
-            <span class="flex items-center gap-2"
+        <div class="dropdown-container">
+          <button class="cursor-pointer" id="dropdown-btn">
+            <span class="flex items-center justify-between gap-2"
               >Service
               <img
                 src="./assets/images/dropdown-chevron.png"
@@ -27,14 +27,17 @@
                 alt=""
             /></span>
           </button>
-          <ul id="dropdown-menu" class="hidden">
-            <li>
+          <ul
+            id="dropdown-menu"
+            class="dropdown-menu absolute top-17 right-0 w-[320px] hidden"
+          >
+            <li class="dropdown-items">
               <a href="./pages/find-apartment.html">Find an Apartment</a>
             </li>
-            <li>
+            <li class="dropdown-items">
               <a href="./pages/find-roomie.html"> Find a Roomamte</a>
             </li>
-            <li>
+            <li class="dropdown-items">
               <a href="./pages/find-renter.html">FInd a Flatmate</a>
             </li>
           </ul>
@@ -84,7 +87,7 @@
       <section class="what-we-do-frame mb-20 mt-20">
         <h2 class="what-we-do-heading">What we do</h2>
         <div
-          class="grid m-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 w-[90%] p-10"
+          class="grid m-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 w-[90%]"
         >
           <div
             class="wwd-card-parent w-full bg-[#f5f5f5] items-center flex flex-col p-6 rounded-[20px]"
@@ -167,24 +170,15 @@
         </div>
       </section>
       <!--roompal Image -->
-      <section class="">
-        <div class="relative">
-          <!-- <img
-            src="./assets/images/3d-rendering-loft-luxury-living-room-with-shelf-near-dining-table-1.png"
-            class="w-full h-full object-cover"
-          /> -->
-
-          <h2 class="text-black text-3xl font-bold">Roompal</h2>
+      <section>
+        <div class="roompal-background w-[90%] mx-auto">
+          <div class="w-full flex items-center gap-5 px-10">
+            <p class="w-[50%] bg-white rounded-2xl h-3.25"></p>
+            <h2 class="roompal-h2">Roompal</h2>
+            <p class="w-[50%] bg-white rounded-2xl h-3.25"></p>
+          </div>
         </div>
-        <!-- <div class="w-full relative">
-          <img
-            src="./assets/images/3d-rendering-loft-luxury-living-room-with-shelf-near-dining-table-1.png"
-            class="w-[90%] m-auto object-cover rounded-[20px]"
-          />
-          <span class="absolute top-20">Roompal</span>
-        </div> -->
       </section>
-
       <!--Why us section  -->
       <section class="py-35">
         <h2 class="text-3xl font-bold text-center pb-10">WHY US</h2>
@@ -625,9 +619,92 @@
         </div>
       </section>
       <!-- Reviews -->
-      <section class="h-full">
-        <div>
-          <div class="bg-[#f5f5f5]"></div>
+      <section class="carousel">
+        <!-- carousel cards -->
+        <div class="carousel__content grid">
+          <article class="carousel__card bg-[#f5f5f5] w-full h-105">
+            <q class="w-66.25">
+              I found a clean, affordable apartment in less than a week. I liked
+              that the listings were verified. It saved me from wasting time and
+              money on fake agents.
+            </q>
+            <div class="profile-box flex items-center gap-4">
+              <img src="assets/images/review-image-1.png" alt="" />
+              <div>
+                <h3 class="name">Alex Carter</h3>
+                <p class="profession">Product Designer, Base</p>
+              </div>
+            </div>
+          </article>
+          <article class="carousel__card bg-[#f5f5f5] w-full">
+            <q class="w-66.25">
+              Very smooth experience from start to finish. From searching to
+              scheduling a viewing, everything was simple and clear.
+            </q>
+            <div class="profile-box flex items-center gap-4">
+              <img src="assets/images/review-image-1.png" alt="" />
+              <div>
+                <h3 class="name">ALex Crter</h3>
+                <p class="profession">Product Designer, Base</p>
+              </div>
+            </div>
+          </article>
+          <article class="carousel__card w-full bg-[#f5f5f5]">
+            <q class="w-66.25">
+              I found a clean, affordable apartment in less than a week. I liked
+              that the listings were verified. It saved me from wasting time and
+              money on fake agents.
+            </q>
+            <div class="profile-box flex items-center gap-4">
+              <img src="assets/images/review-image-1.png" alt="" />
+              <div>
+                <h3 class="name">ALex Crter</h3>
+                <p class="profession">Product Designer, Base</p>
+              </div>
+            </div>
+          </article>
+          <article class="carousel__card w-full bg-[#f5f5f5]">
+            <q class="w-66.25">
+              I found a clean, affordable apartment in less than a week. I liked
+              that the listings were verified. It saved me from wasting time and
+              money on fake agents.
+            </q>
+            <div class="profile-box flex items-center gap-4">
+              <img src="assets/images/review-image-1.png" alt="" />
+              <div>
+                <h3 class="name">ALex Crter</h3>
+                <p class="profession">Product Designer, Base</p>
+              </div>
+            </div>
+          </article>
+          <article class="carousel__card w-full bg-[#f5f5f5]">
+            <q class="w-66.25">
+              I found a clean, affordable apartment in less than a week. I liked
+              that the listings were verified. It saved me from wasting time and
+              money on fake agents.
+            </q>
+            <div class="profile-box flex items-center gap-4">
+              <img src="assets/images/review-image-1.png" alt="" />
+              <div>
+                <h3 class="name">ALex Crter</h3>
+                <p class="profession">Product Designer, Base</p>
+              </div>
+            </div>
+          </article>
+          <article class="carousel__card w-full bg-[#f5f5f5]">
+            <q class="w-66.25">
+              I found a clean, affordable apartment in less than a week. I liked
+              that the listings were verified. It saved me from wasting time and
+              money on fake agents.
+            </q>
+            <div class="profile-box flex items-center gap-4">
+              <img src="assets/images/review-image-1.png" alt="" />
+              <div>
+                <h3 class="name">ALex Crter</h3>
+                <p class="profession">Product Designer, Base</p>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
       <!--subscribe to our newsletter  -->

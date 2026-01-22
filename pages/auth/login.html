@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Roompal</title>
     <link rel="stylesheet" href="/frontend/dist/output.css" />
-    <link rel="stylesheet" href="/frontend/src/styles/register.css" />
+    <link rel="stylesheet" href="/frontend/src/styles/login.css" />
   </head>
   <body class="m-0 p-0 border-box">
     <main>
@@ -72,11 +72,17 @@
               <div
                 class="bg-[#223448] text-[#e9e0cf] w-full rounded-full h-10 flex items-center justify-center cursor-pointer mb-4"
               >
-                <button class="w-full">Sign in</button>
+                <a
+                  class="w-full flex items-center justify-center cursor-pointer"
+                  href="/frontend/pages/reg-users/homepage/home.html"
+                  >Sign in</a
+                >
               </div>
               <span
                 >Do not have an account?
-                <a class="text-green-700" href="register.html">Sign up</a></span
+                <a class="text-green-700" href="/frontend/register.html"
+                  >Sign up</a
+                ></span
               >
             </form>
           </div>
