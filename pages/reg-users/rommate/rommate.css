@@ -53,18 +53,20 @@ nav {
 .nav-side__1 {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 10rem;
+  gap: 7rem;
 }
 .nav .home {
   font-weight: 600;
   font-size: 24px;
   text-transform: uppercase;
 }
+.link {
+  display: flex;
+}
 .link a {
   margin-right: 1.5em;
   color: var(--gray);
-  font-weight: 500;
+  font-weight: 400;
 }
 .side-two {
   display: flex;
@@ -110,20 +112,36 @@ aside {
   font-size: 12px;
   color: var(--gray);
 }
-.filter-dropdown {
+.filter-search-box {
+  padding-top: 2rem;
+}
+.filter-search-box input {
+  border: 1.5px solid var(--gray);
+  border-radius: 15px;
+  outline: none;
+  caret-color: var(--black-color);
+  width: 100%;
+  padding-left: 10px;
+  padding-block: 5px;
+  color: hsla(0, 0%, 0%, 0.623);
+}
+.filter-dropdown-btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   padding: 0.8rem;
 }
-.filter-dropdown img {
+.filter-dropdown-btn img {
   width: 12px;
   height: 6px;
 }
 .filter-dropdown,
 .clear_filter button {
   cursor: pointer;
+}
+.select-filter-dropdown {
+  display: none;
 }
 .clear_filter {
   display: flex;
@@ -161,6 +179,7 @@ main {
   color: var(--gray);
   font-weight: 500;
   width: 100%;
+  margin-bottom: 1rem;
 }
 .btn-toggling button {
   line-height: 24px;
@@ -177,7 +196,62 @@ main {
   border-radius: 50px;
   transform: scale(0.98);
 }
-.roomate-reg-section {
+.content.active {
+  display: block;
+}
+/* sec 1 */
+.find-roommate-section {
+  padding-left: 1.2rem;
+}
+.search-rommie-frame {
+  width: 100%;
+  background: var(--white);
+  height: 215px;
+  padding: 1rem;
+}
+.search-rommie-frame h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.search-rommie-frame p {
+  color: var(--gray);
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: auto;
+  padding-top: 3rem;
+}
+.search-box input {
+  width: 70%;
+  border: none;
+  outline: none;
+  background-color: #f1f1f1;
+  padding: 1rem;
+}
+.search-box input::placeholder {
+  font-weight: 300;
+}
+.search-box button {
+  background: var(--primary-color-1);
+  color: var(--white);
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.search-box input,
+.search-box button {
+  height: 44px;
+  border-radius: 25px;
+}
+.find-roommate-container {
+  margin-top: 1rem;
+}
+/*  */
+.roommate-reg-section {
   max-width: 858px;
   width: 100%;
   margin: 3rem auto;

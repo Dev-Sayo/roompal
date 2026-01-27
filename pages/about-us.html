@@ -2,8 +2,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/about-us.css" />
+    <link rel="stylesheet" href="../src/styles/about-us.css" />
     <link rel="stylesheet" href="../dist/output.css" />
+    <link rel="stylesheet" href="../src/styles/main.css" />
     <title>About Us</title>
   </head>
   <body class="m-0 p-0 border-box">
@@ -13,10 +14,9 @@
       </div>
       <nav class="flex items-center gap-4 text-[#7c7c7c]">
         <a href="../index.html">Home</a>
-        <div class="relative">
-          <button class="dropdown-btn">
-            <img src="/" alt="" />
-            <span class="flex items-center gap-2"
+        <div class="dropdown-container" id="myDropdown">
+          <button class="dropdown-btn cursor-pointer">
+            <span class="flex items-center justify-between gap-2"
               >Service
               <img
                 src="../assets/images/dropdown-chevron.png"
@@ -24,16 +24,13 @@
                 alt=""
             /></span>
           </button>
-          <ul id="dropdown-menu" class="hidden dropdown">
-            <li>
-              <a href="./find-apartment.html">Find an Apartment</a>
-            </li>
-            <li>
-              <a href="./find-roomie.html"> Find a Roomamte</a>
-            </li>
-            <li>
-              <a href="./find-renter.html">FInd a Flatmate</a>
-            </li>
+          <ul
+            id="dropdown-menu"
+            class="dropdown-content absolute top-17 right-0 w-[320px] hidden"
+          >
+            <li><a href="./pages/find-apartment.html">Find an Apartment</a></li>
+            <li><a href="./pages/find-roomie.html"> Find a Roomamte</a></li>
+            <li><a href="./pages/find-renter.html">FInd a Flatmate</a></li>
           </ul>
         </div>
         <a href="./about-us.html">About</a>
@@ -42,7 +39,9 @@
       <div
         class="bg-[#223448] text-white rounded-full w-37 h-11 flex items-center justify-center px-3.75 py-1"
       >
-        <a class="registerRoute text-white" href="#">Find your home</a>
+        <a class="registerRoute text-white" href="../register.html"
+          >Find your home</a
+        >
       </div>
     </header>
     <main>
@@ -54,18 +53,18 @@
             finding a place to live simple, safe, and reliable.
           </h2>
         </div>
-        <div class="w-full pb-24">
+        <div class="hero-bottom w-full pb-24">
           <img
-            class="w-full px-10 object-cover m-auto h-full"
+            class="w-full px-10 object-cover m-auto"
             src="../assets/images/Frame-427321920.png"
             alt=""
           />
         </div>
       </section>
-      <!--  -->
+      <!--hero bottom  -->
       <section>
         <div class="about-us-container">
-          <div class="grid grid-cols-2 w-full">
+          <div class="grid grid-cols-2 w-full mb-10">
             <div class="flex flex-col pl-24 justify-center w-full">
               <h2 class="font-medium text-[3rem] text-black">OUR MISSION</h2>
               <p class="text-[#ababab] leading-[150%] font-normal w-125">
@@ -82,7 +81,7 @@
               />
             </div>
           </div>
-          <div class="w-full grid grid-cols-2 items-center">
+          <div class="w-full grid grid-cols-2 gap-70">
             <div class="about-us-image">
               <img
                 class="w-full object-cover"
@@ -90,7 +89,7 @@
                 alt=""
               />
             </div>
-            <div class="flex flex-col flex-center max-w-125 h-33 pr-24">
+            <div class="flex flex-col pl-24 justify-center w-full">
               <h2 class="max-w-full font-medium text-[3rem] text-black">
                 OUR VISION
               </h2>
@@ -142,12 +141,12 @@
             <div class="flex mt-auto gap-4">
               <a
                 class="registerRoute flex items-center justify-center pt-1 pr-3.75 pb-1 pl-3.75 bg-[#223448] rounded-full max-w-37 h-11 capitalize text-[#e9e0cf]"
-                href="#"
+                href="../register.html"
                 >find apartment</a
               >
               <a
                 class="registerRoute flex items-center justify-center bg-[#00000033] max-w-43.25 h-11 text pt-1 pr-3.75 pb-1 pl-3.75 text-[#223448] rounded-full"
-                href="#"
+                href="../register.html"
                 >List an apartment</a
               >
             </div>
@@ -284,11 +283,11 @@
     <footer class="h-full bg-[#f5f5f5]">
       <div class="infinite py-30 px-10 relative text-black">
         <img
-          class="absolute top-px left-[40%] max-w-49.25 h-[474.33px]"
+          class="max-w-49.25 h-[474.33px]"
           src="../assets/images/flame.png"
           alt=""
         />
-        <strong class="text-[200px]">ROOMPAL</strong>
+        <strong>ROOMPAL</strong>
         <p>
           At ROOMPAL, we’re not just about properties , we’re about people. Born
           from a passion for helping individuals and families find their ideal
@@ -328,7 +327,6 @@
         </div>
       </div>
     </footer>
-    <script src="/js/faq.js"></script>
-    <script src=""></script>
+    <script src="../assets/scripts/main.js"></script>
   </body>
 </html>

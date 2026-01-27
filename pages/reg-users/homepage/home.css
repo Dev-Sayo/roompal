@@ -163,6 +163,8 @@ main {
   height: 300px;
   padding: 20px;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
 }
 .location-select {
   display: flex;
@@ -181,7 +183,7 @@ main {
 }
 .location-div {
   background: var(--Secondary-white-Color);
-  padding: 1rem;
+  padding: 2rem;
 }
 .location-dropdown {
   border-radius: 10px;
@@ -192,9 +194,9 @@ main {
   justify-content: space-between;
   padding: 10px 25px 10px 5px;
 }
-form input {
-  border: 2px solid var(--gray);
-  border-radius: 10px;
+.filter-search-box input {
+  border: 1.5px solid var(--gray);
+  border-radius: 15px;
   outline: none;
   caret-color: var(--black-color);
   width: 100%;
@@ -206,15 +208,31 @@ form input {
   margin-top: 2rem;
 }
 .ranges-div {
-  padding: 1.2rem;
+  padding: 2rem;
   border-radius: 20px;
+  margin-top: auto;
+  margin-bottom: 2rem;
+}
+.find-container p {
+  padding-bottom: 12px;
+  color: var(--gray);
+}
+#find-apartment {
+  width: 350px;
+  height: 44px;
+  border-radius: 10px;
+  max-width: 100%;
+  background: var(--Secondary-white-Color);
+  padding: 10px;
+  border: none;
+  outline: none;
 }
 .search-btn {
   background: var(--primary-color-1);
-  min-width: 93px;
+  min-width: 100px;
   height: 44px;
   color: var(--white);
   border-radius: 25px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 2.3rem;
 }

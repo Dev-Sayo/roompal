@@ -1,16 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
 @font-face {
   font-family: "Infinite Realities";
-  src: url("/frontend/assets/fonts/Infinite\ Realities.otf") format("truetype");
+  src: url(/frontend/assets/fonts/Infinite\ Realities.ttf) format("truetype");
 }
 @font-face {
   font-family: "Gilroy Thin";
-  src: url("/frontend/assets/fonts/Gilroy-Thin.ttf") format("truetype");
+  src: url(/frontend/assets/fonts/Gilroy-Thin.ttf) format("truetype");
 }
 @font-face {
   font-family: "Gilroy light";
-  src: url("/frontend/assets/fonts/Gilroy-Light.ttf") format("truetype");
+  src: url(/frontend/assets/fonts/Gilroy-Light.ttf) format("truetype");
 }
 :root {
   --white: #ffffff;
@@ -19,31 +18,21 @@
   --footer-color: #f5f5f5;
   --blue-2: #223448;
   --ash: #7c7c7c;
-  --ash-2: #ababab;
-  color: #fafafa;
+  color: rgb(0, 0, 0, 1);
 }
 * {
   text-decoration: none;
   letter-spacing: -0.2px;
 }
 body {
-  background: var(--white);
   font-family: "inter", sans-serif;
-  color: #fafafa;
-}
-/*  HEADER   */
-.links {
-  display: flex;
-  gap: 10px;
-}
-.links a {
-  font-size: 16px;
 }
 .dropdown-menu.active {
   display: block;
 }
 .dropdown-menu {
-  background: #f5f5f5;
+  background: var(--white);
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.6);
   width: 320px;
   border-radius: 20px;
   height: 178px;
@@ -59,45 +48,7 @@ body {
   cursor: pointer;
 }
 .dropdown-items:hover {
-  background: var(--white);
-}
-.find-a-home a {
-  background: var(--black);
-  color: var(--white);
-  font-size: 16px;
-  border-radius: 20px;
-  padding: 10px 15px;
-}
-/* MAIN */
-.hero-section {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.who-are-we {
-  max-height: 138px;
-  height: 100%;
-  max-width: 1240px;
-  width: 100%;
-  /* padding: 184px 0rem 0rem; */
-}
-.who-are-we p {
-  font-family: "DM Mono", monospace;
-  color: var(--ash);
-  text-transform: uppercase;
-}
-.who-are-we h1 {
-  text-align: left;
-  font-size: 48px;
-  font-weight: 400;
-}
-.hero-image {
-  border-radius: 20px;
-}
-footer {
-  background: var(--footer-color);
-  height: 910px;
+  background: #f1f1f1;
 }
 .infinite {
   max-width: 100%;
@@ -107,9 +58,6 @@ footer {
 }
 .infinite strong {
   font-family: "Infinite Realities", sans-serif;
-  max-width: 100%;
-  display: flex;
-  font-size: 200px;
   letter-spacing: 5px;
 }
 .infinite p {
@@ -119,22 +67,17 @@ footer {
   font-weight: 400;
 }
 .infinite img {
-  max-width: 196.02px;
   max-width: 100%;
   height: 474.33px;
   position: absolute;
-  left: 42%;
-  top: 3%;
+  left: 48%;
+  top: 4%;
   z-index: 9999;
 }
 .footer-bottom {
   display: flex;
   justify-content: space-between;
-  padding: 6rem 4rem;
-}
-.socials img {
-  width: 20.25px;
-  height: 20.25px;
+  padding-bottom: 4rem;
 }
 .find {
   padding-top: 1.2rem;

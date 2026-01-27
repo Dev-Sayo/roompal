@@ -1,19 +1,62 @@
 "use strict";
 // nav dropdown
-const dropdownBtn = document.getElementById("dropdown-btn");
-const dropdownMenu = document.getElementById("dropdown-menu");
-const dropdownItems = document.querySelectorAll(".dropdown-items");
+const dropdownBox = document.getElementById("myDropdown");
+const dropdownBtn = document.querySelector(".dropdown-btn");
+const dropdownContent = document.querySelector(".dropdown-content");
+const dropdownItems = document.querySelectorAll("a");
+const track = document.querySelector(".review-track");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
 
-dropdownBtn.addEventListener("click", () => {
-  dropdownMenu.classList.toggle("active");
+// dropdown in navbar
+dropdownBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  dropdownBox.classList.toggle("active");
 });
 
-const regiterRoute = document.querySelectorAll(".registerRoute");
+document.addEventListener("click", function () {
+  dropdownBox.classList.remove("active");
+});
 
-regiterRoute.forEach((route) => {
-  route.addEventListener("click", () => {
-    window.location.href = "register.html";
-    route.classList.add;
-    route.textContent = "Create Account";
+// Faq
+const faqQuestions = document.querySelectorAll(".faq-question");
+const questions = document.querySelectorAll(".faq-question");
+
+questions.forEach((question) => {
+  question.addEventListener("click", () => {
+    const answer = question.nextElementSibling;
+    const icon = question.querySelector(".faq-icon");
+
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+      icon.style.transform = "rotate(0deg)";
+    } else {
+      document.querySelectorAll(".faq-answer").forEach((a) => {
+        a.style.maxHeight = null;
+        a.previousElementSibling.querySelector(".faq-icon").style.transform =
+          "rotate(0deg)";
+      });
+
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      icon.style.transform = "rotate(180deg)";
+    }
   });
 });
+
+// carousel
+// nextBtn.addEventListener("click", () => {
+//   document.documentElement.style.setProperty("--dir", "1");
+//   restartAnimation();
+// });
+
+// // Change Direction to Left
+// prevBtn.addEventListener("click", () => {
+//   document.documentElement.style.setProperty("-1");
+//   restartAnimation();
+// });
+
+function restartAnimation() {
+  track.style.animation = "none";
+  track.offsetHeight;
+  track.style.animation = null;
+}

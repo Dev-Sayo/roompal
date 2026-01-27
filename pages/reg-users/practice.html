@@ -1,301 +1,414 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/frontend/dist/output.css" />
-  </head>
-  <body>
-    <div class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg">
-      <div class="text-sm font-semibold text-gray-500 mb-4">
-        Step <span id="current-index">1</span> of 3
-      </div>
+    <title>Dropdown Navbar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-      <div id="step-1" class="step-content">
-        <h2 class="text-2xl font-bold mb-4">Account Info</h2>
-        <input
-          type="text"
-          placeholder="Username"
-          class="w-full p-2 border rounded"
-        />
-      </div>
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+          Cantarell, sans-serif;
+        background: #f5f5f5;
+      }
 
-      <div id="step-2" class="step-content hidden">
-        <h2 class="text-2xl font-bold mb-4">Profile Details</h2>
-        <input
-          type="text"
-          placeholder="Full Name"
-          class="w-full p-2 border rounded"
-        />
-      </div>
+      nav {
+        background: #2c3e50;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
 
-      <div id="step-3" class="step-content hidden">
-        <h2 class="text-2xl font-bold mb-4">Review & Submit</h2>
-        <p class="text-gray-600">Please confirm your details are correct.</p>
-      </div>
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+      }
 
-      <div class="flex justify-between mt-8">
-        <button id="prevBtn" class="px-4 py-2 text-gray-600 invisible">
-          Previous
-        </button>
-        <button
-          id="nextBtn"
-          class="px-6 py-2 bg-blue-600 text-black rounded-lg font-medium"
-        >
-          Next
-        </button>
-      </div>
-    </div>
-    <script>
-      const steps = document.querySelectorAll(".step-content");
-      const nextBtn = document.getElementById("nextBtn");
-      const prevBtn = document.getElementById("prevBtn");
-      const stepCounter = document.getElementById("current-index");
+      .logo {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 20px 0;
+      }
 
-      let currentStep = 1;
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 5px;
+      }
 
-      function updateDisplay() {
-        // 1. Show/Hide Step Content
-        steps.forEach((step, index) => {
-          step.classList.toggle("hidden", index + 1 !== currentStep);
-        });
+      .nav-item {
+        position: relative;
+      }
 
-        // 2. Update Counter Text
-        stepCounter.innerText = currentStep;
+      .nav-link {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 20px 18px;
+        transition: background 0.3s;
+      }
 
-        // 3. Handle Button Visibility/Text
-        prevBtn.classList.toggle("invisible", currentStep === 1);
+      .nav-link:hover {
+        background: #34495e;
+      }
 
-        if (currentStep === steps.length) {
-          nextBtn.innerText = "Finish";
-          nextBtn.classList.replace("bg-blue-600", "bg-green-600");
-        } else {
-          nextBtn.innerText = "Next";
-          nextBtn.classList.replace("bg-green-600", "bg-blue-600");
+      .dropdown-toggle::after {
+        content: " ▾";
+        font-size: 12px;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        min-width: 200px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        list-style: none;
+        border-radius: 0 0 4px 4px;
+        z-index: 1000;
+      }
+
+      .nav-item:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .dropdown-item {
+        display: block;
+        padding: 12px 20px;
+        color: #2c3e50;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+
+      .dropdown-item:hover {
+        background: #ecf0f1;
+      }
+
+      .dropdown-divider {
+        height: 1px;
+        background: #ecf0f1;
+        margin: 5px 0;
+      }
+
+      /* Mobile menu toggle */
+      .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 10px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .mobile-toggle {
+          display: block;
+        }
+
+        .nav-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: #2c3e50;
+          flex-direction: column;
+          gap: 0;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        }
+
+        .nav-menu.active {
+          max-height: 500px;
+        }
+
+        .nav-link {
+          padding: 15px 20px;
+        }
+
+        .dropdown-menu {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          box-shadow: none;
+          background: #34495e;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        }
+
+        .nav-item.active .dropdown-menu {
+          max-height: 300px;
+        }
+
+        .dropdown-item {
+          color: #ecf0f1;
+          padding-left: 40px;
+        }
+
+        .dropdown-item:hover {
+          background: #2c3e50;
         }
       }
 
-      nextBtn.addEventListener("click", () => {
-        if (currentStep < steps.length) {
-          currentStep++;
-          updateDisplay();
+      /* Demo content */
+      .content {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      .content h1 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+      }
+
+      .content p {
+        color: #666;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <div class="logo">MyBrand</div>
+        <button class="mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link dropdown-toggle">Products</a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="dropdown-item">Electronics</a></li>
+              <li><a href="#" class="dropdown-item">Clothing</a></li>
+              <li><a href="#" class="dropdown-item">Books</a></li>
+              <li class="dropdown-divider"></li>
+              <li><a href="#" class="dropdown-item">View All</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link dropdown-toggle">Services</a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="dropdown-item">Consulting</a></li>
+              <li><a href="#" class="dropdown-item">Design</a></li>
+              <li><a href="#" class="dropdown-item">Development</a></li>
+              <li><a href="#" class="dropdown-item">Marketing</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="content">
+      <h1>Dropdown Navigation Example</h1>
+      <p>
+        Hover over "Products" or "Services" in the navigation bar to see the
+        dropdown menus. The navbar is fully responsive and works on mobile
+        devices with a hamburger menu.
+      </p>
+    </div>
+
+    <script>
+      function toggleMobileMenu() {
+        const navMenu = document.getElementById("navMenu");
+        navMenu.classList.toggle("active");
+      }
+
+      // Toggle dropdowns on mobile
+      document.querySelectorAll(".dropdown-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", function (e) {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            this.parentElement.classList.toggle("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html> -->
+
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Searchable Dropdown</title>
+    <style>
+      .dropdown-container {
+        position: relative;
+        width: 300px;
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      .options-list {
+        position: absolute;
+        width: 100%;
+        max-height: 200px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        border-top: none;
+        background-color: white;
+        display: none;
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+
+      .options-list.show {
+        display: block;
+      }
+
+      .option-item {
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .option-item:hover {
+        background-color: #f0f0f0;
+      }
+
+      .option-item.hidden {
+        display: none;
+      }
+
+      .no-results {
+        padding: 10px;
+        color: #999;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dropdown-container">
+      <input
+        type="text"
+        class="search-input"
+        id="searchInput"
+        placeholder="Search options..."
+        autocomplete="off"
+      />
+      <div class="options-list" id="optionsList">
+        <div class="option-item" data-value="apple">Apple</div>
+        <div class="option-item" data-value="banana">Banana</div>
+        <div class="option-item" data-value="cherry">Cherry</div>
+        <div class="option-item" data-value="grape">Grape</div>
+        <div class="option-item" data-value="orange">Orange</div>
+        <div class="option-item" data-value="pear">Pear</div>
+        <div class="option-item" data-value="strawberry">Strawberry</div>
+        <div class="option-item" data-value="watermelon">Watermelon</div>
+      </div>
+    </div>
+
+    <p id="selected"></p>
+
+    <script>
+      const searchInput = document.getElementById("searchInput");
+      const optionsList = document.getElementById("optionsList");
+      const options = document.querySelectorAll(".option-item");
+      const selected = document.getElementById("selected");
+
+      // Show dropdown when input is focused
+      searchInput.addEventListener("focus", function () {
+        optionsList.classList.add("show");
+      });
+
+      // Filter options as user types
+      searchInput.addEventListener("input", function () {
+        const searchTerm = this.value.toLowerCase();
+        let hasVisibleOptions = false;
+
+        options.forEach((option) => {
+          const text = option.textContent.toLowerCase();
+          if (text.includes(searchTerm)) {
+            option.classList.remove("hidden");
+            hasVisibleOptions = true;
+          } else {
+            option.classList.add("hidden");
+          }
+        });
+
+        // Show/hide "no results" message
+        let noResults = optionsList.querySelector(".no-results");
+        if (!hasVisibleOptions) {
+          if (!noResults) {
+            noResults = document.createElement("div");
+            noResults.className = "no-results";
+            noResults.textContent = "No results found";
+            optionsList.appendChild(noResults);
+          }
+        } else {
+          if (noResults) {
+            noResults.remove();
+          }
         }
       });
 
-      prevBtn.addEventListener("click", () => {
-        if (currentStep > 1) {
-          currentStep--;
-          updateDisplay();
+      // Handle option selection
+      options.forEach((option) => {
+        option.addEventListener("click", function () {
+          const value = this.getAttribute("data-value");
+          const text = this.textContent;
+
+          searchInput.value = text;
+          selected.textContent = `Selected: ${text} (${value})`;
+          optionsList.classList.remove("show");
+
+          console.log("Selected:", value);
+        });
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".dropdown-container")) {
+          optionsList.classList.remove("show");
+        }
+      });
+
+      // Navigate with keyboard (optional enhancement)
+      searchInput.addEventListener("keydown", function (e) {
+        const visibleOptions = Array.from(options).filter(
+          (opt) => !opt.classList.contains("hidden"),
+        );
+
+        if (e.key === "ArrowDown" && visibleOptions.length > 0) {
+          e.preventDefault();
+          visibleOptions[0].focus();
         }
       });
     </script>
   </body>
-</html>
-<div class="info-input-parent-container">
-  <div>
-    <div class="numbering-change">
-      <p>PROPERTY DETAILS</p>
-      <span id="current-index">1/3</span>
-    </div>
-    <a href="#" id="prevBtn">Go Back</a>
-    <div class="info-input-parent bg-white">
-      <div id="step-1" class="selector">
-        <div class="selector-group block px-4 selector-group w-full relative">
-          <p>What type of space are you listing?</p>
-          <select
-            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-            name=""
-            id=""
-          >
-            <option value="0" selected disabled>Choose Options</option>
-            <option value="1">Apartment / Flat</option>
-            <option value="">Self-contained R0oms</option>
-            <option value="">Shared Apartments</option>
-            <option value="">Detached Houses</option>
-            <option value="">Semi-detached Houses</option>
-            <option value="">Duplexes</option>
-            <option value="">Bungalow</option>
-            <option value="">Serviced Apartment</option>
-          </select>
-        </div>
-        <div class="selector-group">
-          <p>Is this an entire place or a shared space?</p>
-          <select
-            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-            name=""
-            id=""
-          >
-            <option value="0" selected disabled>Choose Options</option>
-            <option value="1">Entire Place</option>
-            <option value="2">Shared Space</option>
-          </select>
-        </div>
-        <div class="selector-group">
-          <p>How many rooms are available?</p>
-          <select
-            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-            name=""
-            id=""
-          >
-            <option value="0" selected disabled>Choose Options</option>
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-            <option value="">4</option>
-            <option value="">5</option>
-            <option value="">6</option>
-            <option value="">8</option>
-            <option value="">8 & above</option>
-          </select>
-        </div>
-        <div class="selector-group">
-          <p>How many bathroom are available?</p>
-          <select
-            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-            name=""
-            id=""
-          >
-            <option value="0" selected disabled>Choose Options</option>
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-            <option value="">4</option>
-            <option value="">5</option>
-            <option value="">6</option>
-            <option value="">8</option>
-            <option value="">8 & above</option>
-          </select>
-        </div>
-        <div class="selector-group">
-          <p>Where is the property located?</p>
-          <select
-            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-            name=""
-            id=""
-          >
-            <option value="0" selected disabled>Choose Options</option>
-            <option value="">Abia</option>
-            <option value="">Adamawa</option>
-            <option value="">Akwa Ibom</option>
-            <option value="">Ogun</option>
-            <option value="">Lagos</option>
-            <option value="">Delta</option>
-            <option value="">Abuja</option>
-          </select>
-        </div>
-        <div class="selector-group">
-          <p>In which City/Area?</p>
-          <select
-            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-            name=""
-            id=""
-          >
-            <option value="0" selected disabled>Choose Options</option>
-            <option value="">Gbagada</option>
-            <option value="">Ikoggi</option>
-            <option value="">Ketu</option>
-            <option value="">Mile 2</option>
-            <option value="">Mainland</option>
-            <option value="">Island</option>
-          </select>
-        </div>
-        <div class="selector-group">
-          <p>Nearest landmark?</p>
-          <select
-            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-            name=""
-            id=""
-          >
-            <option value="0" selected disabled>Choose Options</option>
-            <option value="">Millennium Estate</option>
-            <option value="">The Redeemed Church</option>
-            <option value="">Medina centre mosque</option>
-            <option value="">Gospel Apostolic church</option>
-          </select>
-        </div>
-        <button class="next-btn">Next</button>
-      </div>
-      <div id="step-2" class="selector hidden">
-        <div class="selector-group block px-4 selector-group w-full relative">
-          <p>Are utilities included in the rent??</p>
-          <select
-            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-            name=""
-            id=""
-          >
-            <option value="0" selected disabled>Choose Options</option>
-            <option value="">Yes</option>
-            <option value="">NO</option>
-          </select>
-        </div>
-        <div class="selector-group">
-          <p>Are Pets Allowed</p>
-          <select
-            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-            name=""
-            id=""
-          >
-            <option value="0" selected disabled>Choose Options</option>
-            <option value="">Yes</option>
-            <option value="">No</option>
-          </select>
-        </div>
-        <div class="selector-group">
-          <p>What is the yearly rent?</p>
-          <div class="tel-box">
-            <input type="text" placeholder="Enter Exact Amount" />
-          </div>
-        </div>
-        <div class="selector-group">
-          <p>Is the property furnished or unfurnished?</p>
-          <select
-            class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-            name=""
-            id=""
-          >
-            <option value="0" selected disabled>Choose Options</option>
-            <option value="">Fully Furnished</option>
-            <option value="">Semi Firnished</option>
-            <option value="">Not Furnished</option>
-          </select>
-        </div>
-        <div class="selector-group">
-          <p>Date Of Birth</p>
-          <div class="tel-box">
-            <input type="date" />
-          </div>
-        </div>
-        <div class="selector-group">
-          <p>
-            provide the primary contact for lease signing and maintenance
-            issues?
-          </p>
-          <div class="tel-box">
-            <input type="tel" placeholder="Enter Phone Number" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- 3 -->
-    <div id="step-3" class="selector info-input-parent hidden">
-      <div class="selector h-full">
-        <form class="flex flex-col">
-          <p class="py-5">Upload a valid ID</p>
-          <div
-            class="upload-box w-full bg-white rounded-lg flex gap-3 items-center"
-          >
-            <label class="flex items-center w-5 h-5" for="upload"
-              ><img
-                class="w-full object-cover"
-                src="/frontend/assets/images/upload.png"
-                alt=""
-            /></label>
-            <input class="cursor-pointer" type="file" accept=".jpg,.png,.pdf" />
-          </div>
-          <a href="/frontend/index.html">Start Hunting</a>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+</html> -->

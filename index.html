@@ -4,21 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="./src/styles/index.css" />
-    <link href="./dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="src/styles/index.css" />
+    <link rel="stylesheet" href="src/styles/main.css" />
+    <link href="dist/output.css" rel="stylesheet" />
   </head>
   <body class="m-0 p-0 border-box bg-#f1f1f1">
     <header class="header w-full flex justify-between p-4">
       <div class="uppercase font-bold text-[24px]">
         <a href="./index.html">roompal</a>
-        <img src="" alt="" />
       </div>
       <nav
         class="hidden items-center justify-between gap-4 text-[#7c7c7c] md:flex"
       >
         <a href="./index.html">Home</a>
-        <div class="dropdown-container">
-          <button class="cursor-pointer" id="dropdown-btn">
+        <div class="dropdown-container" id="myDropdown">
+          <button class="dropdown-btn cursor-pointer">
             <span class="flex items-center justify-between gap-2"
               >Service
               <img
@@ -29,17 +29,11 @@
           </button>
           <ul
             id="dropdown-menu"
-            class="dropdown-menu absolute top-17 right-0 w-[320px] hidden"
+            class="dropdown-content absolute top-17 right-0 w-[320px] hidden"
           >
-            <li class="dropdown-items">
-              <a href="./pages/find-apartment.html">Find an Apartment</a>
-            </li>
-            <li class="dropdown-items">
-              <a href="./pages/find-roomie.html"> Find a Roomamte</a>
-            </li>
-            <li class="dropdown-items">
-              <a href="./pages/find-renter.html">FInd a Flatmate</a>
-            </li>
+            <li><a href="./pages/find-apartment.html">Find an Apartment</a></li>
+            <li><a href="./pages/find-roomie.html"> Find a Roomamte</a></li>
+            <li><a href="./pages/find-renter.html">FInd a Flatmate</a></li>
           </ul>
         </div>
         <a href="./pages/about-us.html">About</a>
@@ -48,7 +42,9 @@
       <div
         class="bg-[#223448] text-white rounded-full w-37 h-11 flex items-center justify-center px-3.75 py-1"
       >
-        <a class="registerRoute text-white" href="#">Find your home</a>
+        <a class="registerRoute text-white" href="./register.html"
+          >Find your home</a
+        >
       </div>
     </header>
     <main>
@@ -64,21 +60,65 @@
           </p>
         </div>
         <div class="get-a-space-container">
-          <img src="./assets/images/3d-rendering-house-model-1.png" alt="" />
           <div class="two-con">
-            <div class="fia-links w-[70%]">
+            <div class="fia-links">
               <a class="find-apartment" href="./pages/find-apartment.html"
                 >Find an Apartment</a
               >
               <a href="./pages/find-renter.html">List an Apartment</a>
-              <a href="./pages/find-roomie.html">Find a Roomate</a>
+              <a href="./pages/find-roomie.html">Find a roommate</a>
             </div>
-            <div class="apartment-locations w-[90%]">
-              <div class="apartment-locations-frame">
-                <div></div>
-                <div></div>
-                <div></div>
+            <div class="apartment-locations m-auto h-27 rounded-[20px] p-5">
+              <div class="select-div w-full">
+                <p class="text-[14px] text-[#7c7c7c]">Location</p>
+                <select
+                  id="state"
+                  name="states"
+                  class="w-full bg-[#f5f5f5] h-11 cursor-pointer"
+                >
+                  <option value="abia">Abia</option>
+                  <option value="adamawa">Adamawa</option>
+                  <option value="akwa-ibom">Akwa ibom</option>
+                  <option value="lagos" selected>lagos</option>
+                  <option value="abuja">Abuja</option>
+                  <option value="delta">Delta</option>
+                </select>
               </div>
+              <div class="select-div">
+                <p class="text-[14px] text-[#7c7c7c]">Budget</p>
+                <select
+                  name="budget"
+                  id="budget"
+                  class="w-full bg-[#f5f5f5] h-11 cursor-pointer"
+                >
+                  <option value="">100k - 200k</option>
+                  <option value="" selected>200 - 400k</option>
+                  <option value="">400 - 600k</option>
+                  <option value="">600 - 1M</option>
+                  <option value="">1M -2M</option>
+                  <option value="">2M - 5M</option>
+                  <option value="">%M & above</option>
+                </select>
+              </div>
+              <div class="select-div">
+                <p class="text-[14px] text-[#7c7c7c]">Apatment Type</p>
+                <select
+                  name="apartment-type"
+                  id="apartment-type"
+                  class="w-full bg-[#f5f5f5] h-11 cursor-pointer"
+                >
+                  <option value="" selected disabled>Show all</option>
+                  <option value="">Apartments / Flats</option>
+                  <option value="">Self-contained rooms</option>
+                  <option value="">Shared Apartments</option>
+                  <option value="">Detached Houses</option>
+                  <option value="">Semi-detatched Houses</option>
+                  <option value="">Duplexes</option>
+                  <option value="">Bungalows</option>
+                  <option value="">Serviced Apartments</option>
+                </select>
+              </div>
+              <div class="search-div"><a href="./register.html">Search</a></div>
             </div>
           </div>
         </div>
@@ -103,7 +143,7 @@
               >
               <a
                 class="registerRoute bg-[#223448] text-white rounded-full flex items-center justify-center text-[1.1rem] max-w-37.5 h-13.5 mt-4"
-                href="#"
+                href="./register.html"
                 >Get Started</a
               >
             </div>
@@ -136,7 +176,7 @@
               >
               <a
                 class="registerRoute bg-[#223448] text-white rounded-full flex items-center justify-center text-[1.1rem] max-w-37.5 h-13.5 mt-4"
-                href="#"
+                href="./register.html"
                 >Get Started</a
               >
             </div>
@@ -155,7 +195,7 @@
               >
               <a
                 class="registerRoute bg-[#223448] text-white rounded-full flex items-center justify-center text-[1.1rem] max-w-37.5 h-13.5 mt-[0.8rem]"
-                href="#"
+                href="./register.html"
                 >Get Started</a
               >
             </div>
@@ -273,7 +313,7 @@
           <div class="post">
             <p class="text-[#ababab] font-light">Featured Post</p>
             <h2>Explore our properties</h2>
-            <a class="registerRoute" href="#">Explore</a>
+            <a class="registerRoute" href="./register.html">Explore</a>
           </div>
           <div class="discover">
             <p>
@@ -324,7 +364,7 @@
               <div class="flex items-center justify-evenly gap-10 py-4">
                 <a
                   class="registerRoute flex items-center justify-center gap-2 text-white bg-[#223448] h-11 w-full rounded-full text-xs"
-                  href="#"
+                  href="./register.html"
                   ><img
                     class="w-4"
                     src="./assets/images/tel.png"
@@ -332,7 +372,7 @@
                   />Contact the house agent</a
                 ><a
                   class="registerRoute w-18 h-9 bg-[#00000033] flex items-center justify-center rounded-full"
-                  href="#"
+                  href="./register.html"
                   ><img
                     class="w-4 h-4"
                     src="./assets/images/message.png"
@@ -380,7 +420,7 @@
               <div class="flex items-center justify-evenly gap-10 py-4">
                 <a
                   class="registerRoute flex items-center justify-center gap-2 text-white bg-[#223448] h-11 w-full rounded-full text-xs"
-                  href="#"
+                  href="./register.html"
                   ><img
                     class="w-4"
                     src="./assets/images/tel.png"
@@ -388,7 +428,7 @@
                   />Contact the house agent</a
                 ><a
                   class="registerRoute w-18 h-9 bg-[#00000033] flex items-center justify-center rounded-full"
-                  href="#"
+                  href="./register.html"
                   ><img
                     class="w-4 h-4"
                     src="./assets/images/message.png"
@@ -436,7 +476,7 @@
               <div class="flex items-center justify-evenly gap-10 py-4">
                 <a
                   class="registerRoute flex items-center justify-center gap-2 text-white bg-[#223448] h-11 w-full rounded-full text-xs"
-                  href="#"
+                  href="./register.html"
                   ><img
                     class="w-4"
                     src="./assets/images/tel.png"
@@ -444,7 +484,7 @@
                   />Contact the house agent</a
                 ><a
                   class="registerRoute w-18 h-9 bg-[#00000033] flex items-center justify-center rounded-full"
-                  href="#"
+                  href="./register.html"
                   ><img
                     class="w-4 h-4"
                     src="./assets/images/message.png"
@@ -492,7 +532,7 @@
               <div class="flex items-center justify-evenly gap-10 py-4">
                 <a
                   class="registerRoute flex items-center justify-center gap-2 text-white bg-[#223448] h-11 w-full rounded-full text-xs"
-                  href="#"
+                  href="./register.html"
                   ><img
                     class="w-4"
                     src="./assets/images/tel.png"
@@ -500,7 +540,7 @@
                   />Contact the house agent</a
                 ><a
                   class="registerRoute w-18 h-9 bg-[#00000033] flex items-center justify-center rounded-full"
-                  href="#"
+                  href="./register.html"
                   ><img class="w-4" src="./assets/images/message.png" alt=""
                 /></a>
               </div>
@@ -545,7 +585,7 @@
               <div class="flex items-center justify-evenly gap-10 py-4">
                 <a
                   class="registerRoute flex items-center justify-center gap-2 text-white bg-[#223448] h-11 w-full rounded-full text-xs"
-                  href="#"
+                  href="./register.html"
                   ><img
                     class="w-4"
                     src="./assets/images/tel.png"
@@ -553,7 +593,7 @@
                   />Contact the house agent</a
                 ><a
                   class="registerRoute w-18 h-9 bg-[#00000033] flex items-center justify-center rounded-full"
-                  href="#"
+                  href="./register.html"
                 >
                   <img class="w-4 h-4" src="./assets/images/message.png" alt=""
                 /></a>
@@ -599,7 +639,7 @@
               <div class="flex items-center justify-evenly gap-10 py-4">
                 <a
                   class="registerRoute flex items-center justify-center gap-2 text-white bg-[#223448] h-11 w-full rounded-full text-xs"
-                  href="#"
+                  href="./register.html"
                   ><img
                     class="w-4"
                     src="./assets/images/tel.png"
@@ -607,7 +647,7 @@
                   />Contact the house agent</a
                 ><a
                   class="registerRoute w-18 h-9 bg-[#00000033] flex items-center justify-center rounded-full"
-                  href="#"
+                  href="./register.html"
                   ><img
                     class="w-4 h-4"
                     src="./assets/images/message.png"
@@ -619,92 +659,154 @@
         </div>
       </section>
       <!-- Reviews -->
-      <section class="carousel">
-        <!-- carousel cards -->
-        <div class="carousel__content grid">
-          <article class="carousel__card bg-[#f5f5f5] w-full h-105">
-            <q class="w-66.25">
-              I found a clean, affordable apartment in less than a week. I liked
-              that the listings were verified. It saved me from wasting time and
-              money on fake agents.
-            </q>
-            <div class="profile-box flex items-center gap-4">
-              <img src="assets/images/review-image-1.png" alt="" />
-              <div>
-                <h3 class="name">Alex Carter</h3>
-                <p class="profession">Product Designer, Base</p>
-              </div>
+      <section class="testimonials-section">
+        <div>
+          <div class="testimonial-heading">
+            <p class="text-4">Testimonials</p>
+            <h2 class="text-4xl font-medium">Our customer reviews</h2>
+            <p>
+              See what customers are saying about their experience with Homely
+            </p>
+          </div>
+          <div class="review-frame" aria-label="Customer Reviews">
+            <div id="review-container" class="review-track">
+              <article class="review-card clone w-full">
+                <q>
+                  I found a clean, affordable apartment in less than a week. I
+                  liked that the listings were verified. It saved me from
+                  wasting time and money on fake agents.
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="./assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Alex Carter</p>
+                    <p class="title">Product Designer, Base</p>
+                  </div>
+                </div>
+              </article>
+              <!-- clone above -->
+              <article class="review-card w-full">
+                <q class="review-text">
+                  I found a clean, affordable apartment in less than a week. I
+                  liked that the listings were verified. It saved me from
+                  wasting time and money on fake agents.
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="./assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Alex Carter</p>
+                    <p class="title">Product Designer, Base</p>
+                  </div>
+                </div>
+              </article>
+              <article class="review-card w-full">
+                <q>
+                  Very smooth experience from start to finish. From searching to
+                  scheduling a viewing, everything was simple and clear.
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="./assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Jordan Kim</p>
+                    <p class="title">Frontend Engineer, Atlas</p>
+                  </div>
+                </div>
+              </article>
+              <article class="review-card w-full">
+                <q>
+                  The roommate matching actually works. I was worried about
+                  living with a stranger, but the lifestyle matching helped a
+                  lot. We get along really well..
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="./assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Daniel White</p>
+                    <p class="title">Product Designer, Nova</p>
+                  </div>
+                </div>
+              </article>
+              <article class="review-card w-full">
+                <q>
+                  Finally, a housing platform I can trust. No spam, no random
+                  calls. I could chat with the landlord before going for
+                  inspection.
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="./assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Alex Carter</p>
+                    <p class="title">Product Designer, Base</p>
+                  </div>
+                </div>
+              </article>
+              <article class="review-card w-full">
+                <q>
+                  I found a clean, affordable apartment in less than a week. I
+                  liked that the listings were verified. It saved me from
+                  wasting time and money on fake agents.
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="./assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Alex Carter</p>
+                    <p class="title">Product Designer, Base</p>
+                  </div>
+                </div>
+              </article>
+              <article class="review-card w-full">
+                <q>
+                  I found a clean, affordable apartment in less than a week. I
+                  liked that the listings were verified. It saved me from
+                  wasting time and money on fake agents.
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="./assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Alex Carter</p>
+                    <p class="title">Product Designer, Base</p>
+                  </div>
+                </div>
+              </article>
+              <article class="review-card clone w-full">
+                <q>
+                  I found a clean, affordable apartment in less than a week. I
+                  liked that the listings were verified. It saved me from
+                  wasting time and money on fake agents.
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="./assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Alex Carter</p>
+                    <p class="title">Product Designer, Base</p>
+                  </div>
+                </div>
+              </article>
+              <!-- Duplicate irst article-review-card -->
+              <article class="review-card clone w-full">
+                <q class="review-text">
+                  I found a clean, affordable apartment in less than a week. I
+                  liked that the listings were verified. It saved me from
+                  wasting time and money on fake agents.
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="./assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Alex Carter</p>
+                    <p class="title">Product Designer, Base</p>
+                  </div>
+                </div>
+              </article>
             </div>
-          </article>
-          <article class="carousel__card bg-[#f5f5f5] w-full">
-            <q class="w-66.25">
-              Very smooth experience from start to finish. From searching to
-              scheduling a viewing, everything was simple and clear.
-            </q>
-            <div class="profile-box flex items-center gap-4">
-              <img src="assets/images/review-image-1.png" alt="" />
-              <div>
-                <h3 class="name">ALex Crter</h3>
-                <p class="profession">Product Designer, Base</p>
-              </div>
+            <div class="controls">
+              <button class="nav-btn" id="prevBtn" onclick="prevSlide()">
+                <img src="./assets/images/chevron-left (1).svg" alt="" />
+              </button>
+              <button class="nav-btn" id="nextBtn" onclick="nextSlide()">
+                <img src="./assets/images/chevron-right (1).svg" alt="" />
+              </button>
             </div>
-          </article>
-          <article class="carousel__card w-full bg-[#f5f5f5]">
-            <q class="w-66.25">
-              I found a clean, affordable apartment in less than a week. I liked
-              that the listings were verified. It saved me from wasting time and
-              money on fake agents.
-            </q>
-            <div class="profile-box flex items-center gap-4">
-              <img src="assets/images/review-image-1.png" alt="" />
-              <div>
-                <h3 class="name">ALex Crter</h3>
-                <p class="profession">Product Designer, Base</p>
-              </div>
-            </div>
-          </article>
-          <article class="carousel__card w-full bg-[#f5f5f5]">
-            <q class="w-66.25">
-              I found a clean, affordable apartment in less than a week. I liked
-              that the listings were verified. It saved me from wasting time and
-              money on fake agents.
-            </q>
-            <div class="profile-box flex items-center gap-4">
-              <img src="assets/images/review-image-1.png" alt="" />
-              <div>
-                <h3 class="name">ALex Crter</h3>
-                <p class="profession">Product Designer, Base</p>
-              </div>
-            </div>
-          </article>
-          <article class="carousel__card w-full bg-[#f5f5f5]">
-            <q class="w-66.25">
-              I found a clean, affordable apartment in less than a week. I liked
-              that the listings were verified. It saved me from wasting time and
-              money on fake agents.
-            </q>
-            <div class="profile-box flex items-center gap-4">
-              <img src="assets/images/review-image-1.png" alt="" />
-              <div>
-                <h3 class="name">ALex Crter</h3>
-                <p class="profession">Product Designer, Base</p>
-              </div>
-            </div>
-          </article>
-          <article class="carousel__card w-full bg-[#f5f5f5]">
-            <q class="w-66.25">
-              I found a clean, affordable apartment in less than a week. I liked
-              that the listings were verified. It saved me from wasting time and
-              money on fake agents.
-            </q>
-            <div class="profile-box flex items-center gap-4">
-              <img src="assets/images/review-image-1.png" alt="" />
-              <div>
-                <h3 class="name">ALex Crter</h3>
-                <p class="profession">Product Designer, Base</p>
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
       </section>
       <!--subscribe to our newsletter  -->
@@ -740,12 +842,12 @@
             <div class="flex mt-auto gap-4">
               <a
                 class="registerRoute flex items-center justify-center pt-1 pr-3.75 pb-1 pl-3.75 bg-[#223448] rounded-full max-w-37 h-11 capitalize text-[#e9e0cf]"
-                href="#"
+                href="./register.html"
                 >find apartment</a
               >
               <a
                 class="registerRoute flex items-center justify-center bg-[#00000033] max-w-43.25 h-11 text pt-1 pr-3.75 pb-1 pl-3.75 text-[#223448] rounded-full"
-                href="#"
+                href="./register.html"
                 >List an apartment</a
               >
             </div>
@@ -924,7 +1026,6 @@
         </div>
       </div>
     </footer>
-    <script src="assets/scripts/faq.js"></script>
     <script src="assets/scripts/main.js"></script>
   </body>
 </html>

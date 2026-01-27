@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Find an apartment</title>
     <link rel="stylesheet" href="../dist/output.css" />
+    <link rel="stylesheet" href="../src/styles/main.css" />
   </head>
   <body>
     <header class="header w-full flex justify-between p-4">
@@ -12,27 +13,23 @@
       </div>
       <nav class="flex items-center gap-4 text-[#7c7c7c]">
         <a href="../index.html">Home</a>
-        <div class="relative">
-          <button class="dropdown-btn">
-            <img src="/" alt="" />
-            <span class="flex items-center gap-2"
+        <div class="dropdown-container" id="myDropdown">
+          <button class="dropdown-btn cursor-pointer">
+            <span class="flex items-center justify-between gap-2"
               >Service
               <img
-                src="../assets/images/dropdown-chevron.png"
+                src="./assets/images/dropdown-chevron.png"
                 class="w-4"
                 alt=""
             /></span>
           </button>
-          <ul id="dropdown-menu" class="hidden dropdown">
-            <li>
-              <a href="./find-apartment.html">Find an Apartment</a>
-            </li>
-            <li>
-              <a href="./find-roomie.html"> Find a Roomamte</a>
-            </li>
-            <li>
-              <a href="./find-renter.html">FInd a Flatmate</a>
-            </li>
+          <ul
+            id="dropdown-menu"
+            class="dropdown-content absolute top-17 right-0 w-[320px] hidden"
+          >
+            <li><a href="./pages/find-apartment.html">Find an Apartment</a></li>
+            <li><a href="./pages/find-roomie.html"> Find a Roomamte</a></li>
+            <li><a href="./pages/find-renter.html">FInd a Flatmate</a></li>
           </ul>
         </div>
         <a href="./about-us.html">About</a>
@@ -58,7 +55,7 @@
         </div>
         <div class="pb-20">
           <div
-            class="bg-[#f5f5f5] max-w-141.25 m-auto flex justify-between items-center p-5 rounded-t-lg"
+            class="bg-[#f5f5f5] w-[40%] m-auto flex justify-between items-center p-5 rounded-t-lg"
           >
             <a
               class="flex items-center justify-center w-45.75 h-11 bg-[#223448] text-white rounded-full"
@@ -72,19 +69,56 @@
             >
           </div>
           <div
-            class="flex justify-between m-auto max-w-246.5 bg-[#f5f5f5] h-27 rounded-[20px] p-5"
+            class="grid grid-cols-3 gap-5 justify-between m-auto w-[70%] bg-[#f5f5f5] h-27 rounded-[20px] p-5"
           >
-            <div>
-              <p class="text-[12px] text-[#7c7c7c]">Location</p>
-              <div></div>
+            <div class="w-full">
+              <p class="text-[14px] text-[#7c7c7c]">Location</p>
+              <select
+                id="state"
+                name="states"
+                class="w-full bg-white h-11 cursor-pointer"
+              >
+                <option value="abia">Abia</option>
+                <option value="adamawa">Adamawa</option>
+                <option value="akwa-ibom">Akwa ibom</option>
+                <option value="lagos" selected>lagos</option>
+                <option value="abuja">Abuja</option>
+                <option value="delta">Delta</option>
+              </select>
             </div>
             <div>
-              <p class="text-[12px] text-[#7c7c7c]">Budget</p>
-              <div></div>
+              <p class="text-[14px] text-[#7c7c7c]">Budget</p>
+              <select
+                name="budget"
+                id="budget"
+                class="w-full bg-white h-11 cursor-pointer"
+              >
+                <option value="">100k - 200k</option>
+                <option value="" selected>200 - 400k</option>
+                <option value="">400 - 600k</option>
+                <option value="">600 - 1M</option>
+                <option value="">1M -2M</option>
+                <option value="">2M - 5M</option>
+                <option value="">%M & above</option>
+              </select>
             </div>
             <div>
-              <p class="text-[12px] text-[#7c7c7c]">Apatment Type</p>
-              <div></div>
+              <p class="text-[14px] text-[#7c7c7c]">Apatment Type</p>
+              <select
+                name="apartment-type"
+                id="apartment-type"
+                class="w-full bg-white h-11 cursor-pointer"
+              >
+                <option value="" selected disabled>Show all</option>
+                <option value="">Apartments / Flats</option>
+                <option value="">Self-contained rooms</option>
+                <option value="">Shared Apartments</option>
+                <option value="">Detached Houses</option>
+                <option value="">Semi-detatched Houses</option>
+                <option value="">Duplexes</option>
+                <option value="">Bungalows</option>
+                <option value="">Serviced Apartments</option>
+              </select>
             </div>
           </div>
         </div>
@@ -1135,6 +1169,6 @@
         </div>
       </div>
     </footer>
-    <script src="/src/scripts/faq.js"></script>
+    <script src="../assets/scripts/main.js"></script>
   </body>
 </html>

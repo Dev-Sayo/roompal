@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
     <link rel="stylesheet" href="../dist/output.css" />
+    <link rel="stylesheet" href="../src/styles/contact.css" />
+    <link rel="stylesheet" href="../src/styles/main.css" />
   </head>
   <body>
     <header class="header w-full flex justify-between p-4">
@@ -12,36 +14,33 @@
       </div>
       <nav class="flex items-center gap-4 text-[#7c7c7c]">
         <a href="../index.html">Home</a>
-        <div class="relative">
-          <button class="dropdown-btn">
-            <img src="/" alt="" />
-            <span class="flex items-center gap-2"
+        <div class="dropdown-container" id="myDropdown">
+          <button class="dropdown-btn cursor-pointer">
+            <span class="flex items-center justify-between gap-2"
               >Service
               <img
-                src="../assets/images/dropdown-chevron.png"
+                src="./assets/images/dropdown-chevron.png"
                 class="w-4"
                 alt=""
             /></span>
           </button>
-          <ul id="dropdown-menu" class="hidden dropdown">
-            <li>
-              <a href="./find-apartment.html">Find an Apartment</a>
-            </li>
-            <li>
-              <a href="./find-roomie.html"> Find a Roomamte</a>
-            </li>
-            <li>
-              <a href="./find-renter.html">FInd a Flatmate</a>
-            </li>
+          <ul
+            id="dropdown-menu"
+            class="dropdown-content absolute top-17 right-0 w-[320px] hidden"
+          >
+            <li><a href="./pages/find-apartment.html">Find an Apartment</a></li>
+            <li><a href="./pages/find-roomie.html"> Find a Roomamte</a></li>
+            <li><a href="./pages/find-renter.html">FInd a Flatmate</a></li>
           </ul>
         </div>
+        >
         <a href="./about-us.html">About</a>
         <a href="./contact-us.html">Contact</a>
       </nav>
       <div
         class="bg-[#223448] text-white rounded-full w-37 h-11 flex items-center justify-center px-3.75 py-1"
       >
-        <a class="text-white" href="#">Find your home</a>
+        <a class="text-white" href="../register.html">Find your home</a>
       </div>
     </header>
     <main>
@@ -92,7 +91,7 @@
                 <div class="input-box mb-10">
                   <label class="flex flex-col pb-2" for="name">Name</label>
                   <input
-                    class="w-full h-10 border border-gray-300 rounded-lg bg-[#f5f5f5] p-3"
+                    class="w-full h-10 border border-gray-300 outline-0 border-none rounded-lg bg-[#f5f5f5] p-3"
                     type="text"
                     placeholder="Jacob Moore"
                   />
@@ -158,12 +157,12 @@
             <div class="flex mt-auto gap-4">
               <a
                 class="user-link flex items-center justify-center pt-1 pr-3.75 pb-1 pl-3.75 bg-[#223448] rounded-full w-37 h-11 capitalize text-[#e9e0cf]"
-                href="#"
+                href="../register.html"
                 >find apartment</a
               >
               <a
                 class="flex items-center justify-center bg-[#00000033] w-43.25 h-11 text pt-1 pr-3.75 pb-1 pl-3.75 text-[#223448] rounded-full"
-                href="#"
+                href="../register.html"
                 >List an apartment</a
               >
             </div>
@@ -299,13 +298,12 @@
       </section>
     </main>
     <footer class="h-full">
-      <div class="infinite relative">
-        <img
-          class="absolute w-49.25 h-118.5"
-          src="../assets/images/flame.png"
-          alt=""
-        />
-        <strong class="text-[200px]">ROOMPAL</strong>
+      <div class="infinite">
+        <img src="../assets/images/flame.png" alt="" />
+        <strong
+          class="w-full flex text-[64px] sm:text-[100px] md:text-[150px] lg:text-[200px]"
+          >ROOMPAL</strong
+        >
         <p>
           At ROOMPAL, we’re not just about properties , we’re about people. Born
           from a passion for helping individuals and families find their ideal
@@ -313,8 +311,8 @@
           journey as seamless and rewarding as possible.
         </p>
       </div>
-      <div class="flex justify-between w-[90%] mx-auto">
-        <div class="flex items-center gap-3">
+      <div class="footer-bottom w-[90%] mx-auto">
+        <div class="socials flex items-center gap-3">
           <a href="">
             <img class="w-6 h-6" src="../assets/images/Vector.png" alt=""
           /></a>
@@ -345,6 +343,6 @@
         </div>
       </div>
     </footer>
-    <script src="../scripts/faq.js"></script>
+    <script src="../assets/scripts/main.js"></script>
   </body>
 </html>

@@ -9,7 +9,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Roompal</title>
+    <title>Find an apartment</title>
     <link rel="stylesheet" href="./home.css" />
     <link rel="stylesheet" href="/frontend/dist/output.css" />
   </head>
@@ -19,7 +19,7 @@
         <a class="home" href="/frontend/index.html">roompal</a>
         <div class="link">
           <a href="">Find an Apartment</a>
-          <a href="">Find a Roomate</a>
+          <a href="">Find a roommate</a>
           <a href="">List a House </a>
           <a href="">Messages</a>
         </div>
@@ -53,9 +53,9 @@
         </div>
       </div>
       <div class="filter-section">
-        <form action="#">
+        <div class="filter-search-box">
           <input type="search" placeholder="Filter Options" />
-        </form>
+        </div>
         <div class="filter-dropdown-container">
           <div>
             <button class="filter-dropdown">
@@ -109,54 +109,59 @@
     <main class="bg-white h-full">
       <section class="m-10">
         <div class="hero-section rounded-2xl">
-          <div>
-            <h2 class="font-medium text-2xl">
-              Search for your Dream Apartment Here
-            </h2>
-            <div class="ranges-div bg-white flex justify-between items-center">
-              <div>
-                <p>Location</p>
-                <button class="location-select">
-                  Lagos
-                  <img
-                    class="chevron"
-                    src="/frontend/assets/images/light-chevron.png"
-                    alt=""
-                  />
-                </button>
-              </div>
-              <div>
-                <p>Pricing Range</p>
-                <div>
-                  <button class="location-select">
-                    Lagos
-                    <img
-                      class="chevron"
-                      src="/frontend/assets/images/light-chevron.png"
-                      alt=""
-                    />
-                  </button>
-                </div>
-              </div>
-              <div>
-                <p>Apartment Type</p>
-                <div>
-                  <button class="location-select">
-                    Lagos
-                    <img
-                      class="chevron"
-                      src="/frontend/assets/images/light-chevron.png"
-                      alt=""
-                    />
-                  </button>
-                </div>
-              </div>
-              <div><button class="search-btn mt-10">Search</button></div>
+          <h2 class="font-medium text-2xl">
+            Search for your Dream Apartment Here
+          </h2>
+          <div class="ranges-div bg-white flex justify-between items-center">
+            <div class="find-container">
+              <p>Location</p>
+              <select name="" id="find-apartment">
+                <option value="">Lagos</option>
+                <option value="">Abia</option>
+                <option value="">Abuja</option>
+                <option value="">Ibadan</option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+              </select>
             </div>
+            <div class="find-container">
+              <p>Pricing Range</p>
+              <select name="" id="find-apartment">
+                <option value="">Lagos</option>
+                <option value="">Abia</option>
+                <option value="">Abuja</option>
+                <option value="">Ibadan</option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+              </select>
+            </div>
+            <div class="find-container">
+              <p>Apartment Type</p>
+              <select name="" id="find-apartment">
+                <option value="">Lagos</option>
+                <option value="">Abia</option>
+                <option value="">Abuja</option>
+                <option value="">Ibadan</option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+              </select>
+            </div>
+            <div><button class="search-btn mt-10">Search</button></div>
           </div>
         </div>
       </section>
+      <section>
+        <div></div>
+      </section>
     </main>
-    <!-- <footer></footer> -->
   </body>
 </html>

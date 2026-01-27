@@ -3,7 +3,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Find a renter</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../dist/output.css" />
+    <link rel="stylesheet" href="../src/styles/main.css" />
   </head>
   <body class="m-0 p-0 border-box bg-white">
     <header class="header w-full flex justify-between p-4">
@@ -12,23 +13,28 @@
       </div>
       <nav class="flex items-center gap-4 text-[#7c7c7c]">
         <a href="../index.html">Home</a>
-        <div class="relative">
-          <button class="dropdown-btn">
-            <img src="/" alt="" />
-            <span class="flex items-center gap-2"
+        <div class="dropdown-container">
+          <button class="cursor-pointer" id="dropdown-btn">
+            <span class="flex items-center justify-between gap-2"
               >Service
-              <img src="../images/dropdown-chevron.png" class="w-4" alt=""
+              <img
+                src="../assets/images/dropdown-chevron.png"
+                class="w-4"
+                alt=""
             /></span>
           </button>
-          <ul id="dropdown-menu" class="hidden dropdown">
-            <li>
-              <a href="./find-apartment.html">Find an Apartment</a>
+          <ul
+            id="dropdown-menu"
+            class="dropdown-menu absolute top-17 right-0 w-[320px] hidden"
+          >
+            <li class="dropdown-items">
+              <a href="./pages/find-apartment.html">Find an Apartment</a>
             </li>
-            <li>
-              <a href="./find-roomie.html"> Find a Roomamte</a>
+            <li class="dropdown-items">
+              <a href="./pages/find-roomie.html"> Find a Roomamte</a>
             </li>
-            <li>
-              <a href="./find-renter.html">FInd a Flatmate</a>
+            <li class="dropdown-items">
+              <a href="./pages/find-renter.html">FInd a Flatmate</a>
             </li>
           </ul>
         </div>
@@ -155,7 +161,7 @@
             <div class="w-full">
               <img
                 class="w-full h-full object-cover"
-                src="../images/why-us-img-1.png"
+                src=" ../assets/images/why-us-img-1.png"
                 alt=""
               />
             </div>
@@ -164,7 +170,7 @@
             <div class="w-full">
               <img
                 class="w-full h-full object-cover"
-                src="../images/why-us-img-2.png"
+                src=" ../assets/images/why-us-img-2.png"
                 alt=""
               />
             </div>
@@ -198,15 +204,27 @@
               Subscribe to our newletter
             </h2>
             <div class="flex items-center gap-2.5">
-              <img class="h-5 w-5" src="../images/Vector-(5).png" alt="" />
+              <img
+                class="h-5 w-5"
+                src=" ../assets/images/Vector-(5).png"
+                alt=""
+              />
               <span class="text-[#7c7c7c]">Weekly updates</span>
             </div>
             <div class="flex items-center gap-2.5">
-              <img class="h-5 w-5" src="../images/Vector-(5).png" alt="" />
+              <img
+                class="h-5 w-5"
+                src=" ../assets/images/Vector-(5).png"
+                alt=""
+              />
               <span class="text-[#7c7c7c]">Early access our new listing</span>
             </div>
             <div class="flex items-center gap-2.5">
-              <img class="h-5 w-5" src="../images/Vector-(5).png" alt="" />
+              <img
+                class="h-5 w-5"
+                src=" ../assets/images/Vector-(5).png"
+                alt=""
+              />
               <span class="text-[#7c7c7c]">Exclusive content</span>
             </div>
             <div class="flex mt-auto gap-4">
@@ -226,7 +244,7 @@
           <div class="max-w-full">
             <img
               class="w-139.5 h-full rounded-2xl object-cover"
-              src="../images/flip-image.png"
+              src=" ../assets/images/flip-image.png"
               alt=""
             />
           </div>
@@ -251,7 +269,7 @@
                 <span class="faq-icon transition-transform duration-300">
                   <img
                     class="object-cover w-[16.7px] h-2.25"
-                    src="../images/chevron.png"
+                    src=" ../assets/images/chevron.png"
                     alt=""
                   />
                 </span>
@@ -273,7 +291,7 @@
                 <span class="faq-icon transition-transform duration-300">
                   <img
                     class="object-cover w-[16.7px] h-2.25"
-                    src="../images/chevron.png"
+                    src=" ../assets/images/chevron.png"
                     alt=""
                   />
                 </span>
@@ -295,7 +313,7 @@
                 <span class="faq-icon transition-transform duration-300"
                   ><img
                     class="object-cover w-[16.7px] h-2.25"
-                    src="../images/chevron.png"
+                    src=" ../assets/images/chevron.png"
                     alt=""
                 /></span>
               </button>
@@ -316,7 +334,7 @@
                 <span class="faq-icon transition-transform duration-300">
                   <img
                     class="object-cover w-[16.7px] h-2.25"
-                    src="../images/chevron.png"
+                    src=" ../assets/images/chevron.png"
                     alt=""
                   />
                 </span>
@@ -339,7 +357,7 @@
                 <span class="faq-icon transition-transform duration-300"
                   ><img
                     class="object-cover w-[16.7px] h-2.25"
-                    src="../images/chevron.png"
+                    src=" ../assets/images/chevron.png"
                     alt=""
                   />
                 </span>
@@ -358,7 +376,7 @@
     </main>
     <footer class="h-full bg-[#f5f5f5] mt-8">
       <div class="infinite">
-        <img src="../images/flame.png" alt="" />
+        <img src=" ../assets/images/flame.png" alt="" />
         <strong
           class="w-full uppercase flex sm:text-[48px] md:text-[150px] lg:text-[180px] 2xl:text-[200px] tracking-[5px]"
           >roompal</strong
@@ -373,15 +391,22 @@
       <div class="footer-bottom">
         <div class="flex items-center gap-2.5">
           <a href="">
-            <img class="w-[20.25px]" src="../images/Vector.png" alt="" />
+            <img
+              class="w-[20.25px]"
+              src=" ../assets/images/Vector.png"
+              alt=""
+            />
           </a>
           <a href="">
-            <img class="w-[20.25px]" src="../images/Vector-(1).png" alt=""
+            <img
+              class="w-[20.25px]"
+              src=" ../assets/images/Vector-(1).png"
+              alt=""
           /></a>
           <a href="">
             <img
               class="w-[20.25px] object-cover"
-              src="../images/InstagramLogo.png"
+              src=" ../assets/images/InstagramLogo.png"
               alt=""
           /></a>
         </div>
@@ -402,6 +427,6 @@
         </div>
       </div>
     </footer>
-    <script src="../js/faq.js"></script>
+    <script src="../assets/scripts/main.js"></script>
   </body>
 </html>

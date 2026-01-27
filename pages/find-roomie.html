@@ -2,8 +2,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Find Roomate</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Find roommate</title>
+    <link rel="stylesheet" href="../dist/output.css" />
+    <link rel="stylesheet" href="../src/styles/main.css" />
   </head>
   <body class="m-0 p-0 border-box bg-white">
     <header class="header w-full flex justify-between p-4">
@@ -14,23 +15,23 @@
         class="flex items-center justify-between gap-4 text-[#7c7c7c] md:flex"
       >
         <a href="/index.html">Home</a>
-        <div class="relative">
-          <button class="dropdown-btn">
-            <span class="flex items-center gap-2"
+        <div class="dropdown-container" id="myDropdown">
+          <button class="dropdown-btn cursor-pointer">
+            <span class="flex items-center justify-between gap-2"
               >Service
-              <img src="../images/dropdown-chevron.png" class="w-4" alt=""
+              <img
+                src="./assets/images/dropdown-chevron.png"
+                class="w-4"
+                alt=""
             /></span>
           </button>
-          <ul id="dropdown-menu" class="hidden">
-            <li>
-              <a href="./find-apartment.html">Find an Apartment</a>
-            </li>
-            <li>
-              <a href="./find-roomie.html"> Find a Roomamte</a>
-            </li>
-            <li>
-              <a href="./find-renter.html">FInd a Flatmate</a>
-            </li>
+          <ul
+            id="dropdown-menu"
+            class="dropdown-content absolute top-17 right-0 w-[320px] hidden"
+          >
+            <li><a href="./pages/find-apartment.html">Find an Apartment</a></li>
+            <li><a href="./pages/find-roomie.html"> Find a Roomamte</a></li>
+            <li><a href="./pages/find-renter.html">FInd a Flatmate</a></li>
           </ul>
         </div>
         <a href="./about-us.html">About</a>
@@ -43,7 +44,7 @@
       </div>
     </header>
     <main>
-      <!--Find Roomate here  -->
+      <!--Find roommate here  -->
       <section>
         <div class="pb-12 pt-8 w-full">
           <h1 class="text-[64px] font-medium text-center">
@@ -123,7 +124,7 @@
           </div>
         </div>
       </section>
-      <!-- Choose a roomate -->
+      <!-- Choose a roommate -->
       <section class="lg:py-24 md:py-8">
         <div class="flex flex-col justify-center items-center py-10">
           <p class="text-[#ababab] uppercase">Choose a Roommate</p>
@@ -136,7 +137,7 @@
           class="w-full max-w-7xl mx-auto grid grid-cols-2 max-[366px]:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-10 gap-x-6 p-4 sm:p-6 md:p-10"
         >
           <figure class="max-w-sm m-auto">
-            <img src="../images/avatar-1.png" alt="Modern apartment" />
+            <img src="../assets/images/avatar-1.png" alt="Modern apartment" />
             <figcaption class="flex justify-center flex-col">
               <p class="name pt-4 font-medium text-black text-center">
                 Owen Mitchell
@@ -145,17 +146,24 @@
               <div class="w-full flex items-center justify-center gap-5">
                 <span
                   class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
-                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/tel.png"
+                    alt="tel"
+                  />
                   Call</span
                 ><span
                   class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
-                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/message.png"
+                    alt=""
                 /></span>
               </div>
             </figcaption>
           </figure>
           <figure class="max-w-sm m-auto">
-            <img src="../images/avatar-2.png" alt="Modern apartment" />
+            <img src="../assets/images/avatar-2.png" alt="Modern apartment" />
             <figcaption class="flex justify-center flex-col">
               <p class="name pt-4 font-medium text-black text-center">
                 Lucas Grant
@@ -164,17 +172,24 @@
               <div class="w-full flex items-center justify-center gap-5">
                 <span
                   class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
-                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/tel.png"
+                    alt="tel"
+                  />
                   Call</span
                 ><span
                   class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
-                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/message.png"
+                    alt=""
                 /></span>
               </div>
             </figcaption>
           </figure>
           <figure class="max-w-sm m-auto">
-            <img src="../images/avatar-3.png" alt="Modern apartment" />
+            <img src="../assets/images/avatar-3.png" alt="Modern apartment" />
             <figcaption class="flex justify-center flex-col">
               <p class="name pt-4 font-medium text-black text-center">
                 Chloe Adams
@@ -183,17 +198,24 @@
               <div class="w-full flex items-center justify-center gap-5">
                 <span
                   class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
-                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/tel.png"
+                    alt="tel"
+                  />
                   Call</span
                 ><span
                   class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
-                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/message.png"
+                    alt=""
                 /></span>
               </div>
             </figcaption>
           </figure>
           <figure class="max-w-sm m-auto">
-            <img src="../images/avatar-4.png" alt="Modern apartment" />
+            <img src="../assets/images/avatar-4.png" alt="Modern apartment" />
             <figcaption class="flex justify-center flex-col">
               <p class="name pt-4 font-medium text-black text-center">
                 Grace Miller
@@ -202,17 +224,24 @@
               <div class="w-full flex items-center justify-center gap-5">
                 <span
                   class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
-                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/tel.png"
+                    alt="tel"
+                  />
                   Call</span
                 ><span
                   class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
-                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/message.png"
+                    alt=""
                 /></span>
               </div>
             </figcaption>
           </figure>
           <figure class="max-w-sm m-auto">
-            <img src="../images/avatar-2.png" alt="Modern apartment" />
+            <img src="../assets/images/avatar-2.png" alt="Modern apartment" />
             <figcaption class="flex justify-center flex-col">
               <p class="name pt-4 font-medium text-black text-center">
                 Lucas Grant
@@ -221,17 +250,24 @@
               <div class="w-full flex items-center justify-center gap-5">
                 <span
                   class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
-                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/tel.png"
+                    alt="tel"
+                  />
                   Call</span
                 ><span
                   class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
-                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/message.png"
+                    alt=""
                 /></span>
               </div>
             </figcaption>
           </figure>
           <figure class="max-w-sm m-auto">
-            <img src="../images/avatar-5.png" alt="Modern apartment" />
+            <img src="../assets/images/avatar-5.png" alt="Modern apartment" />
             <figcaption class="flex justify-center flex-col">
               <p class="name pt-4 font-medium text-black text-center">
                 Benjamin Ross
@@ -240,17 +276,24 @@
               <div class="w-full flex items-center justify-center gap-5">
                 <span
                   class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
-                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/tel.png"
+                    alt="tel"
+                  />
                   Call</span
                 ><span
                   class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
-                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/message.png"
+                    alt=""
                 /></span>
               </div>
             </figcaption>
           </figure>
           <figure class="max-w-sm m-auto">
-            <img src="../images/avatar-6.png" alt="Modern apartment" />
+            <img src="../assets/images/avatar-6.png" alt="Modern apartment" />
             <figcaption class="flex justify-center flex-col">
               <p class="name pt-4 font-medium text-black text-center">
                 Elijah Scott
@@ -259,17 +302,24 @@
               <div class="w-full flex items-center justify-center gap-5">
                 <span
                   class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
-                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/tel.png"
+                    alt="tel"
+                  />
                   Call</span
                 ><span
                   class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
-                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/message.png"
+                    alt=""
                 /></span>
               </div>
             </figcaption>
           </figure>
           <figure class="max-w-sm m-auto">
-            <img src="../images/avatar-7.png" alt="Modern apartment" />
+            <img src="../assets/images/avatar-7.png" alt="Modern apartment" />
             <figcaption class="flex justify-center flex-col">
               <p class="name pt-4 font-medium text-black text-center">
                 Scarlett Bennett
@@ -278,17 +328,24 @@
               <div class="w-full flex items-center justify-center gap-5">
                 <span
                   class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
-                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/tel.png"
+                    alt="tel"
+                  />
                   Call</span
                 ><span
                   class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
-                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/message.png"
+                    alt=""
                 /></span>
               </div>
             </figcaption>
           </figure>
           <figure class="max-w-sm m-auto">
-            <img src="../images/avatar-8.png" alt="Modern apartment" />
+            <img src="../assets/images/avatar-8.png" alt="Modern apartment" />
             <figcaption class="flex justify-center flex-col">
               <p class="name pt-4 font-medium text-black text-center">
                 Aria Collins
@@ -297,17 +354,24 @@
               <div class="w-full flex items-center justify-center gap-5">
                 <span
                   class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
-                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/tel.png"
+                    alt="tel"
+                  />
                   Call</span
                 ><span
                   class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
-                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/message.png"
+                    alt=""
                 /></span>
               </div>
             </figcaption>
           </figure>
           <figure class="max-w-sm m-auto">
-            <img src="../images/avatar-7.png" alt="Modern apartment" />
+            <img src="../assets/images/avatar-7.png" alt="Modern apartment" />
             <figcaption class="flex justify-center flex-col">
               <p class="name pt-4 font-medium text-black text-center">
                 Scarlett Bennett
@@ -316,15 +380,172 @@
               <div class="w-full flex items-center justify-center gap-5">
                 <span
                   class="bg-[#223448] text-white rounded-full w-[50%] h-11 flex items-center justify-center gap-2 py-sm px-xl"
-                  ><img class="w-4 h-4" src="../images/tel.png" alt="tel" />
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/tel.png"
+                    alt="tel"
+                  />
                   Call</span
                 ><span
                   class="w-14 h-10 bg-[#00000033] rounded-full py-sm px-xl flex items-center justify-center"
-                  ><img class="w-4 h-4" src="../images/message.png" alt=""
+                  ><img
+                    class="w-4 h-4"
+                    src="../assets/images/message.png"
+                    alt=""
                 /></span>
               </div>
             </figcaption>
           </figure>
+        </div>
+      </section>
+      <section class="testimonials-section">
+        <div>
+          <div class="testimonial-heading">
+            <p class="text-4">Testimonials</p>
+            <h2 class="text-4xl font-medium">Our customer reviews</h2>
+            <p>
+              See what customers are saying about their experience with Homely
+            </p>
+          </div>
+          <div class="review-frame" aria-label="Customer Reviews">
+            <div id="review-container" class="review-track">
+              <article class="review-card clone w-full">
+                <q>
+                  I found a clean, affordable apartment in less than a week. I
+                  liked that the listings were verified. It saved me from
+                  wasting time and money on fake agents.
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="../assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Alex Carter</p>
+                    <p class="title">Product Designer, Base</p>
+                  </div>
+                </div>
+              </article>
+              <!-- clone above -->
+              <article class="review-card w-full">
+                <q class="review-text">
+                  I found a clean, affordable apartment in less than a week. I
+                  liked that the listings were verified. It saved me from
+                  wasting time and money on fake agents.
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="../assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Alex Carter</p>
+                    <p class="title">Product Designer, Base</p>
+                  </div>
+                </div>
+              </article>
+              <article class="review-card w-full">
+                <q>
+                  Very smooth experience from start to finish. From searching to
+                  scheduling a viewing, everything was simple and clear.
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="../assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Jordan Kim</p>
+                    <p class="title">Frontend Engineer, Atlas</p>
+                  </div>
+                </div>
+              </article>
+              <article class="review-card w-full">
+                <q>
+                  The roommate matching actually works. I was worried about
+                  living with a stranger, but the lifestyle matching helped a
+                  lot. We get along really well..
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="../assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Daniel White</p>
+                    <p class="title">Product Designer, Nova</p>
+                  </div>
+                </div>
+              </article>
+              <article class="review-card w-full">
+                <q>
+                  Finally, a housing platform I can trust. No spam, no random
+                  calls. I could chat with the landlord before going for
+                  inspection.
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="../assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Alex Carter</p>
+                    <p class="title">Product Designer, Base</p>
+                  </div>
+                </div>
+              </article>
+              <article class="review-card w-full">
+                <q>
+                  I found a clean, affordable apartment in less than a week. I
+                  liked that the listings were verified. It saved me from
+                  wasting time and money on fake agents.
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="../assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Alex Carter</p>
+                    <p class="title">Product Designer, Base</p>
+                  </div>
+                </div>
+              </article>
+              <article class="review-card w-full">
+                <q>
+                  I found a clean, affordable apartment in less than a week. I
+                  liked that the listings were verified. It saved me from
+                  wasting time and money on fake agents.
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="../assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Alex Carter</p>
+                    <p class="title">Product Designer, Base</p>
+                  </div>
+                </div>
+              </article>
+              <article class="review-card clone w-full">
+                <q>
+                  I found a clean, affordable apartment in less than a week. I
+                  liked that the listings were verified. It saved me from
+                  wasting time and money on fake agents.
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="../assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Alex Carter</p>
+                    <p class="title">Product Designer, Base</p>
+                  </div>
+                </div>
+              </article>
+              <!-- Duplicate irst article-review-card -->
+              <article class="review-card clone w-full">
+                <q class="review-text">
+                  I found a clean, affordable apartment in less than a week. I
+                  liked that the listings were verified. It saved me from
+                  wasting time and money on fake agents.
+                </q>
+                <div class="profile flex items-center gap-4">
+                  <img src="../assets/images/man-1.png" alt="" />
+                  <div>
+                    <p class="name">Alex Carter</p>
+                    <p class="title">Product Designer, Base</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="controls">
+              <button class="nav-btn" id="prevBtn" onclick="prevSlide()">
+                <img src="../assets/images/chevron-left (1).svg" alt="" />
+              </button>
+              <button class="nav-btn" id="nextBtn" onclick="nextSlide()">
+                <img src="../assets/images/chevron-right (1).svg" alt="" />
+              </button>
+            </div>
+          </div>
         </div>
       </section>
       <!--subscribe to our newsletter  -->
@@ -339,18 +560,21 @@
             <span class="flex items-center text-[#7c7c7c] gap-2.5 py-2"
               ><img
                 class="h-5 w-5"
-                src="../images/Vector-(5).png"
+                src="../assets/images/Vector-(5).png"
                 alt=""
               />Weekly updates</span
             >
             <span class="flex items-center text-[#7c7c7c] gap-2.5 pb-2">
-              <img class="h-5 w-5" src="../images/Vector-(5).png" alt="" />Early
-              access our new listing
+              <img
+                class="h-5 w-5"
+                src="../assets/images/Vector-(5).png"
+                alt=""
+              />Early access our new listing
             </span>
             <span class="flex items-center text-[#7c7c7c] gap-2.5"
               ><img
                 class="h-5 w-5"
-                src="../images/Vector-(5).png"
+                src="../assets/images/Vector-(5).png"
                 alt=""
               />Exclusive content</span
             >
@@ -370,7 +594,7 @@
           <div class="w-full">
             <img
               class="w-full h-full rounded-2xl object-cover"
-              src="../images/flip-image.png"
+              src="../assets/images/flip-image.png"
               alt=""
             />
           </div>
@@ -395,7 +619,7 @@
                 <span class="faq-icon transition-transform duration-300">
                   <img
                     class="object-cover w-[16.7px] h-2.25"
-                    src="../images/chevron.png"
+                    src="../assets/images/chevron.png"
                     alt=""
                   />
                 </span>
@@ -417,7 +641,7 @@
                 <span class="faq-icon transition-transform duration-300">
                   <img
                     class="object-cover w-[16.7px] h-2.25"
-                    src="../images/chevron.png"
+                    src="../assets/images/chevron.png"
                     alt=""
                   />
                 </span>
@@ -439,7 +663,7 @@
                 <span class="faq-icon transition-transform duration-300"
                   ><img
                     class="object-cover w-[16.7px] h-2.25"
-                    src="../images/chevron.png"
+                    src="../assets/images/chevron.png"
                     alt=""
                 /></span>
               </button>
@@ -460,7 +684,7 @@
                 <span class="faq-icon transition-transform duration-300">
                   <img
                     class="object-cover w-[16.7px] h-2.25"
-                    src="../images/chevron.png"
+                    src="../assets/images/chevron.png"
                     alt=""
                   />
                 </span>
@@ -483,7 +707,7 @@
                 <span class="faq-icon transition-transform duration-300"
                   ><img
                     class="object-cover w-[16.7px] h-2.25"
-                    src="../images/chevron.png"
+                    src="../assets/images/chevron.png"
                     alt=""
                   />
                 </span>
@@ -500,14 +724,12 @@
         </div>
       </section>
     </main>
-    <footer class="bg-[#f5f5f5] mt-8">
+    <footer class="h-full">
       <div class="infinite">
-        <div class="w-49 h-118.5">
-          <img src="../images/flame.png" alt="" />
-        </div>
+        <img src="../assets/images/flame.png" alt="" />
         <strong
-          class="w-full uppercase flex sm:text-[48px] md:text-[150px] lg:text-[180px] 2xl:text-[200px] tracking-[5px]"
-          >roompal</strong
+          class="w-full flex text-[64px] sm:text-[100px] md:text-[150px] lg:text-[200px]"
+          >ROOMPAL</strong
         >
         <p>
           At ROOMPAL, we’re not just about properties , we’re about people. Born
@@ -516,18 +738,18 @@
           journey as seamless and rewarding as possible.
         </p>
       </div>
-      <div class="footer-bottom">
-        <div class="flex items-center gap-2.5">
+      <div class="footer-bottom w-[90%] mx-auto">
+        <div class="socials flex items-center gap-3">
           <a href="">
-            <img class="w-[20.25px]" src="../images/Vector.png" alt="" />
-          </a>
+            <img class="w-6 h-6" src="../assets/images/Vector.png" alt=""
+          /></a>
           <a href="">
-            <img class="w-[20.25px]" src="../images/Vector-(1).png" alt=""
+            <img class="w-6 h-6" src="../assets/images/Vector-(1).png" alt=""
           /></a>
           <a href="">
             <img
-              class="w-[20.25px] object-cover"
-              src="../images/InstagramLogo.png"
+              class="w-6 h-6"
+              src="../assets/images/InstagramLogo.png"
               alt=""
           /></a>
         </div>
@@ -548,6 +770,6 @@
         </div>
       </div>
     </footer>
-    <script src="/src/scripts/faq.js"></script>
+    <script src="../assets/scripts/main.js"></script>
   </body>
 </html>
