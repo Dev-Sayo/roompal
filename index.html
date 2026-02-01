@@ -9,44 +9,125 @@
     <link href="dist/output.css" rel="stylesheet" />
   </head>
   <body class="m-0 p-0 border-box bg-#f1f1f1">
-    <header class="header w-full flex justify-between p-4">
+    <header class="header w-full flex justify-between items-center p-4">
       <div class="uppercase font-bold text-[24px]">
         <a href="./index.html">roompal</a>
       </div>
+      <!-- Desktop Navigation -->
       <nav
         class="hidden items-center justify-between gap-4 text-[#7c7c7c] md:flex"
       >
         <a href="./index.html">Home</a>
-        <div class="dropdown-container" id="myDropdown">
+        <div class="dropdown-container relative" id="myDropdown">
           <button class="dropdown-btn cursor-pointer">
-            <span class="flex items-center justify-between gap-2"
-              >Service
+            <span class="flex items-center justify-between gap-2">
+              Service
               <img
                 src="./assets/images/dropdown-chevron.png"
                 class="w-4"
                 alt=""
-            /></span>
+              />
+            </span>
           </button>
           <ul
             id="dropdown-menu"
-            class="dropdown-content absolute top-17 right-0 w-[320px] hidden"
+            class="dropdown-content absolute top-full right-0 w-[320px] hidden mt-2"
           >
             <li><a href="./pages/find-apartment.html">Find an Apartment</a></li>
-            <li><a href="./pages/find-roomie.html"> Find a Roomamte</a></li>
-            <li><a href="./pages/find-renter.html">FInd a Flatmate</a></li>
+            <li><a href="./pages/find-roomie.html">Find a Roommate</a></li>
+            <li><a href="./pages/find-renter.html">Find a Flatmate</a></li>
           </ul>
         </div>
         <a href="./pages/about-us.html">About</a>
         <a href="./pages/contact-us.html">Contact</a>
       </nav>
+      <!-- Desktop CTA Button -->
       <div
-        class="bg-[#223448] text-white rounded-full w-37 h-11 flex items-center justify-center px-3.75 py-1"
+        class="hidden md:flex bg-[#223448] text-white rounded-full h-11 items-center justify-center px-3.75 py-1"
       >
-        <a class="registerRoute text-white" href="./register.html"
+        <a
+          class="registerRoute text-white whitespace-nowrap"
+          href="./register.html"
           >Find your home</a
         >
       </div>
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden text-[#223448] focus:outline-none"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
     </header>
+    <nav
+      id="mobile-menu"
+      class="hidden md:hidden bg-white border-b border-gray-200"
+    >
+      <div class="flex flex-col p-4 space-y-4 text-[#7c7c7c]">
+        <a href="./index.html" class="hover:text-[#223448]">Home</a>
+        <!-- Mobile Dropdown -->
+        <div>
+          <button
+            id="mobile-dropdown-btn"
+            class="flex items-center justify-between w-full hover:text-[#223448]"
+          >
+            <span>Service</span>
+            <img
+              src="./assets/images/dropdown-chevron.png"
+              class="w-4"
+              alt=""
+            />
+          </button>
+          <ul id="mobile-dropdown-menu" class="hidden mt-2 space-y-2">
+            <li>
+              <a
+                href="./pages/find-apartment.html"
+                class="block hover:text-[#223448]"
+                >Find an Apartment</a
+              >
+            </li>
+            <li>
+              <a
+                href="./pages/find-roomie.html"
+                class="block hover:text-[#223448]"
+                >Find a Roommate</a
+              >
+            </li>
+            <li>
+              <a
+                href="./pages/find-renter.html"
+                class="block hover:text-[#223448]"
+                >Find a Flatmate</a
+              >
+            </li>
+          </ul>
+        </div>
+        <a href="./pages/about-us.html" class="hover:text-[#223448]">About</a>
+        <a href="./pages/contact-us.html" class="hover:text-[#223448]"
+          >Contact</a
+        >
+        <!-- Mobile CTA Button -->
+        <!-- <a
+          href="./register.html"
+          class="bg-[#223448] text-white rounded-full py-3 px-4 text-center"
+        >
+          Find your home
+        </a> -->
+      </div>
+    </nav>
+
     <main>
       <!-- hero section -->
       <section class="hero-section">
@@ -132,7 +213,7 @@
           <div
             class="wwd-card-parent w-full bg-[#f5f5f5] items-center flex flex-col p-6 rounded-[20px]"
           >
-            <div class="w-full flex flex-col p-2.5">
+            <div class="wwd-text w-full flex flex-col p-2.5">
               <p class="text-[#7c7c7c] uppercase text-[16px] pb-2">
                 performance
               </p>
@@ -165,7 +246,7 @@
                 alt=""
               />
             </div>
-            <div class="w-full flex flex-col p-2.5">
+            <div class="wwd-text w-full flex flex-col p-2.5">
               <p class="text-[#7c7c7c] uppercase text-[16px] pb-2">
                 Monitoring
               </p>
@@ -184,7 +265,7 @@
           <div
             class="wwd-card-parent w-full bg-[#f5f5f5] items-center flex flex-col p-6 rounded-[20px]"
           >
-            <div class="w-full flex flex-col p-2.5">
+            <div class="wwd-text w-full flex flex-col p-2.5">
               <p class="text-[#7c7c7c] uppercase text-[16px] pb-2">
                 performance
               </p>
@@ -214,14 +295,14 @@
         <div class="roompal-background w-[90%] mx-auto">
           <div class="w-full flex items-center gap-5 px-10">
             <p class="w-[50%] bg-white rounded-2xl h-3.25"></p>
-            <h2 class="roompal-h2">Roompal</h2>
+            <h2 class="text-white text-[100px]">Roompal</h2>
             <p class="w-[50%] bg-white rounded-2xl h-3.25"></p>
           </div>
         </div>
       </section>
       <!--Why us section  -->
       <section class="py-35">
-        <h2 class="text-3xl font-bold text-center pb-10">WHY US</h2>
+        <h2 class="lg:text-3xl font-bold text-center pb-10">WHY US</h2>
         <div class="w-[90%] border-2 border-[#e5e5e5] rounded-lg m-auto">
           <div
             class="why-us-parent grid items-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 sm:grid-cols-2 p-20"
@@ -234,7 +315,7 @@
               >
                 <img class="w-4 h-4.5" src="./assets/images/arrow.png" alt="" />
               </div>
-              <div>
+              <div class="why-us-text">
                 <p class="text-4xl font-semibold">x3</p>
                 <p class="text-2xl font-medium py-2">
                   Verified listings <br />
@@ -253,7 +334,7 @@
               >
                 <img class="w-4 h-4.5" src="./assets/images/arrow.png" alt="" />
               </div>
-              <div>
+              <div class="why-us-text">
                 <p class="text-4xl font-semibold">x5</p>
                 <p class="text-2xl font-medium py-2">
                   Real people, <br />
@@ -291,7 +372,7 @@
               >
                 <img class="w-4 h-4.5" src="./assets/images/arrow.png" alt="" />
               </div>
-              <div>
+              <div class="why-us-text">
                 <p class="text-4xl font-semibold">+3M</p>
                 <p class="text-2xl font-medium py-2">Built for safety</p>
                 <p class="w-45 text-[#7c7c7c]">
@@ -301,7 +382,7 @@
             </div>
           </div>
           <div class="pt-8 pb-20 flex items-center justify-center">
-            <p class="text-2xl font-semibold text-center max-w-[492px]">
+            <p class="lg:text-2xl font-semibold text-center max-w-[492px]">
               Find verified homes and compatible roommates in one place.
             </p>
           </div>
@@ -309,9 +390,13 @@
       </section>
       <!--Explore Our Properties  -->
       <section class="bg-[#f5f5f5]">
-        <div class="w-[90%] m-auto flex justify-between items-center py-15">
+        <div
+          class="w-[90%] m-auto md:flex justify-between items-center m:py-15"
+        >
           <div class="post">
-            <p class="text-[#ababab] font-light">Featured Post</p>
+            <p class="text-[#ababab] font-light max-[769px]-hidden">
+              Featured Post
+            </p>
             <h2>Explore our properties</h2>
             <a class="registerRoute" href="./register.html">Explore</a>
           </div>
@@ -329,7 +414,7 @@
             <div class="w-full p-5">
               <img src="./assets/images/image-1.png" alt="" />
             </div>
-            <div class="w-full flex flex-col px-10 pb-4">
+            <div class="explore-prop w-full flex flex-col px-10 pb-4">
               <div class="w-full flex items-center justify-between px-1">
                 <h2 class="text-2xl font-medium">N250,000</h2>
                 <p class="text-[#00000033] text-xs uppercase font-medium">
@@ -385,7 +470,7 @@
             <div class="p-5">
               <img src="./assets/images/image-2.png" alt="" />
             </div>
-            <div class="w-full flex flex-col px-10 pb-4">
+            <div class="explore-prop w-full flex flex-col px-10 pb-4">
               <div class="w-full flex items-center justify-between px-1">
                 <h2 class="text-2xl font-medium">N250,000</h2>
                 <p class="text-[#00000033] text-xs uppercase font-medium">
@@ -441,7 +526,7 @@
             <div class="p-5 w-full">
               <img src="./assets/images/image-3.png" alt="" />
             </div>
-            <div class="w-full flex flex-col px-10 pb-4">
+            <div class="explore-prop w-full flex flex-col px-10 pb-4">
               <div class="w-full flex items-center justify-between px-1">
                 <h2 class="text-2xl font-medium">N250,000</h2>
                 <p class="text-[#00000033] text-xs uppercase font-medium">
@@ -497,7 +582,7 @@
             <div class="p-5">
               <img src="./assets/images/image-4.png" alt="" />
             </div>
-            <div class="w-full flex flex-col px-10 pb-4">
+            <div class="explore-prop w-full flex flex-col px-10 pb-4">
               <div class="w-full flex items-center justify-between px-1">
                 <h2 class="text-2xl font-medium">N250,000</h2>
                 <p class="text-[#00000033] text-xs uppercase font-medium">
@@ -550,7 +635,7 @@
             <div class="p-5">
               <img src="./assets/images/image-5.png" alt="" />
             </div>
-            <div class="w-full flex flex-col px-10 pb-4">
+            <div class="explore-prop w-full flex flex-col px-10 pb-4">
               <div class="w-full flex items-center justify-between px-1">
                 <h2 class="text-2xl font-medium">N250,000</h2>
                 <p class="text-[#00000033] text-xs uppercase font-medium">
@@ -604,7 +689,7 @@
             <div class="p-5">
               <img src="./assets/images/image-6.png" alt="" />
             </div>
-            <div class="w-full flex flex-col px-10 pb-4">
+            <div class="explore-prop w-full flex flex-col px-10 pb-4">
               <div class="w-full flex items-center justify-between px-1">
                 <h2 class="text-2xl font-medium">N250,000</h2>
                 <p class="text-[#00000033] text-xs uppercase font-medium">
@@ -863,11 +948,11 @@
       </section>
       <!-- FAQ ACCORDION         -->
       <section class="bg-black text-white mb-20">
-        <div class="p-10 sm:p-6 lg:p-16">
+        <div class="faq-container p-10 sm:p-6 lg:p-16">
           <div class="grid lg:grid-cols-2 m-auto w-full">
-            <div class="h-38.75 max-w-86.75 mb-15">
+            <div class="faq-header h-38.75 max-w-86.75 mb-15">
               <h2 class="text-[48px] font-bold">FAQS</h2>
-              <p class="max-w-77.75 text-[24px] leading-[120%] font-light">
+              <p class="max-w-77.75 lg:text-[24px] leading-[120%] font-light">
                 Everything you want to know before finding your next home.
               </p>
             </div>
@@ -983,7 +1068,7 @@
         </div>
       </section>
     </main>
-    <footer class="h-full">
+    <footer>
       <div class="infinite">
         <img src="./assets/images/flame.png" alt="" />
         <strong

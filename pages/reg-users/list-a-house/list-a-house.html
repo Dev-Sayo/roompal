@@ -36,200 +36,233 @@
       </div>
     </nav>
     <main>
-      <div class="hero-section w-full">
+      <section class="hero-section w-full">
         <div class="heading-text">
           <h1>Listing Form</h1>
           <p>Fill the above details to list an apartment in our platform</p>
         </div>
         <div class="info-input-parent-container">
-          <div class="numbering-change">
+          <div class="step-header flex justify-between items-center">
             <p>PROPERTY DETAILS</p>
-            <span id="current-index">1/3</span>
+            <span class="step-counter" id="stepCounter">1/3</span>
           </div>
-          <div class="info-input-parent bg-white">
-            <div id="step-1" class="selector hidden">
-              <div
-                class="selector-group block px-4 selector-group w-full relative"
-              >
-                <p>What type of space are you listing?</p>
-                <select
-                  class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-                  name=""
-                  id=""
+          <!-- form section -->
+          <div class="form-card">
+            <form
+              class="info-input-parent bg-white p-10 rounded-2xl"
+              id="propertyForm"
+            >
+              <div class="selector" data-type="1">
+                <div
+                  class="selector-group block px-4 selector-group w-full relative"
                 >
-                  <option value="0" selected disabled>Choose Options</option>
-                  <option value="1">Apartment / Flat</option>
-                  <option value="">Self-contained R0oms</option>
-                  <option value="">Shared Apartments</option>
-                  <option value="">Detached Houses</option>
-                  <option value="">Semi-detached Houses</option>
-                  <option value="">Duplexes</option>
-                  <option value="">Bungalow</option>
-                  <option value="">Serviced Apartment</option>
-                </select>
-              </div>
-              <div class="selector-group">
-                <p>Is this an entire place or a shared space?</p>
-                <select
-                  class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-                  name=""
-                  id=""
-                >
-                  <option value="0" selected disabled>Choose Options</option>
-                  <option value="1">Entire Place</option>
-                  <option value="2">Shared Space</option>
-                </select>
-              </div>
-              <div class="selector-group">
-                <p>How many rooms are available?</p>
-                <select
-                  class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-                  name=""
-                  id=""
-                >
-                  <option value="0" selected disabled>Choose Options</option>
-                  <option value="">1</option>
-                  <option value="">2</option>
-                  <option value="">3</option>
-                  <option value="">4</option>
-                  <option value="">5</option>
-                  <option value="">6</option>
-                  <option value="">8</option>
-                  <option value="">8 & above</option>
-                </select>
-              </div>
-              <div class="selector-group">
-                <p>How many bathroom are available?</p>
-                <select
-                  class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-                  name=""
-                  id=""
-                >
-                  <option value="0" selected disabled>Choose Options</option>
-                  <option value="">1</option>
-                  <option value="">2</option>
-                  <option value="">3</option>
-                  <option value="">4</option>
-                  <option value="">5</option>
-                  <option value="">6</option>
-                  <option value="">8</option>
-                  <option value="">8 & above</option>
-                </select>
-              </div>
-              <div class="selector-group">
-                <p>Where is the property located?</p>
-                <select
-                  class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-                  name=""
-                  id=""
-                >
-                  <option value="0" selected disabled>Choose Options</option>
-                  <option value="">Abia</option>
-                  <option value="">Adamawa</option>
-                  <option value="">Akwa Ibom</option>
-                  <option value="">Ogun</option>
-                  <option value="">Lagos</option>
-                  <option value="">Delta</option>
-                  <option value="">Abuja</option>
-                </select>
-              </div>
-              <div class="selector-group">
-                <p>In which City/Area?</p>
-                <select
-                  class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-                  name=""
-                  id=""
-                >
-                  <option value="0" selected disabled>Choose Options</option>
-                  <option value="">Gbagada</option>
-                  <option value="">Ikoggi</option>
-                  <option value="">Ketu</option>
-                  <option value="">Mile 2</option>
-                  <option value="">Mainland</option>
-                  <option value="">Island</option>
-                </select>
-              </div>
-              <div class="selector-group">
-                <p>Nearest landmark?</p>
-                <select
-                  class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-                  name=""
-                  id=""
-                >
-                  <option value="0" selected disabled>Choose Options</option>
-                  <option value="">Millennium Estate</option>
-                  <option value="">The Redeemed Church</option>
-                  <option value="">Medina centre mosque</option>
-                  <option value="">Gospel Apostolic church</option>
-                </select>
-              </div>
-              <button class="next-btn">Next</button>
-            </div>
-            <div id="step-2" class="selector hidden">
-              <div
-                class="selector-group block px-4 selector-group w-full relative"
-              >
-                <p>Are utilities included in the rent??</p>
-                <select
-                  class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-                  name=""
-                  id=""
-                >
-                  <option value="0" selected disabled>Choose Options</option>
-                  <option value="">Yes</option>
-                  <option value="">NO</option>
-                </select>
-              </div>
-              <div class="selector-group">
-                <p>Are Pets Allowed</p>
-                <select
-                  class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-                  name=""
-                  id=""
-                >
-                  <option value="0" selected disabled>Choose Options</option>
-                  <option value="">Yes</option>
-                  <option value="">No</option>
-                </select>
-              </div>
-              <div class="selector-group">
-                <p>What is the yearly rent?</p>
-                <div class="tel-box">
-                  <input type="text" placeholder="Enter Exact Amount" />
+                  <p>What type of space are you listing?</p>
+                  <div class="custom-select">
+                    <select
+                      required
+                      class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                      name=""
+                      id=""
+                    >
+                      <option value="0" selected disabled>
+                        Choose Options
+                      </option>
+                      <option value="apartment">Apartment / Flat</option>
+                      <option value="">Self-contained R0oms</option>
+                      <option value="">Shared Apartments</option>
+                      <option value="">Detached Houses</option>
+                      <option value="">Semi-detached Houses</option>
+                      <option value="">Duplexes</option>
+                      <option value="">Bungalow</option>
+                      <option value="">Serviced Apartment</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="selector-group">
+                  <p>Is this an entire place or a shared space?</p>
+                  <select
+                    required
+                    class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                    name=""
+                    id=""
+                  >
+                    <option value="0" selected disabled>Choose Options</option>
+                    <option value="1">Entire Place</option>
+                    <option value="2">Shared Space</option>
+                  </select>
+                </div>
+                <div class="selector-group">
+                  <p>How many rooms are available?</p>
+                  <select
+                    required
+                    class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                    name=""
+                    id=""
+                  >
+                    <option value="0" selected disabled>Choose Options</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>
+                    <option value="">6</option>
+                    <option value="">8</option>
+                    <option value="">8 & above</option>
+                  </select>
+                </div>
+                <div class="selector-group">
+                  <p>How many bathroom are available?</p>
+                  <div class="custom-select">
+                    <select
+                      required
+                      class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                      name=""
+                      id=""
+                    >
+                      <option value="0" selected disabled>
+                        Choose Options
+                      </option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                      <option value="">6</option>
+                      <option value="">8</option>
+                      <option value="">8 & above</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="selector-group">
+                  <p>Where is the property located?</p>
+                  <div class="custom-select">
+                    <select
+                      required
+                      class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                      name=""
+                      id=""
+                    >
+                      <option value="0" selected disabled>
+                        Choose Options
+                      </option>
+                      <option value="">Abia</option>
+                      <option value="">Adamawa</option>
+                      <option value="">Akwa Ibom</option>
+                      <option value="">Ogun</option>
+                      <option value="">Lagos</option>
+                      <option value="">Delta</option>
+                      <option value="">Abuja</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="selector-group">
+                  <p>In which City/Area?</p>
+                  <div class="custom-select">
+                    <select
+                      required
+                      class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                      name=""
+                      id=""
+                    >
+                      <option value="0" selected disabled>
+                        Choose Options
+                      </option>
+                      <option value="">Gbagada</option>
+                      <option value="">Ikoggi</option>
+                      <option value="">Ketu</option>
+                      <option value="">Mile 2</option>
+                      <option value="">Mainland</option>
+                      <option value="">Island</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="selector-group">
+                  <p>Nearest landmark?</p>
+                  <div class="custom-select">
+                    <select
+                      required
+                      class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                      name=""
+                      id=""
+                    >
+                      <option value="0" selected disabled>
+                        Choose Options
+                      </option>
+                      <option value="mall">Shopping Mall</option>
+                      <option value="school">School</option>
+                      <option value="hospital">Hospital</option>
+                      <option value="airport">Airport</option>
+                      <option value="station">Bus/Train Station</option>
+                    </select>
+                  </div>
                 </div>
               </div>
-              <div class="selector-group">
-                <p>Is the property furnished or unfurnished?</p>
-                <select
-                  class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
-                  name=""
-                  id=""
+              <div class="selector" data-type="2">
+                <div
+                  class="selector-group block px-4 selector-group w-full relative"
                 >
-                  <option value="0" selected disabled>Choose Options</option>
-                  <option value="">Fully Furnished</option>
-                  <option value="">Semi Firnished</option>
-                  <option value="">Not Furnished</option>
-                </select>
-              </div>
-              <div class="selector-group">
-                <p>Date Of Birth</p>
-                <div class="tel-box">
-                  <input type="date" />
+                  <p>Are utilities included in the rent??</p>
+                  <select
+                    required
+                    class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                    name=""
+                    id=""
+                  >
+                    <option value="0" selected disabled>Choose Options</option>
+                    <option value="">Yes</option>
+                    <option value="">NO</option>
+                  </select>
+                </div>
+                <div class="selector-group">
+                  <p>Are Pets Allowed</p>
+                  <select
+                    required
+                    class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                    name=""
+                    id=""
+                  >
+                    <option value="0" selected disabled>Choose Options</option>
+                    <option value="">Yes</option>
+                    <option value="">No</option>
+                  </select>
+                </div>
+                <div class="selector-group">
+                  <p>What is the yearly rent?</p>
+                  <div class="tel-box">
+                    <input type="text" placeholder="Enter Exact Amount" />
+                  </div>
+                </div>
+                <div class="selector-group">
+                  <p>Is the property furnished or unfurnished?</p>
+                  <select
+                    required
+                    class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                    name=""
+                    id=""
+                  >
+                    <option value="0" selected disabled>Choose Options</option>
+                    <option value="">Fully Furnished</option>
+                    <option value="">Semi Firnished</option>
+                    <option value="">Not Furnished</option>
+                  </select>
+                </div>
+                <div class="selector-group">
+                  <p>Date Of Birth</p>
+                  <div class="tel-box">
+                    <input type="date" />
+                  </div>
+                </div>
+                <div class="selector-group">
+                  <p>
+                    provide the primary contact for lease signing and
+                    maintenance issues?
+                  </p>
+                  <div class="tel-box">
+                    <input type="tel" placeholder="Enter Phone Number" />
+                  </div>
                 </div>
               </div>
-              <div class="selector-group">
-                <p>
-                  provide the primary contact for lease signing and maintenance
-                  issues?
-                </p>
-                <div class="tel-box">
-                  <input type="tel" placeholder="Enter Phone Number" />
-                </div>
-              </div>
-              <button class="next-btn">Next</button>
-            </div>
-            <div id="step-3" class="info-input-parent-2 info-input-parent">
-              <div class="selector h-full">
+              <div class="selector" data-type="3">
                 <div class="upload-frame">
                   <div class="upload-file-box">
                     <p>Upload a valid ID</p>
@@ -239,7 +272,7 @@
                       /></span>
                       <span>Upload File or <a href="#">Browse</a></span>
                     </label>
-                    <input id="file-upload" type="file" hidden />
+                    <input id="file-upload" type="file" />
                   </div>
                   <div class="upload-file-box">
                     <p>
@@ -252,16 +285,42 @@
                       /></span>
                       <span>Upload File or <a href="#">Browse</a></span>
                     </label>
-                    <input id="file-upload" type="file" hidden />
+                    <input id="file-upload" type="file" />
                   </div>
                 </div>
               </div>
-            </div>
+              <!-- loading/success messages -->
+              <div class="success-message" id="successMessage">
+                <div class="success-icon">
+                  <img src="/frontend/assets/images/" alt="" />
+                </div>
+                <h2>Congratulation</h2>
+                <p>Your house listing has been created.</p>
+              </div>
+              <!-- nav btns -->
+              <div class="button-group flex items-center gap-5">
+                <button type="button" class="btn btn-prev" id="prevBtn">
+                  Previous
+                </button>
+                <button type="button" class="btn btn-next" id="nextBtn">
+                  Next
+                </button>
+                <button
+                  type="submit"
+                  class="btn btn-submit"
+                  id="submitBtn"
+                  style="display: none"
+                >
+                  List Now
+                </button>
+              </div>
+            </form>
           </div>
+
           <!-- 3 -->
         </div>
-      </div>
+      </section>
     </main>
-    <script src="./list-a-house.js"></script>
+    <script src="/frontend/assets/scripts/stepper.js"></script>
   </body>
 </html>

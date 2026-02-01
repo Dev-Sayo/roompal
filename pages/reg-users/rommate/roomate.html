@@ -360,212 +360,319 @@
       </div>
     </aside>
     <main>
-      <section class="hero-section">
-        <div class="btn-toggling bg-white">
-          <button data-target="section1" class="changeBtn">
+      <div class="roommate-section">
+        <!-- Tab Buttons -->
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="search">
             Look for a roommate
           </button>
-          <button data-target="section1" class="changeBtn">
+          <button class="tab-btn" data-tab="register">
             Register to be found
           </button>
         </div>
-      </section>
-      <!-- find roommate section  -->
-      <section class="content find-roommate-section" id="rommate-section">
-        <div>
-          <div class="search-rommie-frame">
-            <h2>Find a roommate</h2>
-            <p>Below are some of the persons looking for a roommate now</p>
-            <div class="search-box">
-              <input
-                type="text"
-                id="searchInput"
-                placeholder="search by name, age and occupation"
-                autocomplete="off"
-              />
-              <button id="searchBtn">Search</button>
+        <!-- Tab Contents -->
+        <div class="tab-content-container">
+          <!-- Tab 1: Search for Roommates (Active by default) -->
+          <div class="tab-content active" id="search-tab">
+            <div class="search-rommie-frame">
+              <h2>Find a roommate</h2>
+              <p>Below are some of the persons looking for a roommate now</p>
+              <div class="search-box">
+                <input
+                  type="text"
+                  id="searchInput"
+                  placeholder="search by name, age and occupation"
+                  autocomplete="off"
+                />
+                <button id="searchBtn">Search</button>
+              </div>
+            </div>
+            <div
+              id="rommie-deets"
+              class="find-roommate-container bg-white h-full"
+            >
+              <div class="roommate-card">
+                <div class="roommate-avatar">
+                  <img src="/frontend/assets/images/avatar-1.png" alt="" />
+                </div>
+                <div class="roommate-info">
+                  <h4>John Doe</h4>
+                  <p>Banker</p>
+                  <a href="">chat</a>
+                  <br />
+                  <a href="">View More</a>
+                </div>
+              </div>
+              <div class="roommate-card">
+                <div class="roommate-avatar">
+                  <img src="/frontend/assets/images/avatar-1.png" alt="" />
+                </div>
+                <div class="roommate-info">
+                  <h4>John Doe</h4>
+                  <p>Banker</p>
+                  <a href="">chat</a>
+                  <br />
+                  <a href="">View More</a>
+                </div>
+              </div>
+              <div class="roommate-card">
+                <div class="roommate-avatar">
+                  <img src="/frontend/assets/images/avatar-1.png" alt="" />
+                </div>
+                <div class="roommate-info">
+                  <h4>John Doe</h4>
+                  <p>Banker</p>
+                  <a href="">chat</a>
+                  <br />
+                  <a href="">View More</a>
+                </div>
+              </div>
+              <div class="roommate-card">
+                <div class="roommate-avatar">
+                  <img src="/frontend/assets/images/avatar-1.png" alt="" />
+                </div>
+                <div class="roommate-info">
+                  <h4>John Doe</h4>
+                  <p>Banker</p>
+                  <a href="">chat</a>
+                  <br />
+                  <a href="">View More</a>
+                </div>
+              </div>
+              <div class="roommate-card">
+                <div class="roommate-avatar">
+                  <img src="/frontend/assets/images/avatar-1.png" alt="" />
+                </div>
+                <div class="roommate-info">
+                  <h4>John Doe</h4>
+                  <p>Banker</p>
+                  <a href="">chat</a>
+                  <br />
+                  <a href="">View More</a>
+                </div>
+              </div>
+              <div class="roommate-card">
+                <div class="roommate-avatar">
+                  <img src="/frontend/assets/images/avatar-1.png" alt="" />
+                </div>
+                <div class="roommate-info">
+                  <h4>John Doe</h4>
+                  <p>Banker</p>
+                  <a href="">chat</a>
+                  <br />
+                  <a href="">View More</a>
+                </div>
+              </div>
             </div>
           </div>
-          <div
-            id="rommie-deets"
-            class="find-roommate-container bg-white h-full"
-          >
-            <div></div>
+          <!-- Tab 2: Register as Roommate (Hidden by default) -->
+          <div class="tab-content" id="register-tab">
+            <div class="register-header">
+              <h2 class="text-center text-4xl font-medium">Roommate form</h2>
+              <p class="text-center text-[#5e5e5e]">
+                Fill out this form to enable us show you to your kind of
+                roommate
+              </p>
+            </div>
+            <div class="register-container">
+              <div class="step-counter flex justify-between text-gray-400">
+                <p class="text-[#5e5e5e] uppercase text-sm">Find me DETAILS</p>
+                <span>1/3</span>
+              </div>
+              <!-- Multi-step form content -->
+              <form class="propertyForm" action="#">
+                <div class="selector">
+                  <!-- Input fields for step 1 -->
+                  <form action="#">
+                    <div class="rommie-details">
+                      <p>What is your name?</p>
+                      <input type="text" placeholder="Jacob Moore" />
+                    </div>
+                    <div class="">
+                      <p>What is your gender?</p>
+                      <select name="" id="">
+                        <option value="#" disabled selected>
+                          Choose Options
+                        </option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                        <option value="no-preference">No Preference</option>
+                      </select>
+                    </div>
+                    <div class="rommie-details">
+                      <p>What is your current age range?</p>
+                      <select name="" id="">
+                        <option value="#" disabled selected>
+                          Choose Options
+                        </option>
+                        <option value="">15 -18</option>
+                        <option value="">18 - 25</option>
+                        <option value="">25 - 30</option>
+                        <option value="">30 - 45</option>
+                        <option value="">45 - 65</option>
+                        <option value="">65 & above</option>
+                      </select>
+                    </div>
+                    <div class="rommie-details">
+                      <p>Which State do you want to live in?</p>
+                      <select name="" id="">
+                        <option value="#" disabled selected>
+                          Choose Options
+                        </option>
+                        <option value=""></option>
+                      </select>
+                    </div>
+                    <div class="rommie-details">
+                      <p>Which area/city do you prefer?</p>
+                      <select name="" id="">
+                        <option value=""></option>
+                      </select>
+                    </div>
+                  </form>
+                </div>
+                <!-- Other steps (Step 2, Step 3) would be defined similarly -->
+                <div class="selector">
+                  <!-- Input fields for step 1 -->
+                  <form action="#">
+                    <div class="rommie-details">
+                      <p>What is your Religion?</p>
+                      <select name="" id="">
+                        <option value="">Christainity</option>
+                        <option value="">Islam</option>
+                        <option value="">Traditionalist</option>
+                        <option value="">Buddhism</option>
+                        <option value="">Judaism</option>
+                        <option value="">Hinduism</option>
+                        <option value="">Others</option>
+                      </select>
+                    </div>
+                    <div class="">
+                      <p>Do you have any health challenge?</p>
+                      <select name="" id="">
+                        <option value="#" disabled selected>
+                          Choose Options
+                        </option>
+                        <option value="yes">Yes</option>
+                        <option value="no">NO</option>
+                      </select>
+                    </div>
+                    <div class="rommie-details">
+                      <p>What is your Work / daily schedule?</p>
+                      <select name="" id="">
+                        <option value="#" disabled selected>
+                          Choose Options
+                        </option>
+                        <option value="">Student (mostly out)</option>
+                        <option value="">Student (mostly home)</option>
+                        <option value="">Working (office based)</option>
+                        <option value="">working (remote based)</option>
+                        <option value="">Self Employed</option>
+                      </select>
+                    </div>
+                    <div class="rommie-details">
+                      <p>How often do you have guests over??</p>
+                      <select name="" id="">
+                        <option value="#" disabled selected>
+                          Choose Options
+                        </option>
+                        <option value="rarely">Rarely</option>
+                        <option value="occasionally">Occasionally</option>
+                        <option value="often">Often</option>
+                        <option value="no">No Guest Allowed</option>
+                      </select>
+                    </div>
+                    <div class="rommie-details">
+                      <p>What is your Lifestyle vibe</p>
+                      <select name="" id="">
+                        <option value="#" disabled selected>
+                          Choose Options
+                        </option>
+                        <option value="">Quiet & Private</option>
+                        <option value="">Balanced</option>
+                        <option value="">Social & Friendly</option>
+                      </select>
+                    </div>
+                  </form>
+                </div>
+                <!-- step 3 -->
+                <div class="selector">
+                  <!-- Input fields for step 1 -->
+
+                  <div class="rommie-details">
+                    <p>What is you cleanliness level?</p>
+                    <select name="" id="">
+                      <option value="#" disabled selected>
+                        Choose Options
+                      </option>
+                      <option value="">Low (Easy-going)</option>
+                      <option value="">Meduim (reasonably tidy)</option>
+                      <option value="">High (Very neat)</option>
+                    </select>
+                  </div>
+                  <div class="rommie-details">
+                    <p>When is your preferred move in time?</p>
+                    <select name="" id="">
+                      <option value="#" disabled selected>
+                        Choose Options
+                      </option>
+                      <option value="yes">Immediately</option>
+                      <option value="">Within a Month</option>
+                      <option value="">1 - 3 Months</option>
+                      <option value="">Flexible / not sure when</option>
+                    </select>
+                  </div>
+                  <div class="rommie-details">
+                    <p>Do you smoke or Drink</p>
+                    <select name="" id="">
+                      <option value="#" disabled selected>
+                        Choose Options
+                      </option>
+                      <option value="">Yes</option>
+                      <option value="">No</option>
+                    </select>
+                  </div>
+                  <div class="rommie-details">
+                    <p>Are you a roommate that Smokes / Drink?</p>
+                    <select name="" id="">
+                      <option value="#" disabled selected>
+                        Choose Options
+                      </option>
+                      <option value="rarely">Okay with drinking</option>
+                      <option value="occasionally">
+                        Okay with smoking only
+                      </option>
+                      <option value="often">Okay with both</option>
+                      <option value="no">Not okay with both</option>
+                    </select>
+                  </div>
+                  <div class="rommie-details">
+                    <p>In one sentence, what kind of roommate are you?</p>
+                    <input type="text" placeholder="I am..." />
+                  </div>
+                  <div class="rommie-details">
+                    <p>upload a good picture of you</p>
+                    <label for="file-upload" class="upload-box">
+                      <span class="upload-icon"
+                        ><img src="/frontend/assets/images/upload.png" alt=""
+                      /></span>
+                      <span>Upload FIle</span>
+                    </label>
+                    <input id="file-upload" type="file" />
+                  </div>
+                </div>
+                <div class="button-group flex items-center gap-5">
+                  <button type="button" class="btn btn-prev" id="prevBtn">
+                    Previous
+                  </button>
+                  <button type="button" class="btn btn-next" id="nextBtn">
+                    Next
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </section>
-      <!-- Registration section (hidden by default) -->
-      <section
-        class="content roommate-reg-section hidden"
-        id="register-section"
-      >
-        <h2>roommate Form</h2>
-        <p>Fill out this form to enable us show you to your kind of roommate</p>
-        <div class="step-counter flex justify-between text-gray-400">
-          <p>Find me DETAILS</p>
-          <span>1/3</span>
-        </div>
-        <!-- Multi-step form content -->
-        <div class="form-step active" id="step1">
-          <!-- Input fields for step 1 -->
-          <form action="#">
-            <div class="rommie-details">
-              <p>What is your name?</p>
-              <input type="text" placeholder="Jacob Moore" />
-            </div>
-            <div class="">
-              <p>What is your gender?</p>
-              <select name="" id="">
-                <option value="#" disabled selected>Choose Options</option>
-                <option value="female">Female</option>
-                <option value="male">Male</option>
-                <option value="no-preference">No Preference</option>
-              </select>
-            </div>
-            <div class="rommie-details">
-              <p>What is your current age range?</p>
-              <select name="" id="">
-                <option value="#" disabled selected>Choose Options</option>
-                <option value="">15 -18</option>
-                <option value="">18 - 25</option>
-                <option value="">25 - 30</option>
-                <option value="">30 - 45</option>
-                <option value="">45 - 65</option>
-                <option value="">65 & above</option>
-              </select>
-            </div>
-            <div class="rommie-details">
-              <p>Which State do you want to live in?</p>
-              <select name="" id="">
-                <option value="#" disabled selected>Choose Options</option>
-                <option value=""></option>
-              </select>
-            </div>
-            <div class="rommie-details">
-              <p>Which area/city do you prefer?</p>
-              <select name="" id="">
-                <option value=""></option>
-              </select>
-            </div>
-          </form>
-          <button id="next-btn">Next</button>
-        </div>
-        <!-- Other steps (Step 2, Step 3) would be defined similarly -->
-        <div class="form-step active hidden" id="step2">
-          <!-- Input fields for step 1 -->
-          <form action="#">
-            <div class="rommie-details">
-              <p>What is your Religion?</p>
-              <select name="" id="">
-                <option value="">Christainity</option>
-                <option value="">Islam</option>
-                <option value="">Traditionalist</option>
-                <option value="">Buddhism</option>
-                <option value="">Judaism</option>
-                <option value="">Hinduism</option>
-                <option value="">Others</option>
-              </select>
-            </div>
-            <div class="">
-              <p>Do you have any health challenge?</p>
-              <select name="" id="">
-                <option value="#" disabled selected>Choose Options</option>
-                <option value="yes">Yes</option>
-                <option value="no">NO</option>
-              </select>
-            </div>
-            <div class="rommie-details">
-              <p>What is your Work / daily schedule?</p>
-              <select name="" id="">
-                <option value="#" disabled selected>Choose Options</option>
-                <option value="">Student (mostly out)</option>
-                <option value="">Student (mostly home)</option>
-                <option value="">Working (office based)</option>
-                <option value="">working (remote based)</option>
-                <option value="">Self Employed</option>
-              </select>
-            </div>
-            <div class="rommie-details">
-              <p>How often do you have guests over??</p>
-              <select name="" id="">
-                <option value="#" disabled selected>Choose Options</option>
-                <option value="rarely">Rarely</option>
-                <option value="occasionally">Occasionally</option>
-                <option value="often">Often</option>
-                <option value="no">No Guest Allowed</option>
-              </select>
-            </div>
-            <div class="rommie-details">
-              <p>What is your Lifestyle vibe</p>
-              <select name="" id="">
-                <option value="#" disabled selected>Choose Options</option>
-                <option value="">Quiet & Private</option>
-                <option value="">Balanced</option>
-                <option value="">Social & Friendly</option>
-              </select>
-            </div>
-          </form>
-          <button id="next-btn">Next</button>
-        </div>
-        <!-- step 3 -->
-        <div class="form-step active hidden" id="step3">
-          <!-- Input fields for step 1 -->
-          <form action="#">
-            <div class="rommie-details">
-              <p>What is you cleanliness level?</p>
-              <select name="" id="">
-                <option value="#" disabled selected>Choose Options</option>
-                <option value="">Low (Easy-going)</option>
-                <option value="">Meduim (reasonably tidy)</option>
-                <option value="">High (Very neat)</option>
-              </select>
-            </div>
-            <div class="rommie-details">
-              <p>When is your preferred move in time?</p>
-              <select name="" id="">
-                <option value="#" disabled selected>Choose Options</option>
-                <option value="yes">Immediately</option>
-                <option value="">Within a Month</option>
-                <option value="">1 - 3 Months</option>
-                <option value="">Flexible / not sure when</option>
-              </select>
-            </div>
-            <div class="rommie-details">
-              <p>Do you smoke or Drink</p>
-              <select name="" id="">
-                <option value="#" disabled selected>Choose Options</option>
-                <option value="">Yes</option>
-                <option value="">No</option>
-              </select>
-            </div>
-            <div class="rommie-details">
-              <p>Are you a roommate that Smokes / Drink?</p>
-              <select name="" id="">
-                <option value="#" disabled selected>Choose Options</option>
-                <option value="rarely">Okay with drinking</option>
-                <option value="occasionally">Okay with smoking only</option>
-                <option value="often">Okay with both</option>
-                <option value="no">Not okay with both</option>
-              </select>
-            </div>
-            <div class="rommie-details">
-              <p>In one sentence, what kind of roommate are you?</p>
-              <input type="text" placeholder="I am..." />
-            </div>
-            <div class="rommie-details">
-              <p>upload a good picture of you</p>
-              <label for="file-upload" class="upload-box">
-                <span class="upload-icon"
-                  ><img src="/frontend/assets/images/upload.png" alt=""
-                /></span>
-                <span>Upload FIle</span>
-              </label>
-              <input id="file-upload" type="file" hidden />
-            </div>
-          </form>
-          <button id="next-btn">Next</button>
-        </div>
-      </section>
+      </div>
     </main>
     <script src="./find-rommate.js"></script>
   </body>

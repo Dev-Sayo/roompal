@@ -1,34 +1,11 @@
-const tabButtons = document.querySelectorAll(".tab-btn");
-const tabContents = document.querySelectorAll(".tab-content");
+// Get all the DOM elements
 const form = document.getElementById("propertyForm");
 const steps = document.querySelectorAll(".selector");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
+const submitBtn = document.getElementById("submitBtn");
 const stepCounter = document.getElementById("stepCounter");
 const successMessage = document.getElementById("successMessage");
-
-// Add click event to each tab button
-tabButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    // Get the data-tab attribute value
-    const targetTab = button.getAttribute("data-tab");
-
-    // Remove active class from all buttons
-    tabButtons.forEach((btn) => btn.classList.remove("active"));
-
-    // Add active class to clicked button
-    button.classList.add("active");
-
-    // Hide all tab contents
-    tabContents.forEach((content) => content.classList.remove("active"));
-
-    // Show the target tab content
-    const targetContent = document.getElementById(`${targetTab}-tab`);
-    targetContent.classList.add("active");
-  });
-});
-
-// Get all the DOM elements
 
 // Track which step we're on
 let currentStep = 0;
@@ -38,11 +15,10 @@ const totalSteps = steps.length;
 initialize();
 
 function initialize() {
-  showStep(0); // Show first step
-  updateUI(); // Update buttons and counter
+  showStep(0);
+  updateUI();
 }
 
-// Show a specific step
 function showStep(stepIndex) {
   steps.forEach((step) => step.classList.remove("active"));
   steps[stepIndex].classList.add("active");
@@ -53,28 +29,18 @@ function updateStepCounter() {
   stepCounter.textContent = `${currentStep + 1}/${totalSteps}`;
 }
 
-// Update button states
-function updateButtons() {
-  prevBtn.disabled = currentStep === 0;
-
-  const isLastStep = currentStep === totalSteps - 1;
-  nextBtn.style.display = isLastStep ? "none" : "block";
-}
-
 // Update everything
 function updateUI() {
   updateStepCounter();
-  updateButtons();
 }
 
-// Simulate async operation
 async function simulateAsyncOperation(delay) {
   return new Promise((resolve) => {
     setTimeout(resolve, delay);
   });
 }
 
-// Hide current step with animation
+// Hide current step
 async function hideCurrentStep() {
   return new Promise((resolve) => {
     const currentStepElement = steps[currentStep];
@@ -87,7 +53,7 @@ async function hideCurrentStep() {
   });
 }
 
-// Show current step with animation
+// Show current step
 async function showCurrentStep() {
   return new Promise((resolve) => {
     const currentStepElement = steps[currentStep];

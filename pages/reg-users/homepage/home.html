@@ -12,6 +12,7 @@
     <title>Find an apartment</title>
     <link rel="stylesheet" href="./home.css" />
     <link rel="stylesheet" href="/frontend/dist/output.css" />
+    <link rel="stylesheet" href="/frontend/src/styles/filter-section.css" />
   </head>
   <body>
     <nav class="nav">
@@ -47,62 +48,16 @@
               alt=""
             />
           </div>
-          <div>
-            <ul></ul>
-          </div>
         </div>
       </div>
-      <div class="filter-section">
-        <div class="filter-search-box">
-          <input type="search" placeholder="Filter Options" />
+      <div class="filter-container">
+        <div class="filter-sections" id="filterSections"></div>
+        <div class="filter-count" id="filterCount">
+          <div class="count-badge" id="countBadge">0</div>
         </div>
-        <div class="filter-dropdown-container">
-          <div>
-            <button class="filter-dropdown">
-              property Type
-              <img src="/frontend/assets/images/light-chevron.png" alt="" />
-            </button>
-          </div>
-          <div>
-            <button class="filter-dropdown">
-              Rent Price, Yearly N
-              <img src="/frontend/assets/images/light-chevron.png" alt="" />
-            </button>
-          </div>
-          <div>
-            <button class="filter-dropdown">
-              Agent
-              <img src="/frontend/assets/images/light-chevron.png" alt="" />
-            </button>
-          </div>
-          <div>
-            <button class="filter-dropdown">
-              Amenities
-              <img src="/frontend/assets/images/light-chevron.png" alt="" />
-            </button>
-          </div>
-          <div>
-            <button class="filter-dropdown">
-              Bathroon
-              <img src="/frontend/assets/images/light-chevron.png" alt="" />
-            </button>
-          </div>
-          <div>
-            <button class="filter-dropdown">
-              Bedrooms
-              <img src="/frontend/assets/images/light-chevron.png" alt="" />
-            </button>
-          </div>
-          <div>
-            <button class="filter-dropdown">
-              Furnishing
-              <img src="/frontend/assets/images/light-chevron.png" alt="" />
-            </button>
-          </div>
-        </div>
-        <div class="clear_filter">
-          <button class="cancel">Cancel</button
-          ><button class="filter-btn">Filter</button>
+        <div class="filter-actions">
+          <button class="btn btn-reset" id="resetBtn">Clear</button>
+          <button class="btn btn-filter" id="filterBtn">Filter</button>
         </div>
       </div>
     </aside>
@@ -163,5 +118,6 @@
         <div></div>
       </section>
     </main>
+    <script src="./filter.js"></script>
   </body>
 </html>

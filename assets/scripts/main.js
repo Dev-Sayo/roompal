@@ -18,6 +18,22 @@ document.addEventListener("click", function () {
   dropdownBox.classList.remove("active");
 });
 
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+
+mobileMenuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});
+
+// Mobile dropdown toggle
+const mobileDropdownBtn = document.getElementById("mobile-dropdown-btn");
+const mobileDropdownMenu = document.getElementById("mobile-dropdown-menu");
+
+mobileDropdownBtn.addEventListener("click", () => {
+  mobileDropdownMenu.classList.toggle("hidden");
+});
+
 // Faq
 const faqQuestions = document.querySelectorAll(".faq-question");
 const questions = document.querySelectorAll(".faq-question");

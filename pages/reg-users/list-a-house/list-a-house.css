@@ -113,33 +113,59 @@ nav {
   margin-top: 10px;
   color: var(--gray-2);
 }
-.numbering-change {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2rem;
+.info-input-parent-container {
+  padding: 64px;
+  max-width: 920px;
+  width: 100%;
+  margin-inline: auto;
+  margin-top: 2rem;
 }
-.numbering-change p,
+form .info-input-parent {
+  height: 100%;
+}
+.info-input-parent {
+  padding: 11px;
+}
+.form-card {
+  margin-top: 2rem;
+}
+.step-header p,
 span {
   font-size: 14px;
   color: rgba(171, 171, 171, 1);
   line-height: 20px;
   font-family: "DM mono", monospace;
 }
-.info-input-parent-container {
-  padding: 64px;
-  max-width: 858px;
-  width: 100%;
-  margin-inline: auto;
-  margin-top: 2rem;
-}
-.info-input-parent {
-  border-radius: 24px;
-  padding-inline: 3rem;
-  padding-block: 2rem;
-}
 /* Select Dropdown */
 .selector {
-  padding: 10px;
+  padding: 2rem 1.7rem;
+  display: none;
+  opacity: 0;
+}
+.selector.active {
+  display: block;
+  opacity: 1;
+  animation: fadeIn 0.4s ease;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
 }
 .selector-group {
   padding-block: 1rem;
@@ -224,28 +250,94 @@ option:hover {
   opacity: 0;
   transition: all 0.4s allow-discrete;
 }
-button {
-  border: none;
-  background: var(--primary-color-variant);
-  width: 100%;
-  color: var(--white);
-  border-radius: 50px;
-  height: 44px;
-  margin-top: 1rem;
-  cursor: pointer;
+.button-group {
+  .btn {
+    flex: 1;
+    padding: 16px;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+  .btn-prev {
+    background: #e0e0e0;
+    color: #666;
+  }
+  .btn-prev:hover:not(:disabled) {
+    background: #d5d5d5;
+  }
+  .btn-next,
+  .btn-submit {
+    background: #2c3e50;
+    color: white;
+  }
+  .btn-next:hover:not(:disabled),
+  .btn-submit:hover:not(:disabled) {
+    background: #1a252f;
+  }
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  /* Loading state */
+  .btn.loading {
+    pointer-events: none;
+  }
+  .btn.loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.6s linear infinite;
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  /* 2 */
+  .tel-box {
+    background: #eeeeee;
+    padding: 10px;
+    flex: 1;
+    border-radius: 10px;
+  }
+  .tel-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+  }
 }
-button:hover {
-  background: hsla(212, 36%, 21%, 0.847);
+.success-message {
+  display: none;
+  text-align: center;
+  padding: 60px 20px;
 }
-/* 2 */
-.tel-box {
-  background: #eeeeee;
-  padding: 10px;
-  flex: 1;
-  border-radius: 10px;
+.success-message.show {
+  display: block;
+  animation: fadeInUp 0.4s ease;
 }
-.tel-box input {
-  width: 100%;
-  border: none;
-  outline: none;
+.success-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+.success-message h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.success-message p {
+  color: #666;
+  font-size: 15px;
 }

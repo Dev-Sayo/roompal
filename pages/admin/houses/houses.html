@@ -12,11 +12,11 @@
       <nav>
         <ul>
           <li>
-            <a style="color: white" href="../admin-home/admin-home.html"
-              >Dashboard</a
-            >
+            <a href="../admin-home/admin-home.html">Dashboard</a>
           </li>
-          <li><a href="../houses/houses.html">Houses</a></li>
+          <li>
+            <a style="color: white" href="../houses/houses.html">Houses</a>
+          </li>
           <li>
             <a href="../admin-roommate-listing/ad-roommies.html">roommates</a>
           </li>
@@ -65,37 +65,63 @@
           </div>
         </div>
       </section>
-      <div class="table-container">
-        <!-- Table Header -->
-        <div class="table-header">
-          <div>Full name</div>
-          <div>Date posted</div>
-          <div>Poster</div>
-          <div>Email</div>
-          <div>Phone number</div>
-          <div>Images</div>
-          <div>ID Card</div>
-          <div>List Status</div>
+      <div class="table-wrapper">
+        <div class="table-container">
+          <table class="table" id="table-one">
+            <thead>
+              <tr class="table-row">
+                <th class="table-cell">Id</th>
+                <th class="table-cell">Full Name</th>
+                <th class="table-cell">Date joined</th>
+                <th class="table-cell">Email</th>
+                <th class="table-cell">Phone Number</th>
+                <th class="table-cell">Last Login Time</th>
+                <th class="table-cell">Status</th>
+              </tr>
+            </thead>
+            <tbody id="data-container">
+              <tr class="table-row">
+                <td class="table-cell">1</td>
+                <td class="table-cell">
+                  <div class="character-elem">
+                    <span class="character-avatar">
+                      <img
+                        src="/frontend/assets/images/avatar-5.png"
+                        alt="character image"
+                      />
+                    </span>
+                    <span class="character-name no-wrap">Grace Joy</span>
+                  </div>
+                </td>
+                <td class="table-cell">01/02/2025</td>
+                <td class="table-cell">shittubusayo@gmail.com</td>
+                <td class="table-cell">08106537022</td>
+                <td class="table-cell">10/01/2025</td>
+                <td class="table-cell" id="successful">sucessful</td>
+              </tr>
+              <tr class="table-row">
+                <td class="table-cell">1</td>
+                <td class="table-cell">
+                  <div class="character-elem">
+                    <span class="character-avatar">
+                      <img
+                        src="/frontend/assets/images/avatar-5.png"
+                        alt="character image"
+                      />
+                    </span>
+                    <span class="character-name no-wrap">Grace Joy</span>
+                  </div>
+                </td>
+                <td class="table-cell">01/02/2025</td>
+                <td class="table-cell">shittubusayo@gmail.com</td>
+                <td class="table-cell">08106537022</td>
+                <td class="table-cell">10/01/2025</td>
+                <td class="table-cell" id="successful">sucessful</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <!-- Table Rows -->
-        <div class="table-body">
-          <div class="table-row">
-            <div class="name-col">
-              <span class="number">1.</span>
-              <img src="../images/icon-2.png" alt="Queen love" class="avatar" />
-              <span class="name">Queen Love</span>
-            </div>
-            <div>17/12/24</div>
-            <div>Agent</div>
-            <div>queenlove@gmail.com</div>
-            <div>+2349085676433</div>
-            <div><a href="#">View house images</a></div>
-            <div><a href="#">View ID card</a></div>
-            <div><span class="status verified">Verified</span></div>
-          </div>
-
-          <!-- Repeat more rows -->
-        </div>
+        <table class="table" id="table-fixed"></table>
       </div>
     </main>
   </body>

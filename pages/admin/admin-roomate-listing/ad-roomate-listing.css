@@ -48,7 +48,7 @@ nav ul {
 nav ul li a {
   color: var(--gray);
 }
-nav ul li:nth-of-type(1) {
+nav ul li:nth-of-type(3) {
   background: var(--primary-color);
   width: 129px;
   height: 44px;
@@ -213,9 +213,11 @@ th:last-child {
   border-radius: 50px;
   text-align: center;
 }
-/* @media (max-width: 768px) {
-  .hero-section-container {
-    grid-template-columns: 1fr;
-    padding-inline: 1rem;
+@media (max-width: 885px) {
+  .link-container {
+    display: none;
   }
-} */
+  .table-wrapper {
+    padding: 0rem 1rem;
+  }
+}
