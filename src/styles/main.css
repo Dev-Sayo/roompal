@@ -13,6 +13,7 @@
 body {
   font-family: "Inter", sans-serif;
 }
+/* header - nav */
 .dropdown-container {
   background: var(--white);
   border-radius: 20px;
@@ -409,6 +410,16 @@ footer {
     font-size: 20px;
   }
 }
+@media (max-width: 639px) {
+  .wwd-card-parent {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .wwd-card-parent-2 {
+    flex-direction: row-reverse;
+    gap: 20px;
+  }
+}
 @media (max-width: 592px) {
   .fia-link a,
   .select-div p,
@@ -417,6 +428,9 @@ footer {
   }
 }
 @media (max-width: 480px) {
+  .logo a {
+    font-size: 18px;
+  }
   .footer-bottom,
   .contact-us {
     flex-direction: column;

@@ -187,6 +187,9 @@ body {
   position: absolute;
   top: 70%;
 }
+.why-us-section {
+  padding-block: 3rem;
+}
 .why-us-container {
   max-width: 1294px;
   width: 100%;
@@ -213,6 +216,9 @@ body {
 @media (max-width: 810px) {
   .explore-prop {
     padding-inline: 16px;
+  }
+  .roompal-background h2 {
+    font-size: 40px;
   }
 }
 @media (max-width: 769px) {
@@ -295,6 +301,9 @@ body {
   .wwd-text a {
     font-size: 14px;
   }
+  .reduce {
+    aspect-ratio: 23/21;
+  }
 }
 @media (max-width: 480px) {
   .get-a-space-container {
@@ -308,6 +317,9 @@ body {
   }
   .wwd-text {
     padding: 5px;
+  }
+  .roompal-background h2 {
+    font-size: 24px;
   }
 }
 @media (max-width: 404px) {
@@ -355,5 +367,10 @@ body {
   .your-home h2 {
     font-size: 64px;
     max-width: 516px;
+  }
+}
+@media (min-width: 810px) {
+  .roompal-background {
+    font-size: 100px;
   }
 }
