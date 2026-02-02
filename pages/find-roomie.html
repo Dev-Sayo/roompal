@@ -7,72 +7,143 @@
     <link rel="stylesheet" href="../src/styles/main.css" />
   </head>
   <body class="m-0 p-0 border-box bg-white">
-    <header class="header w-full flex justify-between p-4">
+    <header class="header w-full flex justify-between items-center p-4">
       <div class="uppercase font-bold text-[24px]">
-        <a href="/index.html">roompal</a>
+        <a href="../index.html">roompal</a>
       </div>
+      <!-- Desktop Navigation -->
       <nav
-        class="flex items-center justify-between gap-4 text-[#7c7c7c] md:flex"
+        class="hidden items-center justify-between gap-4 text-[#7c7c7c] md:flex"
       >
-        <a href="/index.html">Home</a>
-        <div class="dropdown-container" id="myDropdown">
+        <a href="../index.html">Home</a>
+        <div class="dropdown-container relative" id="myDropdown">
           <button class="dropdown-btn cursor-pointer">
-            <span class="flex items-center justify-between gap-2"
-              >Service
+            <span class="flex items-center justify-between gap-2">
+              Service
               <img
-                src="./assets/images/dropdown-chevron.png"
+                src="../assets/images/dropdown-chevron.png"
                 class="w-4"
                 alt=""
-            /></span>
+              />
+            </span>
           </button>
           <ul
             id="dropdown-menu"
-            class="dropdown-content absolute top-17 right-0 w-[320px] hidden"
+            class="dropdown-content absolute top-full right-0 w-[320px] hidden mt-2"
           >
             <li><a href="./pages/find-apartment.html">Find an Apartment</a></li>
-            <li><a href="./pages/find-roomie.html"> Find a Roomamte</a></li>
-            <li><a href="./pages/find-renter.html">FInd a Flatmate</a></li>
+            <li><a href="./pages/find-roomie.html">Find a Roommate</a></li>
+            <li><a href="./pages/find-renter.html">Find a Flatmate</a></li>
           </ul>
         </div>
-        <a href="./about-us.html">About</a>
-        <a href="./contact-us.html">Contact</a>
+        <a href="./pages/about-us.html">About</a>
+        <a href="./pages/contact-us.html">Contact</a>
       </nav>
+      <!-- Desktop CTA Button -->
       <div
-        class="bg-[#223448] text-white rounded-full w-37 h-11 flex items-center justify-center px-3.75 py-1"
+        class="hidden md:flex bg-[#223448] text-white rounded-full h-11 items-center justify-center px-3.75 py-1"
       >
-        <a class="text-white" href="/register.html">Find your home</a>
+        <a
+          class="registerRoute text-white whitespace-nowrap"
+          href="./register.html"
+          >Find your home</a
+        >
       </div>
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden text-[#223448] focus:outline-none"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
     </header>
+    <nav
+      id="mobile-menu"
+      class="hidden md:hidden bg-white border-b border-gray-200"
+    >
+      <div class="flex flex-col p-4 space-y-4 text-[#7c7c7c]">
+        <a href="/frontend/index.html" class="hover:text-[#223448]">Home</a>
+        <!-- Mobile Dropdown -->
+        <div>
+          <button
+            id="mobile-dropdown-btn"
+            class="flex items-center justify-between w-full hover:text-[#223448]"
+          >
+            <span>Service</span>
+            <img src="../assets/images/chevron.png" class="w-4" alt="" />
+          </button>
+          <ul id="mobile-dropdown-menu" class="hidden mt-2 space-y-2">
+            <li>
+              <a
+                href="../pages/find-apartment.html"
+                class="block hover:text-[#223448]"
+                >Find an Apartment</a
+              >
+            </li>
+            <li>
+              <a
+                href="../pages/find-roomie.html"
+                class="block hover:text-[#223448]"
+                >Find a Roommate</a
+              >
+            </li>
+            <li>
+              <a
+                href="../pages/find-renter.html"
+                class="block hover:text-[#223448]"
+                >Find a Flatmate</a
+              >
+            </li>
+          </ul>
+        </div>
+        <a href="../pages/about-us.html" class="hover:text-[#223448]">About</a>
+        <a href="../pages/contact-us.html" class="hover:text-[#223448]"
+          >Contact</a
+        >
+      </div>
+    </nav>
     <main>
       <!--Find roommate here  -->
       <section>
-        <div class="pb-12 pt-8 w-full">
-          <h1 class="text-[64px] font-medium text-center">
+        <div class="right-roommie-div pt-8 w-full">
+          <h1 class="right-roommie text-[64px] font-medium text-center">
             Find the Right Roommate
           </h1>
           <p class="text-[16px] text-center font-normal">
             Living with the right person makes all the difference.
           </p>
         </div>
-        <div class="pb-20">
+        <div class="two__cons pb-20">
           <div
-            class="bg-[#f5f5f5] w-[40%] m-auto flex justify-between items-center p-5 rounded-t-lg"
+            class="fia-link bg-[#f5f5f5] m-auto flex justify-between gap-5 items-center p-5 rounded-t-lg"
           >
-            <a
-              class="flex items-center justify-center w-45.75 h-11 bg-[#223448] text-white rounded-full"
-              href="./find-apartment.html"
+            <a class="text-[#7c7c7c]" href="./find-apartment.html"
               >Find an Apartment</a
             >
             <a class="font-medium text-[#7c7c7c]" href="./find-renter.html"
               >List an Apartment</a
-            ><a class="font-medium text-[#7c7c7c]" href="./find-roomie.html"
+            ><a
+              class="font-medium flex items-center justify-center w-45.75 h-11 bg-[#223448] text-white rounded-full"
+              href="./find-roomie.html"
               >Find a Flatmate</a
             >
           </div>
           <div
-            class="grid grid-cols-3 gap-5 justify-between m-auto w-[70%] bg-[#f5f5f5] h-27 rounded-[20px] p-5"
+            class="apartment-locations bg-[#f5f5f5] m-auto h-27 rounded-[20px] p-5"
           >
-            <div class="w-full">
+            <div class="select-div w-full">
               <p class="text-[14px] text-[#7c7c7c]">Location</p>
               <select
                 id="state"
@@ -87,7 +158,7 @@
                 <option value="delta">Delta</option>
               </select>
             </div>
-            <div>
+            <div class="select-div">
               <p class="text-[14px] text-[#7c7c7c]">Budget</p>
               <select
                 name="budget"
@@ -103,7 +174,7 @@
                 <option value="">%M & above</option>
               </select>
             </div>
-            <div>
+            <div class="select-div">
               <p class="text-[14px] text-[#7c7c7c]">Apatment Type</p>
               <select
                 name="apartment-type"
@@ -121,13 +192,15 @@
                 <option value="">Serviced Apartments</option>
               </select>
             </div>
-            <div class="search-div"><a href="./register.html">Search</a></div>
+            <div class="search-div"><a href="../register.html">Search</a></div>
           </div>
         </div>
       </section>
       <!-- Choose a roommate -->
       <section class="lg:py-24 md:py-8">
-        <div class="flex flex-col justify-center items-center py-10">
+        <div
+          class="choose-your-rommie flex flex-col justify-center items-center py-10"
+        >
           <p class="text-[#ababab] uppercase">Choose a Roommate</p>
           <h2 class="text-4xl font-medium">Find a Roommate</h2>
           <p class="text-[#7c7c7c] pt-3">
@@ -293,7 +366,7 @@
               </div>
             </figcaption>
           </figure>
-          <figure class="max-w-sm m-auto">
+          <figure class="max-w-sm m-auto hide">
             <img src="../assets/images/avatar-6.png" alt="Modern apartment" />
             <figcaption class="flex justify-center flex-col">
               <p class="name pt-4 font-medium text-black text-center">
@@ -319,7 +392,7 @@
               </div>
             </figcaption>
           </figure>
-          <figure class="max-w-sm m-auto">
+          <figure class="max-w-sm m-auto hide">
             <img src="../assets/images/avatar-7.png" alt="Modern apartment" />
             <figcaption class="flex justify-center flex-col">
               <p class="name pt-4 font-medium text-black text-center">
@@ -345,7 +418,7 @@
               </div>
             </figcaption>
           </figure>
-          <figure class="max-w-sm m-auto">
+          <figure class="max-w-sm m-auto hide">
             <img src="../assets/images/avatar-8.png" alt="Modern apartment" />
             <figcaption class="flex justify-center flex-col">
               <p class="name pt-4 font-medium text-black text-center">
@@ -371,7 +444,7 @@
               </div>
             </figcaption>
           </figure>
-          <figure class="max-w-sm m-auto">
+          <figure class="max-w-sm m-auto hide">
             <img src="../assets/images/avatar-7.png" alt="Modern apartment" />
             <figcaption class="flex justify-center flex-col">
               <p class="name pt-4 font-medium text-black text-center">
@@ -550,22 +623,20 @@
         </div>
       </section>
       <!--subscribe to our newsletter  -->
-      <section class="py-15">
-        <div class="grid lg:grid-cols-2 w-full p-4 lg:p-10">
-          <div class="flex flex-col w-full">
-            <h2
-              class="lg:text-4xl text-black font-medium leading-[-1.5px] py-3"
-            >
+      <section class="py-20">
+        <div class="subscribe-frame grid grid-cols-2 w-full p-10">
+          <div class="flex flex-col">
+            <h2 class="text-4xl text-black font-medium leading-[-1.5px]">
               Subscribe to our newletter
             </h2>
-            <span class="flex items-center text-[#7c7c7c] gap-2.5 py-2"
+            <span class="flex items-center text-[#7c7c7c] gap-2.5"
               ><img
                 class="h-5 w-5"
                 src="../assets/images/Vector-(5).png"
                 alt=""
               />Weekly updates</span
             >
-            <span class="flex items-center text-[#7c7c7c] gap-2.5 pb-2">
+            <span class="flex items-center text-[#7c7c7c] gap-2.5">
               <img
                 class="h-5 w-5"
                 src="../assets/images/Vector-(5).png"
@@ -579,22 +650,23 @@
                 alt=""
               />Exclusive content</span
             >
-            <div class="flex mt-auto gap-4">
+            <div class="subscribe-bt flex mt-auto gap-4">
               <a
-                class="flex items-center justify-center pt-1 pr-3.75 pb-1 pl-3.75 bg-[#223448] rounded-full max-w-37 h-11 capitalize text-[#e9e0cf]"
-                href="#"
+                class="user-link flex items-center justify-center pt-1 pr-3.75 pb-1 pl-3.75 bg-[#223448] rounded-full w-37 h-11 capitalize text-[#e9e0cf]"
+                href="../register.html"
                 >find apartment</a
               >
               <a
-                class="flex items-center justify-center bg-[#00000033] max-w-43.25 h-11 text pt-1 pr-3.75 pb-1 pl-3.75 text-[#223448] rounded-full"
-                href="#"
+                class="flex items-center justify-center bg-[#00000033] w-43.25 h-11 text pt-1 pr-3.75 pb-1 pl-3.75 text-[#223448] rounded-full"
+                href="../register.html"
                 >List an apartment</a
               >
             </div>
           </div>
+          <!--  -->
           <div class="w-full">
             <img
-              class="w-full h-full rounded-2xl object-cover"
+              class="w-full rounded-2xl object-cover"
               src="../assets/images/flip-image.png"
               alt=""
             />
@@ -725,7 +797,7 @@
         </div>
       </section>
     </main>
-    <footer class="h-full">
+    <footer>
       <div class="infinite">
         <img src="../assets/images/flame.png" alt="" />
         <strong

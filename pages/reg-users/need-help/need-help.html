@@ -6,22 +6,67 @@
     <title>Contact Us</title>
     <link rel="stylesheet" href="/frontend/dist/output.css" />
     <link rel="stylesheet" href="./need-help.css" />
+    <link rel="stylesheet" href="../reg-user.css" />
   </head>
   <body>
-    <header class="flex justify-between">
-      <div class="uppercase font-bold">
-        <a href="/frontend/index.html">roompal</a>
+    <nav class="nav">
+      <div class="nav-mobile">
+        <button class="back-btn" aria-label="Go back">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M15 18L9 12L15 6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <h1 class="nav-title">Find Apartment</h1>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M3 12H21M3 6H21M3 18H21"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
       </div>
-      <div class="flex items-center gap-2">
-        <a href="">Find an Apartment</a>
-        <a href="">Find a roommate</a>
-        <a href="">List a House </a>
-        <a href="">Messages</a>
+      <!-- Dropdown Menu -->
+      <div class="nav-dropdown">
+        <div class="dropdown-links">
+          <a class="dropdown-header" href="../homepage/home.html">Roompal</a>
+          <a href="./home.html">Find Apartment</a>
+          <a href="../rommate/roomate.html">Find roommate</a>
+          <a href="../list-a-house/list-a-house.html">List a House</a>
+          <a href="../message/in-app-message.html">Message</a>
+          <a href="">Notification</a>
+          <a href="../need-help/need-help.html">Need Help</a>
+        </div>
       </div>
-      <div class="">
-        <a href="">Need Help?</a>
+      <!-- Desktop Nav -->
+      <div class="nav-side__1">
+        <a class="home" href="/frontend/index.html">roompal</a>
+        <div class="link">
+          <a href="../homepage/home.html">Find an Apartment</a>
+          <a href="../rommate/roomate.html">Find a roommate</a>
+          <a href="../list-a-house/list-a-house.html">List a House</a>
+          <a href="../message/in-app-message.html">Messages</a>
+        </div>
       </div>
-    </header>
+      <div class="side-two">
+        <span class="notification bg-[#cccccc]"
+          ><img src="/frontend/assets/images/notification-bell.png" alt=""
+        /></span>
+        <span
+          ><a class="need-help" href="../need-help/need-help.html"
+            >Need Help?</a
+          ></span
+        >
+      </div>
+    </nav>
     <main>
       <section class="mt-20">
         <div class="bg-[#f5f5f5] w-full pt-5 pb-20">

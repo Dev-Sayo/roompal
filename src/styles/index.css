@@ -67,7 +67,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px;
   border-radius: 10px 10px 0px 0px;
 }
 .fia-links a {
@@ -79,7 +78,7 @@ body {
   border-radius: 20px;
   padding: 10px;
   max-width: 183px;
-  height: 44px;
+  height: auto;
 }
 .apartment-locations {
   background: var(--white);
@@ -93,21 +92,6 @@ body {
 }
 .select-div {
   width: 292px;
-}
-.select-div select {
-  padding: 13px;
-  border-radius: 10px;
-}
-.search-div {
-  min-width: 100px;
-  height: 44px;
-  background: var(--blue-2);
-  color: var(--white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  margin-top: 1.3rem;
 }
 .what-we-do-heading {
   font-size: 3rem;
@@ -215,11 +199,7 @@ body {
   align-items: center;
   padding: 2rem;
 }
-
 /* carousel */
-.testimonials-section {
-  padding: 4rem;
-}
 .testimonial-heading h2 {
   padding: 10px 0px 5px 0px;
 }
@@ -322,19 +302,12 @@ body {
   }
 }
 @media (max-width: 426px) {
-  .wwd-card-parent {
-    flex-direction: row-reverse;
-    gap: 10px;
-    background: none;
-  }
-  .wwd-card-parent-2 {
-    flex-direction: row;
-    gap: 10px;
-    background: none;
-  }
   .wwd-card-parent p,
   .wwd-card-parent-2 p {
     padding-bottom: 0px;
+  }
+  .wwd-text {
+    padding: 5px;
   }
 }
 @media (max-width: 404px) {
@@ -342,14 +315,13 @@ body {
     padding: 10px;
   }
   .wwd-text p {
-    font-size: 14px;
+    font-size: 12px;
   }
   .wwd-text span {
-    font-size: 14px;
+    font-size: 12px;
   }
   .wwd-text a {
-    font-size: 14px;
-    margin-top: 2px;
+    font-size: 12px;
   }
   .wwd-card-parent,
   .wwd-card-parent-2 {
@@ -357,6 +329,20 @@ body {
   }
   .fia-links {
     padding: 0px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 350px) {
+  .fia-links {
+    padding: 10px;
+    gap: 5px;
+  }
+  .select-div select {
+    padding: 1px;
+    font-size: 10px;
+  }
+  .fia-links a {
+    font-size: 10px !important;
   }
 }
 @media (min-width: 769px) {

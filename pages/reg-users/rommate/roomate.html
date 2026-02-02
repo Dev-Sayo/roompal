@@ -5,17 +5,53 @@
     <title>Find roommate</title>
     <link rel="stylesheet" href="./rommate.css" />
     <link rel="stylesheet" href="/frontend/dist/output.css" />
+    <link rel="stylesheet" href="../reg-user.css" />
   </head>
   <body>
     <nav class="nav">
+      <div class="nav-mobile">
+        <button class="back-btn" aria-label="Go back">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M15 18L9 12L15 6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <h1 class="nav-title">Find Apartment</h1>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M3 12H21M3 6H21M3 18H21"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="nav-dropdown">
+        <div class="dropdown-links">
+          <a class="dropdown-header" href="../homepage/home.html">Roompal</a>
+          <a href="./home.html">Find Apartment</a>
+          <a href="../rommate/roomate.html">Find roommate</a>
+          <a href="../list-a-house/list-a-house.html">List a House</a>
+          <a href="../message/in-app-message.html">Message</a>
+          <a href="">Notification</a>
+          <a href="../need-help/need-help.html">Need Help</a>
+        </div>
+      </div>
       <div class="nav-side__1">
-        <div><a class="home" href="../homepage/home.html">roompal</a></div>
-        <ul class="link">
-          <li><a href="../homepage/home.html">Find an Apartment</a></li>
-          <li><a href="./roommate.html">Find a roommate</a></li>
-          <li><a href="../list-a-house/list-a-house.html">List a House </a></li>
-          <li><a href="../message/in-app-message.html">Messages</a></li>
-        </ul>
+        <a class="home" href="/frontend/index.html">roompal</a>
+        <div class="link">
+          <a href="../homepage/home.html">Find an Apartment</a>
+          <a href="../rommate/roomate.html">Find a roommate</a>
+          <a href="../list-a-house/list-a-house.html">List a House</a>
+          <a href="../message/in-app-message.html">Messages</a>
+        </div>
       </div>
       <div class="side-two">
         <span class="notification"
@@ -398,9 +434,8 @@
                 <div class="roommate-info">
                   <h4>John Doe</h4>
                   <p>Banker</p>
-                  <a href="">chat</a>
-                  <br />
-                  <a href="">View More</a>
+                  <a class="chat" href="">chat</a>
+                  <a class="view-more" href="">View More</a>
                 </div>
               </div>
               <div class="roommate-card">
@@ -410,9 +445,8 @@
                 <div class="roommate-info">
                   <h4>John Doe</h4>
                   <p>Banker</p>
-                  <a href="">chat</a>
-                  <br />
-                  <a href="">View More</a>
+                  <a class="chat" href="">chat</a>
+                  <a class="view-more" href="">View More</a>
                 </div>
               </div>
               <div class="roommate-card">
@@ -422,9 +456,8 @@
                 <div class="roommate-info">
                   <h4>John Doe</h4>
                   <p>Banker</p>
-                  <a href="">chat</a>
-                  <br />
-                  <a href="">View More</a>
+                  <a class="chat" href="">chat</a>
+                  <a class="view-more" href="">View More</a>
                 </div>
               </div>
               <div class="roommate-card">
@@ -434,9 +467,8 @@
                 <div class="roommate-info">
                   <h4>John Doe</h4>
                   <p>Banker</p>
-                  <a href="">chat</a>
-                  <br />
-                  <a href="">View More</a>
+                  <a class="chat" href="">chat</a>
+                  <a class="view-more" href="">View More</a>
                 </div>
               </div>
               <div class="roommate-card">
@@ -446,9 +478,8 @@
                 <div class="roommate-info">
                   <h4>John Doe</h4>
                   <p>Banker</p>
-                  <a href="">chat</a>
-                  <br />
-                  <a href="">View More</a>
+                  <a class="chat" href="">chat</a>
+                  <a class="view-more" href="">View More</a>
                 </div>
               </div>
               <div class="roommate-card">
@@ -458,9 +489,8 @@
                 <div class="roommate-info">
                   <h4>John Doe</h4>
                   <p>Banker</p>
-                  <a href="">chat</a>
-                  <br />
-                  <a href="">View More</a>
+                  <a class="chat" href="">chat</a>
+                  <a class="view-more" href="">View More</a>
                 </div>
               </div>
             </div>
@@ -675,5 +705,6 @@
       </div>
     </main>
     <script src="./find-rommate.js"></script>
+    <script src="../reg-user-dropdown.js"></script>
   </body>
 </html>

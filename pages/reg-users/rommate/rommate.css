@@ -16,6 +16,7 @@
   --notify-white: rgba(204, 204, 204, 1);
   --black-color: #000;
   --Secondary-white-Color: rgba(245, 245, 245, 1);
+  --notification-color: rgba(204, 204, 204, 1);
   --secondary-color-2: rgba(148, 180, 193, 1);
   --primary-color: rgba(0, 0, 0, 0.2);
   --primary-color-1: rgba(34, 52, 72, 1);
@@ -53,7 +54,6 @@ nav {
 .nav-side__1 {
   display: flex;
   align-items: center;
-  gap: 7rem;
 }
 .nav .home {
   font-weight: 600;
@@ -273,6 +273,32 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+}
+.roommate-info h4 {
+  font-weight: 600;
+}
+.chat {
+  background: #223448;
+  color: var(--white);
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.view-more {
+  background: var(--notification-color);
+  color: var(--white);
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chat,
+.view-more {
+  border-radius: 25px;
 }
 .roommate-reg-section {
   max-width: 858px;
@@ -409,8 +435,17 @@ option {
   color: white;
   box-shadow: 0 2px 8px rgba(110, 181, 192, 0.3);
 }
-
 /* Registration Form */
 .register-form {
   max-width: 600px;
+}
+@media (max-width: 1024px) {
+  .tab-buttons {
+    padding: 1rem;
+  }
+}
+@media (max-width: 550px) {
+  .search-box button {
+    min-width: 150px;
+  }
 }

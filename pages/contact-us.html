@@ -8,40 +8,111 @@
     <link rel="stylesheet" href="../src/styles/main.css" />
   </head>
   <body>
-    <header class="header w-full flex justify-between p-4">
-      <div class="uppercase font-bold text-[24px] text-black">
+    <header class="header w-full flex justify-between items-center p-4">
+      <div class="uppercase font-bold text-[24px]">
         <a href="../index.html">roompal</a>
       </div>
-      <nav class="flex items-center gap-4 text-[#7c7c7c]">
+      <nav
+        class="hidden items-center justify-between gap-4 text-[#7c7c7c] md:flex"
+      >
         <a href="../index.html">Home</a>
-        <div class="dropdown-container" id="myDropdown">
+        <div class="dropdown-container relative" id="myDropdown">
           <button class="dropdown-btn cursor-pointer">
-            <span class="flex items-center justify-between gap-2"
-              >Service
+            <span class="flex items-center justify-between gap-2">
+              Service
               <img
                 src="../assets/images/dropdown-chevron.png"
                 class="w-4"
                 alt=""
-            /></span>
+              />
+            </span>
           </button>
           <ul
             id="dropdown-menu"
-            class="dropdown-content absolute top-17 right-0 w-[320px] hidden"
+            class="dropdown-content absolute top-full right-0 w-[320px] hidden mt-2"
           >
             <li><a href="./pages/find-apartment.html">Find an Apartment</a></li>
-            <li><a href="./pages/find-roomie.html"> Find a Roomamte</a></li>
-            <li><a href="./pages/find-renter.html">FInd a Flatmate</a></li>
+            <li><a href="./pages/find-roomie.html">Find a Roommate</a></li>
+            <li><a href="./pages/find-renter.html">Find a Flatmate</a></li>
           </ul>
         </div>
-        <a href="./about-us.html">About</a>
-        <a href="./contact-us.html">Contact</a>
+        <a href="./pages/about-us.html">About</a>
+        <a href="./pages/contact-us.html">Contact</a>
       </nav>
+      <!-- Desktop CTA Button -->
       <div
-        class="bg-[#223448] text-white rounded-full w-37 h-11 flex items-center justify-center px-3.75 py-1"
+        class="hidden md:flex bg-[#223448] text-white rounded-full h-11 items-center justify-center px-3.75 py-1"
       >
-        <a class="text-white" href="../register.html">Find your home</a>
+        <a
+          class="registerRoute text-white whitespace-nowrap"
+          href="./register.html"
+          >Find your home</a
+        >
       </div>
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden text-[#223448] focus:outline-none"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
     </header>
+    <nav
+      id="mobile-menu"
+      class="hidden md:hidden bg-white border-b border-gray-200"
+    >
+      <div class="flex flex-col p-4 space-y-4 text-[#7c7c7c]">
+        <a href="/frontend/index.html" class="hover:text-[#223448]">Home</a>
+        <div>
+          <button
+            id="mobile-dropdown-btn"
+            class="flex items-center justify-between w-full hover:text-[#223448]"
+          >
+            <span>Service</span>
+            <img src="../assets/images/chevron.png" class="w-4" alt="" />
+          </button>
+          <ul id="mobile-dropdown-menu" class="hidden mt-2 space-y-2">
+            <li>
+              <a
+                href="../pages/find-apartment.html"
+                class="block hover:text-[#223448]"
+                >Find an Apartment</a
+              >
+            </li>
+            <li>
+              <a
+                href="../pages/find-roomie.html"
+                class="block hover:text-[#223448]"
+                >Find a Roommate</a
+              >
+            </li>
+            <li>
+              <a
+                href="../pages/find-renter.html"
+                class="block hover:text-[#223448]"
+                >Find a Flatmate</a
+              >
+            </li>
+          </ul>
+        </div>
+        <a href="../pages/about-us.html" class="hover:text-[#223448]">About</a>
+        <a href="../pages/contact-us.html" class="hover:text-[#223448]"
+          >Contact</a
+        >
+      </div>
+    </nav>
     <main>
       <section class="mt-20">
         <div class="text-center flex flex-col my-15">
@@ -317,7 +388,7 @@
               >
             </div>
           </div>
-          <!--  -->
+
           <div class="w-full">
             <img
               class="w-full rounded-2xl object-cover"
@@ -472,8 +543,11 @@
             <img class="w-6 h-6" src="../assets/images/Vector-(1).png" alt=""
           /></a>
           <a href="">
-            <img class="w-6 h-6" src="../assets/images/InstagramLogo.png" alt=""
-          </a>
+            <img
+              class="w-6 h-6"
+              src="../assets/images/InstagramLogo.png"
+              alt=""
+          /></a>
         </div>
         <div class="contact-us">
           <div class="find">
