@@ -43,9 +43,219 @@ body {
     "aside main"
     "footer footer";
 }
+/* notification */
 .notification {
   background: var(--secondary-color-2);
 }
+.notification-container {
+  display: none;
+}
+.notification-modal {
+  width: 100%;
+  height: 691px;
+  position: relative;
+  border-radius: 25px;
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+  padding: 40px 10px 15px 24px;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 16px;
+  color: #000;
+  font-family: Inter;
+}
+.frame-parent {
+  width: 308px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 31px;
+  flex-shrink: 0;
+}
+.frame-wrapper {
+  width: 135px;
+  height: 47px;
+  border-radius: 20px;
+  border: 1px solid #223448;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 18px;
+  flex-shrink: 0;
+  font-size: 14px;
+  color: #223448;
+}
+.notifications-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+}
+.notifications {
+  position: relative;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+}
+.frame-group {
+  width: 305px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.all-dropdown-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.all-dropdown {
+  align-self: stretch;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+}
+.all-dropdown-inner {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.property-type-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.property-type {
+  flex: 1;
+  position: relative;
+  letter-spacing: -0.3px;
+  line-height: 150%;
+}
+.button-parent {
+  width: 305px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  font-size: 11.91px;
+  color: #fff;
+}
+.button {
+  width: 133.5px;
+  border-radius: 850.14px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8.5px 17px;
+  box-sizing: border-box;
+}
+.view-profile-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.view-profile {
+  position: relative;
+  letter-spacing: -0.26px;
+  line-height: 20.42px;
+  font-weight: 500;
+}
+.button2 {
+  width: 165.9px;
+  border-radius: 850.14px;
+  background-color: #223448;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8.5px 17px;
+  box-sizing: border-box;
+}
+.frame-child {
+  width: 374px;
+  height: 1px;
+  position: relative;
+  border-top: 1px solid rgba(124, 124, 124, 0.15);
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+.all-dropdown-frame {
+  width: 315px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.button-container {
+  width: 305px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+  font-size: 11.91px;
+  color: #fff;
+}
+.frame-parent2 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.all-dropdown-wrapper2 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.button-parent2 {
+  height: 38.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  font-size: 12.06px;
+  color: #fff;
+}
+.button7 {
+  width: 135.1px;
+  border-radius: 860.49px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8.6px 17.2px;
+  box-sizing: border-box;
+}
+.ignore {
+  position: relative;
+  letter-spacing: -0.26px;
+  line-height: 20.67px;
+  font-weight: 500;
+}
+.button8 {
+  width: 168px;
+  border-radius: 860.49px;
+  background-color: #223448;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8.6px 17.2px;
+  box-sizing: border-box;
+}
+
 aside {
   grid-area: aside;
   background: var(--white);

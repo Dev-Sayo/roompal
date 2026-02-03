@@ -302,7 +302,12 @@ body {
     font-size: 14px;
   }
   .reduce {
-    aspect-ratio: 23/21;
+    aspect-ratio: 10/10;
+  }
+}
+@media (max-width: 518px) {
+  .wwd-text a {
+    margin-top: 4px;
   }
 }
 @media (max-width: 480px) {
