@@ -307,12 +307,13 @@ option:hover {
   }
   /* 2 */
   .tel-box {
-    background: #eeeeee;
+    background: #f1f1f1;
     padding: 10px;
     flex: 1;
     border-radius: 10px;
   }
   .tel-box input {
+    background: #eeeeee !important;
     width: 100%;
     border: none;
     outline: none;
@@ -339,4 +340,27 @@ option:hover {
 .success-message p {
   color: #666;
   font-size: 15px;
+}
+.hiding {
+  display: block;
+}
+@media (max-width: 768px) {
+  .info-input-parent-container {
+    padding: 1rem;
+  }
+  .heading-text h1 {
+    font-size: 30px;
+  }
+  .selector {
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 446px) {
+  .heading-text h1 {
+    font-size: 20px;
+  }
+  .heading-text p {
+    padding-inline: 10px;
+    text-align: center;
+  }
 }

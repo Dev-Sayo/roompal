@@ -255,7 +255,6 @@ body {
   padding: 8.6px 17.2px;
   box-sizing: border-box;
 }
-
 aside {
   grid-area: aside;
   background: var(--white);
@@ -357,6 +356,28 @@ main {
   cursor: pointer;
   margin-top: 2.3rem;
 }
+.apartment-section {
+  padding-block: 1.3rem;
+}
+.apartment-frame {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+.explore-box {
+  padding: 10px;
+}
+.agent-info {
+  gap: 5px;
+  padding-block: 1rem;
+}
+.agent-info a {
+  width: calc(50%);
+  cursor: pointer;
+}
+.agent-info a:first-child {
+  gap: 2rem;
+}
 @media (max-width: 1024px) {
   .hero-section {
     background-color: transparent;
@@ -365,7 +386,6 @@ main {
     background-size: 100%;
   }
 }
-
 @media (max-width: 768px) {
   .nav {
     padding: 0.75rem;

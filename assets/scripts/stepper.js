@@ -1,4 +1,3 @@
-// Get all the DOM elements
 const form = document.getElementById("propertyForm");
 const steps = document.querySelectorAll(".selector");
 const prevBtn = document.getElementById("prevBtn");
@@ -7,11 +6,9 @@ const submitBtn = document.getElementById("submitBtn");
 const stepCounter = document.getElementById("stepCounter");
 const successMessage = document.getElementById("successMessage");
 
-// Track which step we're on
 let currentStep = 0;
 const totalSteps = steps.length;
 
-// When page loads, show first step
 initialize();
 
 function initialize() {
@@ -24,12 +21,10 @@ function showStep(stepIndex) {
   steps[stepIndex].classList.add("active");
 }
 
-// Update the step counter
 function updateStepCounter() {
   stepCounter.textContent = `${currentStep + 1}/${totalSteps}`;
 }
 
-// Update everything
 function updateUI() {
   updateStepCounter();
 }
@@ -65,7 +60,6 @@ async function showCurrentStep() {
   });
 }
 
-// Handle "Next" button click
 async function handleNext() {
   nextBtn.classList.add("loading");
   nextBtn.disabled = true;
@@ -84,7 +78,6 @@ async function handleNext() {
   }
 }
 
-// Handle "Previous" button click
 async function handlePrevious() {
   prevBtn.classList.add("loading");
   prevBtn.disabled = true;
@@ -101,7 +94,6 @@ async function handlePrevious() {
   }
 }
 
-// Handle form submission
 async function handleSubmit(e) {
   e.preventDefault();
 
@@ -129,7 +121,6 @@ async function handleSubmit(e) {
   }
 }
 
-// Attach event listeners
 nextBtn.addEventListener("click", handleNext);
 prevBtn.addEventListener("click", handlePrevious);
 form.addEventListener("submit", handleSubmit);

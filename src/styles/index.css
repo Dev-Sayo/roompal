@@ -314,6 +314,9 @@ body {
   .get-a-space-container {
     padding: 5px;
   }
+  .your-home p {
+    font-size: 14px;
+  }
 }
 @media (max-width: 426px) {
   .wwd-card-parent p,

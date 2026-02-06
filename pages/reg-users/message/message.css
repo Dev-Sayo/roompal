@@ -22,7 +22,7 @@
   --bg-color: #f8f8f8;
   --gray: rgba(124, 124, 124, 1);
   --dark-gray: rgba(94, 94, 94, 1);
-  :--primary-color-2: #e9e0cf;
+  --primary-color-2: #e9e0cf;
 }
 *,
 *::before,
