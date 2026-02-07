@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
-    <link rel="stylesheet" href="/frontend/dist/output.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="need-help.css" />
-    <link rel="stylesheet" href="/frontend/src/styles/reg-user.css" />
+    <link rel="stylesheet" href="../reg-user.css" />
   </head>
   <body>
     <nav class="nav">
@@ -36,9 +36,9 @@
       </div>
       <div class="nav-dropdown">
         <div class="dropdown-links">
-          <a class="dropdown-header" href="../homepage/home.html">Roompal</a>
-          <a href="./home.html">Find Apartment</a>
-          <a href="../rommate/roomate.html">Find roommate</a>
+          <a class="dropdown-header" href="./homepage/home.html">Roompal</a>
+          <a href="../homepage/home.html">Find Apartment</a>
+          <a href="../roommate/roommate.html">Find roommate</a>
           <a href="../list-a-house/list-a-house.html">List a House</a>
           <a href="../message/in-app-message.html">Message</a>
           <a href="">Notification</a>
@@ -49,14 +49,14 @@
         <a class="home" href="/frontend/index.html">roompal</a>
         <div class="link">
           <a href="../homepage/home.html">Find an Apartment</a>
-          <a href="../rommate/roomate.html">Find a roommate</a>
+          <a href="../roommate/roommate.html">Find a roommate</a>
           <a href="../list-a-house/list-a-house.html">List a House</a>
           <a href="../message/in-app-message.html">Messages</a>
         </div>
       </div>
       <div class="side-two">
         <span class="notification bg-[#cccccc]"
-          ><img src="/frontend/assets/images/notification-bell.png" alt=""
+          ><img src="../images/notification-bell.png" alt=""
         /></span>
         <span
           ><a class="need-help" href="../need-help/need-help.html"
@@ -152,7 +152,7 @@
         <!-- messages recieved -->
         <div class="message-recieved">
           <div class="message-inner">
-            <img src="/frontend/assets/images/sent-coffetti-check.gif" />
+            <img src="../images/sent-coffetti-check.gif" />
             <div class="message-text">
               <h2>Message Received</h2>
               <p>
@@ -165,5 +165,6 @@
         </div>
       </section>
     </main>
+    <script src="../reg-user-dropdown.js"></script>
   </body>
 </html>

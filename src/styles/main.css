@@ -462,8 +462,7 @@ footer {
     margin-bottom: 10px;
   }
   .fia-link,
-  .fia-links,
-  .apartment-locations {
+  .fia-links {
     flex-wrap: wrap;
     padding: 3px;
   }

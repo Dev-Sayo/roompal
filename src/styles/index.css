@@ -29,6 +29,12 @@ body {
   font-family: "Inter", sans-serif;
 }
 /* MAIN */
+.hero-frame {
+  padding: 2rem;
+}
+.your-home {
+  padding-block: 1rem;
+}
 .your-home h2 {
   width: 100%;
   font-weight: 550;
@@ -213,6 +219,14 @@ body {
   font-style: normal;
 }
 /* media queries */
+@media (max-width: 1000px) {
+  .hero-frame {
+    padding: 10px;
+  }
+  .your-home h2 {
+    font-size: 38px;
+  }
+}
 @media (max-width: 810px) {
   .explore-prop {
     padding-inline: 16px;
@@ -225,6 +239,9 @@ body {
   .your-home {
     display: block;
     padding: 1rem;
+  }
+  .your-home h2 {
+    font-size: 28px;
   }
   .your-home p {
     text-align: center;
@@ -306,6 +323,9 @@ body {
   }
 }
 @media (max-width: 518px) {
+  .your-home h2 {
+    font-size: 24px;
+  }
   .wwd-text a {
     margin-top: 4px;
   }

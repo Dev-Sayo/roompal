@@ -49,9 +49,12 @@ function showStep(stepIndex) {
 }
 
 // Update the step counter
-function updateStepCounter() {
-  stepCounter.textContent = `${currentStep + 1}/${totalSteps}`;
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const element = document.getElementById("my-element");
+  if (element) {
+    element.textContent = "New Content";
+  }
+});
 
 // Update button states
 function updateButtons() {
