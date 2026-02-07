@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verify your email</title>
+    <link rel="stylesheet" href="./verify-email.css" />
+    <link rel="stylesheet" href="/frontend/dist/output.css" />
+  </head>
+  <body>
+    <main>
+      <div class="verify-email-container w-full">
+        <!-- verify your email overlay-modal -->
+        <div
+          id="verify-email"
+          class="verify-email-overlay rounded-[14px] mx-auto"
+        >
+          <div class="verify-text w-full text-center">
+            <h2>Account Created</h2>
+            <p id="">Your account has been successfully created</p>
+            <div class="email_animation mt-4">
+              <img src="/frontend/assets/images/check-animation.gif" />
+            </div>
+            <div
+              class="okay-btn w-full h-10 rounded-[20px] bg-[#223448] text-white cursor-pointer p-20 flex items-center justify-center"
+            >
+              <a
+                href="/frontend/pages/reg-users/homepage/home.html"
+                class="p-5"
+                target="_self"
+              >
+                Start House hunting
+              </a>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="verify-info-container">
+          <div class="verify-info-text">
+            <h2>Verify your Email</h2>
+            <p>We sent the verification code to your email, proxy1@gmail.com</p>
+          </div>
+          <form action="#">
+            <div>
+              <p>Enter 6 Digit Code</p>
+              <div class="input-group">
+                <label for=""
+                  ><img
+                    class="w-6 h-6"
+                    src="/frontend/assets/images/keyboard.png"
+                    alt=""
+                /></label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="bottom-frame">
+              <div class="agreement">
+                <input type="checkbox" />
+                <span>I agree to the terms and conditions</span>
+              </div>
+              <button class="verifyBtn">Verify</button>
+              <span
+                >Already have an account?
+                <a href="../login.html">Sign In</a></span
+              >
+            </div>
+          </form>
+        </div>
+        <div class="bg-side-image">
+          <div class="bg-side">
+            <h2>Roompal</h2>
+            <p>
+              We are a housing and roommate matching platform built to make
+              finding a place to live simple, safe, and reliable.
+            </p>
+            <!-- <img
+              class="backdrop"
+              src="/frontend/assets/images/blur-blue.png"
+              alt=""
+            /> -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

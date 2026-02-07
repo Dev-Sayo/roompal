@@ -98,7 +98,7 @@
                 class="bg-[#223448] text-[#e9e0cf] w-full rounded-full h-10 flex items-center justify-center cursor-pointer mb-4"
               >
                 <a
-                  href="pages/reg-users/homepage/home.html"
+                  href="../reg-users/homepage/home.html"
                   id="openModal"
                   class="w-full cursor-pointer text-center"
                 >
@@ -107,19 +107,28 @@
               </div>
               <span
                 >Already have an account?
-                <a class="text-green-700" href="/frontend/pages/auth/login.html"
-                  >Sign in</a
-                ></span
+                <a class="text-green-700" href="./login.html">Sign in</a></span
               >
             </form>
           </div>
-          <div class="bg-side">
+          <div
+            class="bg-side"
+            style="
+              background: url(&quot;./assets/images/3d-rendering-house-model-\(1\)-1.png&quot;);
+              background-size: cover;
+              background-position: center center;
+              position: relative;
+              min-height: 1024px;
+              color: var(--text-color);
+              border-top-left-radius: 15px;
+            "
+          >
             <h2>Roompal</h2>
             <p>
               We are a housing and roommate matching platform built to make
               finding a place to live simple, safe, and reliable.
             </p>
-            <img class="backdrop" src="assets/images/blur-blue.png" alt="" />
+            <img class="backdrop" src="../assets/images/blur-blue.png" />
           </div>
         </div>
         <!-- verify your email overlay-modal -->
@@ -133,7 +142,7 @@
               We sent the verification code to your email, proxy1@gmail.com
             </p>
             <div class="email_animation mt-4">
-              <img src="assets/images/email-animation.gif" alt="" />
+              <img src="../assets/images/email-animation.gif" />
             </div>
             <div
               class="okay-btn w-[80%] m-auto h-10 rounded-[20px] bg-[#223448] text-white cursor-pointer p-5 flex items-center justify-center"

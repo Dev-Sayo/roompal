@@ -3,8 +3,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Roompal</title>
-    <link rel="stylesheet" href="/frontend/dist/output.css" />
-    <link rel="stylesheet" href="/frontend/src/styles/login.css" />
+    <link rel="stylesheet" href="dist/output.css" />
+    <link rel="stylesheet" href="src/styles/login.css" />
   </head>
   <body class="m-0 p-0 border-box">
     <main>
@@ -86,13 +86,24 @@
             </form>
           </div>
           <div class="w-full">
-            <div class="bg-side">
+            <div
+              class="bg-side"
+              style="
+                background: url(&quot;./assets/images/3d-rendering-house-model-\(1\)-1.png&quot;);
+                background-size: cover;
+                background-position: center center;
+                position: relative;
+                min-height: 1024px;
+                color: var(--text-color);
+                border-top-left-radius: 15px;
+              "
+            >
               <h2>Roompal</h2>
               <p>
                 We are a housing and roommate matching platform built to make
                 finding a place to live simple, safe, and reliable.
               </p>
-              <img class="backdrop" src="assets/images/blur-blue.png" alt="" />
+              <img class="backdrop" src="assets/images/blur-blue.png" />
             </div>
           </div>
         </div>

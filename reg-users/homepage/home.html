@@ -11,7 +11,6 @@
     />
     <title>Find an apartment</title>
     <link rel="stylesheet" href="home.css" />
-    <link rel="stylesheet" href="/frontend/dist/output.css" />
     <link rel="stylesheet" href="../filter-section.css" />
     <link rel="stylesheet" href="../reg-user.css" />
   </head>
@@ -63,7 +62,9 @@
       </div>
       <div class="side-two">
         <div>
-          <span class="notification"><img src="" /></span>
+          <span class="notification"
+            ><img src="../images/notification-bell.png" alt=""
+          /></span>
           <div class="notification-container">
             <div class="notification-modal">
               <div class="notification-modal">
@@ -196,7 +197,7 @@
             <span>Lagos</span>
             <img
               class="w-4 object-cover"
-              src="/frontend/assets/images/light-chevron.png"
+              src="../images/light-chevron.png"
               alt=""
             />
           </div>
@@ -213,8 +214,8 @@
         </div>
       </div>
     </aside>
-    <main class="bg-white">
-      <section class="m-10">
+    <main>
+      <section>
         <div class="hero-section rounded-2xl">
           <h2 class="font-medium text-2xl">
             Search for your Dream Apartment Here
@@ -254,12 +255,8 @@
       <section class="mobile-tab hidden">
         <div>
           <h2>Popular Searches</h2>
-          <div>
-            <img
-              class="w-24 h-24"
-              src="/frontend/assets/images/search.png"
-              alt=""
-            />
+          <div class="mobile-filter-dropdown">
+            <img class="w-24 h-24" src="../images/search.png" />
             <aside>
               <div class="location-div w-77.25">
                 <p>Location</p>
@@ -268,7 +265,7 @@
                     <span>Lagos</span>
                     <img
                       class="w-4 object-cover"
-                      src="/frontend/assets/images/light-chevron.png"
+                      src="../images/light-chevron.png"
                       alt=""
                     />
                   </div>
@@ -289,322 +286,181 @@
         </div>
       </section>
       <section class="apartment-section bg-white">
-        <div class="apartment-frame w-full">
-          <div class="explore-box bg-[#fffafa] w-full rounded-[20px]">
-            <div class="w-full p-5">
-              <img src="/frontend/assets/images/image-1.png" />
+        <div class="apartment-frame">
+          <div class="explore-box">
+            <div class="display-img">
+              <img src="../images/image-1.png" />
             </div>
-            <div class="explore-prop w-full flex flex-col px-10 pb-4">
-              <div class="w-full flex items-center justify-between px-1">
-                <h2 class="text-2xl font-medium">N250,000</h2>
-                <p class="text-[#00000033] text-xs uppercase font-medium">
-                  total area: 250M2
-                </p>
+            <div class="explore-prop">
+              <div class="explore-property-text">
+                <h2>N250,000</h2>
+                <p>total area: 250M2</p>
               </div>
-              <p class="flex items-center gap-2 text-[#00000033] py-2 px-1">
-                <img
-                  class="w-4 h-3.5"
-                  src="/frontend/assets/images/Vector-(7).png"
-                  alt=""
-                />
+              <p class="house-ad">
+                <img class="w-4 h-3.5" src="../images/Vector-(7).png" />
                 102 Gbagada street, new island
               </p>
-              <div class="flex items-center gap-6 px-1">
+              <div class="bedroom-qty">
                 <p class="flex items-center gap-2 text-[#00000033]">
-                  <img
-                    class="w-4 h-2.75"
-                    src="/frontend/assets/images/Vector-(8).png"
-                    alt=""
-                  />
+                  <img src="../images/Vector-(8).png" />
                   4 bedroom
                 </p>
                 <p class="text-[#00000033] flex items-center gap-2">
-                  <img
-                    class="w-4 h-3.25"
-                    src="/frontend/assets/images/Vector-(9).png"
-                    alt=""
-                  />2 bedroom
+                  <img src="../images/Vector-(9).png" />2 bedroom
                 </p>
               </div>
-              <div class="flex items-center py-4 agent-info">
-                <a
-                  class="registerRoute flex items-center justify-center gap-2 text-white bg-[#223448] h-11 rounded-full text-xs"
-                >
-                  <img
-                    class="w-4"
-                    src="/frontend/assets/images/message.png"
-                    alt=""
-                  />
+              <div class="agent-info">
+                <a href="">
+                  <img src="../images/message.png" />
                   Message agent</a
                 >
-                <a
-                  class="registerRoute bg-[#00000033] h-11 flex items-center justify-center rounded-full"
-                >
-                  View more details
-                </a>
+                <a> View more details </a>
               </div>
             </div>
           </div>
-          <div class="explore-box bg-[#fffafa] w-full rounded-[20px]">
-            <div class="p-5">
-              <img src="/frontend/assets/images/image-2.png" />
+          <div class="explore-box">
+            <div class="display-img">
+              <img src="../images/image-2.png" />
             </div>
-            <div class="explore-prop w-full flex flex-col px-10 pb-4">
-              <div class="w-full flex items-center justify-between px-1">
-                <h2 class="text-2xl font-medium">N250,000</h2>
-                <p class="text-[#00000033] text-xs uppercase font-medium">
-                  total area: 250M2
-                </p>
+            <div class="explore-prop">
+              <div class="explore-property-text">
+                <h2>N250,000</h2>
+                <p>total area: 250M2</p>
               </div>
-              <p class="flex items-center gap-2 text-[#00000033] py-2 px-1">
-                <img
-                  class="w-4 h-3.5"
-                  src="/frontend/assets/images/Vector-(7).png"
-                  alt=""
-                />
+              <p class="house-ad">
+                <img class="w-4 h-3.5" src="../images/Vector-(7).png" />
                 102 Gbagada street, new island
               </p>
-              <div class="flex items-center gap-6 px-1">
+              <div class="bedroom-qty">
                 <p class="flex items-center gap-2 text-[#00000033]">
-                  <img
-                    class="w-4 h-2.75"
-                    src="/frontend/assets/images/Vector-(8).png"
-                    alt=""
-                  />
+                  <img src="../images/Vector-(8).png" />
                   4 bedroom
                 </p>
                 <p class="text-[#00000033] flex items-center gap-2">
-                  <img
-                    class="w-4 h-3.25"
-                    src="/frontend/assets/images/Vector-(9).png"
-                    alt=""
-                  />2 bedroom
+                  <img src="../images/Vector-(9).png" />2 bedroom
                 </p>
               </div>
-              <div class="flex items-center py-4 agent-info">
-                <a
-                  class="registerRoute flex items-center justify-center gap-2 text-white bg-[#223448] h-11 rounded-full text-xs"
-                  ><img
-                    class="w-4"
-                    src="/frontend/assets/images/message.png"
-                    alt=""
-                  />Message agent</a
-                ><a
-                  class="registerRoute bg-[#00000033] h-11 flex items-center justify-center rounded-full"
-                >
-                  View more details
-                </a>
+              <div class="agent-info">
+                <a href=""><img src="../images/message.png" />Message agent</a>
+                <a href=""> View more details </a>
               </div>
             </div>
           </div>
-          <div class="explore-box bg-[#fffafa] w-full rounded-[20px]">
-            <div class="p-5 w-full">
-              <img src="/frontend/assets/images/image-3.png" />
+          <div class="explore-box">
+            <div class="display-img">
+              <img src="../images/image-3.png" />
             </div>
-            <div class="explore-prop w-full flex flex-col px-10 pb-4">
-              <div class="w-full flex items-center justify-between px-1">
-                <h2 class="text-2xl font-medium">N250,000</h2>
-                <p class="text-[#00000033] text-xs uppercase font-medium">
-                  total area: 250M2
-                </p>
+            <div class="explore-prop">
+              <div class="explore-property-text">
+                <h2>N250,000</h2>
+                <p>total area: 250M2</p>
               </div>
-              <p class="flex items-center gap-2 text-[#00000033] py-2 px-1">
-                <img
-                  class="w-4 h-3.5"
-                  src="/frontend/assets/images/Vector-(7).png"
-                  alt=""
-                />
+              <p class="house-ad">
+                <img class="w-4 h-3.5" src="../images/Vector-(7).png" />
                 102 Gbagada street, new island
               </p>
-              <div class="flex items-center gap-6 px-1">
+              <div class="bedroom-qty">
                 <p class="flex items-center gap-2 text-[#00000033]">
-                  <img
-                    class="w-4 h-2.75"
-                    src="/frontend/assets/images/Vector-(8).png"
-                    alt=""
-                  />
+                  <img src="../images/Vector-(8).png" />
                   4 bedroom
                 </p>
                 <p class="text-[#00000033] flex items-center gap-2">
-                  <img
-                    class="w-4 h-3.25"
-                    src="/frontend/assets/images/Vector-(9).png"
-                    alt=""
-                  />2 bedroom
+                  <img src="../images/Vector-(9).png" />2 bedroom
                 </p>
               </div>
-              <div class="flex items-center py-4 agent-info">
-                <a
-                  class="registerRoute flex items-center justify-center gap-2 text-white bg-[#223448] h-11 rounded-full text-xs"
-                >
-                  <img
-                    class="w-4"
-                    src="/frontend/assets/images/message.png"
-                    alt=""
-                  />
+              <div class="agent-info">
+                <a href="../message/in-app-message.html">
+                  <img src="../images/message.png" />
                   Message agent</a
                 >
-                <a
-                  class="registerRoute bg-[#00000033] h-11 flex items-center justify-center rounded-full"
-                >
-                  View more details
-                </a>
+                <a href=""> View more details </a>
               </div>
             </div>
           </div>
-          <div class="explore-box bg-[#fffafa] w-full rounded-[20px] hide">
-            <div class="p-5">
-              <img src="/frontend/assets/images/image-4.png" />
+          <div class="explore-box hide">
+            <div class="display-img">
+              <img src="../images/image-4.png" />
             </div>
-            <div class="explore-prop w-full flex flex-col px-10 pb-4">
-              <div class="w-full flex items-center justify-between px-1">
-                <h2 class="text-2xl font-medium">N250,000</h2>
-                <p class="text-[#00000033] text-xs uppercase font-medium">
-                  total area: 250M2
-                </p>
+            <div class="explore-prop">
+              <div class="explore-property-text">
+                <h2>N250,000</h2>
+                <p>total area: 250M2</p>
               </div>
-              <p class="flex items-center gap-2 text-[#00000033] py-2 px-1">
-                <img
-                  class="w-4 h-3.5"
-                  src="/frontend/assets/images/Vector-(7).png"
-                  alt=""
-                />
+              <p class="house-ad">
+                <img class="w-4 h-3.5" src="../images/Vector-(7).png" />
                 102 Gbagada street, new island
               </p>
-              <div class="flex items-center gap-6 px-1">
+              <div class="bedroom-qty">
                 <p class="flex items-center gap-2 text-[#00000033]">
-                  <img
-                    class="w-4 h-2.75"
-                    src="/frontend/assets/images/Vector-(8).png"
-                    alt=""
-                  />
+                  <img src="../images/Vector-(8).png" />
                   4 bedroom
                 </p>
                 <p class="text-[#00000033] flex items-center gap-2">
-                  <img
-                    class="w-4 h-3.25"
-                    src="/frontend/assets/images/Vector-(9).png"
-                    alt=""
-                  />2 bedroom
+                  <img src="../images/Vector-(9).png" />2 bedroom
                 </p>
               </div>
-              <div class="flex items-center py-4 agent-info">
-                <a
-                  class="registerRoute flex items-center justify-center gap-2 text-white bg-[#223448] h-11 rounded-full text-xs"
-                  ><img
-                    class="w-4"
-                    src="/frontend/assets/images/message.png"
-                    alt=""
-                  />Message agent</a
-                ><a
-                  class="registerRoute bg-[#00000033] h-11 flex items-center justify-center rounded-full"
-                >
-                  View more details
-                </a>
+              <div class="agent-info">
+                <a href="../message/in-app-message.html"
+                  ><img src="../images/message.png" />Message agent</a
+                ><a href=""> View more details </a>
               </div>
             </div>
           </div>
-          <div class="explore-box bg-[#fffafa] w-full rounded-[20px] hide">
-            <div class="p-5">
-              <img src="/frontend/assets/images/image-5.png" />
+          <div class="explore-box hide">
+            <div class="display-img">
+              <img src="../images/image-5.png" />
             </div>
-            <div class="explore-prop w-full flex flex-col px-10 pb-4">
-              <div class="w-full flex items-center justify-between px-1">
-                <h2 class="text-2xl font-medium">N250,000</h2>
-                <p class="text-[#00000033] text-xs uppercase font-medium">
-                  total area: 250M2
-                </p>
+            <div class="explore-prop">
+              <div class="explore-property-text">
+                <h2>N250,000</h2>
+                <p>total area: 250M2</p>
               </div>
-              <p class="flex items-center gap-2 text-[#00000033] py-2 px-1">
-                <img
-                  class="w-4 h-3.5"
-                  src="/frontend/assets/images/Vector-(7).png"
-                  alt=""
-                />
+              <p class="house-ad">
+                <img class="w-4 h-3.5" src="../images/Vector-(7).png" />
                 102 Gbagada street, new island
               </p>
-              <div class="flex items-center gap-6 px-1">
+              <div class="bedroom-qty">
                 <p class="flex items-center gap-2 text-[#00000033]">
-                  <img
-                    class="w-4 h-2.75"
-                    src="/frontend/assets/images/Vector-(8).png"
-                    alt=""
-                  />
+                  <img src="../images/Vector-(8).png" />
                   4 bedroom
                 </p>
                 <p class="text-[#00000033] flex items-center gap-2">
-                  <img
-                    class="w-4 h-3.25"
-                    src="/frontend/assets/images/Vector-(9).png"
-                    alt=""
-                  />2 bedroom
+                  <img src="../images/Vector-(9).png" />2 bedroom
                 </p>
               </div>
-              <div class="flex items-center py-4 agent-info">
-                <a
-                  class="registerRoute flex items-center justify-center gap-2 text-white bg-[#223448] h-11 rounded-full text-xs"
-                  ><img
-                    class="w-4"
-                    src="/frontend/assets/images/message.png"
-                    alt=""
-                  />Message agent</a
-                ><a
-                  class="registerRoute bg-[#00000033] h-11 flex items-center justify-center rounded-full"
-                >
-                  View more details</a
-                >
+              <div class="agent-info">
+                <a href="../message/in-app-message.html"
+                  ><img src="../images/message.png" />Message agent</a
+                ><a href=""> View more details</a>
               </div>
             </div>
           </div>
-          <div class="explore-box bg-[#fffafa] w-full rounded-[20px]">
-            <div class="p-5">
-              <img src="/frontend/assets/images/image-6.png" />
+          <div class="explore-box">
+            <div class="display-img">
+              <img src="../images/image-6.png" />
             </div>
-            <div class="explore-prop w-full flex flex-col px-10 pb-4">
-              <div class="w-full flex items-center justify-between px-1">
-                <h2 class="text-2xl font-medium">N250,000</h2>
-                <p class="text-[#00000033] text-xs uppercase font-medium">
-                  total area: 250M2
-                </p>
+            <div class="explore-prop">
+              <div class="explore-property-text">
+                <h2>N250,000</h2>
+                <p>total area: 250M2</p>
               </div>
-              <p class="flex items-center gap-2 text-[#00000033] py-2 px-1">
-                <img
-                  class="w-4 h-3.5"
-                  src="/frontend/assets/images/Vector-(7).png"
-                  alt=""
-                />
+              <p class="house-ad">
+                <img class="w-4 h-3.5" src="../images/Vector-(7).png" />
                 102 Gbagada street, new island
               </p>
-              <div class="flex items-center gap-6 px-1">
+              <div class="bedroom-qty">
                 <p class="flex items-center gap-2 text-[#00000033]">
-                  <img
-                    class="w-4 h-2.75"
-                    src="/frontend/assets/images/Vector-(8).png"
-                    alt=""
-                  />
+                  <img src="../images/Vector-(8).png" />
                   4 bedroom
                 </p>
                 <p class="text-[#00000033] flex items-center gap-2">
-                  <img
-                    class="w-4 h-3.25"
-                    src="/frontend/assets/images/Vector-(9).png"
-                    alt=""
-                  />2 bedroom
+                  <img src="../images/Vector-(9).png" />2 bedroom
                 </p>
               </div>
-              <div class="flex items-center py-4 agent-info">
-                <a
-                  class="registerRoute flex items-center justify-center gap-2 text-white bg-[#223448] h-11 rounded-full text-xs"
-                  ><img
-                    class="w-4"
-                    src="/frontend/assets/images/message.png"
-                    alt=""
-                  />Message agent</a
-                ><a
-                  class="registerRoute bg-[#00000033] h-11 flex items-center justify-center rounded-full"
-                >
-                  View more details
-                </a>
+              <div class="agent-info">
+                <a href="../message/in-app-message.html"
+                  ><img src="../images/message.png" />Message agent</a
+                ><a href=""> View more details </a>
               </div>
             </div>
           </div>

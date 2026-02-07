@@ -12,7 +12,6 @@ body {
   font-family: "Inter", sans-serif;
 }
 .bg-side {
-  background-image: url("/frontend/assets/images/3d-rendering-house-model-\(1\)-1.png");
   background-size: cover;
   background-position: center center;
   position: relative;
