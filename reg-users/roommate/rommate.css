@@ -101,6 +101,7 @@ aside {
   grid-area: aside;
   background: var(--white);
   padding: 1rem;
+  height: auto;
 }
 .location-div {
   background: var(--Secondary-white-Color);
@@ -108,9 +109,18 @@ aside {
   max-height: 100%;
 }
 .location-div p {
-  padding: 0.5em;
+  padding-top: 1rem;
+  padding-left: 14px;
   font-weight: 400;
   font-size: 12px;
+  color: var(--gray);
+}
+.location-dropdown {
+  margin: 10px;
+  padding: 10px 2rem;
+  border-radius: 10px;
+}
+.location-dropdown span {
   color: var(--gray);
 }
 .filter-search-box {
@@ -180,8 +190,10 @@ main {
   background: var(--white);
   color: var(--gray);
   font-weight: 500;
-  width: 100%;
+  width: 98%;
   margin-bottom: 1rem;
+  padding: 1rem;
+  margin-left: 1.1rem;
 }
 .tab-buttons button {
   line-height: 24px;
@@ -215,17 +227,17 @@ main {
 .tab-content.active {
   display: block;
 }
-.search-rommie-frame {
+.search-roommie-frame {
   width: 100%;
   background: var(--white);
   height: 215px;
   padding: 1rem;
 }
-.search-rommie-frame h2 {
+.search-roommie-frame h2 {
   font-size: 2rem;
   font-weight: 500;
 }
-.search-rommie-frame p {
+.search-roommie-frame p {
   color: var(--gray);
 }
 .search-box {
@@ -261,6 +273,7 @@ main {
 }
 .find-roommate-container {
   margin-top: 1rem;
+  height: 100vh;
 }
 .find-roommate-container {
   display: grid;
@@ -328,7 +341,6 @@ main {
 .selector {
   border-radius: 24px;
   padding: 64px;
-  height: 760px;
   width: 100%;
 }
 .sslector form {
@@ -336,11 +348,15 @@ main {
   flex-direction: column;
   gap: 2rem;
 }
-.rommie-details input {
+.roommie-details {
+  height: 68px;
+  margin-bottom: 2rem;
+}
+.roommie-details input {
   width: 100%;
   border: none;
   outline: none;
-  background: rgba(229, 229, 229, 1);
+  background: rgba(245, 245, 245, 1);
   border: 1.5px solid hsla(0, 0%, 100%, 0.568);
   height: 40px;
   border-radius: 10px;
@@ -356,7 +372,7 @@ select {
   width: 100%;
   height: 40px;
   padding-inline: 10px;
-  background: rgba(229, 229, 229, 1);
+  background: rgba(245, 245, 245, 1);
   border: 1.5px solid hsla(0, 0%, 100%, 0.568);
   border-radius: 10px;
   outline: none;
@@ -384,21 +400,26 @@ option {
 ::picker(select) {
   top: calc(anchor(bottom) + 8px);
   left: anchor(50%);
-  min-width: 420px;
+  min-width: 400px;
   border-radius: 20px;
   border: none;
   opacity: 0;
   transition: all 0.4s allow-discrete;
   padding: 10px;
 }
-#next-btn {
+.btn {
   width: 100%;
-  background: var(--primary-color-1);
   color: var(--white);
   height: 40px;
   border-radius: 20px;
   cursor: pointer;
   margin-top: 2rem;
+}
+.btn-next {
+  background: var(--primary-color-1);
+}
+.btn-prev {
+  background: var(--notification-color);
 }
 .upload-box {
   display: flex;
