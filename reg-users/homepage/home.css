@@ -305,10 +305,19 @@ main {
 }
 .location-div {
   background: var(--Secondary-white-Color);
-  padding: 2rem;
+  padding: 1.5rem;
+  max-width: 309px;
 }
 .location-dropdown {
+  display: flex;
+  flex-direction: column;
+  height: 44px;
+  width: 100%;
+  background: var(--white);
   border-radius: 10px;
+}
+.location-dropdown img {
+  width: 24px;
 }
 .location-dropdown div {
   display: flex;
