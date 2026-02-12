@@ -6,6 +6,8 @@
     <title>Get started</title>
     <link rel="stylesheet" href="dist/output.css" />
     <link rel="stylesheet" href="src/styles/register.css" />
+    <link rel="stylesheet" href="assets/styles/toast.css" />
+    <link rel="stylesheet" href="assets/styles/loading.css" />
   </head>
   <body class="m-0 p-0 box-border">
     <main>
@@ -70,7 +72,7 @@
                 <input
                   id="password"
                   class="w-full h-11 bg-[#f1f1f1] pl-4.5 rounded-lg border border-transparent focus:border-[#223448] focus:outline-none"
-                  type="text"
+                  type="password"
                   placeholder="Enter password"
                 />
                 <div class="error" id="passwordError"></div>
@@ -82,8 +84,8 @@
                 <input
                   id="confirmPassword"
                   class="w-full h-11 bg-[#f1f1f1] pl-4.5 rounded-lg border border-transparent focus:border-[#223448] focus:outline-none"
-                  type="text"
-                  placeholder="Enter password"
+                  type="password"
+                  placeholder="Confirm password"
                 />
                 <div class="error" id="confirmPasswordError"></div>
               </div>
@@ -94,17 +96,13 @@
                 />
                 <span> <span>I agree to the terms and conditions</span></span>
               </div>
-              <div
-                class="bg-[#223448] text-[#e9e0cf] w-full rounded-full h-10 flex items-center justify-center cursor-pointer mb-4"
+              <button
+                type="submit"
+                id="register-submit-btn"
+                class="bg-[#223448] text-[#e9e0cf] w-full rounded-full h-10 flex items-center justify-center cursor-pointer mb-4 border-none"
               >
-                <a
-                  href="../reg-users/homepage/home.html"
-                  id="openModal"
-                  class="w-full cursor-pointer text-center"
-                >
-                  Create Account
-                </a>
-              </div>
+                <span class="button-text">Create Account</span>
+              </button>
               <span
                 >Already have an account?
                 <a class="text-green-700" href="./login.html">Sign in</a></span
@@ -139,7 +137,7 @@
           <div class="verify-text w-full text-center">
             <h2>Verify your email</h2>
             <p id="">
-              We sent the verification code to your email, proxy1@gmail.com
+              We sent the verification code to your email
             </p>
             <div class="email_animation mt-4">
               <img src="../assets/images/email-animation.gif" />
@@ -159,6 +157,9 @@
         </div>
       </section>
     </main>
+    <script src="./assets/scripts/api.js"></script>
+    <script src="./assets/scripts/toast.js"></script>
+    <script src="./assets/scripts/loading.js"></script>
     <script src="./assets/scripts/register.js"></script>
   </body>
 </html>

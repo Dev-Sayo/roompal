@@ -60,7 +60,7 @@
       <div class="nav-side__1">
         <a class="home" target="_blank" href="./home.html">roompal</a>
         <div class="link">
-          <a target="_blank" href="../homepage/home.html">Find an Apartment</a>
+          <a target="_blank" href="./home.html">Find an Apartment</a>
           <a target="_blank" href="../roommate/roommate.html"
             >Find a roommate</a
           >
@@ -175,6 +175,14 @@
             </div>
           </div>
         </div>
+        <button class="logout-btn" onclick="handleLogout()" title="Logout">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          Logout
+        </button>
         <span
           ><a
             class="need-help"
@@ -215,30 +223,42 @@
           <div class="ranges-div bg-white">
             <div class="find-container">
               <p>Location</p>
-              <select class="find-apartment">
-                <option value="">Lagos</option>
-                <option value="">Abia</option>
-                <option value="">Abuja</option>
-                <option value="">Ibadan</option>
+              <select class="find-apartment" id="search-location" name="location">
+                <option value="">All Locations</option>
+                <option value="Lagos">Lagos</option>
+                <option value="Abia">Abia</option>
+                <option value="Abuja">Abuja</option>
+                <option value="Ibadan">Ibadan</option>
+                <option value="Delta">Delta</option>
+                <option value="Akwa Ibom">Akwa Ibom</option>
               </select>
             </div>
 
             <div class="find-container">
               <p>Pricing Range</p>
-              <select class="find-apartment">
-                <option value="">Lagos</option>
-                <option value="">Abia</option>
-                <option value="">Abuja</option>
-                <option value="">Ibadan</option>
+              <select class="find-apartment" id="search-price-range" name="priceRange">
+                <option value="">All Prices</option>
+                <option value="100k - 200k">100k - 200k</option>
+                <option value="200k - 400k">200k - 400k</option>
+                <option value="400k - 600k">400k - 600k</option>
+                <option value="600k - 1M">600k - 1M</option>
+                <option value="1M - 2M">1M - 2M</option>
+                <option value="2M - 5M">2M - 5M</option>
+                <option value="5M and above">5M and above</option>
               </select>
             </div>
             <div class="find-container">
               <p>Apartment Type</p>
-              <select class="find-apartment">
-                <option value="">Lagos</option>
-                <option value="">Abia</option>
-                <option value="">Abuja</option>
-                <option value="">Ibadan</option>
+              <select class="find-apartment" id="search-apartment-type" name="apartmentType">
+                <option value="">All Types</option>
+                <option value="Apartments / Flats">Apartments / Flats</option>
+                <option value="Self-contained rooms">Self-contained rooms</option>
+                <option value="Shared Apartments">Shared Apartments</option>
+                <option value="Detached Houses">Detached Houses</option>
+                <option value="Semi-detached Houses">Semi-detached Houses</option>
+                <option value="Duplexes">Duplexes</option>
+                <option value="Bungalows">Bungalows</option>
+                <option value="Serviced Apartments">Serviced Apartments</option>
               </select>
             </div>
             <div class="search-box">
@@ -278,202 +298,20 @@
         </div>
       </section>
       <section class="apartment-section bg-white">
-        <div class="apartment-frame">
-          <div class="explore-box">
-            <div class="display-img">
-              <img src="../images/image-1.png" />
-            </div>
-            <div class="explore-prop">
-              <div class="explore-property-text">
-                <h2>N250,000</h2>
-                <p>total area: 250M2</p>
-              </div>
-              <p class="house-ad">
-                <img class="w-4 h-3.5" src="../images/Vector-(7).png" />
-                102 Gbagada street, new island
-              </p>
-              <div class="bedroom-qty">
-                <p class="flex items-center gap-2">
-                  <img src="../images/Vector-(8).png" />
-                  4 bedroom
-                </p>
-                <p class="flex items-center gap-2">
-                  <img src="../images/Vector-(9).png" />2 bedroom
-                </p>
-              </div>
-              <div class="agent-info">
-                <a target="_blank" href="">
-                  <img src="../images/message.png" />
-                  Message agent</a
-                >
-                <a target="_blank" href="./property-details.html">
-                  View more details
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="explore-box">
-            <div class="display-img">
-              <img src="../images/image-2.png" />
-            </div>
-            <div class="explore-prop">
-              <div class="explore-property-text">
-                <h2>N250,000</h2>
-                <p>total area: 250M2</p>
-              </div>
-              <p class="house-ad">
-                <img class="w-4 h-3.5" src="../images/Vector-(7).png" />
-                102 Gbagada street, new island
-              </p>
-              <div class="bedroom-qty">
-                <p class="flex items-center gap-2">
-                  <img src="../images/Vector-(8).png" />
-                  4 bedroom
-                </p>
-                <p class="flex items-center gap-2">
-                  <img src="../images/Vector-(9).png" />2 bedroom
-                </p>
-              </div>
-              <div class="agent-info">
-                <a target="_blank" href="../message/in-app-message.html"
-                  ><img src="../images/message.png" />Message agent</a
-                >
-                <a target="_blank" href="./property-details.html">
-                  View more details
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="explore-box">
-            <div class="display-img">
-              <img src="../images/image-3.png" />
-            </div>
-            <div class="explore-prop">
-              <div class="explore-property-text">
-                <h2>N250,000</h2>
-                <p>total area: 250M2</p>
-              </div>
-              <p class="house-ad">
-                <img class="w-4 h-3.5" src="../images/Vector-(7).png" />
-                102 Gbagada street, new island
-              </p>
-              <div class="bedroom-qty">
-                <p class="flex items-center gap-2">
-                  <img src="../images/Vector-(8).png" />
-                  4 bedroom
-                </p>
-                <p class="flex items-center gap-2">
-                  <img src="../images/Vector-(9).png" />2 bedroom
-                </p>
-              </div>
-              <div class="agent-info">
-                <a target="_blank" href="../message/in-app-message.html">
-                  <img src="../images/message.png" />
-                  Message agent</a
-                >
-                <a target="_blank" href="./property-details.html">
-                  View more details
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="explore-box hide">
-            <div class="display-img">
-              <img src="../images/image-4.png" />
-            </div>
-            <div class="explore-prop">
-              <div class="explore-property-text">
-                <h2>N250,000</h2>
-                <p>total area: 250M2</p>
-              </div>
-              <p class="house-ad">
-                <img class="w-4 h-3.5" src="../images/Vector-(7).png" />
-                102 Gbagada street, new island
-              </p>
-              <div class="bedroom-qty">
-                <p class="flex items-center gap-2">
-                  <img src="../images/Vector-(8).png" />
-                  4 bedroom
-                </p>
-                <p class="flex items-center gap-2">
-                  <img src="../images/Vector-(9).png" />2 bedroom
-                </p>
-              </div>
-              <div class="agent-info">
-                <a target="_blank" href="../message/in-app-message.html"
-                  ><img src="../images/message.png" />Message agent</a
-                ><a target="_blank" href="./property-details.html">
-                  View more details
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="explore-box hide">
-            <div class="display-img">
-              <img src="../images/image-5.png" />
-            </div>
-            <div class="explore-prop">
-              <div class="explore-property-text">
-                <h2>N250,000</h2>
-                <p>total area: 250M2</p>
-              </div>
-              <p class="house-ad">
-                <img class="w-4 h-3.5" src="../images/Vector-(7).png" />
-                102 Gbagada street, new island
-              </p>
-              <div class="bedroom-qty">
-                <p class="flex items-center gap-2">
-                  <img src="../images/Vector-(8).png" />
-                  4 bedroom
-                </p>
-                <p class="flex items-center gap-2">
-                  <img src="../images/Vector-(9).png" />2 bedroom
-                </p>
-              </div>
-              <div class="agent-info">
-                <a target="_blank" href="../message/in-app-message.html"
-                  ><img src="../images/message.png" />Message agent</a
-                ><a target="_blank" href="./property-details.html">
-                  View more details</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="explore-box">
-            <div class="display-img">
-              <img src="../images/image-6.png" />
-            </div>
-            <div class="explore-prop">
-              <div class="explore-property-text">
-                <h2>N250,000</h2>
-                <p>total area: 250M2</p>
-              </div>
-              <p class="house-ad">
-                <img class="w-4 h-3.5" src="../images/Vector-(7).png" />
-                102 Gbagada street, new island
-              </p>
-              <div class="bedroom-qty">
-                <p class="flex items-center gap-2">
-                  <img src="../images/Vector-(8).png" />
-                  4 bedroom
-                </p>
-                <p class="flex items-center gap-2">
-                  <img src="../images/Vector-(9).png" />2 bedroom
-                </p>
-              </div>
-              <div class="agent-info">
-                <a target="_blank" href="../message/in-app-message.html"
-                  ><img src="../images/message.png" />Message agent</a
-                ><a target="_blank" href="./property-details.html">
-                  View more details
-                </a>
-              </div>
-            </div>
-          </div>
+        <div class="apartment-frame" id="property-listings">
+          <!-- Properties will be loaded dynamically here -->
         </div>
       </section>
     </main>
+    <link rel="stylesheet" href="../../assets/styles/toast.css" />
+    <link rel="stylesheet" href="../../assets/styles/loading.css" />
+    <script src="../../assets/scripts/api.js"></script>
+    <script src="../../assets/scripts/toast.js"></script>
+    <script src="../../assets/scripts/logout.js"></script>
+    <script src="../../assets/scripts/propertyUtils.js"></script>
     <script src="home.js"></script>
+    <script src="../../assets/scripts/homepageProperties.js"></script>
+    <script src="../../assets/scripts/authGuard.js"></script>
     <script src="../reg-user-dropdown.js"></script>
   </body>
 </html>
