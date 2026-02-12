@@ -197,7 +197,7 @@ This document describes the complete database schema for the Roompal platform, i
 | `_id` | ObjectId | Yes | Auto | Primary key |
 | `sender` | ObjectId (ref: User) | Yes | - | Message sender reference |
 | `receiver` | ObjectId (ref: User) | Yes | - | Message receiver reference |
-| `conversationId` | ObjectId (ref: Conversation) | Yes | - | Conversation reference |
+| `conversation` | ObjectId (ref: Conversation) | Yes | - | Conversation reference |
 | `content` | String | Yes | - | Message content (1-5000 chars) |
 | `isRead` | Boolean | No | `false` | Read status |
 | `readAt` | Date | No | - | Read timestamp |
@@ -206,7 +206,7 @@ This document describes the complete database schema for the Roompal platform, i
 
 ### Indexes
 
-- `{ conversationId: 1, createdAt: -1 }` - Compound index for conversation messages
+- `{ conversation: 1, createdAt: -1 }` - Compound index for conversation messages
 - `{ sender: 1, receiver: 1 }` - Compound index for user message queries
 - `{ isRead: 1, receiver: 1 }` - Compound index for unread messages
 
@@ -214,7 +214,7 @@ This document describes the complete database schema for the Roompal platform, i
 
 - **Many-to-One** with `users` (via `sender` field)
 - **Many-to-One** with `users` (via `receiver` field)
-- **Many-to-One** with `conversations` (via `conversationId` field)
+- **Many-to-One** with `conversations` (via `conversation` field)
 
 ---
 
@@ -267,7 +267,7 @@ This document describes the complete database schema for the Roompal platform, i
 │ _id (PK)           │
 │ sender (FK)        │
 │ receiver (FK)      │
-│ conversationId (FK)│
+│ conversation (FK)  │
 │ content            │
 │ isRead             │
 └────────────────────┘
