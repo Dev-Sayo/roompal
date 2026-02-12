@@ -1,7 +1,7 @@
 {
   "name": "roompal-backend",
   "version": "1.0.0",
-  "description": "Roompal Backend - Authentication System",
+  "description": "Roompal Backend - Property Listing & Roommate Matching API",
   "main": "src/index.js",
   "type": "commonjs",
   "scripts": {
@@ -12,9 +12,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "authentication",
-    "jwt",
-    "roompal"
+    "roompal",
+    "property-listing",
+    "roommate-matching",
+    "api"
   ],
   "author": "",
   "license": "ISC",
@@ -38,5 +39,9 @@
     "@faker-js/faker": "^10.3.0",
     "axios": "^1.13.5",
     "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
   }
 }

@@ -1,0 +1,24 @@
+# Render.com Configuration for Roompal Backend
+# This file configures the backend service deployment
+
+services:
+  - type: web
+    name: roompal-backend
+    env: node
+    # IMPORTANT: Set root directory to backend folder
+    rootDir: backend
+    # Build command - installs dependencies
+    buildCommand: npm install
+    # Start command - uses npm start which runs "node src/index.js"
+    startCommand: npm start
+    # Health check endpoint (optional)
+    healthCheckPath: /api/health
+    # Environment variables
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        fromService:
+          type: web
+          name: roompal-backend
+          property: port
