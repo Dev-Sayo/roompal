@@ -150,7 +150,7 @@ EMAIL_PASSWORD=your-app-password
 EMAIL_FROM=noreply@roompal.com
 
 # Frontend URL (for email links)
-FRONTEND_URL=http://localhost:3000
+FRONTEND_URL=https://dev-sayo.github.io
 
 # Application Name
 APP_NAME=Roompal

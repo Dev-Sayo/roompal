@@ -52,7 +52,8 @@ const loadMyProperties = async () => {
     const token = localStorage.getItem('accessToken');
     
     // Fetch properties
-    const response = await fetch('http://localhost:5002/api/properties/my/properties', {
+    const baseURL = typeof getAPIBaseURL === 'function' ? getAPIBaseURL() : (window.location.hostname === 'dev-sayo.github.io' || window.location.hostname.includes('github.io') ? 'https://roompal-wrgn.onrender.com/api' : 'http://localhost:5002/api');
+    const response = await fetch(`${baseURL}/properties/my/properties`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -251,7 +252,8 @@ window.deleteProperty = async (propertyId, propertyTitle) => {
     }
 
     const token = localStorage.getItem('accessToken');
-    const response = await fetch(`http://localhost:5002/api/properties/${propertyId}`, {
+    const baseURL = typeof getAPIBaseURL === 'function' ? getAPIBaseURL() : (window.location.hostname === 'dev-sayo.github.io' || window.location.hostname.includes('github.io') ? 'https://roompal-wrgn.onrender.com/api' : 'http://localhost:5002/api');
+    const response = await fetch(`${baseURL}/properties/${propertyId}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`,

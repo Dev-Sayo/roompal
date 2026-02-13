@@ -55,7 +55,8 @@ async function loadNotifications() {
       return;
     }
 
-    const response = await fetch('http://localhost:5002/api/notifications/me', {
+    const baseURL = typeof getAPIBaseURL === 'function' ? getAPIBaseURL() : (window.location.hostname === 'dev-sayo.github.io' || window.location.hostname.includes('github.io') ? 'https://roompal-wrgn.onrender.com/api' : 'http://localhost:5002/api');
+    const response = await fetch(`${baseURL}/notifications/me`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -290,7 +291,8 @@ async function markNotificationAsRead(notificationId) {
     const token = localStorage.getItem('accessToken');
     if (!token) return;
 
-    await fetch(`http://localhost:5002/api/notifications/${notificationId}/read`, {
+    const baseURL = typeof getAPIBaseURL === 'function' ? getAPIBaseURL() : (window.location.hostname === 'dev-sayo.github.io' || window.location.hostname.includes('github.io') ? 'https://roompal-wrgn.onrender.com/api' : 'http://localhost:5002/api');
+    await fetch(`${baseURL}/notifications/${notificationId}/read`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -318,7 +320,8 @@ async function acceptRoommateRequest(requestId) {
       return;
     }
 
-    const response = await fetch(`http://localhost:5002/api/roommate-requests/${requestId}/accept`, {
+    const baseURL = typeof getAPIBaseURL === 'function' ? getAPIBaseURL() : (window.location.hostname === 'dev-sayo.github.io' || window.location.hostname.includes('github.io') ? 'https://roompal-wrgn.onrender.com/api' : 'http://localhost:5002/api');
+    const response = await fetch(`${baseURL}/roommate-requests/${requestId}/accept`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -371,7 +374,8 @@ async function rejectRoommateRequest(requestId) {
       return;
     }
 
-    const response = await fetch(`http://localhost:5002/api/roommate-requests/${requestId}/reject`, {
+    const baseURL = typeof getAPIBaseURL === 'function' ? getAPIBaseURL() : (window.location.hostname === 'dev-sayo.github.io' || window.location.hostname.includes('github.io') ? 'https://roompal-wrgn.onrender.com/api' : 'http://localhost:5002/api');
+    const response = await fetch(`${baseURL}/roommate-requests/${requestId}/reject`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

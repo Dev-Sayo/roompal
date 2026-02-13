@@ -24,7 +24,7 @@ const server = http.createServer(app);
 // Initialize Socket.io
 const io = new Server(server, {
   cors: {
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: process.env.FRONTEND_URL || 'https://dev-sayo.github.io',
     methods: ['GET', 'POST'],
     credentials: true,
   },
@@ -45,7 +45,7 @@ app.use(helmet());
 // CORS configuration
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: process.env.FRONTEND_URL || 'https://dev-sayo.github.io',
     credentials: true,
   })
 );

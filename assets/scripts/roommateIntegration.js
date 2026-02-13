@@ -106,7 +106,14 @@ async function loadRoommateProfiles(filters = {}, page = 1) {
         const queryString = queryParams.toString();
         const endpoint = `/roommates${queryString ? `?${queryString}` : ''}`;
 
-        const response = await authenticatedFetch(`http://localhost:5002/api${endpoint}`, {
+        // Get base URL based on environment
+        const getBaseURL = () => {
+          if (window.location.hostname === 'dev-sayo.github.io' || window.location.hostname.includes('github.io')) {
+            return 'https://roompal-wrgn.onrender.com/api';
+          }
+          return 'http://localhost:5002/api';
+        };
+        const response = await authenticatedFetch(`${getBaseURL()}${endpoint}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -446,7 +453,14 @@ async function authenticatedFetch(url, options = {}) {
       const refreshToken = localStorage.getItem('refreshToken');
       if (!refreshToken) return false;
 
-      const response = await fetch('http://localhost:5002/api/auth/refresh-token', {
+      // Get base URL based on environment
+      const getBaseURL = () => {
+        if (window.location.hostname === 'dev-sayo.github.io' || window.location.hostname.includes('github.io')) {
+          return 'https://roompal-wrgn.onrender.com/api';
+        }
+        return 'http://localhost:5002/api';
+      };
+      const response = await fetch(`${getBaseURL()}/auth/refresh-token`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ refreshToken }),
@@ -577,7 +591,14 @@ async function submitRegistrationForm() {
         const imageFormData = new FormData();
         imageFormData.append('image', imageFile);
 
-        const uploadResponse = await authenticatedFetch('http://localhost:5002/api/roommates/upload-image', {
+        // Get base URL based on environment
+        const getBaseURL = () => {
+          if (window.location.hostname === 'dev-sayo.github.io' || window.location.hostname.includes('github.io')) {
+            return 'https://roompal-wrgn.onrender.com/api';
+          }
+          return 'http://localhost:5002/api';
+        };
+        const uploadResponse = await authenticatedFetch(`${getBaseURL()}/roommates/upload-image`, {
           method: 'POST',
           // Don't set Content-Type - let browser set it with boundary for FormData
           body: imageFormData,
@@ -606,7 +627,14 @@ async function submitRegistrationForm() {
     // Submit to API
     console.log('📤 Submitting profile data to API:', formData);
     console.log('📤 profileImage in formData:', formData.profileImage);
-    const response = await authenticatedFetch('http://localhost:5002/api/roommates/profile', {
+    // Get base URL based on environment
+    const getBaseURL = () => {
+      if (window.location.hostname === 'dev-sayo.github.io' || window.location.hostname.includes('github.io')) {
+        return 'https://roompal-wrgn.onrender.com/api';
+      }
+      return 'http://localhost:5002/api';
+    };
+    const response = await authenticatedFetch(`${getBaseURL()}/roommates/profile`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

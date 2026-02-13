@@ -5,8 +5,18 @@
 
 console.log('✅ api.js script loaded!');
 
+// Detect environment and set base URL
+const getBaseURL = () => {
+  // Check if we're in production (GitHub Pages)
+  if (window.location.hostname === 'dev-sayo.github.io' || window.location.hostname.includes('github.io')) {
+    return 'https://roompal-wrgn.onrender.com/api';
+  }
+  // Development/localhost
+  return 'http://localhost:5002/api';
+};
+
 const API_CONFIG = {
-  baseURL: 'http://localhost:5002/api',
+  baseURL: getBaseURL(),
   timeout: 30000, // 30 seconds
 };
 

@@ -250,7 +250,8 @@ async function handleSubmit(e) {
     const token = localStorage.getItem('accessToken');
 
     // Submit
-    const response = await fetch('http://localhost:5002/api/properties', {
+    const baseURL = typeof getAPIBaseURL === 'function' ? getAPIBaseURL() : (window.location.hostname === 'dev-sayo.github.io' || window.location.hostname.includes('github.io') ? 'https://roompal-wrgn.onrender.com/api' : 'http://localhost:5002/api');
+    const response = await fetch(`${baseURL}/properties`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`

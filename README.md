@@ -150,7 +150,7 @@ roompal/
    CLOUDINARY_API_SECRET=your-api-secret
    EMAIL_USER=your-email@gmail.com
    EMAIL_PASSWORD=your-app-password
-   FRONTEND_URL=http://localhost:3000
+   FRONTEND_URL=https://dev-sayo.github.io
    ```
 
 4. **Start the backend server**
@@ -179,7 +179,8 @@ roompal/
    - Right-click on `index.html` → "Open with Live Server"
 
 4. **Access the application**
-   - Open `http://localhost:3000` in your browser
+   - Open `http://localhost:3000` in your browser (for local development)
+   - Production: https://dev-sayo.github.io/roompal/
 
 ##  Key Pages
 
@@ -204,9 +205,8 @@ roompal/
 ##  API Endpoints
 
 ### Base URL
-```
-http://localhost:5002/api
-```
+**Production:** `https://roompal-wrgn.onrender.com/api`  
+**Development:** `http://localhost:5002/api`
 
 ### Authentication
 - `POST /api/auth/register` - Register new user
@@ -314,18 +314,24 @@ See `backend/README.md` for detailed API documentation.
 
 ##  Deployment
 
+### Production URLs
+- **Frontend:** https://dev-sayo.github.io/roompal/
+- **Backend API:** https://roompal-wrgn.onrender.com/api
+
 ### Backend Deployment
 1. Set up MongoDB Atlas or production MongoDB
-2. Configure environment variables
+2. Configure environment variables:
+   - `FRONTEND_URL=https://dev-sayo.github.io`
+   - `MONGODB_URI=your-production-mongodb-uri`
+   - Other required environment variables
 3. Set up Cloudinary production account
 4. Configure email service
-5. Deploy to Heroku, Railway, or similar platform
+5. Deploy to Render, Heroku, Railway, or similar platform
 
 ### Frontend Deployment
-1. Build/optimize static files (if needed)
-2. Deploy to Netlify, Vercel, or similar
-3. Update `FRONTEND_URL` in backend `.env`
-4. Configure CORS for production domain
+1. The frontend is deployed on GitHub Pages
+2. All API calls automatically detect production environment
+3. No additional configuration needed - URLs are environment-aware
 
 ##  Documentation
 

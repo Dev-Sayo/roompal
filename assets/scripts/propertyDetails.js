@@ -39,7 +39,8 @@ const loadPropertyDetails = async (propertyId) => {
     const token = localStorage.getItem('accessToken');
     
     // Fetch property directly
-    const response = await fetch(`http://localhost:5002/api/properties/${propertyId}`, {
+    const baseURL = typeof getAPIBaseURL === 'function' ? getAPIBaseURL() : (window.location.hostname === 'dev-sayo.github.io' || window.location.hostname.includes('github.io') ? 'https://roompal-wrgn.onrender.com/api' : 'http://localhost:5002/api');
+    const response = await fetch(`${baseURL}/properties/${propertyId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

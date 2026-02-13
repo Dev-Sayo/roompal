@@ -35,8 +35,14 @@ class SocketClient {
         return;
       }
 
-      // Get base URL - default to localhost:5002
-      const serverURL = 'http://localhost:5002';
+      // Get base URL - detect environment
+      const getServerURL = () => {
+        if (window.location.hostname === 'dev-sayo.github.io' || window.location.hostname.includes('github.io')) {
+          return 'https://roompal-wrgn.onrender.com';
+        }
+        return 'http://localhost:5002';
+      };
+      const serverURL = getServerURL();
 
       this.socket = io(serverURL, {
         auth: {

@@ -26,7 +26,8 @@ async function authenticatedFetch(url, options = {}) {
   // Use api.js if available, otherwise fallback
   if (typeof window !== 'undefined' && window.api && window.api.request) {
     try {
-      const endpoint = url.replace('http://localhost:5002/api', '');
+      const baseURL = typeof getAPIBaseURL === 'function' ? getAPIBaseURL() : (window.location.hostname === 'dev-sayo.github.io' || window.location.hostname.includes('github.io') ? 'https://roompal-wrgn.onrender.com/api' : 'http://localhost:5002/api');
+      const endpoint = url.replace(baseURL, '').replace('http://localhost:5002/api', '');
       return await window.api.request(endpoint, {
         ...options,
         requiresAuth: true,
@@ -78,7 +79,7 @@ async function loadRoommateInfo(profileId) {
     showLoading();
 
     const response = await authenticatedFetch(
-      `http://localhost:5002/api/roommates/${profileId}`,
+      `${typeof getAPIBaseURL === 'function' ? getAPIBaseURL() : (window.location.hostname === 'dev-sayo.github.io' || window.location.hostname.includes('github.io') ? 'https://roompal-wrgn.onrender.com/api' : 'http://localhost:5002/api')}/roommates/${profileId}`,
       {
         method: 'GET',
         headers: {
@@ -435,7 +436,8 @@ async function sendRoommateRequest(recipientId, recipientName) {
     }
 
     // Send request
-    const response = await fetch('http://localhost:5002/api/roommate-requests', {
+    const baseURL = typeof getAPIBaseURL === 'function' ? getAPIBaseURL() : (window.location.hostname === 'dev-sayo.github.io' || window.location.hostname.includes('github.io') ? 'https://roompal-wrgn.onrender.com/api' : 'http://localhost:5002/api');
+    const response = await fetch(`${baseURL}/roommate-requests`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
