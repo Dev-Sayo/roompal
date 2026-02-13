@@ -21,10 +21,23 @@ const app = express();
 // Create HTTP server
 const server = http.createServer(app);
 
+// Get CORS origin for Socket.io
+const getCorsOrigin = () => {
+  const frontendUrl = process.env.FRONTEND_URL || 'https://dev-sayo.github.io';
+  // Remove trailing slash and path if present
+  try {
+    const url = new URL(frontendUrl);
+    return url.origin; // Returns just the protocol + hostname + port
+  } catch {
+    // If not a valid URL, try to extract origin manually
+    return frontendUrl.replace(/\/.*$/, ''); // Remove everything after the first /
+  }
+};
+
 // Initialize Socket.io
 const io = new Server(server, {
   cors: {
-    origin: process.env.FRONTEND_URL || 'https://dev-sayo.github.io',
+    origin: getCorsOrigin(),
     methods: ['GET', 'POST'],
     credentials: true,
   },
@@ -42,11 +55,21 @@ configureCloudinary();
 // Security middleware
 app.use(helmet());
 
-// CORS configuration
+// CORS configuration - allow base origin (without path)
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || 'https://dev-sayo.github.io',
+    origin: (origin, callback) => {
+      const allowedOrigin = getCorsOrigin();
+      // Allow requests from the base origin (with or without path)
+      if (!origin || origin.startsWith(allowedOrigin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
 
