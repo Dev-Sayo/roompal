@@ -10,7 +10,12 @@ const transporter = createEmailTransporter();
  * @returns {Promise<Object>}
  */
 const sendVerificationEmail = async (email, fullName, verificationToken) => {
-  const verificationUrl = `${process.env.FRONTEND_URL}/auth/verify-email?token=${verificationToken}`;
+  // Get frontend URL - if it doesn't include /roompal, add it for GitHub Pages
+  let frontendUrl = process.env.FRONTEND_URL || 'https://dev-sayo.github.io';
+  if (!frontendUrl.includes('/roompal')) {
+    frontendUrl = `${frontendUrl}/roompal`;
+  }
+  const verificationUrl = `${frontendUrl}/auth/verify-email?token=${verificationToken}`;
 
   const mailOptions = {
     from: `"${process.env.APP_NAME}" <${process.env.EMAIL_FROM}>`,
@@ -89,7 +94,12 @@ const sendVerificationEmail = async (email, fullName, verificationToken) => {
  * @returns {Promise<Object>}
  */
 const sendPasswordResetEmail = async (email, fullName, resetToken) => {
-  const resetUrl = `${process.env.FRONTEND_URL}/auth/new-password?token=${resetToken}`;
+  // Get frontend URL - if it doesn't include /roompal, add it for GitHub Pages
+  let frontendUrl = process.env.FRONTEND_URL || 'https://dev-sayo.github.io';
+  if (!frontendUrl.includes('/roompal')) {
+    frontendUrl = `${frontendUrl}/roompal`;
+  }
+  const resetUrl = `${frontendUrl}/auth/new-password?token=${resetToken}`;
 
   const mailOptions = {
     from: `"${process.env.APP_NAME}" <${process.env.EMAIL_FROM}>`,
