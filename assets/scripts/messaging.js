@@ -74,6 +74,8 @@ const loadConversations = async () => {
 
     if (response.success && response.data && response.data.conversations) {
       const conversations = response.data.conversations;
+      console.log('📋 Loaded conversations:', conversations);
+      console.log('👤 First conversation otherParticipant:', conversations[0]?.otherParticipant);
 
       if (conversations.length > 0) {
         conversationsList.innerHTML = conversations
@@ -92,6 +94,35 @@ const loadConversations = async () => {
 };
 
 /**
+ * Get user avatar URL
+ * @param {Object} user - User object
+ * @returns {string} - Avatar URL
+ */
+const getUserAvatar = (user) => {
+  if (!user) {
+    return `https://ui-avatars.com/api/?name=U&background=223448&color=fff&size=200&bold=true`;
+  }
+
+  const fullName = user.fullName || user.name || 'User';
+  const initials = fullName
+    .split(' ')
+    .map(n => n[0])
+    .join('')
+    .toUpperCase()
+    .substring(0, 2) || 'U';
+
+  // If user has profileImage, use it (from roommate profile)
+  if (user.profileImage) {
+    console.log(`✅ Using profile image for ${fullName}:`, user.profileImage);
+    return user.profileImage;
+  }
+
+  console.log(`⚠️ No profileImage for ${fullName}, using initials:`, initials);
+  // Generate avatar from initials using UI Avatars
+  return `https://ui-avatars.com/api/?name=${encodeURIComponent(initials)}&background=223448&color=fff&size=200&bold=true&font-size=0.5`;
+};
+
+/**
  * Create conversation list item
  * @param {Object} conversation - Conversation object
  * @returns {string} - HTML string
@@ -100,15 +131,17 @@ const createConversationItem = (conversation) => {
   const otherParticipant = conversation.otherParticipant || {};
   const lastMessage = conversation.lastMessage || {};
   const unreadCount = conversation.unreadCount || 0;
+  const fullName = otherParticipant.fullName || 'Unknown';
+  const avatarUrl = getUserAvatar(otherParticipant);
 
   return `
     <div class="conversation-item" data-conversation-id="${conversation._id}" onclick="openConversation('${conversation._id}')">
       <div class="conversation-avatar">
-        <img src="../images/avatar-1.png" alt="${otherParticipant.fullName || 'User'}" />
+        <img src="${avatarUrl}" alt="${fullName}" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(fullName.substring(0, 2).toUpperCase())}&background=223448&color=fff&size=200&bold=true'" />
         ${unreadCount > 0 ? `<span class="unread-badge">${unreadCount}</span>` : ''}
       </div>
       <div class="conversation-info">
-        <h4>${otherParticipant.fullName || 'Unknown'}</h4>
+        <h4>${fullName}</h4>
         <p class="last-message">${lastMessage.content || 'No messages yet'}</p>
       </div>
       <div class="conversation-meta">
@@ -190,10 +223,16 @@ const createMessageBubble = (message) => {
   const isMine = message.sender._id === getCurrentUserId();
   const senderName = message.sender.fullName || 'Unknown';
   const time = formatTime(message.createdAt);
+  const senderAvatar = getUserAvatar(message.sender);
 
   return `
     <div class="message-bubble ${isMine ? 'message-mine' : 'message-theirs'}">
-      ${!isMine ? `<div class="message-sender">${senderName}</div>` : ''}
+      ${!isMine ? `
+        <div class="message-header">
+          <img src="${senderAvatar}" alt="${senderName}" class="message-avatar" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(senderName.substring(0, 2).toUpperCase())}&background=223448&color=fff&size=200&bold=true'" />
+          <div class="message-sender">${senderName}</div>
+        </div>
+      ` : ''}
       <div class="message-content">${escapeHtml(message.content)}</div>
       <div class="message-time">
         ${time}

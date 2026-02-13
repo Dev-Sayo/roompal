@@ -1,6 +1,7 @@
 const Message = require('../models/Message');
 const Conversation = require('../models/Conversation');
 const User = require('../models/User');
+const RoommateProfile = require('../models/RoommateProfile');
 const { sendSuccessResponse, sendErrorResponse } = require('../utils/responseHandler');
 const { validationResult } = require('express-validator');
 
@@ -35,6 +36,32 @@ const getConversations = async (req, res) => {
         const otherParticipant = conv.participants.find(
           (p) => p._id.toString() !== userId.toString()
         );
+
+        // Get profile image from roommate profile if available
+        if (otherParticipant) {
+          console.log(`🔍 Looking for profile image for user: ${otherParticipant.fullName} (ID: ${otherParticipant._id})`);
+          const roommateProfile = await RoommateProfile.findOne({
+            user: otherParticipant._id,
+          }).select('profileImage user').lean();
+
+          console.log(`🔍 RoommateProfile query result:`, roommateProfile ? {
+            hasProfile: true,
+            profileImage: roommateProfile.profileImage,
+            userId: roommateProfile.user
+          } : { hasProfile: false });
+
+          if (roommateProfile && roommateProfile.profileImage) {
+            otherParticipant.profileImage = roommateProfile.profileImage;
+            console.log(`✅ Found profile image for ${otherParticipant.fullName}:`, roommateProfile.profileImage);
+          } else {
+            console.log(`⚠️ No profile image found for ${otherParticipant.fullName}`);
+            // Try to find the profile to see if it exists at all
+            const profileCheck = await RoommateProfile.findOne({
+              user: otherParticipant._id,
+            }).lean();
+            console.log(`🔍 Profile exists check:`, profileCheck ? 'Profile exists but no image' : 'No profile found');
+          }
+        }
 
         return {
           ...conv,
@@ -85,14 +112,59 @@ const getMessages = async (req, res) => {
       .skip(skip)
       .lean();
 
+    // Add profile images from roommate profiles
+    const messagesWithProfiles = await Promise.all(
+      messages.map(async (msg) => {
+        // Get sender profile image
+        if (msg.sender) {
+          console.log(`🔍 Looking for sender profile image: ${msg.sender.fullName} (ID: ${msg.sender._id})`);
+          const senderProfile = await RoommateProfile.findOne({
+            user: msg.sender._id,
+          }).select('profileImage user').lean();
+          console.log(`🔍 Sender profile result:`, senderProfile ? {
+            hasProfile: true,
+            profileImage: senderProfile.profileImage,
+            userId: senderProfile.user
+          } : { hasProfile: false });
+          if (senderProfile && senderProfile.profileImage) {
+            msg.sender.profileImage = senderProfile.profileImage;
+            console.log(`✅ Added sender profile image:`, senderProfile.profileImage);
+          } else {
+            console.log(`⚠️ No profile image for sender ${msg.sender.fullName}`);
+          }
+        }
+
+        // Get receiver profile image
+        if (msg.receiver) {
+          console.log(`🔍 Looking for receiver profile image: ${msg.receiver.fullName} (ID: ${msg.receiver._id})`);
+          const receiverProfile = await RoommateProfile.findOne({
+            user: msg.receiver._id,
+          }).select('profileImage user').lean();
+          console.log(`🔍 Receiver profile result:`, receiverProfile ? {
+            hasProfile: true,
+            profileImage: receiverProfile.profileImage,
+            userId: receiverProfile.user
+          } : { hasProfile: false });
+          if (receiverProfile && receiverProfile.profileImage) {
+            msg.receiver.profileImage = receiverProfile.profileImage;
+            console.log(`✅ Added receiver profile image:`, receiverProfile.profileImage);
+          } else {
+            console.log(`⚠️ No profile image for receiver ${msg.receiver.fullName}`);
+          }
+        }
+
+        return msg;
+      })
+    );
+
     // Get total count
     const total = await Message.countDocuments({ conversation: conversationId });
 
     // Reverse to show oldest first
-    messages.reverse();
+    messagesWithProfiles.reverse();
 
     sendSuccessResponse(res, 200, 'Messages retrieved successfully', {
-      messages,
+      messages: messagesWithProfiles,
       pagination: {
         currentPage: page,
         totalPages: Math.ceil(total / limit),
@@ -152,6 +224,21 @@ const sendMessage = async (req, res) => {
     // Populate message
     await message.populate('sender', 'fullName email');
     await message.populate('receiver', 'fullName email');
+
+    // Add profile images from roommate profiles
+    const senderProfile = await RoommateProfile.findOne({
+      user: message.sender._id,
+    }).select('profileImage').lean();
+    if (senderProfile && senderProfile.profileImage) {
+      message.sender.profileImage = senderProfile.profileImage;
+    }
+
+    const receiverProfile = await RoommateProfile.findOne({
+      user: message.receiver._id,
+    }).select('profileImage').lean();
+    if (receiverProfile && receiverProfile.profileImage) {
+      message.receiver.profileImage = receiverProfile.profileImage;
+    }
 
     sendSuccessResponse(res, 201, 'Message sent successfully', {
       message,

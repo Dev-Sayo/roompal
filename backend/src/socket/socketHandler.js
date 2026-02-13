@@ -1,6 +1,7 @@
 const Message = require('../models/Message');
 const Conversation = require('../models/Conversation');
 const User = require('../models/User');
+const RoommateProfile = require('../models/RoommateProfile');
 const { authenticateSocket } = require('../services/socketService');
 
 // Store online users: { userId: socketId }
@@ -103,6 +104,21 @@ const initializeSocket = (io) => {
         // Populate message
         await message.populate('sender', 'fullName email');
         await message.populate('receiver', 'fullName email');
+
+        // Add profile images from roommate profiles
+        const senderProfile = await RoommateProfile.findOne({
+          user: message.sender._id,
+        }).select('profileImage').lean();
+        if (senderProfile && senderProfile.profileImage) {
+          message.sender.profileImage = senderProfile.profileImage;
+        }
+
+        const receiverProfile = await RoommateProfile.findOne({
+          user: message.receiver._id,
+        }).select('profileImage').lean();
+        if (receiverProfile && receiverProfile.profileImage) {
+          message.receiver.profileImage = receiverProfile.profileImage;
+        }
 
         // Emit to sender (confirmation)
         socket.emit('message_sent', {

@@ -50,10 +50,14 @@ const createOrUpdateProfile = async (req, res, next) => {
       profile.pets = pets !== undefined ? (pets === true || pets === 'true') : profile.pets;
       profile.occupation = occupation !== undefined ? occupation : profile.occupation;
       profile.bio = bio !== undefined ? bio : profile.bio;
-      profile.profileImage = profileImage !== undefined ? profileImage : profile.profileImage;
+      if (profileImage !== undefined && profileImage !== null && profileImage !== '') {
+        profile.profileImage = profileImage;
+        console.log('✅ Updated profileImage:', profileImage);
+      }
       profile.isActive = true; // Reactivate if updating
 
       await profile.save();
+      console.log('✅ Profile saved with profileImage:', profile.profileImage);
       await profile.populate('user', 'fullName email');
 
       return sendSuccessResponse(
@@ -100,11 +104,12 @@ const createOrUpdateProfile = async (req, res, next) => {
         pets: pets === true || pets === 'true',
         occupation: occupation ? occupation.trim() : undefined,
         bio: bio ? bio.trim() : undefined,
-        profileImage: profileImage || undefined,
+        profileImage: profileImage && profileImage !== '' ? profileImage : undefined,
         isActive: true,
       });
 
       console.log('✅ Profile created successfully:', newProfile._id);
+      console.log('✅ Profile image saved:', newProfile.profileImage);
 
       await newProfile.populate('user', 'fullName email');
 

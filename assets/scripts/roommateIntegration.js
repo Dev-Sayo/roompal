@@ -588,11 +588,14 @@ async function submitRegistrationForm() {
           console.log('📸 Image upload response:', uploadData);
           if (uploadData.success && uploadData.data && uploadData.data.imageUrl) {
             formData.profileImage = uploadData.data.imageUrl;
-            console.log('✅ Image uploaded:', formData.profileImage);
+            console.log('✅ Image uploaded and added to formData:', formData.profileImage);
+            console.log('✅ Full formData before submission:', formData);
+          } else {
+            console.warn('⚠️ Image upload response missing imageUrl:', uploadData);
           }
         } else {
           const errorData = await uploadResponse.json();
-          console.warn('⚠️ Image upload failed:', errorData);
+          console.error('❌ Image upload failed:', errorData);
         }
       } catch (uploadError) {
         console.warn('⚠️ Image upload error, continuing without image:', uploadError);
@@ -602,6 +605,7 @@ async function submitRegistrationForm() {
 
     // Submit to API
     console.log('📤 Submitting profile data to API:', formData);
+    console.log('📤 profileImage in formData:', formData.profileImage);
     const response = await authenticatedFetch('http://localhost:5002/api/roommates/profile', {
       method: 'POST',
       headers: {
@@ -613,6 +617,7 @@ async function submitRegistrationForm() {
     console.log('📥 API Response status:', response.status);
     const data = await response.json();
     console.log('📥 API Response data:', data);
+    console.log('📥 Profile image in response:', data.data?.profile?.profileImage);
 
     if (response.ok && data.success) {
       console.log('✅ Profile created/updated successfully!');
