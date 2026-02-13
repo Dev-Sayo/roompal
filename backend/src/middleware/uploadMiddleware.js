@@ -73,6 +73,37 @@ const upload = multer({
 });
 
 /**
+ * Configure Cloudinary storage for profile images
+ */
+const profileImageStorage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: async (req, file) => {
+    return {
+      folder: 'roompal/profiles',
+      allowed_formats: ['jpg', 'jpeg', 'png', 'webp'],
+      transformation: [
+        {
+          width: 400,
+          height: 400,
+          crop: 'fill',
+          gravity: 'face',
+          quality: 'auto',
+        },
+      ],
+      public_id: `profile_${Date.now()}_${Math.round(Math.random() * 1e9)}`,
+    };
+  },
+});
+
+const profileImageUpload = multer({
+  storage: profileImageStorage,
+  fileFilter: fileFilter,
+  limits: {
+    fileSize: 5 * 1024 * 1024, // 5MB max file size
+  },
+});
+
+/**
  * Middleware to handle multiple image uploads
  */
 const uploadPropertyImages = upload.array('images', 10);
@@ -81,6 +112,11 @@ const uploadPropertyImages = upload.array('images', 10);
  * Middleware to handle single image upload
  */
 const uploadSingleImage = upload.single('image');
+
+/**
+ * Middleware to handle profile image upload
+ */
+const uploadProfileImage = profileImageUpload.single('image');
 
 /**
  * Error handler for multer errors
@@ -120,5 +156,6 @@ const handleMulterError = (error, req, res, next) => {
 module.exports = {
   uploadPropertyImages,
   uploadSingleImage,
+  uploadProfileImage,
   handleMulterError,
 };

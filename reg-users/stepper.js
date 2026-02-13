@@ -13,8 +13,17 @@
 
   // Wait for DOM to be ready
   function init() {
-    form = document.getElementById("propertyForm");
+    // Try to find form by ID first, then by class
+    form = document.getElementById("propertyForm") || 
+           document.querySelector(".propertyForm") ||
+           document.querySelector('form.propertyForm');
     if (!form) {
+      // Only warn if we're not on a page that uses this stepper
+      const isPropertyPage = window.location.pathname.includes('list-a-house');
+      if (!isPropertyPage) {
+        // Silently return - this stepper is only for property listing page
+        return;
+      }
       console.warn('Property form not found');
       return;
     }

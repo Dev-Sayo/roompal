@@ -58,6 +58,63 @@ const protectRoute = async (req, res, next) => {
 };
 
 /**
+ * Optional authentication middleware - sets req.user if token is valid, but doesn't require it
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Express next function
+ */
+const optionalAuth = async (req, res, next) => {
+  try {
+    // 1. Get token from header
+    let token;
+    const authHeader = req.headers.authorization;
+
+    if (authHeader && authHeader.startsWith('Bearer ')) {
+      token = authHeader.split(' ')[1];
+    }
+
+    // If no token, continue without setting req.user
+    if (!token) {
+      req.user = null;
+      return next();
+    }
+
+    // 2. Verify token
+    let decoded;
+    try {
+      decoded = verifyToken(token);
+    } catch (error) {
+      // Invalid token, continue without setting req.user
+      req.user = null;
+      return next();
+    }
+
+    // 3. Check if user still exists
+    const currentUser = await User.findById(decoded.userId).select('+isActive');
+    
+    if (!currentUser || !currentUser.isActive) {
+      // User doesn't exist or inactive, continue without setting req.user
+      req.user = null;
+      return next();
+    }
+
+    // 4. Set req.user if token is valid
+    req.user = {
+      userId: currentUser._id,
+      email: currentUser.email,
+      role: currentUser.role,
+      fullName: currentUser.fullName,
+    };
+
+    next();
+  } catch (error) {
+    // On error, continue without setting req.user
+    req.user = null;
+    next();
+  }
+};
+
+/**
  * Middleware to restrict routes to specific roles
  * @param {...string} roles - Allowed roles
  * @returns {Function} - Middleware function
@@ -77,5 +134,6 @@ const restrictTo = (...roles) => {
 
 module.exports = {
   protectRoute,
+  optionalAuth,
   restrictTo,
 };

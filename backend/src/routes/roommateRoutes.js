@@ -3,8 +3,16 @@ const { body } = require('express-validator');
 const roommateController = require('../controllers/roommateController');
 const authMiddleware = require('../middleware/authMiddleware');
 const validate = require('../middleware/validationMiddleware');
+const { uploadProfileImage, handleMulterError } = require('../middleware/uploadMiddleware');
 
 const router = express.Router();
+
+// Public routes (no auth required)
+// Get roommate profile by ID
+router.get('/:id', roommateController.getRoommateProfileById);
+
+// Get all active profiles (public - optional auth to exclude own profile)
+router.get('/', authMiddleware.optionalAuth, roommateController.getAllActiveProfiles);
 
 // Validation rules for roommate profile
 const roommateProfileValidation = [
@@ -67,7 +75,12 @@ router.get('/me', roommateController.getMyProfile);
 // Get compatible matches for current user
 router.get('/matches', roommateController.getMatches);
 
-// Get all active profiles (public but can filter by authenticated user)
-router.get('/', roommateController.getAllActiveProfiles);
+// Upload profile image
+router.post(
+  '/upload-image',
+  uploadProfileImage,
+  handleMulterError,
+  roommateController.uploadProfileImage
+);
 
 module.exports = router;

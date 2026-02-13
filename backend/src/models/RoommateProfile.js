@@ -61,6 +61,10 @@ const roommateProfileSchema = new mongoose.Schema(
       trim: true,
       maxlength: [1000, 'Bio cannot exceed 1000 characters'],
     },
+    profileImage: {
+      type: String,
+      trim: true,
+    },
     isActive: {
       type: Boolean,
       default: true,

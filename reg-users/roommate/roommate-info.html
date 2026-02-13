@@ -6,6 +6,15 @@
     <title>Roommate Details</title>
     <link rel="stylesheet" href="../reg-user.css" />
     <link rel="stylesheet" href="roommate-info.css" />
+    <style>
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .loading-spinner {
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
     <nav class="nav">
@@ -60,117 +69,13 @@
           /></span>
           <div style="display: none" class="notification-container">
             <div class="notification-modal">
-              <div class="notification-modal">
-                <div class="frame-parent">
-                  <div class="frame-wrapper">
-                    <div class="notifications-wrapper">
-                      <div class="notifications">Notifications</div>
-                    </div>
-                  </div>
-                  <div class="frame-group">
-                    <div class="all-dropdown-wrapper">
-                      <div class="all-dropdown">
-                        <div class="all-dropdown-inner">
-                          <div class="property-type-wrapper">
-                            <div class="property-type">
-                              Owen Mitchel just sent you a roommmate request
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="button-parent">
-                      <div class="button">
-                        <div class="view-profile-wrapper">
-                          <div class="view-profile">View profile</div>
-                        </div>
-                      </div>
-                      <div class="button2">
-                        <div class="view-profile-wrapper">
-                          <div class="view-profile">Accept</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="frame-child"></div>
-                  <div class="frame-group">
-                    <div class="all-dropdown-wrapper">
-                      <div class="all-dropdown">
-                        <div class="all-dropdown-inner">
-                          <div class="property-type-wrapper">
-                            <div class="property-type">
-                              A new listing has been added by an agent
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="button-parent">
-                      <div class="button">
-                        <div class="view-profile-wrapper">
-                          <div class="view-profile">View profile</div>
-                        </div>
-                      </div>
-                      <div class="button2">
-                        <div class="view-profile-wrapper">
-                          <div class="view-profile">Accept</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="frame-child"></div>
-                  <div class="frame-group">
-                    <div class="all-dropdown-frame">
-                      <div class="all-dropdown">
-                        <div class="all-dropdown-inner">
-                          <div class="property-type-wrapper">
-                            <div class="property-type">
-                              Gift Hope just sent you a roommmate request
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="button-container">
-                      <div class="button">
-                        <div class="view-profile-wrapper">
-                          <div class="view-profile">View profile</div>
-                        </div>
-                      </div>
-                      <div class="button2">
-                        <div class="view-profile-wrapper">
-                          <div class="view-profile">Accept</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="frame-child"></div>
-                  <div class="frame-parent2">
-                    <div class="all-dropdown-wrapper2">
-                      <div class="all-dropdown">
-                        <div class="all-dropdown-inner">
-                          <div class="property-type-wrapper">
-                            <div class="property-type">
-                              A new message just came in
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="button-parent2">
-                      <div class="button7">
-                        <div class="view-profile-wrapper">
-                          <div class="ignore">Ignore</div>
-                        </div>
-                      </div>
-                      <div class="button8">
-                        <div class="view-profile-wrapper">
-                          <div class="ignore">Chat</div>
-                        </div>
-                      </div>
-                    </div>
+              <div class="frame-parent">
+                <div class="frame-wrapper">
+                  <div class="notifications-wrapper">
+                    <div class="notifications">Notifications</div>
                   </div>
                 </div>
+                <!-- Notifications will be dynamically loaded here -->
               </div>
             </div>
           </div>
@@ -185,6 +90,14 @@
     <div class="property-container">
       <a class="back-nav" href="roommate.html" target="_self">← Go back</a>
 
+      <!-- Loading Spinner -->
+      <div id="loadingSpinner" class="loading-spinner" style="display: flex; justify-content: center; align-items: center; min-height: 400px; flex-direction: column;">
+        <div style="width: 50px; height: 50px; border: 4px solid #f3f3f3; border-top: 4px solid #223448; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 1rem;"></div>
+        <p style="color: #666; font-size: 14px;">Loading roommate profile...</p>
+      </div>
+
+      <!-- Content Container (hidden initially) -->
+      <div id="contentContainer" style="display: none;">
       <div class="main-image">
         <img id="mainImage" src="../images/man-1.png" />
       </div>
@@ -279,37 +192,36 @@
           ><img src="../images/message.png" alt="" /> Chat</a
         >
       </div>
+      </div>
+      <!-- End Content Container -->
       <!-- popups -->
-      <div class="confirmation-frame">
+      <div class="confirmation-frame" style="display: none;">
         <div class="inner-content content-2">
           <img src="../images/question-mark.png" alt="" />
           <h2>
-            Are you sure you want to get matched with Owen mitchell as a
-            roommate?
+            Are you sure you want to get matched with this user as a roommate?
           </h2>
           <div class="com-div">
-            <a class="leave" href="roommate.html" target="_parent">No</a>
-            <a class="chat" href="../message/in-app-message.html">Yes</a>
+            <a class="leave" href="#" onclick="event.preventDefault(); document.querySelector('.confirmation-frame').style.display='none';">No</a>
+            <a class="chat" href="#" onclick="event.preventDefault();">Yes</a>
           </div>
         </div>
       </div>
       <!-- 2 -->
-      <div class="loading_1">
+      <div class="loading_1" style="display: none;">
         <div class="inner-content__1">
           <img src="../images/loading.png" alt="" />
           <div>
-            <h2>Match making roomate</h2>
+            <h2>Match making roommate</h2>
             <p>Have a little patience</p>
           </div>
         </div>
       </div>
       <!-- 3 -->
-      <div class="request-checked">
+      <div class="request-checked" style="display: none;">
         <div class="inner-content">
           <p>
-            We have successfully sent Owen Mitchell your roommate request, he
-            needs to accept you now as a roommate, note that you can chat him up
-            while you wait.
+            We have successfully sent your roommate request. They need to accept you now as a roommate. Note that you can chat them up while you wait.
           </p>
           <div class="com-div">
             <a class="leave" href="roommate.html" target="_parent">Leave</a>
@@ -318,6 +230,10 @@
         </div>
       </div>
     </div>
+    <script src="../../assets/scripts/api.js"></script>
+    <script src="../../assets/scripts/toast.js"></script>
+    <script src="../../assets/scripts/notificationIntegration.js"></script>
+    <script src="../../assets/scripts/roommateInfo.js?v=2.0"></script>
     <script src="../reg-user-dropdown.js"></script>
   </body>
 </html>

@@ -151,7 +151,9 @@
   transform: translateY(0);
 }
 .property-type-wrapper {
-  white-space: nowrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 .frame-parent {
   display: flex;
@@ -186,6 +188,15 @@
   align-self: stretch;
   display: flex;
   align-items: center;
+  width: 100%;
+}
+.property-type {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  font-size: 13px;
+  line-height: 1.4;
+  max-width: 100%;
 }
 .button-parent {
   width: 100%;

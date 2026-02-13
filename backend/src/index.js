@@ -9,6 +9,8 @@ const configureCloudinary = require('./config/cloudinary');
 const authRoutes = require('./routes/authRoutes');
 const propertyRoutes = require('./routes/propertyRoutes');
 const roommateRoutes = require('./routes/roommateRoutes');
+const roommateRequestRoutes = require('./routes/roommateRequestRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
 const messageRoutes = require('./routes/messageRoutes');
 const { initializeSocket } = require('./socket/socketHandler');
 const { globalErrorHandler } = require('./utils/errorHandler');
@@ -65,6 +67,8 @@ app.get('/health', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/properties', propertyRoutes);
 app.use('/api/roommates', roommateRoutes);
+app.use('/api/roommate-requests', roommateRequestRoutes);
+app.use('/api/notifications', notificationRoutes);
 app.use('/api/messages', messageRoutes);
 
 // 404 handler

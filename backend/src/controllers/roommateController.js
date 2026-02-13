@@ -27,6 +27,7 @@ const createOrUpdateProfile = async (req, res, next) => {
       pets,
       occupation,
       bio,
+      profileImage,
     } = req.body;
 
     const userId = req.user.userId;
@@ -45,10 +46,11 @@ const createOrUpdateProfile = async (req, res, next) => {
         cleanlinessLevel !== undefined
           ? parseInt(cleanlinessLevel)
           : profile.cleanlinessLevel;
-      profile.smoking = smoking !== undefined ? smoking : profile.smoking;
-      profile.pets = pets !== undefined ? pets : profile.pets;
+      profile.smoking = smoking !== undefined ? (smoking === true || smoking === 'true') : profile.smoking;
+      profile.pets = pets !== undefined ? (pets === true || pets === 'true') : profile.pets;
       profile.occupation = occupation !== undefined ? occupation : profile.occupation;
       profile.bio = bio !== undefined ? bio : profile.bio;
+      profile.profileImage = profileImage !== undefined ? profileImage : profile.profileImage;
       profile.isActive = true; // Reactivate if updating
 
       await profile.save();
@@ -62,20 +64,47 @@ const createOrUpdateProfile = async (req, res, next) => {
       );
     } else {
       // Create new profile
+      console.log('📝 Creating new roommate profile:', {
+        userId,
+        gender,
+        preferredGender,
+        budget,
+        preferredLocation,
+        lifestyle,
+        cleanlinessLevel,
+        smoking,
+        pets,
+        occupation,
+        bio: bio ? bio.substring(0, 50) + '...' : null,
+        profileImage: profileImage ? 'present' : 'none',
+      });
+
+      // Validate required fields before creating
+      if (!gender || !budget || !preferredLocation) {
+        return sendErrorResponse(
+          res,
+          400,
+          'Missing required fields: gender, budget, and preferredLocation are required'
+        );
+      }
+
       const newProfile = await RoommateProfile.create({
         user: userId,
         gender,
         preferredGender: preferredGender || 'No Preference',
         budget: parseFloat(budget),
-        preferredLocation,
+        preferredLocation: preferredLocation.trim(),
         lifestyle: lifestyle || 'Flexible',
         cleanlinessLevel: cleanlinessLevel ? parseInt(cleanlinessLevel) : 3,
-        smoking: smoking || false,
-        pets: pets || false,
-        occupation,
-        bio,
+        smoking: smoking === true || smoking === 'true',
+        pets: pets === true || pets === 'true',
+        occupation: occupation ? occupation.trim() : undefined,
+        bio: bio ? bio.trim() : undefined,
+        profileImage: profileImage || undefined,
         isActive: true,
       });
+
+      console.log('✅ Profile created successfully:', newProfile._id);
 
       await newProfile.populate('user', 'fullName email');
 
@@ -133,8 +162,15 @@ const getMyProfile = async (req, res, next) => {
  */
 const getAllActiveProfiles = async (req, res, next) => {
   try {
+    // This endpoint can be accessed without auth, but if user is authenticated, exclude their own profile
     const userId = req.user ? req.user.userId : null;
     const { location, minBudget, maxBudget, lifestyle, gender } = req.query;
+
+    // Pagination
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 12;
+
+    console.log('📋 Fetching active profiles:', { userId, location, page, limit });
 
     // Build query
     const query = { isActive: true };
@@ -162,10 +198,6 @@ const getAllActiveProfiles = async (req, res, next) => {
     if (gender) {
       query.gender = gender;
     }
-
-    // Pagination
-    const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 20;
     const skip = (page - 1) * limit;
 
     const profiles = await RoommateProfile.find(query)
@@ -253,9 +285,63 @@ const getMatches = async (req, res, next) => {
   }
 };
 
+/**
+ * Get roommate profile by ID
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Express next function
+ */
+const getRoommateProfileById = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    const profile = await RoommateProfile.findById(id).populate(
+      'user',
+      'fullName email'
+    );
+
+    if (!profile) {
+      return sendErrorResponse(res, 404, 'Roommate profile not found');
+    }
+
+    sendSuccessResponse(res, 200, 'Profile retrieved successfully', {
+      profile,
+    });
+  } catch (error) {
+    if (error.name === 'CastError') {
+      return sendErrorResponse(res, 404, 'Invalid profile ID');
+    }
+    next(error);
+  }
+};
+
+/**
+ * Upload profile image
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Express next function
+ */
+const uploadProfileImage = async (req, res, next) => {
+  try {
+    if (!req.file) {
+      return sendErrorResponse(res, 400, 'No image file provided');
+    }
+
+    const imageUrl = req.file.path;
+
+    sendSuccessResponse(res, 200, 'Image uploaded successfully', {
+      imageUrl,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   createOrUpdateProfile,
   getMyProfile,
   getAllActiveProfiles,
   getMatches,
+  getRoommateProfileById,
+  uploadProfileImage,
 };

@@ -1,10 +1,11 @@
 const tabButtons = document.querySelectorAll(".tab-btn");
 const tabContents = document.querySelectorAll(".tab-content");
-const form = document.getElementById("propertyForm");
-const steps = document.querySelectorAll(".selector");
+const form = document.querySelector(".propertyForm");
+// Use selector-group instead of selector for roommate form
+const steps = document.querySelectorAll(".selector-group");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
-const stepCounter = document.getElementById("stepCounter");
+const stepCounter = document.querySelector(".step-counter span");
 const successMessage = document.getElementById("successMessage");
 
 // Add click event to each tab button
@@ -30,22 +31,37 @@ tabButtons.forEach((button) => {
 
 // Get all the DOM elements
 
-// Track which step we're on
-let currentStep = 0;
-const totalSteps = steps.length;
-
-// When page loads, show first step
-initialize();
+// Only handle tabs - let roommateIntegration.js handle form steps
+// This prevents conflicts between multiple form handlers
 
 function initialize() {
-  showStep(0); // Show first step
+  // Show first step, hide others
+  steps.forEach((step, index) => {
+    if (index === 0) {
+      step.style.display = 'block';
+    } else {
+      step.style.display = 'none';
+    }
+  });
   updateUI(); // Update buttons and counter
 }
 
 // Show a specific step
 function showStep(stepIndex) {
-  steps.forEach((step) => step.classList.remove("active"));
-  steps[stepIndex].classList.add("active");
+  if (stepIndex < 0 || stepIndex >= steps.length) {
+    console.warn('Invalid step index:', stepIndex);
+    return;
+  }
+  
+  steps.forEach((step, index) => {
+    if (step) {
+      if (index === stepIndex) {
+        step.style.display = 'block';
+      } else {
+        step.style.display = 'none';
+      }
+    }
+  });
 }
 
 // Update the step counter
@@ -58,10 +74,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Update button states
 function updateButtons() {
-  prevBtn.disabled = currentStep === 0;
+  if (!prevBtn || !nextBtn) return;
+  
+  if (currentStep === 0) {
+    prevBtn.style.display = 'none';
+  } else {
+    prevBtn.style.display = 'block';
+    prevBtn.disabled = false;
+  }
 
   const isLastStep = currentStep === totalSteps - 1;
-  nextBtn.style.display = isLastStep ? "none" : "block";
+  if (isLastStep) {
+    nextBtn.textContent = 'Submit';
+  } else {
+    nextBtn.textContent = 'Next';
+  }
+  nextBtn.style.display = "block";
+}
+
+// Update step counter
+function updateStepCounter() {
+  const stepCounterElement = document.querySelector('.step-counter span');
+  if (stepCounterElement && steps.length > 0) {
+    stepCounterElement.textContent = `${currentStep + 1}/${steps.length}`;
+  }
 }
 
 // Update everything
@@ -93,8 +129,22 @@ async function hideCurrentStep() {
 // Show current step with animation
 async function showCurrentStep() {
   return new Promise((resolve) => {
+    if (currentStep < 0 || currentStep >= steps.length) {
+      console.warn('Invalid step index:', currentStep);
+      resolve();
+      return;
+    }
+    
     const currentStepElement = steps[currentStep];
-    currentStepElement.classList.add("active");
+    if (!currentStepElement) {
+      console.warn('Step element not found at index:', currentStep);
+      resolve();
+      return;
+    }
+    
+    if (currentStepElement.classList) {
+      currentStepElement.classList.add("active");
+    }
 
     setTimeout(() => {
       resolve();
@@ -104,37 +154,66 @@ async function showCurrentStep() {
 
 // Handle "Next" button click
 async function handleNext() {
+  if (!nextBtn || !form) return;
+  
+  // Check if we're on the last step
+  if (currentStep >= totalSteps - 1) {
+    // On last step - let roommateIntegration.js handle submission
+    console.log('On last step, submitting form...');
+    if (typeof submitRegistrationForm === 'function') {
+      await submitRegistrationForm();
+    } else {
+      console.warn('submitRegistrationForm not found');
+    }
+    return;
+  }
+  
   nextBtn.classList.add("loading");
   nextBtn.disabled = true;
 
   try {
     await simulateAsyncOperation(300);
     await hideCurrentStep();
-    currentStep++;
-    await showCurrentStep();
-    updateUI();
+    
+    // Move to next step
+    if (currentStep < steps.length - 1) {
+      currentStep++;
+      showStep(currentStep);
+      updateUI();
+    }
   } catch (error) {
     console.error("Error:", error);
   } finally {
-    nextBtn.classList.remove("loading");
-    nextBtn.disabled = false;
+    if (nextBtn) {
+      nextBtn.classList.remove("loading");
+      nextBtn.disabled = false;
+    }
   }
 }
 
 // Handle "Previous" button click
 async function handlePrevious() {
+  if (!prevBtn || currentStep <= 0) return;
+  
   prevBtn.classList.add("loading");
   prevBtn.disabled = true;
 
   try {
     await simulateAsyncOperation(200);
     await hideCurrentStep();
-    currentStep--;
-    await showCurrentStep();
-    updateUI();
+    
+    if (currentStep > 0) {
+      currentStep--;
+      showStep(currentStep);
+      updateUI();
+    }
+  } catch (error) {
+    console.error("Error:", error);
   } finally {
-    prevBtn.classList.remove("loading");
-    prevBtn.disabled = false;
+    if (prevBtn) {
+      prevBtn.classList.remove("loading");
+      prevBtn.disabled = false;
+    }
   }
 }
 
@@ -166,7 +245,5 @@ async function handleSubmit(e) {
   }
 }
 
-// Attach event listeners
-nextBtn.addEventListener("click", handleNext);
-prevBtn.addEventListener("click", handlePrevious);
-form.addEventListener("submit", handleSubmit);
+// Form step handling is now done by roommateIntegration.js
+// This file only handles tab switching
