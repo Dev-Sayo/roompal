@@ -36,7 +36,9 @@ const filterOptions = {
   Furnishing: ["Fully Furnished", "Semi Furnished", "Unfurnished"],
 };
 
-let selectedFilters = {};
+// Make selectedFilters globally accessible
+window.selectedFilters = {};
+let selectedFilters = window.selectedFilters;
 
 function initializeFilters() {
   Object.keys(filterOptions).forEach((category) => {
@@ -117,17 +119,20 @@ function updateFilterCount() {
   const filterCountDiv = document.getElementById("filterCount");
   const countBadge = document.getElementById("countBadge");
 
-  countBadge.textContent = count;
+  // Only update if elements exist
+  if (filterCountDiv && countBadge) {
+    countBadge.textContent = count;
 
-  if (count > 0) {
-    filterCountDiv.classList.add("active");
-  } else {
-    filterCountDiv.classList.remove("active");
+    if (count > 0) {
+      filterCountDiv.classList.add("active");
+    } else {
+      filterCountDiv.classList.remove("active");
+    }
   }
 }
 
-function resetFilters() {
-  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+function resetSidebarFilters() {
+  const checkboxes = document.querySelectorAll('#filterSections input[type="checkbox"]');
   checkboxes.forEach((checkbox) => {
     checkbox.checked = false;
   });
@@ -137,34 +142,95 @@ function resetFilters() {
   });
 
   updateFilterCount();
+  
+  // Use the resetFilters function from homepageProperties if available
+  if (typeof window !== 'undefined' && window.homepageProperties && window.homepageProperties.resetFilters) {
+    window.homepageProperties.resetFilters();
+  }
 }
 
 function applyFilters() {
   console.log("Applied filters:", selectedFilters);
 
-  const filterSummary = Object.entries(selectedFilters)
-    .filter(([_, values]) => values.length > 0)
-    .map(([category, values]) => `${category}: ${values.join(", ")}`)
-    .join("\n");
-
-  if (filterSummary) {
-    alert("Filters applied!\n\n" + filterSummary);
+  // Use the performSearch function from homepageProperties if available
+  if (typeof window !== 'undefined' && window.homepageProperties && window.homepageProperties.performSearch) {
+    window.homepageProperties.performSearch();
+  } else if (typeof performSearch === 'function') {
+    performSearch();
   } else {
-    alert("No filters selected");
+    // Fallback: show filter summary
+    const filterSummary = Object.entries(selectedFilters)
+      .filter(([_, values]) => values.length > 0)
+      .map(([category, values]) => `${category}: ${values.join(", ")}`)
+      .join("\n");
+
+    if (filterSummary) {
+      if (toast) {
+        toast.info("Filters applied: " + filterSummary);
+      } else {
+        alert("Filters applied!\n\n" + filterSummary);
+      }
+    } else {
+      if (toast) {
+        toast.warning("No filters selected");
+      } else {
+        alert("No filters selected");
+      }
+    }
   }
 }
 function init() {
+  console.log('Initializing sidebar filters...');
+  
   initializeFilters();
 
   const sectionsContainer = document.getElementById("filterSections");
+  if (!sectionsContainer) {
+    console.warn('Filter sections container not found');
+    return;
+  }
 
+  // Clear any existing content
+  sectionsContainer.innerHTML = '';
+
+  // Create filter sections
   Object.entries(filterOptions).forEach(([category, options]) => {
     const section = createFilterSection(category, options);
     sectionsContainer.appendChild(section);
   });
+  
+  console.log('Sidebar filters initialized:', Object.keys(filterOptions).length, 'categories');
 
-  document.getElementById("resetBtn").addEventListener("click", resetFilters);
-  document.getElementById("filterBtn").addEventListener("click", applyFilters);
+  // Setup filter buttons - use existing handlers but integrate with API
+  const resetBtn = document.getElementById("resetBtn");
+  const filterBtn = document.getElementById("filterBtn");
+  
+  if (resetBtn) {
+    // Remove existing listeners to avoid conflicts
+    const newResetBtn = resetBtn.cloneNode(true);
+    resetBtn.parentNode.replaceChild(newResetBtn, resetBtn);
+    
+    newResetBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      resetSidebarFilters();
+    });
+  }
+  
+  if (filterBtn) {
+    // Remove existing listeners to avoid conflicts
+    const newFilterBtn = filterBtn.cloneNode(true);
+    filterBtn.parentNode.replaceChild(newFilterBtn, filterBtn);
+    
+    newFilterBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      applyFilters();
+    });
+  }
 }
 
-init();
+// Wait for DOM to be ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}

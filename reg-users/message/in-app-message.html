@@ -37,7 +37,7 @@
       <div class="nav-dropdown">
         <div class="dropdown-links">
           <a class="dropdown-header" href="../homepage/home.html">Roompal</a>
-          <a href="./home.html">Find Apartment</a>
+          <a href="../homepage/home.html">Find Apartment</a>
           <a href="../roommate/roommate.html">Find roommate</a>
           <a href="../list-a-house/list-a-house.html">List a House</a>
           <a href="../message/in-app-message.html">Message</a>
@@ -46,7 +46,7 @@
         </div>
       </div>
       <div class="nav-side__1">
-        <a class="home" href="/frontend/index.html">roompal</a>
+        <a class="home" href="../../index.html">roompal</a>
         <div class="link">
           <a href="../homepage/home.html">Find an Apartment</a>
           <a href="../roommate/roommate.html">Find a roommate</a>
@@ -180,7 +180,40 @@
         </div>
         <p class="below">Look who dropped a text message below</p>
       </div>
-      <section class="message-container"></section>
+      <section class="message-container">
+        <div class="chat-layout">
+          <div class="conversations-sidebar">
+            <div id="conversations-list" class="conversations-list">
+              <!-- Conversations will be loaded here -->
+            </div>
+          </div>
+          <div class="chat-main">
+            <div id="messages-container" class="messages-container">
+              <!-- Messages will be loaded here -->
+            </div>
+            <div id="typing-indicator" class="typing-indicator" style="display: none;"></div>
+            <div class="message-input-container">
+              <input
+                type="text"
+                id="message-input"
+                class="message-input"
+                placeholder="Type a message..."
+              />
+              <button id="send-button" class="send-button">Send</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+    <!-- Socket.io Client Library -->
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <!-- API Helper -->
+    <script src="../../assets/scripts/api.js"></script>
+    <!-- Socket Client -->
+    <script src="../../assets/scripts/socketClient.js"></script>
+    <!-- Toast Notifications -->
+    <script src="../../assets/scripts/toast.js"></script>
+    <!-- Messaging Script -->
+    <script src="../../assets/scripts/messaging.js"></script>
   </body>
 </html>
