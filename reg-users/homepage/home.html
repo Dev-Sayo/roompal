@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      target="_blank"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
       integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
       crossorigin="anonymous"
@@ -12,9 +11,9 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Find an apartment</title>
-    <link rel="stylesheet" target="_blank" href="./home.css" />
-    <link rel="stylesheet" target="_blank" href="../filter-section.css" />
-    <link rel="stylesheet" target="_blank" href="../reg-user.css" />
+    <link rel="stylesheet" href="./home.css" />
+    <link rel="stylesheet" href="../filter-section.css" />
+    <link rel="stylesheet" href="../reg-user.css" />
   </head>
   <body>
     <nav class="nav">
@@ -44,30 +43,22 @@
       </div>
       <div class="nav-dropdown">
         <div class="dropdown-links">
-          <a class="dropdown-header" target="_blank" href="./home.html"
-            >Roompal</a
-          >
-          <a target="_blank" href="./home.html">Find Apartment</a>
-          <a target="_blank" href="../roommate/roommate.html">Find roommate</a>
-          <a target="_blank" href="../list-a-house/list-a-house.html"
-            >List a House</a
-          >
-          <a target="_blank" href="../message/in-app-message.html">Message</a>
-          <a target="_blank" href="">Notification</a>
-          <a target="_blank" href="../need-help/need-help.html">Need Help</a>
+          <a class="dropdown-header" href="./home.html">Roompal</a>
+          <a href="./home.html">Find Apartment</a>
+          <a href="../roommate/roommate.html">Find roommate</a>
+          <a href="../list-a-house/list-a-house.html">List a House</a>
+          <a href="../message/in-app-message.html">Message</a>
+          <a href="">Notification</a>
+          <a href="../need-help/need-help.html">Need Help</a>
         </div>
       </div>
       <div class="nav-side__1">
-        <a class="home" target="_blank" href="./home.html">roompal</a>
+        <a class="home" href="./home.html">roompal</a>
         <div class="link">
-          <a target="_blank" href="../homepage/home.html">Find an Apartment</a>
-          <a target="_blank" href="../roommate/roommate.html"
-            >Find a roommate</a
-          >
-          <a target="_blank" href="../list-a-house/list-a-house.html"
-            >List a House</a
-          >
-          <a target="_blank" href="../message/in-app-message.html">Messages</a>
+          <a href="../homepage/home.html">Find an Apartment</a>
+          <a href="../roommate/roommate.html">Find a roommate</a>
+          <a href="../list-a-house/list-a-house.html">List a House</a>
+          <a href="../message/in-app-message.html">Messages</a>
         </div>
       </div>
       <div class="side-two">
@@ -176,10 +167,7 @@
           </div>
         </div>
         <span
-          ><a
-            class="need-help"
-            target="_blank"
-            href="../need-help/need-help.html"
+          ><a class="need-help" href="../need-help/need-help.html"
             >Need Help?</a
           ></span
         >
@@ -197,9 +185,6 @@
       </div>
       <div class="filter-container">
         <div class="filter-sections" id="filterSections"></div>
-        <!-- <div class="filter-count" id="filterCount">
-          <div class="count-badge" id="countBadge">0</div>
-        </div> -->
         <div class="filter-actions">
           <button class="btn btn-reset" id="resetBtn">Clear</button>
           <button class="btn btn-filter" id="filterBtn">Filter</button>
@@ -207,8 +192,8 @@
       </div>
     </aside>
     <main>
-      <section>
-        <div class="hero-section rounded-2xl">
+      <section class="hero-section">
+        <div class="hero-frame rounded-2xl">
           <h2 class="font-medium text-2xl">
             Search for your Dream Apartment Here
           </h2>
@@ -302,13 +287,11 @@
                 </p>
               </div>
               <div class="agent-info">
-                <a target="_blank" href="">
+                <a target="_parent" href="../message/in-app-message.html">
                   <img src="../images/message.png" />
                   Message agent</a
                 >
-                <a target="_blank" href="./property-details.html">
-                  View more details
-                </a>
+                <a href="./property-details.html"> View more details </a>
               </div>
             </div>
           </div>
@@ -335,12 +318,10 @@
                 </p>
               </div>
               <div class="agent-info">
-                <a target="_blank" href="../message/in-app-message.html"
+                <a href="../message/in-app-message.html"
                   ><img src="../images/message.png" />Message agent</a
                 >
-                <a target="_blank" href="./property-details.html">
-                  View more details
-                </a>
+                <a href="./property-details.html"> View more details </a>
               </div>
             </div>
           </div>
@@ -367,13 +348,11 @@
                 </p>
               </div>
               <div class="agent-info">
-                <a target="_blank" href="../message/in-app-message.html">
+                <a href="../message/in-app-message.html">
                   <img src="../images/message.png" />
                   Message agent</a
                 >
-                <a target="_blank" href="./property-details.html">
-                  View more details
-                </a>
+                <a href="./property-details.html"> View more details </a>
               </div>
             </div>
           </div>
@@ -400,11 +379,9 @@
                 </p>
               </div>
               <div class="agent-info">
-                <a target="_blank" href="../message/in-app-message.html"
+                <a href="../message/in-app-message.html"
                   ><img src="../images/message.png" />Message agent</a
-                ><a target="_blank" href="./property-details.html">
-                  View more details
-                </a>
+                ><a href="./property-details.html"> View more details </a>
               </div>
             </div>
           </div>
@@ -431,11 +408,9 @@
                 </p>
               </div>
               <div class="agent-info">
-                <a target="_blank" href="../message/in-app-message.html"
+                <a href="../message/in-app-message.html"
                   ><img src="../images/message.png" />Message agent</a
-                ><a target="_blank" href="./property-details.html">
-                  View more details</a
-                >
+                ><a href="./property-details.html"> View more details</a>
               </div>
             </div>
           </div>
@@ -462,11 +437,9 @@
                 </p>
               </div>
               <div class="agent-info">
-                <a target="_blank" href="../message/in-app-message.html"
+                <a href="../message/in-app-message.html"
                   ><img src="../images/message.png" />Message agent</a
-                ><a target="_blank" href="./property-details.html">
-                  View more details
-                </a>
+                ><a href="./property-details.html"> View more details </a>
               </div>
             </div>
           </div>

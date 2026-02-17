@@ -64,6 +64,27 @@
                 <div class="error" id="emailError"></div>
               </div>
               <div class="input-box w-full mb-5">
+                <label class="flex flex-col mb-3" for="email"
+                  >Why are you using Appointify</label
+                >
+                <select
+                  class="w-full h-11 bg-[#f1f1f1] rounded-lg border border-transparent focus:border-[#223448] focus:outline-none"
+                >
+                  <option
+                    class="text-gray-400"
+                    value="choose"
+                    disabled
+                    selected
+                  >
+                    Pick an option
+                  </option>
+                  <option value="find-apartment">Find an Apartment</option>
+                  <option value="find-roommate">Find a Roommate</option>
+                  <option value="post-apartment">Post an Apartment</option>
+                </select>
+                <div class="error" id="whyUsingAppointifyError"></div>
+              </div>
+              <div class="input-box w-full mb-5">
                 <label class="flex flex-col mb-3" for="password"
                   >Password</label
                 >
@@ -128,7 +149,7 @@
               We are a housing and roommate matching platform built to make
               finding a place to live simple, safe, and reliable.
             </p>
-            <img class="backdrop" src="../assets/images/blur-blue.png" />
+            <img class="backdrop" src="./assets/images/blur-blue.png" />
           </div>
         </div>
         <!-- verify your email overlay-modal -->

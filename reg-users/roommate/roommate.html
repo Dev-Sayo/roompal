@@ -3,9 +3,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Find roommate</title>
-    <link rel="stylesheet" href="./rommate.css" />
-    <link rel="stylesheet" href="/frontend/dist/output.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./roommate.css" />
     <link rel="stylesheet" href="../reg-user.css" />
+    <link rel="stylesheet" href="../filter-section.css" />
   </head>
   <body>
     <nav class="nav">
@@ -45,7 +46,7 @@
         </div>
       </div>
       <div class="nav-side__1">
-        <a class="home" href="/frontend/index.html">roompal</a>
+        <a class="home" href="../homepage/home.html">roompal</a>
         <div class="link">
           <a href="../homepage/home.html">Find an Apartment</a>
           <a href="../roommate/roommate.html">Find a roommate</a>
@@ -56,7 +57,7 @@
       <div class="side-two">
         <div class="notification-dropdown">
           <span class="notification"
-            ><img src="../images/notification-bell.png" alt=""
+            ><img src="../images/notification-bell.png"
           /></span>
           <div class="notification-modal">
             <div class="frame-parent">
@@ -169,333 +170,18 @@
       </div>
     </nav>
     <aside>
-      <div class="location-div w-77.25">
+      <div class="location-div">
         <p>Location</p>
-        <div
-          class="location-dropdown bg-white h-11 flex items-center justify-between"
-        >
+        <div class="location-dropdown">
           <span>Lagos</span>
-          <img
-            class="w-4 object-cover"
-            src="../images/light-chevron.png"
-            alt=""
-          />
-        </div>
-        <div>
-          <ul></ul>
+          <img src="../images/light-chevron.png" />
         </div>
       </div>
-      <div class="filter-section">
-        <div class="filter-search-box">
-          <input type="search" placeholder="Filter Options" />
-        </div>
-        <div class="filter-dropdown-container">
-          <div class="filter-group">
-            <button class="filter-dropdown-btn">
-              Gender Preferences
-              <img src="../images/light-chevron.png" />
-            </button>
-            <div class="select-filter-dropdown">
-              <ul value="">
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" />Male only</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> Female only</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> No preference</label>
-                  <p>01</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="filter-group">
-            <button class="filter-dropdown-btn">
-              Age Range
-              <img src="../images/light-chevron.png" />
-            </button>
-            <div class="select-filter-dropdown">
-              <ul value="">
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> 15 -18</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> 18 -25</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> 25 -30</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> 30 -45</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> 45 -65</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> 65 and above</label>
-                  <p>01</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <button class="filter-dropdown-btn">
-              Smoking / Drinking
-              <img src="../images/light-chevron.png" />
-            </button>
-            <div class="select-filter-dropdown">
-              <ul value="">
-                <li class="flex justify-between">
-                  <label for="">
-                    <input type="checkbox" />Not okay with either</label
-                  >
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for="">
-                    <input type="checkbox" /> Okay with drinking only</label
-                  >
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for="">
-                    <input type="checkbox" /> Okay with smoking only</label
-                  >
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for="">
-                    <input type="checkbox" /> Okay with both</label
-                  >
-                  <p>01</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <button class="filter-dropdown-btn">
-              Health Issues
-              <img src="../images/light-chevron.png" />
-            </button>
-            <div class="select-filter-dropdown">
-              <ul value="">
-                <li class="flex justify-between">
-                  <label for="">
-                    <input type="checkbox" />Not okay with either</label
-                  >
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> Disabled</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> Fit 100%</label>
-                  <p>01</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <button class="filter-dropdown-btn">
-              Guests
-              <img src="../images/light-chevron.png" />
-            </button>
-            <div class="select-filter-dropdown">
-              <ul value="">
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" />Rarely</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> Occasionally</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> Often</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for="">
-                    <input type="checkbox" /> NO guest allowed</label
-                  >
-                  <p>01</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <button class="filter-dropdown-btn">
-              Move in timeline
-              <img src="../images/light-chevron.png" />
-            </button>
-            <div class="select-filter-dropdown">
-              <ul value="">
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" />Immediately</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for="">
-                    <input type="checkbox" /> Within 1 month</label
-                  >
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> 1 -3 Month</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for="">
-                    <input type="checkbox" /> Flexible / Not sure when</label
-                  >
-                  <p>01</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <button class="filter-dropdown-btn">
-              Work / Daily Schedule
-              <img src="../images/light-chevron.png" />
-            </button>
-            <div class="select-filter-dropdown">
-              <ul>
-                <li class="flex justify-between">
-                  <label for="">
-                    <input type="checkbox" />Student (mostly out)</label
-                  >
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for="">
-                    <input type="checkbox" />Student (mostly home)</label
-                  >
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for="">
-                    <input type="checkbox" /> Working (office based)</label
-                  >
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for="">
-                    <input type="checkbox" /> Working (remote)</label
-                  >
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> Self Employed</label>
-                  <p>01</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <button class="filter-dropdown-btn">
-              Cleanliness Level
-              <img src="../images/light-chevron.png" />
-            </button>
-            <div class="select-filter-dropdown">
-              <ul>
-                <li class="flex justify-between">
-                  <label for="">
-                    <input type="checkbox" />Low (easy-going)</label
-                  >
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for="">
-                    <input type="checkbox" /> Meduim (reasonably neat)</label
-                  >
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for="">
-                    <input type="checkbox" /> High (hery neat)</label
-                  >
-                  <p>01</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <button class="filter-dropdown-btn">
-              Lifestyle Vibe
-              <img src="../images/light-chevron.png" />
-            </button>
-            <div class="select-filter-dropdown">
-              <ul>
-                <li class="flex justify-between">
-                  <label for="">
-                    <input type="checkbox" />Quite & Balanced</label
-                  >
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" />Balanced</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for="">
-                    <input type="checkbox" /> SOcial & Friendly</label
-                  >
-                  <p>01</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <button class="filter-dropdown-btn">
-              Rent Price, Yearly N
-              <img src="../images/light-chevron.png" />
-            </button>
-            <div class="select-filter-dropdown">
-              <ul>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" />100k - 200k </label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" />200k - 400k</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> 400k - 600k</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> 600k - 1M</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> 1M - 2M</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> 2M - 5M</label>
-                  <p>01</p>
-                </li>
-                <li class="flex justify-between">
-                  <label for=""> <input type="checkbox" /> 5M % above</label>
-                  <p>01</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="clear_filter">
-          <button class="cancel">Cancel</button
-          ><button class="filter-btn">Filter</button>
+      <div class="filter-container">
+        <div class="filter-sections" id="filterSections"></div>
+        <div class="filter-action">
+          <button class="btn btn-reset" id="resetBtn">Clear</button>
+          <button class="btn btn-filter" id="filterBtn">Fiter</button>
         </div>
       </div>
     </aside>
@@ -789,7 +475,7 @@
                         <p>upload a good picture of you</p>
                         <label for="file-upload" class="upload-box">
                           <span class="upload-icon"
-                            ><img src="../images/upload.png" alt=""
+                            ><img src="../images/upload.png"
                           /></span>
                           <span>Upload FIle</span>
                         </label>
@@ -812,7 +498,7 @@
         </div>
       </div>
     </main>
-    <script src="./find-rommate.js"></script>
+    <script src="./find-roommate.js"></script>
     <script src="../reg-user-dropdown.js"></script>
     <script src="../stepper.js"></script>
   </body>

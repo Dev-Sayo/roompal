@@ -69,7 +69,6 @@ main {
     url("../images/3d-rendering-house-model-1.png") no-repeat;
   background-position: right;
   background-size: 300px 100%;
-  height: 300px;
   padding: 10px;
   border-radius: 20px;
   display: flex;
@@ -184,6 +183,11 @@ main {
 .explore-property-text h2 {
   font-weight: 500;
   padding-bottom: 5px;
+}
+.house-ad {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 .house-ad,
 .explore-property-text h2 {

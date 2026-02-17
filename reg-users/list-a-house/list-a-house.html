@@ -2,13 +2,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>List a House</title>
     <link rel="stylesheet" href="list-a-house.css" />
@@ -191,7 +184,7 @@
           <!-- form section -->
           <div class="form-card">
             <form
-              class="info-input-parent bg-white p-10 rounded-2xl"
+              class="info-input-parent bg-[#f5f5f5] p-10 rounded-2xl"
               id="propertyForm"
             >
               <div class="selector" data-type="1">
@@ -202,7 +195,7 @@
                   <div class="custom-select">
                     <select
                       required
-                      class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                      class="w-full h-11 leading-tight border-none rounded-lg appearance-none focus:outline-none"
                       name=""
                       id=""
                     >
@@ -224,7 +217,7 @@
                   <p>Is this an entire place or a shared space?</p>
                   <select
                     required
-                    class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                    class="w-full h-11 leading-tight border-none rounded-lg appearance-none focus:outline-none"
                     name=""
                     id=""
                   >
@@ -237,7 +230,7 @@
                   <p>How many rooms are available?</p>
                   <select
                     required
-                    class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                    class="w-full h-11 leading-tight border-none rounded-lg appearance-none focus:outline-none"
                     name=""
                     id=""
                   >
@@ -257,7 +250,7 @@
                   <div class="custom-select">
                     <select
                       required
-                      class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                      class="w-full h-11 leading-tight border-none rounded-lg appearance-none focus:outline-none"
                       name=""
                       id=""
                     >
@@ -280,7 +273,7 @@
                   <div class="custom-select">
                     <select
                       required
-                      class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                      class="w-full h-11 leading-tight border-none rounded-lg appearance-none focus:outline-none"
                       name=""
                       id=""
                     >
@@ -302,7 +295,7 @@
                   <div class="custom-select">
                     <select
                       required
-                      class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                      class="w-full h-11 leading-tight border-none rounded-lg appearance-none focus:outline-none"
                       name=""
                       id=""
                     >
@@ -323,7 +316,7 @@
                   <div class="custom-select">
                     <select
                       required
-                      class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                      class="w-full h-11 leading-tight border-none rounded-lg appearance-none focus:outline-none"
                       name=""
                       id=""
                     >
@@ -346,7 +339,7 @@
                   <p>Are utilities included in the rent??</p>
                   <select
                     required
-                    class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                    class="w-full h-11 leading-tight border-none rounded-lg appearance-none focus:outline-none"
                     name=""
                     id=""
                   >
@@ -359,7 +352,7 @@
                   <p>Are Pets Allowed</p>
                   <select
                     required
-                    class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                    class="w-full h-11 leading-tight border-none rounded-lg appearance-none focus:outline-none"
                     name=""
                     id=""
                   >
@@ -370,7 +363,7 @@
                 </div>
                 <div class="selector-group">
                   <p>What is the yearly rent?</p>
-                  <div class="">
+                  <div class="input-box h-11 rounded-lg">
                     <input type="text" placeholder="Enter Exact Amount" />
                   </div>
                 </div>
@@ -378,7 +371,7 @@
                   <p>Is the property furnished or unfurnished?</p>
                   <select
                     required
-                    class="w-full h-11 leading-tight bg-[#ff1f1] border-none rounded-lg appearance-none focus:outline-none"
+                    class="w-full h-11 leading-tight border-none rounded-lg appearance-none focus:outline-none"
                     name=""
                     id=""
                   >
@@ -390,7 +383,7 @@
                 </div>
                 <div class="selector-group">
                   <p>Date Of Birth</p>
-                  <div class="tel-box">
+                  <div class="input-box h-11 rounded-lg">
                     <input type="date" />
                   </div>
                 </div>
@@ -399,8 +392,8 @@
                     provide the primary contact for lease signing and
                     maintenance issues?
                   </p>
-                  <div class="tel-box">
-                    <input type="tel" placeholder="Enter Phone Number" />
+                  <div class="input-box h-11 rounded-lg">
+                    <input type="input" placeholder="Enter Phone Number" />
                   </div>
                 </div>
               </div>
@@ -431,14 +424,6 @@
                   </div>
                 </div>
               </div>
-              <!-- loading/success messages -->
-              <div class="success-message" id="successMessage">
-                <div class="success-icon">
-                  <img src="/frontend/assets/images/" />
-                </div>
-                <h2>Congratulation</h2>
-                <p>Your house listing has been created.</p>
-              </div>
               <!-- nav btns -->
               <div class="button-group flex items-center gap-5">
                 <button type="button" class="btn btn-prev" id="prevBtn">
@@ -455,6 +440,14 @@
                 >
                   List Now
                 </button>
+              </div>
+              <!-- loading/success messages -->
+              <div class="success-message" id="successMessage">
+                <div class="success-icon">
+                  <img src="/frontend/assets/images/" />
+                </div>
+                <h2>Congratulation</h2>
+                <p>Your house listing has been created.</p>
               </div>
             </form>
           </div>

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @font-face {
   font-family: "Infinite Realities";
-  src: url(/frontend/assets/fonts/Infinite\ Realities.ttf) format("truetype");
+  src: url(/frontend/assets/fonts/Infinite\Realities.ttf) format("truetype");
 }
 @font-face {
   font-family: "Gilroy Thin";
@@ -29,6 +29,7 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  font-family: "Inter", sans-serif;
 }
 button {
   background: transparent;
@@ -119,9 +120,17 @@ aside {
   margin: 10px;
   padding: 10px 2rem;
   border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  background: var(--white);
 }
 .location-dropdown span {
   color: var(--gray);
+}
+.location-dropdown img {
+  width: 16px;
 }
 .filter-search-box {
   padding-top: 2rem;
@@ -136,45 +145,11 @@ aside {
   padding-block: 5px;
   color: hsla(0, 0%, 0%, 0.623);
 }
-.filter-dropdown-btn {
+.filter-action {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0.8rem;
-}
-.filter-dropdown-btn img {
-  width: 12px;
-  height: 6px;
-}
-.filter-dropdown,
-.clear_filter button {
-  cursor: pointer;
-}
-.select-filter-dropdown {
-  display: none;
-}
-.clear_filter {
-  display: flex;
-  float: right;
-  gap: 1rem;
-  color: var(--white);
-}
-.clear_filter button {
-  height: 44px;
-  border-radius: 40px;
-  margin-top: 1rem;
-}
-.cancel {
-  background: var(--primary-color);
-  min-width: 66px;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-}
-.filter-btn {
-  background: var(--primary-color-1);
-  min-width: 110px;
+  justify-content: center;
+  gap: 12px;
 }
 main {
   grid-area: main;
@@ -292,6 +267,9 @@ main {
 }
 .roommate-info h4 {
   font-weight: 600;
+}
+.roommate-info p {
+  padding-bottom: 10px;
 }
 .roommate-avatar img {
   max-width: 300px;

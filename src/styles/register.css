@@ -11,14 +11,6 @@
 body {
   font-family: "Inter", sans-serif;
 }
-/* .bg-side {
-  background: url("/frontend/assets/images/3d-rendering-house-model-\(1\)-1.png");
-  background-size: cover;
-  background-position: center center;
-  position: relative;
-  color: var(--text-color);
-  border-top-left-radius: 15px;
-} */
 .backdrop,
 .bg-side {
   border-bottom-left-radius: 15px;
@@ -105,7 +97,37 @@ body {
     opacity: 1;
   }
 }
-
+select,
+::picker(select) {
+  appearance: base-select;
+}
+select {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+select option {
+  padding: 10px;
+}
+::picker(select):popover-open {
+  opacity: 1;
+}
+@starting-style {
+  ::picker(select):popover-open {
+    opacity: 0;
+  }
+}
+::picker(select) {
+  top: calc(anchor(bottom) + 8px);
+  left: anchor(70%);
+  min-width: 198px;
+  height: 188px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  border: none;
+  opacity: 0;
+  transition: all 0.4s allow-discrete;
+}
 /* media query */
 @media (max-width: 800px) {
   .bg-side {

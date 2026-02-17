@@ -48,7 +48,6 @@
 }
 .section-content.active {
   max-height: 400px;
-  padding: 8px;
 }
 .checkbox-option {
   display: flex;
