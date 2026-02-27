@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
-@font-face {
+/* @font-face {
   font-family: "Infinite Realities";
-  src: url(/frontend/assets/fonts/Infinite\ Realities.ttf) format("truetype");
+  src: url("/frontend/assets/fonts/Infinite\ Realities.ttf") format("truetype");
 }
 @font-face {
   font-family: "Gilroy Thin";
-  src: url(/frontend/assets/fonts/Gilroy-Thin.ttf) format("truetype");
+  src: url("/frontend/assets/fonts/Gilroy-Thin.ttf") format("truetype");
 }
 @font-face {
   font-family: "Gilroy light";
-  src: url(/frontend/assets/fonts/Gilroy-Light.ttf) format("truetype");
-}
+  src: url("/frontend/assets/fonts/Gilroy-Light.ttf") format("truetype");
+} */
 :root {
   --white: #ffffff;
   --off-white: #f5f5f5;
@@ -48,11 +48,6 @@ body {
 }
 .get-a-space-container {
   width: 100%;
-  background: url("/frontend/assets/images/3d-rendering-house-model-1.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  margin: auto;
   border-radius: 20px;
   aspect-ratio: 16/9;
   display: flex;
@@ -180,11 +175,6 @@ body {
   background: var(--white);
 }
 .roompal-background {
-  background: url("/frontend/assets/images/3d-rendering-loft-luxury-living-room-with-shelf-near-dining-table-1.png");
-  background-repeat: no-repeat;
-  background-position: 100%;
-  background-size: cover;
-  background-attachment: scroll;
   aspect-ratio: 16/9;
   border-radius: 20px;
   position: relative;
@@ -251,7 +241,6 @@ body {
   }
   .get-a-space-container {
     background: none;
-    aspect-ratio: 0;
     padding: 1rem;
   }
   .apartment-locations {
@@ -276,7 +265,8 @@ body {
   }
   .post p,
   .discover p,
-  .post a {
+  .post a,
+  .fia-links {
     display: none;
   }
   .post h2 {

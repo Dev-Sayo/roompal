@@ -21,7 +21,6 @@ body {
 }
 .dropdown-content {
   position: absolute;
-  margin-top: 5px;
   min-width: 300px;
   height: 178px;
   margin-top: 10px;
@@ -29,7 +28,7 @@ body {
   width: 100%;
   display: none;
   box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.6);
-  z-index: 10;
+  z-index: 1;
   padding: 1rem;
 }
 .dropdown-content li {
@@ -43,6 +42,7 @@ body {
 }
 .dropdown-container.active .dropdown-content {
   display: block;
+  z-index: 9999;
 }
 .dropdown-items:hover {
   background: #f1f1f1;

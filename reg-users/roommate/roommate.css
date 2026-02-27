@@ -1,16 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@font-face {
-  font-family: "Infinite Realities";
-  src: url(/frontend/assets/fonts/Infinite\Realities.ttf) format("truetype");
-}
-@font-face {
-  font-family: "Gilroy Thin";
-  src: url(/frontend/assets/fonts/Gilroy-Thin.ttf) format("truetype");
-}
-@font-face {
-  font-family: "Gilroy light";
-  src: url(/frontend/assets/fonts/Gilroy-Light.ttf) format("truetype");
-}
 :root {
   --white: #ffffff;
   --notify-white: rgba(204, 204, 204, 1);

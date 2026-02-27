@@ -1,17 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
-@font-face {
-  font-family: "Infinite Realities";
-  src: url(/frontend/assets/fonts/Infinite\ Realities.ttf) format("truetype");
-}
-@font-face {
-  font-family: "Gilroy Thin";
-  src: url(/frontend/assets/fonts/Gilroy-Thin.ttf) format("truetype");
-}
-@font-face {
-  font-family: "Gilroy light";
-  src: url(/frontend/assets/fonts/Gilroy-Light.ttf) format("truetype");
-}
 :root {
   --white: #ffffff;
   --black-color: #000;
@@ -192,13 +180,11 @@ span {
     padding-bottom: 2rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
-
   .form-section:last-of-type {
     border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
   }
-
   .section-title {
     font-size: 18px;
     font-weight: 600;
@@ -207,7 +193,6 @@ span {
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--primary-color-2);
   }
-
   .field-label {
     display: block;
     font-size: 14px;
@@ -215,7 +200,6 @@ span {
     color: #333;
     margin-bottom: 8px;
   }
-
   .form-select {
     width: 100%;
     padding: 12px 16px;
@@ -234,17 +218,14 @@ span {
     background-position: right 16px center;
     background-size: 12px;
   }
-
   .form-select:hover {
     background-color: #f5f5f5;
   }
-
   .form-select:focus {
     outline: none;
     background-color: #f5f5f5;
     box-shadow: 0 0 0 2px rgba(34, 52, 72, 0.1);
   }
-
   .form-input,
   .form-textarea {
     width: 100%;
@@ -256,36 +237,30 @@ span {
     transition: all 0.2s;
     font-family: inherit;
   }
-
   .form-input:hover,
   .form-textarea:hover {
     background-color: #f5f5f5;
   }
-
   .form-input:focus,
   .form-textarea:focus {
     outline: none;
     background-color: #f5f5f5;
     box-shadow: 0 0 0 2px rgba(34, 52, 72, 0.1);
   }
-
   .form-textarea {
     resize: vertical;
     min-height: 120px;
   }
-
   .form-row {
     display: flex;
     gap: 1rem;
   }
-
   .upload-hint {
     display: block;
     margin-top: 8px;
     font-size: 12px;
     color: #6b7280;
   }
-
   /* Button improvements */
   .btn-submit {
     min-width: 200px;
@@ -295,12 +270,10 @@ span {
     border-radius: 12px;
     transition: all 0.3s;
   }
-
   .btn-submit:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(34, 52, 72, 0.3);
   }
-
   .btn-submit:disabled {
     opacity: 0.7;
     cursor: not-allowed;
@@ -311,11 +284,9 @@ span {
   .upload-file-box {
     margin-bottom: 1.5rem;
   }
-
   .upload-file-box:last-child {
     margin-bottom: 0;
   }
-
   .upload-file-box .field-label {
     margin-bottom: 12px;
     font-weight: 600;

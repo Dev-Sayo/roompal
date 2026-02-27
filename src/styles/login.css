@@ -57,10 +57,21 @@ body {
     text-align: center;
   }
 }
-@media (max-width: 870px) {
+@media (max-width: 1078px) {
+  .login-container {
+    grid-template-columns: 1fr;
+  }
   .bg-side {
     display: none;
   }
+  .login-info {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media (max-width: 870px) {
   .bg-side h2 {
     left: 50%;
     transform: translateX(-50%);
@@ -70,5 +81,34 @@ body {
   .bg-side p {
     font-size: 18px;
     padding-right: 1rem;
+  }
+  .login-info {
+    padding: 3rem;
+  }
+}
+@media (max-width: 630px) {
+  .login-info {
+    padding: 1.5em;
+    height: 100vh;
+  }
+  .login-info h2 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 530px) {
+  .login-info h2 {
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+  .login-info a {
+    font-size: 14px;
+  }
+  .login-info p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 381px) {
+  .login-info a {
+    font-size: 12px;
   }
 }

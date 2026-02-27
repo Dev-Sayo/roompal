@@ -362,6 +362,14 @@
   height: 40px;
   border-radius: 10px;
 }
+@media (max-width: 1129px) {
+  .nav-side__1 {
+    gap: 5rem;
+  }
+  .link {
+    gap: 10px;
+  }
+}
 @media (max-width: 1024px) {
   body {
     grid-template-columns: 1fr;
