@@ -1,4 +1,4 @@
-"use strict";
+"use-strict";
 // nav dropdown
 const dropdownBox = document.getElementById("myDropdown");
 const dropdownBtn = document.querySelector(".dropdown-btn");
@@ -58,56 +58,56 @@ questions.forEach((question) => {
     }
   });
 });
-
-// carousel
+// review
 const reviews = [
   {
     name: "Sofia Andrade",
     role: "Product Designer",
-    text: "Absolutely blown away by the quality. Every detail was thoughtfully considered and the experience was seamless from start to finish.",
-    photo: "assets/images/man-1.png",
+    text: "The roommate matching actually works. I was worried about living with a stranger, but the lifestyle matching helped a lot. We get along really well..",
+
+    photo: "../assets/images/man-1.png",
   },
   {
     name: "Camille Dubois",
     role: "Marketing Lead",
     text: "Our conversion rate improved by 40% within the first month. I honestly didn't expect results this quickly.",
-    photo: "assets/images/man-2.png",
+    photo: "../assets/images/man-2.png",
   },
   {
     name: "James Okonkwo",
     role: "CTO at Launchpad",
     text: "Clean API, excellent documentation, and it just works. No fighting with edge cases or broken integrations.",
-    photo: "assets/images/man-3.png",
+    photo: "../assets/images/man-3.png",
   },
   {
     text: "I've recommended this to everyone on my team. The onboarding is smooth and the learning curve is basically zero.",
     name: "Priya Nair",
     role: "UX Researcher",
-    photo: "assets/images/man-4.png",
+    photo: "../assets/images/man-4.png",
   },
   {
     text: "Replaced our entire review workflow with this. Setup took 20 minutes. Results were immediate and impressive.",
     name: "Luca Ferretti",
     role: "E-commerce Manager",
-    photo: "assets/images/man-1.png",
+    photo: "../assets/images/man-1.png",
   },
   {
     text: "The analytics alone are worth it. I finally understand what my audience actually cares about. Total game changer.",
     name: "Amara Osei",
     role: "Content Strategist",
-    photo: "assets/images/man-1.png",
+    photo: "../assets/images/man-1.png",
   },
   // {
   //   text: "Rarely do I write reviews but this deserved one. Rock solid performance even under heavy load. Very impressed.",
   //   name: "Daniel Park",
   //   role: "Software Engineer",
-  //   photo: "assets/images/man-1.png",
+  //   photo: "../assets/images/man-1.png",
   // },
   // {
   //   text: "Our team was skeptical at first. Two weeks in, everyone agreed it was the right call. Speaks for itself.",
   //   name: "Elena Vasquez",
   //   role: "Growth Manager",
-  //   photo: "assets/images/man-1.png",
+  //   photo: "../assets/images/man-1.png",
   // },
 ];
 

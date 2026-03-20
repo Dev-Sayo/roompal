@@ -269,6 +269,9 @@ body {
   .fia-links {
     display: none;
   }
+  .select-div p {
+    color: #fff;
+  }
   .post h2 {
     text-align: center;
     padding-block: 1rem;
