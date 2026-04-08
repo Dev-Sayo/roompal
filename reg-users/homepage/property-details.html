@@ -309,7 +309,16 @@
       </div>
       <div class="side-two">
         <button class="logout-btn" onclick="handleLogout()" title="Logout">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
             <polyline points="16 17 21 12 16 7"></polyline>
             <line x1="21" y1="12" x2="9" y2="12"></line>
@@ -465,9 +474,7 @@
         <div class="left-column">
           <section class="property-section">
             <h2 class="section-title">Property Title</h2>
-            <p class="property-title-text">
-              Loading property details...
-            </p>
+            <p class="property-title-text">Loading property details...</p>
           </section>
           <section class="property-section">
             <h2 class="section-title">Property Features</h2>
@@ -498,7 +505,9 @@
           </section>
           <section class="property-section">
             <h2 class="section-title">Agent Number</h2>
-            <a class="agent-number" id="agent-phone-link" href="#">Loading...</a>
+            <a class="agent-number" id="agent-phone-link" href="#"
+              >Loading...</a
+            >
           </section>
         </div>
         <div class="right-column">
@@ -582,7 +591,8 @@
         showNext() {
           if (!window.propertyData || !window.propertyData.images) return;
           const newIndex =
-            window.propertyData.currentImageIndex === window.propertyData.images.length - 1
+            window.propertyData.currentImageIndex ===
+            window.propertyData.images.length - 1
               ? 0
               : window.propertyData.currentImageIndex + 1;
           this.updateMainImage(newIndex);
@@ -632,19 +642,24 @@
             // Remove any existing listeners by cloning
             const newBtn = contactBtn.cloneNode(true);
             contactBtn.parentNode.replaceChild(newBtn, contactBtn);
-            
+
             // Contact button will be handled by propertyDetails.js
             // This is just a fallback
             newBtn.addEventListener("click", (e) => {
               e.preventDefault();
-              const agentPhoneLink = document.getElementById("agent-phone-link");
-              if (agentPhoneLink && agentPhoneLink.href && agentPhoneLink.href !== '#') {
+              const agentPhoneLink =
+                document.getElementById("agent-phone-link");
+              if (
+                agentPhoneLink &&
+                agentPhoneLink.href &&
+                agentPhoneLink.href !== "#"
+              ) {
                 window.location.href = agentPhoneLink.href;
               } else {
-                if (typeof toast !== 'undefined') {
-                  toast.info('Contact information not available');
+                if (typeof toast !== "undefined") {
+                  toast.info("Contact information not available");
                 } else {
-                  alert('Contact information not available');
+                  alert("Contact information not available");
                 }
               }
             });

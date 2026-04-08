@@ -3,13 +3,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Find roommate</title>
-<<<<<<< HEAD
+    <<<<<<< HEAD
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./roommate.css" />
-=======
+    =======
     <link rel="stylesheet" href="./rommate.css" />
     <link rel="stylesheet" href="../../dist/output.css" />
->>>>>>> 9da3d8aaab3db7ce24155c91caec1d8138a560f3
+    >>>>>>> 9da3d8aaab3db7ce24155c91caec1d8138a560f3
     <link rel="stylesheet" href="../reg-user.css" />
     <link rel="stylesheet" href="../filter-section.css" />
   </head>
@@ -51,11 +51,11 @@
         </div>
       </div>
       <div class="nav-side__1">
-<<<<<<< HEAD
+        <<<<<<< HEAD
         <a class="home" href="../homepage/home.html">roompal</a>
-=======
+        =======
         <a class="home" href="../../index.html">roompal</a>
->>>>>>> 9da3d8aaab3db7ce24155c91caec1d8138a560f3
+        >>>>>>> 9da3d8aaab3db7ce24155c91caec1d8138a560f3
         <div class="link">
           <a href="../homepage/home.html">Find an Apartment</a>
           <a href="../roommate/roommate.html">Find a roommate</a>
@@ -80,7 +80,16 @@
           </div>
         </div>
         <button class="logout-btn" onclick="handleLogout()" title="Logout">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
             <polyline points="16 17 21 12 16 7"></polyline>
             <line x1="21" y1="12" x2="9" y2="12"></line>
@@ -226,22 +235,41 @@
                     <!-- Basic Information Section -->
                     <div class="form-section">
                       <h3 class="section-title">Basic Information</h3>
-                      
+
                       <div class="selector-group">
-                        <label class="field-label">What is your gender? *</label>
-                        <select name="gender" id="gender" required class="form-select">
-                          <option value="" disabled selected>Choose Options</option>
+                        <label class="field-label"
+                          >What is your gender? *</label
+                        >
+                        <select
+                          name="gender"
+                          id="gender"
+                          required
+                          class="form-select"
+                        >
+                          <option value="" disabled selected>
+                            Choose Options
+                          </option>
                           <option value="Female">Female</option>
                           <option value="Male">Male</option>
                           <option value="Other">Other</option>
-                          <option value="Prefer not to say">Prefer not to say</option>
+                          <option value="Prefer not to say">
+                            Prefer not to say
+                          </option>
                         </select>
                       </div>
 
                       <div class="selector-group">
-                        <label class="field-label">Preferred roommate gender?</label>
-                        <select name="preferredGender" id="preferredGender" class="form-select">
-                          <option value="No Preference" selected>No Preference</option>
+                        <label class="field-label"
+                          >Preferred roommate gender?</label
+                        >
+                        <select
+                          name="preferredGender"
+                          id="preferredGender"
+                          class="form-select"
+                        >
+                          <option value="No Preference" selected>
+                            No Preference
+                          </option>
                           <option value="Male">Male</option>
                           <option value="Female">Female</option>
                           <option value="Other">Other</option>
@@ -249,14 +277,34 @@
                       </div>
 
                       <div class="selector-group">
-                        <label class="field-label">What is your monthly budget? (in Naira) *</label>
-                        <input type="number" name="budget" id="budget" placeholder="Enter monthly budget (e.g., 200000)" required min="0" step="1000" class="form-input" />
+                        <label class="field-label"
+                          >What is your monthly budget? (in Naira) *</label
+                        >
+                        <input
+                          type="number"
+                          name="budget"
+                          id="budget"
+                          placeholder="Enter monthly budget (e.g., 200000)"
+                          required
+                          min="0"
+                          step="1000"
+                          class="form-input"
+                        />
                       </div>
 
                       <div class="selector-group">
-                        <label class="field-label">Which State do you want to live in? *</label>
-                        <select name="state" id="state" required class="form-select">
-                          <option value="" disabled selected>Choose Options</option>
+                        <label class="field-label"
+                          >Which State do you want to live in? *</label
+                        >
+                        <select
+                          name="state"
+                          id="state"
+                          required
+                          class="form-select"
+                        >
+                          <option value="" disabled selected>
+                            Choose Options
+                          </option>
                           <option value="Lagos">Lagos</option>
                           <option value="Abuja">Abuja</option>
                           <option value="Rivers">Rivers</option>
@@ -269,8 +317,17 @@
                       </div>
 
                       <div class="selector-group">
-                        <label class="field-label">Which area/city do you prefer? *</label>
-                        <input type="text" name="city" id="city" placeholder="Enter city/area (e.g., Gbagada, Island)" required class="form-input" />
+                        <label class="field-label"
+                          >Which area/city do you prefer? *</label
+                        >
+                        <input
+                          type="text"
+                          name="city"
+                          id="city"
+                          placeholder="Enter city/area (e.g., Gbagada, Island)"
+                          required
+                          class="form-input"
+                        />
                       </div>
                     </div>
 
@@ -279,8 +336,14 @@
                       <h3 class="section-title">Lifestyle & Preferences</h3>
 
                       <div class="selector-group">
-                        <label class="field-label">What is your Lifestyle vibe?</label>
-                        <select name="lifestyle" id="lifestyle" class="form-select">
+                        <label class="field-label"
+                          >What is your Lifestyle vibe?</label
+                        >
+                        <select
+                          name="lifestyle"
+                          id="lifestyle"
+                          class="form-select"
+                        >
                           <option value="Flexible" selected>Flexible</option>
                           <option value="Quiet">Quiet & Private</option>
                           <option value="Moderate">Balanced</option>
@@ -290,14 +353,30 @@
                       </div>
 
                       <div class="selector-group">
-                        <label class="field-label">What is your occupation?</label>
-                        <input type="text" name="occupation" id="occupation" placeholder="Enter your occupation" class="form-input" />
+                        <label class="field-label"
+                          >What is your occupation?</label
+                        >
+                        <input
+                          type="text"
+                          name="occupation"
+                          id="occupation"
+                          placeholder="Enter your occupation"
+                          class="form-input"
+                        />
                       </div>
 
                       <div class="selector-group">
-                        <label class="field-label">What is your cleanliness level?</label>
-                        <select name="cleanlinessLevel" id="cleanlinessLevel" class="form-select">
-                          <option value="3" selected>Medium (reasonably tidy)</option>
+                        <label class="field-label"
+                          >What is your cleanliness level?</label
+                        >
+                        <select
+                          name="cleanlinessLevel"
+                          id="cleanlinessLevel"
+                          class="form-select"
+                        >
+                          <option value="3" selected>
+                            Medium (reasonably tidy)
+                          </option>
                           <option value="1">Low (Easy-going)</option>
                           <option value="2">Low-Medium</option>
                           <option value="4">Medium-High</option>
@@ -305,16 +384,22 @@
                         </select>
                       </div>
 
-                      <div class="form-row" style="display: flex; gap: 1rem;">
-                        <div class="selector-group" style="flex: 1;">
-                          <label class="field-label">Do you smoke or drink?</label>
-                          <select name="smoking" id="smoking" class="form-select">
+                      <div class="form-row" style="display: flex; gap: 1rem">
+                        <div class="selector-group" style="flex: 1">
+                          <label class="field-label"
+                            >Do you smoke or drink?</label
+                          >
+                          <select
+                            name="smoking"
+                            id="smoking"
+                            class="form-select"
+                          >
                             <option value="false" selected>No</option>
                             <option value="true">Yes</option>
                           </select>
                         </div>
 
-                        <div class="selector-group" style="flex: 1;">
+                        <div class="selector-group" style="flex: 1">
                           <label class="field-label">Do you have pets?</label>
                           <select name="pets" id="pets" class="form-select">
                             <option value="false" selected>No</option>
@@ -329,32 +414,73 @@
                       <h3 class="section-title">Additional Information</h3>
 
                       <div class="selector-group">
-                        <label class="field-label">In one sentence, what kind of roommate are you? (Bio)</label>
-                        <textarea name="bio" id="bio" placeholder="I am..." rows="3" maxlength="1000" class="form-textarea"></textarea>
+                        <label class="field-label"
+                          >In one sentence, what kind of roommate are you?
+                          (Bio)</label
+                        >
+                        <textarea
+                          name="bio"
+                          id="bio"
+                          placeholder="I am..."
+                          rows="3"
+                          maxlength="1000"
+                          class="form-textarea"
+                        ></textarea>
                       </div>
 
                       <div class="selector-group">
-                        <label class="field-label">Upload a good picture of you</label>
+                        <label class="field-label"
+                          >Upload a good picture of you</label
+                        >
                         <label for="file-upload" class="upload-box">
-<<<<<<< HEAD
-                          <span class="upload-icon"
-                            ><img src="../images/upload.png"
-                          /></span>
-                          <span>Upload FIle</span>
-=======
                           <span class="upload-icon">
-                            <img src="../../assets/images/upload.png" alt="Upload" onerror="this.style.display='none'; this.nextElementSibling.textContent='📁 Upload'" />
+                            <img
+                              src="../../assets/images/upload.png"
+                              alt="Upload"
+                              onerror="
+                                this.style.display = 'none';
+                                this.nextElementSibling.textContent =
+                                  '📁 Upload';
+                              "
+                            />
                           </span>
                           <span>Upload File</span>
->>>>>>> 9da3d8aaab3db7ce24155c91caec1d8138a560f3
                         </label>
-                        <input id="file-upload" type="file" name="profileImage" accept="image/*" style="display: none;" />
+                        <input
+                          id="file-upload"
+                          type="file"
+                          name="profileImage"
+                          accept="image/*"
+                          style="display: none"
+                        />
                       </div>
                     </div>
 
                     <!-- Submit Button -->
-                    <div class="button-group" style="margin-top: 2rem; display: flex; justify-content: center;">
-                      <button type="submit" class="btn btn-submit" id="submitBtn" style="background: #223448; color: white; padding: 12px 48px; border-radius: 25px; border: none; font-size: 1rem; font-weight: 500; cursor: pointer; transition: all 0.2s;">
+                    <div
+                      class="button-group"
+                      style="
+                        margin-top: 2rem;
+                        display: flex;
+                        justify-content: center;
+                      "
+                    >
+                      <button
+                        type="submit"
+                        class="btn btn-submit"
+                        id="submitBtn"
+                        style="
+                          background: #223448;
+                          color: white;
+                          padding: 12px 48px;
+                          border-radius: 25px;
+                          border: none;
+                          font-size: 1rem;
+                          font-weight: 500;
+                          cursor: pointer;
+                          transition: all 0.2s;
+                        "
+                      >
                         Submit Profile
                       </button>
                     </div>

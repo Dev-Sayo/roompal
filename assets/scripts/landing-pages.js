@@ -35,7 +35,7 @@ mobileDropdownBtn.addEventListener("click", () => {
 });
 
 // Faq
-const faqQuestions = document.querySelectorAll(".faq-question");
+// const faqQuestions = document.querySelectorAll(".faq-question");
 const questions = document.querySelectorAll(".faq-question");
 
 questions.forEach((question) => {
@@ -97,18 +97,6 @@ const reviews = [
     role: "Content Strategist",
     photo: "../assets/images/man-1.png",
   },
-  // {
-  //   text: "Rarely do I write reviews but this deserved one. Rock solid performance even under heavy load. Very impressed.",
-  //   name: "Daniel Park",
-  //   role: "Software Engineer",
-  //   photo: "../assets/images/man-1.png",
-  // },
-  // {
-  //   text: "Our team was skeptical at first. Two weeks in, everyone agreed it was the right call. Speaks for itself.",
-  //   name: "Elena Vasquez",
-  //   role: "Growth Manager",
-  //   photo: "../assets/images/man-1.png",
-  // },
 ];
 
 function getInitial(name) {
