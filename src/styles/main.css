@@ -71,7 +71,7 @@ body {
   border-radius: 50px;
   margin-top: 1.3rem;
 }
-.apartment-locations {
+/* .apartment-locations {
   width: 100%;
   max-width: 1000px;
   height: 100px;
@@ -79,7 +79,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-}
+} */
 .select-div {
   width: 292px;
 }
@@ -475,7 +475,7 @@ footer {
   .fia-link a,
   .select-div p,
   .select-div select {
-    font-size: 12px;
+    font-size: 11px;
   }
   .subscribe-text h2 {
     font-size: 20px;
@@ -528,11 +528,11 @@ footer {
     height: 200px;
   }
 }
-@media (max-width: 418px) {
+/* @media (max-width: 418px) {
   .search-div {
     margin-top: 5px;
   }
-}
+} */
 @media (max-width: 400px) {
   .fia-link {
     justify-content: center;
@@ -548,6 +548,9 @@ footer {
   }
   .bg-bg {
     height: auto;
+  }
+  .apartment-locations {
+    gap: 5px;
   }
   @media (max-width: 320px) {
     .faq-question,
