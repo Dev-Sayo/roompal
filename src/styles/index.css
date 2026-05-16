@@ -81,7 +81,7 @@ body {
   max-width: 183px;
   height: auto;
 }
-.apartment-locations {
+/* .apartment-locations {
   background: var(--white);
   width: 100%;
   max-width: 1000px;
@@ -90,7 +90,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-}
+} */
 .select-div {
   width: 292px;
 }

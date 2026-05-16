@@ -71,7 +71,7 @@ body {
   border-radius: 50px;
   margin-top: 1.3rem;
 }
-/* .apartment-locations {
+.apartment-locations {
   width: 100%;
   max-width: 1000px;
   height: 100px;
@@ -79,7 +79,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-} */
+}
 .select-div {
   width: 292px;
 }
